@@ -1,0 +1,21 @@
+@import "bootstrap-flat/variables";
+@import "bootstrap-flat/mixins";
+
+/*
+ * Boxed content
+ *
+ * An alternative formatting for blockquotes to be used as testimonials.
+ */
+blockquote.testimonial {
+    footer {
+        padding-top: 20px;
+
+        &:before {
+            content: none;
+        }
+
+        cite {
+            font-weight: 700;
+        }
+    }
+}

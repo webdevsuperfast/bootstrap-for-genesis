@@ -1,0 +1,42 @@
+body {
+	font-weight: $body-font-weight;
+}
+
+a {
+	@include transition(all 300ms ease-in-out);
+	text-decoration: none;
+}
+
+// Images
+img {
+    // height: auto;
+    // max-width: 100%;
+}
+
+// Embeds
+.wp-caption,
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+// Form Inputs
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+.form-control {
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+// Table
+.entry table {
+    @extend .table;
+    @extend .table-bordered;
+}

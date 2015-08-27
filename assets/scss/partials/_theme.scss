@@ -1,0 +1,235 @@
+/** Body 
+----------------------------------------------------------------------------- */
+body {
+	// font-weight: $body-font-weight;
+}
+
+/** Site Header
+----------------------------------------------------------------------------- */
+.site-header {
+	background: $light-color;
+	margin: 0;
+	padding: $line-height-computed 0;
+	.site-title {
+		margin: 0;
+	}
+	.site-description {
+		color: $gray-light;
+		font-family: $font-family-base;
+		font-size: $font-size-base;
+		font-weight: $body-font-weight;
+		margin: 0;
+	}
+}
+
+.header-image {
+	.site-title {
+		display: block;
+		text-align: center;
+		@include tablet {
+			display: inline-block;
+		}
+		a {
+			@include hide-text();
+		}
+	}
+	.site-description {
+		display: none;
+	}
+}
+
+/** Navigation 
+----------------------------------------------------------------------------- */
+.navbar-nav .sub-arrow, .navbar-nav .collapsible .sub-arrow {
+	position:static;
+	margin-top:0;
+	margin-right:0;
+	margin-left:6px;
+	display:inline-block;
+	width:0;
+	height:0;
+	overflow:hidden;
+	vertical-align:middle;
+	border-top:4px solid;
+	border-right:4px dashed transparent;
+	border-bottom:4px dashed transparent;
+	border-left:4px dashed transparent;
+}
+.navbar-fixed-bottom .sub-arrow {
+	margin-top:-5px;
+	border-top:4px dashed transparent;
+	border-bottom:4px solid;
+}
+.navbar-nav ul .sub-arrow {
+	position:absolute;
+	right:0;
+	margin-top:6px;
+	margin-right:15px;
+	border-top:4px dashed transparent;
+	border-bottom:4px dashed transparent;
+	border-left:4px solid;
+	top: 50%;
+	margin-top: -4px;
+}
+.navbar-nav ul a.has-submenu {
+	padding-right:30px;
+}
+/* scrolling arrows for tall menus */
+.navbar-nav span.scroll-up, .navbar-nav span.scroll-down {
+	position:absolute;
+	display:none;
+	visibility:hidden;
+	height:20px;
+	overflow:hidden;
+	text-align:center;
+}
+.navbar-nav span.scroll-up-arrow, .navbar-nav span.scroll-down-arrow {
+	position:absolute;
+	top:-2px;
+	left:50%;
+	margin-left:-8px;
+	width:0;
+	height:0;
+	overflow:hidden;
+	border-top:7px dashed transparent;
+	border-right:7px dashed transparent;
+	border-bottom:7px solid;
+	border-left:7px dashed transparent;
+}
+.navbar-nav span.scroll-down-arrow {
+	top:6px;
+	border-top:7px solid;
+	border-right:7px dashed transparent;
+	border-bottom:7px dashed transparent;
+	border-left:7px dashed transparent;
+}
+/* add more indentation for 2+ level sub in collapsible mode - Bootstrap normally supports just 1 level sub menus */
+.navbar-nav .collapsible ul .dropdown-menu > li > a,
+.navbar-nav .collapsible ul .dropdown-menu .dropdown-header {
+	padding-left:35px;
+}
+.navbar-nav .collapsible ul ul .dropdown-menu > li > a,
+.navbar-nav .collapsible ul ul .dropdown-menu .dropdown-header {
+	padding-left:45px;
+}
+.navbar-nav .collapsible ul ul ul .dropdown-menu > li > a,
+.navbar-nav .collapsible ul ul ul .dropdown-menu .dropdown-header {
+	padding-left:55px;
+}
+.navbar-nav .collapsible ul ul ul ul .dropdown-menu > li > a,
+.navbar-nav .collapsible ul ul ul ul .dropdown-menu .dropdown-header {
+	padding-left:65px;
+}
+/* fix SmartMenus sub menus auto width (subMenusMinWidth and subMenusMaxWidth options) */
+.navbar-nav .dropdown-menu > li > a {
+	white-space:normal;
+}
+.navbar-nav ul.sm-nowrap > li > a {
+	white-space:nowrap;
+}
+/* fix .navbar-right subs alignment */
+.navbar-right ul.dropdown-menu {
+	left:0;
+	right:auto;
+}
+/* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
+.navbar-nav .collapsible ul {display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:auto !important;min-width:0 !important;max-width:none !important;}
+.navbar-nav .collapsible ul.sm-nowrap > li > a {white-space:normal;}
+.navbar-nav .collapsible iframe{display:none;}
+
+.dropdown {
+	& > li {
+		& > a {
+			font-weight: $body-font-weight;
+		}
+	}
+}
+
+/** Jumbotron
+----------------------------------------------------------------------------- */
+.jumbotron {
+	margin-bottom: 0;
+	padding: $line-height-computed*2 0;
+}
+
+/** Widgets
+----------------------------------------------------------------------------- */
+.widget {
+	ul, ol {
+		@extend .list-unstyled;
+	}
+}
+
+/** Site Inner
+----------------------------------------------------------------------------- */
+.site-inner {
+	padding: $line-height-computed*2 0;
+}
+
+// Sidebar
+.sidebar {
+	.widget {
+		margin-bottom: $line-height-computed;
+		.widgettitle {
+			margin-bottom: $line-height-computed;
+		}
+	}
+}
+
+/** Footer Widgets
+----------------------------------------------------------------------------- */
+.footer-widgets {
+	background: $gray-dark;
+	border-bottom: 1px solid $gray-darker;
+	color: $gray-lighter;
+	padding: $line-height-computed*2 0;
+	.widget {
+		margin-bottom: $line-height-computed;
+	}
+	.widgettitle {
+		@extend .h5;
+		color: $gray-light;
+		margin-bottom: $line-height-computed;
+		text-transform: uppercase;
+	}
+	a {
+		color: inherit;
+		&:hover {
+			color: $link-color;
+		}	
+	}
+}
+
+/** Site Footer
+----------------------------------------------------------------------------- */
+.site-footer {
+	background: $gray-dark;
+	color: $gray-lighter;
+	font-size: 14px;
+	padding: $line-height-computed 0;
+	.copyright {
+		text-align: center;
+		margin-bottom: $line-height-computed/2;
+		@include tablet {
+			margin-bottom: 0;
+			text-align: left;
+			.no-widget-area & {
+				text-align: center;
+			}
+		}
+	}
+	a {
+		color: inherit;
+		&:hover {
+			color: $link-color;
+		}	
+	}
+	ul {
+		@extend .list-inline;
+		margin-bottom: 0;
+		text-align: center;
+		@include tablet {
+			text-align: right;
+		}
+	}
+}

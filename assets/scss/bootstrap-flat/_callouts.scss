@@ -1,0 +1,68 @@
+@import "bootstrap-flat/variables";
+@import "bootstrap-flat/mixins";
+
+/*
+ * Alerts
+ *
+ * An alternative alert format, with either a left or right border.
+ * Requires a base alert class.
+ */
+.alert {
+    .alert-striped-left {
+        border-left: $callout-border-width solid;
+    }
+
+    .alert-striped-right {
+        border-right: $callout-border-width solid;
+    }
+}
+
+/*
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes.
+ * Requires a base and modifier class.
+ */
+.callout {
+    padding: $callout-padding;
+    margin: $callout-margin 0;
+    border: 1px solid $callout-border-color;
+    border-radius: $callout-border-radius;
+
+    // Headings for larger alerts
+    h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+    // Tighten up space between multiple callouts
+    & + & {
+        margin-top: -5px;
+    }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+.callout-primary {
+    @include callout-variant($callout-primary-bg);
+}
+
+.callout-success {
+    @include callout-variant($callout-success-bg);
+}
+
+.callout-info {
+    @include callout-variant($callout-info-bg);
+}
+
+.callout-warning {
+    @include callout-variant($callout-warning-bg);
+}
+
+.callout-danger {
+    @include callout-variant($callout-danger-bg);
+}

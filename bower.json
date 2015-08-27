@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-for-genesis",
+  "version": "1.0.0",
+  "authors": [
+    "SuperFastBusiness Team <webdevsuperfast@gmail.com>"
+  ],
+  "description": "Genesis child theme based on Bootstrap",
+  "keywords": [
+    "genesis",
+    "bootstrap",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.superfastbusiness.com",
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "fitvids": "~1.1.0",
+    "smartmenus": "~0.9.7"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
+}

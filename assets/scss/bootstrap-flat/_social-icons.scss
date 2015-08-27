@@ -1,0 +1,143 @@
+@import "bootstrap-flat/variables";
+@import "bootstrap-flat/mixins";
+
+/*
+ * Social icons
+ *
+ * Social icons turns list items into inline-block with custom hover effects
+ * and backgrounds.
+ */
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.list-social-icons {
+    padding-left: 0;
+    list-style: none;
+
+    > li {
+        display: inline-block;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 3px;
+        margin-right: 3px;
+        text-align: center;
+        opacity: 0.4;
+        background: $gray-darker;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            opacity: 1;
+            @include transition(0.1s);
+        }
+
+        a {
+            color: #fff;
+            display: block;
+            @include list-social-icons-variant($social-icons-base-size, $social-icons-base-text-size);
+
+            &:after {
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                -moz-transform: translate(0, 0);
+                -ms-transform: translate(0, 0);
+                -o-transform: translate(0, 0);
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &.rss {
+                @include list-social-icons-icon($social-icon-rss, $social-icon-rss-bg);
+            }
+
+            &.facebook {
+                @include list-social-icons-icon($social-icon-facebook, $social-icon-facebook-bg);
+            }
+
+            &.twitter {
+                @include list-social-icons-icon($social-icon-twitter, $social-icon-twitter-bg);
+            }
+
+            &.plus {
+                @include list-social-icons-icon($social-icon-google-plus, $social-icon-googleplus-bg);
+            }
+
+            &.vk {
+                @include list-social-icons-icon($social-icon-vk, $social-icon-vk-bg);
+            }
+
+            &.pinterest {
+                @include list-social-icons-icon($social-icon-pinterest, $social-icon-pinterest-bg);
+            }
+
+            &.vimeo {
+                @include list-social-icons-icon($social-icon-vimeo-square, $social-icon-vimeo-bg);
+            }
+
+            &.github {
+                @include list-social-icons-icon($social-icon-github-alt, $social-icon-github-bg);
+            }
+
+            &.linkedin {
+                @include list-social-icons-icon($social-icon-linkedin, $social-icon-linkedin-bg);
+            }
+
+            &.dropbox {
+                @include list-social-icons-icon($social-icon-dropbox, $social-icon-dropbox-bg);
+            }
+        }
+    }
+}
+
+.list-social-icons-sm {
+    > li a {
+        @include list-social-icons-variant($social-icons-base-size / 2, $social-icons-base-text-size / 2);
+    }
+}
+
+.list-social-icons-lg {
+    > li a {
+        @include list-social-icons-variant($social-icons-base-size * 2, $social-icons-base-text-size * 2);
+    }
+}
+
+.list-social-icons-xl {
+    > li a {
+        @include list-social-icons-variant($social-icons-base-size * 3, $social-icons-base-text-size * 3);
+    }
+}
+
+.list-social-icons-bright {
+    > li {
+        opacity: 1;
+    }
+}
+
+.list-social-icons-dim {
+    > li {
+        opacity: 0.4;
+
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+}

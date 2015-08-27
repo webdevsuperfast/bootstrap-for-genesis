@@ -1,0 +1,20 @@
+/*!
+    Theme Name: Bootstrap for Genesis
+    Description: Twitter Bootstrap-powered Genesis child theme.
+    Author: SuperFastBusiness
+    Author URI: http://www.superfastbusiness.com/
+    Version: 0.0.1
+    Tags: responsive-layout, white, blue, one-column, two-columns, three-columns, fixed-width, theme-options, bootstrap
+    Template: genesis
+    Template Version: 2.0
+    License: GPL-2.0+
+    License URI: http://www.opensource.org/licenses/gpl-license.php
+    Bitbucket Theme URI: https://bitbucket.org/webdevsuperfast/bootstrap-for-genesis
+*/
+
+@import "compass/css3";
+@import "modules/modules";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "bootstrap-flat";
+@import "bootstrap-flat-extras";
+@import "partials/partials";

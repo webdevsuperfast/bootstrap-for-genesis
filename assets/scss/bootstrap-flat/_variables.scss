@@ -1,0 +1,354 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default; // #222
+$gray-dark: lighten($gray-base, 20%) !default; // #333
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary: darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+
+$font-size-base: 14px !default;
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color: #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg: $brand-primary !default;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+$btn-default-color: #333 !default;
+$btn-default-bg: #fff !default;
+$btn-default-border: #ccc !default;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color: #fff !default;
+$btn-success-bg: $brand-success !default;
+$btn-success-border: darken($btn-success-bg, 5%) !default;
+
+$btn-info-color: #fff !default;
+$btn-info-bg: $brand-info !default;
+$btn-info-border: darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color: #fff !default;
+$btn-warning-bg: $brand-warning !default;
+$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color: #fff !default;
+$btn-danger-bg: $brand-danger !default;
+$btn-danger-border: darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color: $gray-light !default;
+
+$border-radius-base: 4px !default;
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text: #3c763d !default;
+$state-success-bg: #dff0d8 !default;
+$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text: #31708f !default;
+$state-info-bg: #d9edf7 !default;
+$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text: #8a6d3b !default;
+$state-warning-bg: #fcf8e3 !default;
+$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text: #a94442 !default;
+$state-danger-bg: #f2dede !default;
+$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+//== Callouts
+//
+//## Define callout colors, border radius, and padding.
+$callout-padding: 20px !default;
+$callout-margin: 20px !default;
+$callout-border-width: 5px !default;
+$callout-border-color: #eee !default;
+$callout-border-radius: 0 !default;
+
+$callout-primary-bg: darken($brand-primary, 10%) !default;
+$callout-success-bg: darken($brand-success, 10%) !default;
+$callout-info-bg: darken($brand-info, 10%) !default;
+$callout-warning-bg: darken($brand-warning, 10%) !default;
+$callout-danger-bg: darken($brand-danger, 10%) !default;
+
+//== Social icons
+//
+//##
+
+$social-icons-base-size: 40px !default;
+$social-icons-base-text-size: 32px !default;
+
+// The social icon content variables are based on the variables
+// from Font Awesome, and add a dependency on that icon font.
+$social-icon-adn: "\f170" !default;
+$social-icon-android: "\f17b" !default;
+$social-icon-angellist: "\f209" !default;
+$social-icon-apple: "\f179" !default;
+$social-icon-behance: "\f1b4" !default;
+$social-icon-behance-square: "\f1b5" !default;
+$social-icon-bitbucket-square: "\f172" !default;
+$social-icon-bitcoin: "\f15a" !default;
+$social-icon-btc: "\f15a" !default;
+$social-icon-buysellads: "\f20d" !default;
+$social-icon-cc-amex: "\f1f3" !default;
+$social-icon-cc-discover: "\f1f2" !default;
+$social-icon-cc-mastercard: "\f1f1" !default;
+$social-icon-cc-paypal: "\f1f4" !default;
+$social-icon-cc-stripe: "\f1f5" !default;
+$social-icon-cc-visa: "\f1f0" !default;
+$social-icon-codepen: "\f1cb" !default;
+$social-icon-connectdevelop: "\f20e" !default;
+$social-icon-css3: "\f13c" !default;
+$social-icon-dashcube: "\f210" !default;
+$social-icon-delicious: "\f1a5" !default;
+$social-icon-deviantart: "\f1bd" !default;
+$social-icon-digg: "\f1a6" !default;
+$social-icon-dribbble: "\f17d" !default;
+$social-icon-dropbox: "\f16b" !default;
+$social-icon-drupal: "\f1a9" !default;
+$social-icon-empire: "\f1d1" !default;
+$social-icon-facebook: "\f09a" !default;
+$social-icon-facebook-f: "\f09a" !default;
+$social-icon-facebook-official: "\f230" !default;
+$social-icon-facebook-square: "\f082" !default;
+$social-icon-flickr: "\f16e" !default;
+$social-icon-forumbee: "\f211" !default;
+$social-icon-foursquare: "\f180" !default;
+$social-icon-ge: "\f1d1" !default;
+$social-icon-git: "\f1d3" !default;
+$social-icon-git-square: "\f1d2" !default;
+$social-icon-github: "\f09b" !default;
+$social-icon-github-alt: "\f113" !default;
+$social-icon-github-square: "\f092" !default;
+$social-icon-gittip: "\f184" !default;
+$social-icon-google: "\f1a0" !default;
+$social-icon-google-plus: "\f0d5" !default;
+$social-icon-google-plus-square: "\f0d4" !default;
+$social-icon-google-wallet: "\f1ee" !default;
+$social-icon-gratipay: "\f184" !default;
+$social-icon-hacker-news: "\f1d4" !default;
+$social-icon-html5: "\f13b" !default;
+$social-icon-instagram: "\f16d" !default;
+$social-icon-ioxhost: "\f208" !default;
+$social-icon-joomla: "\f1aa" !default;
+$social-icon-jsfiddle: "\f1cc" !default;
+$social-icon-lastfm: "\f202" !default;
+$social-icon-lastfm-square: "\f203" !default;
+$social-icon-leanpub: "\f212" !default;
+$social-icon-linkedin: "\f0e1" !default;
+$social-icon-linkedin-square: "\f08c" !default;
+$social-icon-linux: "\f17c" !default;
+$social-icon-maxcdn: "\f136" !default;
+$social-icon-meanpath: "\f20c" !default;
+$social-icon-medium: "\f23a" !default;
+$social-icon-openid: "\f19b" !default;
+$social-icon-pagelines: "\f18c" !default;
+$social-icon-paypal: "\f1ed" !default;
+$social-icon-pinterest: "\f0d2" !default;
+$social-icon-pinterest-p: "\f231" !default;
+$social-icon-pinterest-square: "\f0d3" !default;
+$social-icon-qq: "\f1d6" !default;
+$social-icon-ra: "\f1d0" !default;
+$social-icon-rebel: "\f1d0" !default;
+$social-icon-reddit: "\f1a1" !default;
+$social-icon-reddit-square: "\f1a2" !default;
+$social-icon-renren: "\f18b" !default;
+$social-icon-rss: "\f09e" !default;
+$social-icon-rss-square: "\f143" !default;
+$social-icon-sellsy: "\f213" !default;
+$social-icon-share: "\f064" !default;
+$social-icon-share-alt: "\f1e0" !default;
+$social-icon-share-alt-square: "\f1e1" !default;
+$social-icon-share-square: "\f14d" !default;
+$social-icon-share-square-o: "\f045" !default;
+$social-icon-shirtsinbulk: "\f214" !default;
+$social-icon-simplybuilt: "\f215" !default;
+$social-icon-skyatlas: "\f216" !default;
+$social-icon-skype: "\f17e" !default;
+$social-icon-slack: "\f198" !default;
+$social-icon-slideshare: "\f1e7" !default;
+$social-icon-soundcloud: "\f1be" !default;
+$social-icon-spotify: "\f1bc" !default;
+$social-icon-stack-exchange: "\f18d" !default;
+$social-icon-stack-overflow: "\f16c" !default;
+$social-icon-steam: "\f1b6" !default;
+$social-icon-steam-square: "\f1b7" !default;
+$social-icon-stumbleupon: "\f1a4" !default;
+$social-icon-stumbleupon-circle: "\f1a3" !default;
+$social-icon-tencent-weibo: "\f1d5" !default;
+$social-icon-trello: "\f181" !default;
+$social-icon-tumblr: "\f173" !default;
+$social-icon-tumblr-square: "\f174" !default;
+$social-icon-twitch: "\f1e8" !default;
+$social-icon-twitter: "\f099" !default;
+$social-icon-twitter-square: "\f081" !default;
+$social-icon-viacoin: "\f237" !default;
+$social-icon-vimeo-square: "\f194" !default;
+$social-icon-vine: "\f1ca" !default;
+$social-icon-vk: "\f189" !default;
+$social-icon-wechat: "\f1d7" !default;
+$social-icon-weibo: "\f18a" !default;
+$social-icon-weixin: "\f1d7" !default;
+$social-icon-whatsapp: "\f232" !default;
+$social-icon-windows: "\f17a" !default;
+$social-icon-wordpress: "\f19a" !default;
+$social-icon-xing: "\f168" !default;
+$social-icon-xing-square: "\f169" !default;
+$social-icon-yahoo: "\f19e" !default;
+$social-icon-yelp: "\f1e9" !default;
+$social-icon-yen: "\f157" !default;
+$social-icon-youtube: "\f167" !default;
+$social-icon-youtube-play: "\f16a" !default;
+$social-icon-youtube-square: "\f166" !default;
+
+$social-icon-acrobat-bg: #fff !default;
+$social-icon-amazon-bg: #ffad1d !default;
+$social-icon-android-bg: #a4c639 !default;
+$social-icon-angellist-bg: #000 !default;
+$social-icon-aol-bg: #f00 !default;
+$social-icon-appnet-bg: #3178bd !default;
+$social-icon-appstore-bg: #000 !default;
+$social-icon-bitbucket-bg: #205081 !default;
+$social-icon-bitcoin-bg: #efefef !default;
+$social-icon-blogger-bg: #ee5a22 !default;
+$social-icon-buffer-bg: #232323 !default;
+$social-icon-call-bg: #008000 !default;
+$social-icon-cal-bg: #d63538 !default;
+$social-icon-cart-bg: #333 !default;
+$social-icon-chrome-bg: #006cd4 !default;
+$social-icon-cloudapp-bg: #fff !default;
+$social-icon-creativecommons-bg: #000 !default;
+$social-icon-delicious-bg: #3271cb !default;
+$social-icon-digg-bg: #164673 !default;
+$social-icon-disqus-bg: #5d8aad !default;
+$social-icon-dribbble-bg: #ea4c89 !default;
+$social-icon-dropbox-bg: #007ee5 !default;
+$social-icon-drupal-bg: #0077c0 !default;
+$social-icon-dwolla-bg: #e88c02 !default;
+$social-icon-email-bg: #f0f0eb !default;
+$social-icon-eventasaurus-bg: #192931 !default;
+$social-icon-eventbrite-bg: #ff5616 !default;
+$social-icon-eventful-bg: #fff !default;
+$social-icon-evernote-bg: #6bb130 !default;
+$social-icon-facebook-bg: #3b5998 !default;
+$social-icon-fivehundredpx-bg: #333 !default;
+$social-icon-flattr-bg: #8aba42 !default;
+$social-icon-flickr-bg: #ff0084 !default;
+$social-icon-forrst-bg: #1e360d !default;
+$social-icon-foursquare-bg: #44a8e0 !default;
+$social-icon-github-bg: #657e8c !default;
+$social-icon-gmail-bg: #efefef !default;
+$social-icon-google-bg: #4e6cf7 !default;
+$social-icon-googleplay-bg: #000 !default;
+$social-icon-googleplus-bg: #dd4b39 !default;
+$social-icon-gowalla-bg: #ff720a !default;
+$social-icon-grooveshark-bg: #111 !default;
+$social-icon-guest-bg: #1b4d6d !default;
+$social-icon-html5-bg: #ff3617 !default;
+$social-icon-ie-bg: #00a1d9 !default;
+$social-icon-instapaper-bg: #eee !default;
+$social-icon-instagram-bg: #3f729b !default;
+$social-icon-intensedebate-bg: #0099e1 !default;
+$social-icon-klout-bg: #e34a25 !default;
+$social-icon-itunes-bg: #efefeb !default;
+$social-icon-lanyrd-bg: #2e6ac2 !default;
+$social-icon-lastfm-bg: #dc1a23 !default;
+$social-icon-lego-bg: #fb0000 !default;
+$social-icon-linkedin-bg: #0077b5 !default;
+$social-icon-lkdto-bg: #7c786f !default;
+$social-icon-logmein-bg: #000 !default;
+$social-icon-macstore-bg: #007dcb !default;
+$social-icon-meetup-bg: #ff0026 !default;
+$social-icon-myspace-bg: #000 !default;
+$social-icon-ninetyninedesigns-bg: #fff !default;
+$social-icon-openid-bg: #f5f5f5 !default;
+$social-icon-opentable-bg: #990000 !default;
+$social-icon-paypal-bg: #fff !default;
+$social-icon-persona-bg: #1258a1 !default;
+$social-icon-pinboard-bg: blue !default;
+$social-icon-pinterest-bg: #bd081c !default;
+$social-icon-plancast-bg: #e7ebed !default;
+$social-icon-plurk-bg: #cf682f !default;
+$social-icon-pocket-bg: #fff !default;
+$social-icon-podcast-bg: #9365ce !default;
+$social-icon-posterous-bg: #ffd959 !default;
+$social-icon-print-bg: #f0f0eb !default;
+$social-icon-quora-bg: #a82400 !default;
+$social-icon-reddit-bg: #fff !default;
+$social-icon-rss-bg: #f26522 !default;
+$social-icon-scribd-bg: #231c1a !default;
+$social-icon-skype-bg: #00a2ed !default;
+$social-icon-smashing-bg: #ff4f27 !default;
+$social-icon-songkick-bg: #ff0050 !default;
+$social-icon-soundcloud-bg: #ff4500 !default;
+$social-icon-spotify-bg: #60af00 !default;
+$social-icon-stackoverflow-bg: #fff !default;
+$social-icon-statusnet-bg: #829d25 !default;
+$social-icon-steam-bg: #000 !default;
+$social-icon-stripe-bg: #2f7ed6 !default;
+$social-icon-stumbleupon-bg: #eb4924 !default;
+$social-icon-tumblr-bg: #374a61 !default;
+$social-icon-twitter-bg: #55acee !default;
+$social-icon-viadeo-bg: #fff !default;
+$social-icon-vimeo-bg: #1ab7ea !default;
+$social-icon-vk-bg: #567ca4 !default;
+$social-icon-weibo-bg: #faf6f1 !default;
+$social-icon-wikipedia-bg: #fff !default;
+$social-icon-windows-bg: #0052a4 !default;
+$social-icon-wordpress-bg: #464646 !default;
+$social-icon-xing-bg: #0a5d5e !default;
+$social-icon-yahoo-bg: #a200c2 !default;
+$social-icon-ycombinator-bg: #ff6600 !default;
+$social-icon-yelp-bg: #e60010 !default;
+$social-icon-youtube-bg: #f00 !default;
+
+//== Pricing plans
+//
+//##
+
+$pricing-plan-background-color: #fff !default;
+$pricing-plan-header-text-color: #fff !default;
+$pricing-plan-border-color: $brand-primary !default;
+$pricing-plan-header-background-color: $pricing-plan-border-color !default;
+$pricing-plan-recommended-border-color: darken($brand-primary, 10%) !default;
+$pricing-plan-recommended-background-color: #f9f9f9 !default;
+$pricing-plan-price-duration-separator:          "/" !default;
+$pricing-plan-price-duration-separator-color:              #ccc !default;
+
+$input-border:                   #ccc !default;
+$input-bg-disabled:              $gray-lighter !default;
+$cursor-disabled:                not-allowed !default;
+
+//## Specify custom location and filename of the included zocial icon font. Useful for those including Bootstrap Flat via Bower. 
+
+//** Load fonts from this directory. 
+$zocial-font-path:          "../fonts/" !default; 
+//** File name for all font files. 
+$zocial-font-name:          "zocial" !default; 
+//** Element ID within SVG icon file. 
+$zocial-font-svg-id:        "zocial" !default; 

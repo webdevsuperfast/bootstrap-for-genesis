@@ -1,0 +1,81 @@
+@import "bootstrap-flat/variables";
+@import "bootstrap-flat/mixins";
+
+/*
+ * Pricing plans
+ *
+ * Responsive pricing plans, similar in structure to panels.
+ */
+
+.pricing-plans, .pricing-plan-single {
+    text-align: center;
+    @include pricing-plan-footer();
+}
+
+.pricing-plan {
+    @include pricing-plan-body();
+}
+
+.pricing-plans {
+    @include pricing-plan-heading(50px);
+
+    .pricing-plan {
+        padding: 50px 15px;
+        margin: 0 10px 30px 10px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0;
+
+        @include pricing-plan-price(2.5em);
+
+        &-title {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: ceil(($font-size-base * 1.125));
+            color: inherit;
+
+            .icon {
+                display: block;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+                margin-bottom: 15px;
+                font-size: 48px;
+                background: #ccc;
+
+                &:before {
+                    line-height: 100px;
+                }
+            }
+        }
+        
+        @media screen and (max-width: 992px) {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 50px 5px 30px 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            top: -2em;
+            right: 0;
+        }
+    }
+}
+
+.pricing-plan-single {
+    @include pricing-plan-heading();
+
+    .pricing-plan {
+        width: 80%;
+        margin: 40px auto;
+        padding: 30px;
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+
+        @include pricing-plan-price(5em);
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}

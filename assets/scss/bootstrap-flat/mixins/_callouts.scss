@@ -1,0 +1,19 @@
+// Callout related shortcuts
+
+@import "../variables";
+
+@mixin callout-variant($color) {
+    border-left-color: $color;
+    border-left-width: $callout-border-width;
+
+    &.callout-striped-right {
+        border-left-color: $callout-border-color;
+        border-left-width: 1px;
+        border-right-color: $color;
+        border-right-width: $callout-border-width;
+    }
+
+    h4 {
+        color: $color;
+    }
+}

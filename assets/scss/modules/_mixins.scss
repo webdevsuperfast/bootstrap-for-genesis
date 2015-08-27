@@ -1,0 +1,31 @@
+// Media Queries
+@mixin tablet {
+	@media (min-width: #{$screen-sm-min}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$screen-md-min}) {
+		@content;
+	}
+}
+
+@mixin largescreen {
+	@media (min-width: #{$screen-lg-min}) {
+		@content;
+	}
+}
+
+@mixin column($col:12, $cols:$grid-columns, $gutter: $grid-gutter-width) {
+	position: relative;
+	min-height: 1px;
+	padding: {
+		right: ($gutter / 2);
+		left: ($gutter / 2);
+	}
+	@include tablet {
+		float: left;
+		width: percentage(($col / $cols));
+	}
+}

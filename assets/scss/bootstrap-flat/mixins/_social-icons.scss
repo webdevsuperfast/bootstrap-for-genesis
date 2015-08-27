@@ -1,0 +1,18 @@
+// Social icon list shortcuts
+
+@import "../variables";
+@import "size";
+
+@mixin list-social-icons-variant($size, $font-size) {
+    @include square($size);
+    font-size: $font-size;
+    line-height: $size;
+}
+
+@mixin list-social-icons-icon($icon, $background) {
+    background: $background;
+
+    &:after {
+        content: $icon;
+    }
+}

@@ -1,0 +1,34 @@
+@import "bootstrap-flat/variables";
+@import "bootstrap-flat/mixins";
+
+/*
+ * Tabs
+ *
+ * An alternative formatting for tabs that provides a cleaner, more modern style.
+ */
+.nav-tabs-pivot, .nav-justified.nav-tabs-pivot {
+    > li {
+        > a {
+            color: #707070;
+
+            &:hover, &:focus {
+                color: #4a4a4a;
+                background-color: transparent;
+                border-color: transparent;
+                border-bottom-color: #406da4;
+            }
+        }
+
+        &.active > a {
+            border-color: transparent;
+            border-bottom-color: #406da4;
+
+            &:hover, &:focus {
+                color: #4a4a4a;
+                background-color: transparent;
+                border-color: transparent;
+                border-bottom-color: #406da4;
+            }
+        }
+    }
+}
