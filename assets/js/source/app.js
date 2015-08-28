@@ -2,10 +2,19 @@
 	"use strict";
 	
 	$(document).ready(function(){
+		// Add class to featured image links
 		$('.entry').find('img').parent('a').addClass('imgwrap');
+
+		// FitVids
+		var container = $( '.video, .content' );
+		container.fitVids();
+		container.fitVids( {
+			customSelector: "iframe[src*='//fast.wistia.net']"
+		} );
 
 		var windowResize = function() {
 			if ( document.documentElement.clientWidth > 768 ) {
+				// @link http://wpeden.com/tipsntuts/twitter-bootstrap-dropdown-on-hover-and-activating-click-event-on-parent-item/
 				$('.navbar .dropdown, .navbar .dropdown-submenu').hover(function() {
 		            $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
 
@@ -23,6 +32,7 @@
 		$(window).resize(windowResize);
 		windowResize();
 
+		// @link http://www.bootply.com/QutOBjvgha
 		$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
 		    // Avoid following the href location when clicking
 		    event.preventDefault(); 
