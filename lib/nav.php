@@ -18,15 +18,15 @@ add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
 // add bootstrap markup around the nav
 add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_args_filter( $args ) {
-    if (
-        'primary' === $args['theme_location'] ||
-        'secondary' === $args['theme_location']
-    ) {
+
+    require_once( BFG_THEME_LIB . 'classes/bootstrap-walker.php' );
+    
+    if ( 'primary' === $args['theme_location'] || 'secondary' === $args['theme_location'] ) {
         // $args['depth'] = 2;
         $args['menu_class'] = 'nav navbar-nav';
         $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
         $args['walker'] = new wp_bootstrap_navwalker();
-        $args['items_wrap'] = '<ul id="%1$s" data-sm-skip-collapsible-behavior="true" class="%2$s">%3$s</ul>';
+        // $args['items_wrap'] = '<ul id="%1$s" data-sm-skip-collapsible-behavior="true" class="%2$s">%3$s</ul>';
     }
     return $args;
 }
