@@ -177,3 +177,52 @@ if ( shortcode_exists( 'well' ) ) {
 } else {
 	add_shortcode( 'well', 'bfg_well_shortcode' );
 }
+
+// Bootstrap Tooltip
+function bfg_tooltip_shortcode( $atts, $content = null ) {
+	$defaults = array(
+		'class' => 'btn-default',
+		'position' => 'top',
+		'title' => ''
+	);
+
+	$atts = shortcode_atts( $defaults, $atts, 'tooltip' );
+
+	$output = '<button type="button" class="btn '.$atts['class'].'" data-toggle="tooltip" data-placement="'.$atts['position'].'" title="'.$atts['title'].'">';
+	$output .= do_shortcode( $content );
+	$output .= '</button>';
+
+	return apply_filters( 'bfg_tooltip_shortcode', $output, $atts );
+}
+
+if ( shortcode_exists( 'tooltip' ) ) {
+	remove_shortcode( 'tooltip' );
+	add_shortcode( 'tooltip', 'bfg_tooltip_shortcode' );
+} else {
+	add_shortcode( 'tooltip', 'bfg_tooltip_shortcode' );
+}
+
+// Bootstrap Popover
+function bfg_popover_shortcode( $atts, $content = null ) {
+	$defaults = array(
+		'class' => 'btn-default',
+		'position' => 'top',
+		'title' => '',
+		'content' => ''
+	);
+
+	$atts = shortcode_atts( $defaults, $atts, 'popover' );
+
+	$output = '<button type="button" class="btn '.$atts['class'].'" data-toggle="popover" data-placement="'.$atts['position'].'" title="'.$atts['title'].'" data-content="'.$atts['content'].'" data-container="body" data-trigger="focus">';
+	$output .= do_shortcode( $content );
+	$output .= '</button>';
+
+	return apply_filters( 'bfg_popover_shortcode', $output, $atts );
+}
+
+if ( shortcode_exists( 'popover' ) ) {
+	remove_shortcode( 'popover' );
+	add_shortcode( 'popover', 'bfg_popover_shortcode' );
+} else {
+	add_shortcode( 'popover', 'bfg_popover_shortcode' );
+}
