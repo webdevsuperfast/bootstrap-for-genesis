@@ -2349,6 +2349,10 @@ a.alignright, img.alignright, .wp-caption.alignright { margin: 0 0 24px 24px; }
 .footer-widgets .widget_nav_menu ul li { position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; margin-bottom: 13px; }
 @media (min-width: 768px) { .footer-widgets .widget_nav_menu ul li { float: left; width: 50%; } }
 
+/** Widget Tab
+----------------------------------------------------------------------------- */
+.widget_bfg-tab-widget .nav-tabs { margin-bottom: 13px; }
+
 p[class*="bg-"] { padding: 15px; }
 
 .breadcrumb { font-size: 14px; }
