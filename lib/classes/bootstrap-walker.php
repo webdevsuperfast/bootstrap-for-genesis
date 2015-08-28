@@ -62,15 +62,6 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
-			/* if ( $args->has_children )
-				$class_names .= ' dropdown'; */
-
-			/* if($args->has_children && $depth === 0) { 
-				$class_names .= ' dropdown'; 
-			} elseif($args->has_children && $depth > 0) { 
-				$class_names .= ' dropdown-submenu'; 
-			} */
-
 			if ( $args->has_children && $depth === 0 ) 
 				$class_names .= ' dropdown';
 
@@ -94,17 +85,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
-				// $atts['href']   		= '#';
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
-				/* $atts['data-toggle']	= 'dropdown';
-				$atts['class']			= 'dropdown-toggle';
-				$atts['aria-haspopup']	= 'true'; */
-			} /* elseif ( $args->has_children && $depth > 0 ) {
-				$atts['href'] = '#';
-				$atts['data-toggle']	= 'dropdown';
-				$atts['class']			= 'dropdown-toggle';
-				$atts['aria-haspopup']	= 'true';
-			} */ else {
+			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
 

@@ -11,7 +11,7 @@
  *
 */
 
-require_once( 'class-tgm-plugin-activation.php' );
+require_once( MB_THEME_LIB . 'classes/class-tgm-plugin-activation.php' );
 
 // TGM Plugin Activation
 add_action( 'tgmpa_register', 'bfg_do_plugins_register' );

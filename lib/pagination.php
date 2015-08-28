@@ -1,4 +1,15 @@
 <?php
+/**
+ * Pagination
+ *
+ * @package      Bootstrap for Genesis
+ * @since        1.0
+ * @link         http://www.superfastbusiness.com
+ * @author       SuperFastBusiness <www.superfastbusiness.com>
+ * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ *
+*/
 
 // Add Type Class
 remove_filter( 'genesis_attr_archive-pagination', 'genesis_attributes_pagination' );

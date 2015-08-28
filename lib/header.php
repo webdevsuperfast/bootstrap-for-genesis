@@ -20,7 +20,6 @@ function mb_do_header() {
     global $wp_registered_sidebars;
 
     $custom_header = get_custom_header();
-    // var_dump( $custom_header );
     
     $logo = get_custom_header()->url;
     $width = get_custom_header()->width;

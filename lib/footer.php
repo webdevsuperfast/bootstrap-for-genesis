@@ -16,8 +16,6 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'bfg_do_footer' );
 
 function bfg_do_footer() {
-    // $rel = is_front_page() ? '' : 'rel="nofollow"';
-    // $creds = '<a {$rel} href=\"http://superfastbusiness.com/\">Bootstrap Genesis Theme</a> by <a {$rel} href=\"http://superfastbusiness.com/\">SuperFastBusiness</a>';
     $creds = '<a href="http://www.superfastbusiness.com">Bootstrap for Genesis</a> by <a href="http://www.superfastbusiness.com">SuperFastBusiness</a>';
 
     genesis_markup(array(

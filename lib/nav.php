@@ -1,4 +1,15 @@
 <?php
+/**
+ * Navigation
+ *
+ * @package      Bootstrap for Genesis
+ * @since        1.0
+ * @link         http://www.superfastbusiness.com
+ * @author       SuperFastBusiness <www.superfastbusiness.com>
+ * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ *
+*/
 
 if ( class_exists( 'UberMenuStandard' ) ) {
     return;
@@ -22,11 +33,9 @@ function bfg_nav_menu_args_filter( $args ) {
     require_once( BFG_THEME_LIB . 'classes/bootstrap-walker.php' );
     
     if ( 'primary' === $args['theme_location'] || 'secondary' === $args['theme_location'] ) {
-        // $args['depth'] = 2;
         $args['menu_class'] = 'nav navbar-nav';
         $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
         $args['walker'] = new wp_bootstrap_navwalker();
-        // $args['items_wrap'] = '<ul id="%1$s" data-sm-skip-collapsible-behavior="true" class="%2$s">%3$s</ul>';
     }
     return $args;
 }
@@ -67,8 +76,7 @@ function bfg_navbar_brand_markup() {
     $logo = get_custom_header()->url;
 
     $output = '<a class="navbar-brand visible-xs-block" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
-
-    // $output .= $logo ? '<img src="'.$logo.'" alt="'.get_bloginfo( 'name' ).'" width="190" height="25" />' : get_bloginfo( 'name' );
+    
     $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
 
     $output .= '</a>';
