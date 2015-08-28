@@ -1,4 +1,15 @@
 <?php
+/**
+ * Search Form
+ *
+ * @package      Bootstrap for Genesis
+ * @since        1.0
+ * @link         http://www.superfastbusiness.com
+ * @author       SuperFastBusiness <www.superfastbusiness.com>
+ * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ *
+*/
 
 add_filter( 'genesis_search_form', 'bfg_search_form', 10, 4);
 
