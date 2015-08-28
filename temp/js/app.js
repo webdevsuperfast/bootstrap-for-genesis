@@ -12,6 +12,12 @@
 			customSelector: "iframe[src*='//fast.wistia.net']"
 		} );
 
+		//Tooltip
+		$('[data-toggle="tooltip"]').tooltip();
+
+		// Popover
+		$('[data-toggle="popover"]').popover();
+
 		var windowResize = function() {
 			if ( document.documentElement.clientWidth > 768 ) {
 				// @link http://wpeden.com/tipsntuts/twitter-bootstrap-dropdown-on-hover-and-activating-click-event-on-parent-item/
