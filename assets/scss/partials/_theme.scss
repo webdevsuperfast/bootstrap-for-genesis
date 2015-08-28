@@ -1,7 +1,7 @@
 /** Body 
 ----------------------------------------------------------------------------- */
 body {
-	// font-weight: $body-font-weight;
+	font-weight: $body-font-weight;
 }
 
 /** Bootstrap
@@ -56,31 +56,16 @@ body {
 
 .navbar-nav {
 	& > li {
-		& > a {
-			&.caret-down {
-				@include tablet {
-					display: none;
-				}
-				padding: 0;
-				position: absolute;
-				right: 0;
-				top: 0;
-				width: 46px;
-				height: 46px;
-				&:after {
-					display: block;
-					content: " ";
-					float: right;
-					width: 0;
-					height: 0;
-					border-color: transparent;
-					border-style: solid;
-					border-width: 5px 5px 0 5px;
-					border-top-color: $dropdown-fallback-border;
-					margin-top: 20px;
-					margin-right: 10px;
-				}
+		.caret-down {
+			@include tablet {
+				display: none;
 			}
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 46px;
+			height: 46px;
 		}
 	}
 }
@@ -89,7 +74,7 @@ body {
 	@include box-shadow(none);
 }
 
-.dropdown-submenu{
+.dropdown-submenu {
 	position:relative;
 	& > .dropdown-menu {
 		top: 0;
@@ -97,51 +82,16 @@ body {
 		margin-top: -6px;
 		margin-left: -1px;
 	}
-	& > a {
-		&.caret-right {
-			@include tablet {
-				display: none;
-			}
-			padding: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-			width: 36px;
-			height: 36px;
-			&:after {
-				display: block;
-				content: " ";
-				float: right;
-				width: 0;
-				height: 0;
-				border-color: transparent;
-				border-style: solid;
-				border-width: 5px 0 5px 5px;
-				border-left-color: $dropdown-fallback-border;
-				margin-top: 8px;
-				margin-right: 10px;
-			}
+	.caret-right {
+		@include tablet {
+			display: none;
 		}
-		/* &:after {
-			display: block;
-			content: " ";
-			float: right;
-			width: 0;
-			height: 0;
-			border-color: transparent;
-			border-style: solid;
-			border-width: 5px 0 5px 5px;
-			border-left-color: $dropdown-fallback-border;
-			margin-top: 5px;
-			margin-right: -10px;
-		} */
-	}
-	&:hover {
-		& > a {
-			/* &:after {
-				border-left-color: $light-color;
-			} */
-		}
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 36px;
+		height: 36px;
 	}
 	&.pull-left {
 		float: none;

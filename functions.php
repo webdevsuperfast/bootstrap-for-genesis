@@ -20,13 +20,25 @@ function bfg_childtheme_setup() {
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,300,700,500|Roboto:400,400italic,700,700italic,300italic,300', array(), BFG_THEME_VERSION );
 	}
 
-	//* Add HTML5 markup structure
+	// Cleanup WP Head
+	remove_action( 'wp_head', 'rsd_link' );
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+	remove_action( 'wp_head', 'wp_generator' );
+	remove_action( 'wp_head', 'start_post_rel_link' );
+	remove_action( 'wp_head', 'index_rel_link' );
+	remove_action( 'wp_head', 'adjacent_posts_rel_link' );
+	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+
+	// Remove WP Version
+	add_filter( 'the_generator', 'mb_remove_wp_version' );
+
+	// Add HTML5 markup structure
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
-	//* Add viewport meta tag for mobile browsers
+	// Add viewport meta tag for mobile browsers
 	add_theme_support( 'genesis-responsive-viewport' );
 
-	//* Add support for custom background
+	// Add support for custom background
 	add_theme_support( 'custom-background' );
 
 	// Add support for custom header image
@@ -38,7 +50,7 @@ function bfg_childtheme_setup() {
 		'header-text' => false
 	) );
 
-	//* Add support for 3-column footer widgets
+	// Add support for 3-column footer widgets
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
 	// Structural Wraps
@@ -52,6 +64,9 @@ function bfg_childtheme_setup() {
 		'home-featured'
 	) );
 
+	// WooCommerce Support
+	add_theme_support( 'genesis-connect-woocommerce' );
+
 	// Custom Image Size
 	add_image_size( 'bootstrap-featured', 750, 422, true );
 
@@ -64,6 +79,7 @@ function bfg_childtheme_setup() {
 	// Add TGM Plugin Activation Support
 	add_theme_support( 'bfg-module-tgm' );
 
+	// Custom SiteOrigin Widgets
 	require_once( BFG_THEME_MODULES . 'siteorigin/siteorigin.php' );
 
 	// Include php files from lib folder

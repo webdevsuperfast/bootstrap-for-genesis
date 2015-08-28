@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     compass = require('gulp-compass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
+    csso = require('gulp-csso'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -21,7 +21,7 @@ gulp.task('styles', function(){
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('style.css'))
-        .pipe(minifycss())
+        .pipe(csso())
         .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Styles task complete' }));
 } );
@@ -50,8 +50,6 @@ gulp.task('vendor', function(){
     return gulp.src([
         'bower_components/modernizr/modernizr.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        // 'bower_components/smartmenus/src/jquery.smartmenus.js',
-        // 'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.js',
         'bower_components/fitvids/jquery.fitvids.js'
         // 'assets/js/vendor/*.js'
     ])
