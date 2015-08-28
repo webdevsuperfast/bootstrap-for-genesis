@@ -18,15 +18,15 @@ add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
 // add bootstrap markup around the nav
 add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_args_filter( $args ) {
-    if (
-        'primary' === $args['theme_location'] ||
-        'secondary' === $args['theme_location']
-    ) {
+
+    require_once( BFG_THEME_LIB . 'classes/bootstrap-walker.php' );
+    
+    if ( 'primary' === $args['theme_location'] || 'secondary' === $args['theme_location'] ) {
         // $args['depth'] = 2;
         $args['menu_class'] = 'nav navbar-nav';
         $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
         $args['walker'] = new wp_bootstrap_navwalker();
-        $args['items_wrap'] = '<ul id="%1$s" data-sm-skip-collapsible-behavior="true" class="%2$s">%3$s</ul>';
+        // $args['items_wrap'] = '<ul id="%1$s" data-sm-skip-collapsible-behavior="true" class="%2$s">%3$s</ul>';
     }
     return $args;
 }
@@ -63,12 +63,15 @@ EOT;
 }
 
 function bfg_navbar_brand_markup() {
-    $output = '<a class="navbar-brand visible-xs-block" id="logo" title="' .
-        esc_attr( get_bloginfo( 'description' ) ) .
-        '" href="' .
-            esc_url( home_url( '/' ) ) .
-    '">';
-        $output .= get_bloginfo( 'name' );
+    $custom_header = get_custom_header();
+    $logo = get_custom_header()->url;
+
+    $output = '<a class="navbar-brand visible-xs-block" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
+
+    // $output .= $logo ? '<img src="'.$logo.'" alt="'.get_bloginfo( 'name' ).'" width="190" height="25" />' : get_bloginfo( 'name' );
+    $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
+
     $output .= '</a>';
+
     return $output;
 }

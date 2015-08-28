@@ -145,7 +145,7 @@ function bfg_button_shortcode( $atts, $content = null ) {
 	$output .= do_shortcode( $content );
 	$output .= ( !empty( $atts['link'] ) ? '</a>' : '</button>' );
 
-	return apply_filters( 'bfg_text_shortcode', $output, $atts );
+	return apply_filters( 'bfg_button_shortcode', $output, $atts );
 }
 
 if ( shortcode_exists( 'button' ) ) {
@@ -153,4 +153,27 @@ if ( shortcode_exists( 'button' ) ) {
 	add_shortcode( 'button', 'bfg_button_shortcode' );
 } else {
 	add_shortcode( 'button', 'bfg_button_shortcode' );
+}
+
+// Bootstrap Well
+function bfg_well_shortcode( $atts, $content = null ) {
+	$defaults = array(
+		'class' => ''
+	);
+
+	$atts = shortcode_atts( $defaults, $atts, 'well' );
+
+	$output = '';
+	$output .= '<div class="well'.( $atts['class'] ? ' ' . $atts['class'] : '' ).'">';
+	$output .= do_shortcode( $content );
+	$output .= '</div>';
+
+	return apply_filters( 'bfg_well_shortcode', $output, $atts );
+}
+
+if ( shortcode_exists( 'well' ) ) {
+	remove_shortcode( 'well' );
+	add_shortcode( 'well', 'bfg_well_shortcode' );
+} else {
+	add_shortcode( 'well', 'bfg_well_shortcode' );
 }
