@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     compass = require('gulp-compass'),
     autoprefixer = require('gulp-autoprefixer'),
-    csso = require('gulp-csso'),
+    minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -21,7 +21,7 @@ gulp.task('styles', function(){
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('style.css'))
-        .pipe(csso())
+        .pipe(minifycss())
         .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Styles task complete' }));
 } );
