@@ -1,7 +1,5 @@
 # Bootstrap for Genesis
 
-This theme is not yet ready to rock. Test it out and bring out issues if you encounter anything.
-
 ## Introduction
 
 Bootstrap for Genesis is a genesis child theme which integrates [Twitter Bootstrap](http://getbootstrap.com/). It uses Gulp to compile CSS, JS, Bower to install dependencies and Compass/SCSS for CSS. 
@@ -16,7 +14,6 @@ Bootstrap for Genesis is a genesis child theme which integrates [Twitter Bootstr
 ## Features
 
 1. Bootstrap v3.3.5
-	* [Bootstrap Flat v3.3.4](https://github.com/scottdorman/bootstrap-flat-sass)
 2. Bootstrap components
 	* Comment Form
 	* Media List
@@ -38,10 +35,30 @@ Bootstrap for Genesis is a genesis child theme which integrates [Twitter Bootstr
 	* Thumbnails
 	* Text
 	* Buttons
+	* Tooltip
+	* Well
+	* Popover
 10. Bootstrap Widgets
 	* Accordion Widget
+	* Tab Widget
+	* Modal Widget
 11. Github Updater Support
 
-## Known Issues
+## Credits
 
-* Parent menu item is currently disabled on mobile.
+Without these projects, this theme wouldn't be where it is today.
+
+* [Genesis Framework](http://my.studiopress.com/themes/genesis/)
+* [Bootstrap](http://getbootstrap.com)
+* [SASS / SCSS](http://sass-lang.com/)
+* [Compass](http://compass-style.org)
+* [Gulp](http://gulpjs.com/)
+* [Bower](https://github.com/bower/bower)
+* [TGM Plugin Activation](http://tgmpluginactivation.com/)
+* [FitVids](http://fitvidsjs.com/)
+* [WP Bootstrap Navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
+* [WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)
+* [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
+* [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
+* [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
+* [AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)
