@@ -13,12 +13,8 @@
   "license": "MIT",
   "homepage": "http://www.superfastbusiness.com",
   "dependencies": {
-    "bootstrap-submenu": "~1.2.13",
+    "bootstrap-sass": "~3.3.5",
     "fitvids": "~1.1.0",
-    "modernizr": "~2.8.3",
-    "smartmenus": "~0.9.7"
-  },
-  "devDependencies": {
-    "bootstrap-sass": "~3.3.5"
+    "modernizr": "~2.8.3"
   }
 }
