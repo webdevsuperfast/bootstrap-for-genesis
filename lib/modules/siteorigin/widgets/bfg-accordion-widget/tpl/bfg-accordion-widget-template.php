@@ -17,14 +17,14 @@ echo '<div>';
                             echo $cont['heading'];
                         echo '</a>';
                     echo '</h4>';
-                echo'</div><!-- end .panel-heading -->';
+                echo'</div>';
 
                 echo '<div id="collapse'.$count.'" class="panel-collapse collapse'.( $count == '0' ? ' in' : '' ).'" role="tabpanel" aria-labelledby="heading'.$count.'">';
                     echo '<div class="panel-body">';
                         echo wpautop( $cont['body'], false );
-                    echo '</div><!-- end .panel-body -->';
-                echo '</div><!-- end .panel-collapse -->';
-            echo '</div><!-- end .panel -->';
+                    echo '</div>';
+                echo '</div>';
+            echo '</div>';
             $count++;
         }
         echo '</div>';
