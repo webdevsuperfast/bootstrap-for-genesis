@@ -78,6 +78,12 @@ function bfg_childtheme_setup() {
 
 	// Add TGM Plugin Activation Support
 	add_theme_support( 'bfg-module-tgm' );
+	
+	// Add Customizer Helper support
+	add_theme_support( 'bfg-module-customizer' );
+
+	// Customizer Helper
+	require_once( BFG_THEME_MODULES . 'customizer-library/customizer-library.php' );
 
 	// Custom SiteOrigin Widgets
 	require_once( BFG_THEME_MODULES . 'siteorigin/siteorigin.php' );
@@ -87,6 +93,9 @@ function bfg_childtheme_setup() {
 	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) { 
 		include $file; 
 	}
+	
+	if ( current_theme_supports( 'bf-module-customizer' ) ) 
+		require_once( BFG_THEME_MODULES . 'customizer.php' );
 
 	// Move Sidebar Secondary After Content
 	remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
