@@ -25,20 +25,19 @@ function bfg_customizer_options() {
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
 	
-	// Footer
-	$section = 'footer';
-	
+	// Logo
+	$section = 'logo';
 	$sections[] = array(
 		'id' => $section,
-		'title' => __( 'Footer', 'bfg' ),
-		'priority' => '35',
-		'description' => __( '', 'bfg' )
+		'title' => __( 'Logo', 'bfg' ),
+		'priority' => '25'
 	);
-	$options['footer'] = array(
-		'id' => 'creds',
-		'label' => __( 'Copyright', 'bfg' ),
+	
+	$options['logo'] = array(
+		'id' => 'logo',
+		'label' => __( 'Upload logo', 'bfg' ),
+		'type' => 'upload',
 		'section' => $section,
-		'type' => 'text',
 		'default' => ''
 	);
 	
@@ -67,7 +66,23 @@ function bfg_customizer_options() {
 		'default' => 'Roboto'
 	);
 	
+	// Footer
+	$section = 'footer';
 	
+	$sections[] = array(
+		'id' => $section,
+		'title' => __( 'Footer', 'bfg' ),
+		'priority' => '35',
+		'description' => __( '', 'bfg' )
+	);
+	$options['footer'] = array(
+		'id' => 'creds',
+		'label' => __( 'Copyright', 'bfg' ),
+		'section' => $section,
+		'type' => 'text',
+		'default' => ''
+	);
+		
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
 	
