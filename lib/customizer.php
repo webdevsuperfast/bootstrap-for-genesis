@@ -25,13 +25,13 @@ function bfg_customizer_options() {
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
 	
-	// Sections Goes Here
+	// Footer
 	$section = 'footer';
 	
 	$sections[] = array(
 		'id' => $section,
 		'title' => __( 'Footer', 'bfg' ),
-		'priority' => '60',
+		'priority' => '35',
 		'description' => __( '', 'bfg' )
 	);
 	$options['footer'] = array(
@@ -42,13 +42,13 @@ function bfg_customizer_options() {
 		'default' => ''
 	);
 	
-		// Typography
+	// Typography
 	$section = 'typography';
 	$font_choices = customizer_library_get_font_choices();
 	$sections[] = array(
 		'id' => $section,
 		'title' => __( 'Typography', 'bfg' ),
-		'priority' => '80'
+		'priority' => '30'
 	);
 	$options['heading-font'] = array(
 		'id' => 'heading-font',
