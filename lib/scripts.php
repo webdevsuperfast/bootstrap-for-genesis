@@ -23,3 +23,9 @@ function bfg_theme_scripts() {
 		wp_enqueue_script( 'app-js' );
 	}
 }
+
+// Editor Styles
+add_action( 'init', 'bfg_custom_editor_css' );
+function bfg_custom_editor_css() {
+	add_editor_style( get_stylesheet_uri() );
+}

@@ -79,6 +79,9 @@ function bfg_childtheme_setup() {
 	// Add TGM Plugin Activation Support
 	add_theme_support( 'bfg-module-tgm' );
 
+	// Customizer Helper
+	require_once( BFG_THEME_MODULES . 'customizer-library/customizer-library.php' );
+
 	// Custom SiteOrigin Widgets
 	require_once( BFG_THEME_MODULES . 'siteorigin/siteorigin.php' );
 

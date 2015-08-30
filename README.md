@@ -43,6 +43,7 @@ Bootstrap for Genesis is a genesis child theme which integrates [Twitter Bootstr
 	* Tab Widget
 	* Modal Widget
 11. Github Updater Support
+12. Customizer Library Support
 
 ## Credits
 
@@ -62,3 +63,5 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
 * [AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)
+* [Customizer Library](https://github.com/devinsays/customizer-library)
+* [GitHub Updater](https://github.com/afragen/github-updater)
