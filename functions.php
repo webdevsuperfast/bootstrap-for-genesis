@@ -38,18 +38,6 @@ function bfg_childtheme_setup() {
 	// Add viewport meta tag for mobile browsers
 	add_theme_support( 'genesis-responsive-viewport' );
 
-	// Add support for custom background
-	add_theme_support( 'custom-background' );
-
-	// Add support for custom header image
-	add_theme_support( 'custom-header', array(
-		'flex-height' => true,
-		'width' => 272,
-		'height' => 72,
-		'header-selector' => '.site-title a',
-		'header-text' => false
-	) );
-
 	// Add support for 3-column footer widgets
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
