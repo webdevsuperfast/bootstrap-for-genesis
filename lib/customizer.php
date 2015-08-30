@@ -26,20 +26,45 @@ function bfg_customizer_options() {
 	$options['sections'] = $sections;
 	
 	// Sections Goes Here
-	$section = 'logo';
+	$section = 'footer';
 	
 	$sections[] = array(
 		'id' => $section,
-		'title' => __( 'Logo', 'bfg' ),
-		'priority' => '30',
-		'description' => __( 'Upload your logo here.', 'bfg' )
+		'title' => __( 'Footer', 'bfg' ),
+		'priority' => '60',
+		'description' => __( '', 'bfg' )
 	);
-	$options['logo'] = array(
-		'id' => 'logo',
-		'label'   => __( 'Upload Logo', 'bfg' ),
+	$options['footer'] = array(
+		'id' => 'creds',
+		'label' => __( 'Copyright', 'bfg' ),
 		'section' => $section,
-		'type'    => 'image',
+		'type' => 'text',
 		'default' => ''
+	);
+	
+		// Typography
+	$section = 'typography';
+	$font_choices = customizer_library_get_font_choices();
+	$sections[] = array(
+		'id' => $section,
+		'title' => __( 'Typography', 'bfg' ),
+		'priority' => '80'
+	);
+	$options['heading-font'] = array(
+		'id' => 'heading-font',
+		'label'   => __( 'Heading Font', 'bfg' ),
+		'section' => $section,
+		'type'    => 'select',
+		'choices' => $font_choices,
+		'default' => 'Raleway'
+	);
+	$options['body-font'] = array(
+		'id' => 'body-font',
+		'label'   => __( 'Body Font', 'bfg' ),
+		'section' => $section,
+		'type'    => 'select',
+		'choices' => $font_choices,
+		'default' => 'Roboto'
 	);
 	
 	
@@ -52,4 +77,88 @@ function bfg_customizer_options() {
 	$customizer_library->add_options( $options );
 	
 	// To delete custom mods use: customizer_library_remove_theme_mods();
+}
+
+// Enqueue Google Fonts via Customizer
+add_action( 'wp_enqueue_scripts', 'bfg_customizer_fonts' );
+function bfg_customizer_fonts() {
+	// Font options
+	$fonts = array(
+		get_theme_mod( 'heading-font', customizer_library_get_default( 'heading-font' ) ),
+		get_theme_mod( 'body-font', customizer_library_get_default( 'heading-font' ) )
+	);
+	$font_uri = customizer_library_get_google_font_uri( $fonts );
+	
+	// Load Google Fonts
+	wp_enqueue_style( 'customizer-fonts', $font_uri, array(), null, 'screen' );
+}
+
+if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) {
+	
+	add_action( 'customizer_library_styles', 'bfg_customizer_build_styles' );
+	function bfg_customizer_build_styles() {
+		// Heading font
+		$setting = 'heading-font';
+		$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+		$stack = customizer_library_get_font_stack( $mod );
+		if ( $mod != customizer_library_get_default( $setting ) ) {
+			Customizer_Library_Styles()->add( array(
+				'selectors' => array(
+					'.footer-widgets .widgettitle',
+					'.widgettitle',
+					'.h1',
+					'.h2',
+					'.h3',
+					'.h4',
+					'.h5',
+					'.h6',
+					'h1',
+					'h2',
+					'h3',
+					'h4',
+					'h5',
+					'h6',
+					'.widget_recent_entries li a',
+				),
+				'declarations' => array(
+					'font-family' => $stack
+				)
+			) );
+		}
+		
+		// Body Font
+		$setting = 'body-font';
+		$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+		$stack = customizer_library_get_font_stack( $mod );
+		if ( $mod != customizer_library_get_default( $setting ) ) {
+			Customizer_Library_Styles()->add( array(
+				'selectors' => array(
+					'body',
+					'.popover',
+					'.tooltip',
+					'.widget_recent_entries li span',
+					'.site-header .site-description'
+				),
+				'declarations' => array(
+					'font-family' => $stack
+				)
+			) );
+		}
+	}
+
+}
+
+if ( !function_exists( 'bfg_library_styles' ) ) {
+	add_action( 'wp_head', 'bfg_library_styles' );
+	function bfg_library_styles() {
+		do_action( 'customizer_library_styles' );
+		
+		$css = Customizer_Library_Styles()->build();
+		
+		if ( !empty( $css ) ) {
+			echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"bfg-custom-css\">\n";
+				echo $css;
+			echo "\n</style>\n<!-- End Custom CSS -->\n";
+		}
+	}
 }
