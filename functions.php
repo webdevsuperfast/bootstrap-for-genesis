@@ -82,9 +82,6 @@ function bfg_childtheme_setup() {
 	// Customizer Helper
 	require_once( BFG_THEME_MODULES . 'customizer-library/customizer-library.php' );
 
-	// Custom SiteOrigin Widgets
-	require_once( BFG_THEME_MODULES . 'siteorigin/siteorigin.php' );
-
 	// Include php files from lib folder
 	// @link https://gist.github.com/theandystratton/5924570
 	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) { 

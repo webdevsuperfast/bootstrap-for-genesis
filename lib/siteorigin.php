@@ -5,4 +5,4 @@ function bfg_siteorigin_widgets( $folders ){
 	return $folders;
 }
 
-add_filter('siteorigin_widgets_widget_folders', 'bfg_siteorigin_widgets');
+add_filter( 'siteorigin_widgets_widget_folders', 'bfg_siteorigin_widgets' );
