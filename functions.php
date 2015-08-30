@@ -79,8 +79,8 @@ function bfg_childtheme_setup() {
 	// Add TGM Plugin Activation Support
 	add_theme_support( 'bfg-module-tgm' );
 
-	// Custom SiteOrigin Widgets
-	require_once( BFG_THEME_MODULES . 'siteorigin/siteorigin.php' );
+	// Customizer Helper
+	require_once( BFG_THEME_MODULES . 'customizer-library/customizer-library.php' );
 
 	// Include php files from lib folder
 	// @link https://gist.github.com/theandystratton/5924570
