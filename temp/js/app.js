@@ -19,14 +19,17 @@
 		$('[data-toggle="popover"]').popover();
 
 		var windowResize = function() {
-			if ( document.documentElement.clientWidth > 768 ) {
+			var $width = viewportSize.getWidth();
+			
+			console.log( $width );
+			
+			if ( $width > 768 ) {
 				// @link http://wpeden.com/tipsntuts/twitter-bootstrap-dropdown-on-hover-and-activating-click-event-on-parent-item/
 				$('.navbar .dropdown, .navbar .dropdown-submenu').hover(function() {
 		            $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
 
 		        }, function() {
 		            $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
-
 		        });
 
 		        $('.navbar .dropdown > a').click(function(){
@@ -37,6 +40,8 @@
 
 		$(window).resize(windowResize);
 		windowResize();
+		
+		$('.dropdown-menu').before('<button data-toggle="dropdown" class="btn btn-link caret-down dropdown-toggle" aria-haspopup="true"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>');
 
 		// @link http://www.bootply.com/QutOBjvgha
 		$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
