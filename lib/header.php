@@ -19,21 +19,15 @@ add_action( 'genesis_header', 'mb_do_header' );
 function mb_do_header() {
     global $wp_registered_sidebars;
 
-    $custom_header = get_custom_header();
-    
-    $logo = get_custom_header()->url;
-    $width = get_custom_header()->width;
-    $height = get_custom_header()->height;
-
     genesis_markup( array(
         'html5'   => '<div %s>',
         'xhtml'   => '<div class="title-area" id="title-area">',
         'context' => 'title-area'
     ) );
-    if ( !empty( $logo ) ) {
+    if ( get_theme_mod( 'logo', false ) ) {
         echo '<h1 class="site-title" itemprop="headline">';
             echo '<a href="'.get_bloginfo( 'url' ).'" class="logo" title="'.get_bloginfo( 'name' ).'">';
-                echo '<img src="'.$logo.'" width="'.$width.'" height="'.$height.'" alt="'.get_bloginfo( 'name' ).'"/>';
+                echo '<img src="'.get_theme_mod( 'logo' ).'" width="'.$width.'" height="'.$height.'" alt="'.get_bloginfo( 'name' ).'"/>';
             echo '</a>';
         echo '</h1>';
     } else {

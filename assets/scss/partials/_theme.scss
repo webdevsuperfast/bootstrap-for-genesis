@@ -68,6 +68,14 @@ body {
 			height: 46px;
 		}
 	}
+	li {
+		&.dropdown-submenu {
+			.caret-down {
+				width: 36px;
+				height: 36px;
+			}
+		}
+	}
 }
 
 .dropdown-menu {

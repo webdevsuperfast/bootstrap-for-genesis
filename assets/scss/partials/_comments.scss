@@ -12,6 +12,11 @@
 			margin-bottom: 0;
 			// padding-bottom: 0;
 		}
+		.media-left {
+			img {
+				max-width: inherit;
+			}
+		}
 	}
 	.children {
 		margin-top: $line-height-computed;
