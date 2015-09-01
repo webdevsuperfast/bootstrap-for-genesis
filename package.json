@@ -4,7 +4,7 @@
   "description": "Genesis child theme based on Bootstrap",
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/webdevsuperfast/bootstrap-for-genesis.git"
+    "url": "git+https://github.com/webdevsuperfast/Bootstrap-for-Genesis.git"
   },
   "keywords": [
     "bootstrap",
@@ -13,7 +13,7 @@
   ],
   "author": "SuperFastBusiness",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/webdevsuperfast/bootstrap-for-genesis#readme",
+  "homepage": "https://github.com/webdevsuperfast/Bootstrap-for-Genesis#readme",
   "dependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.11",
