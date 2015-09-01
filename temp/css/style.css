@@ -105,7 +105,7 @@ td, th { padding: 0; }
   .table, .entry table, .widget_calendar table { border-collapse: collapse !important; }
   .table td, .entry table td, .widget_calendar table td, .table th, .entry table th, .widget_calendar table th { background-color: #fff !important; }
   .table-bordered th, .entry table th, .table-bordered td, .entry table td { border: 1px solid #ddd !important; } }
-@font-face { font-family: 'Glyphicons Halflings'; src: url("assets/fonts/bootstrap/glyphicons-halflings-regular.eot"); src: url("assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+@font-face { font-family: 'Glyphicons Halflings'; src: url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.eot"); src: url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .glyphicon-asterisk:before { content: "\2a"; }
@@ -2199,7 +2199,9 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 @media print { .visible-print-inline-block { display: inline-block !important; } }
 
 @media print { .hidden-print { display: none !important; } }
-body { font-weight: 300; }
+body { font-weight: 300; overflow-x: hidden; }
+
+.site-container { overflow-x: hidden; }
 
 a { -webkit-transition: all 300ms ease-in-out; transition: all 300ms ease-in-out; text-decoration: none; }
 

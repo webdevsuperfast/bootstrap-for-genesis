@@ -1,5 +1,10 @@
 body {
 	font-weight: $body-font-weight;
+	overflow-x: hidden;
+}
+
+.site-container {
+	overflow-x: hidden;
 }
 
 a {
