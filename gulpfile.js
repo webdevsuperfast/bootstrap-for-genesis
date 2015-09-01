@@ -15,7 +15,7 @@ gulp.task('styles', function(){
     return gulp.src('assets/scss/style.scss')
         .pipe(compass({
             config_file: './config.rb',
-            css: './',
+            css: 'assets/css',
             sass: 'assets/scss'
         }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
