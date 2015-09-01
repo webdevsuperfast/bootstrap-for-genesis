@@ -11,7 +11,8 @@ function bfg_childtheme_setup() {
 	define( 'BFG_THEME_LIB', CHILD_DIR . '/lib/' );
 	define( 'BFG_THEME_LIB_URL', CHILD_URL . '/lib/' );
 	define( 'BFG_THEME_IMAGES', CHILD_URL . '/images/' );
-	define( 'BFG_THEME_SCRIPTS', CHILD_URL . '/assets/js/' );
+	define( 'BFG_THEME_JS', CHILD_URL . '/assets/js/' );
+	define( 'BFG_THEME_CSS', CHILD_URL . '/assets/css/' ); 
 	define( 'BFG_THEME_MODULES', CHILD_DIR . '/lib/modules/' );
 
 	//* Enqueue Google Fonts
