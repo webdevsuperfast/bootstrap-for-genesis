@@ -15,14 +15,14 @@ gulp.task('styles', function(){
     return gulp.src('assets/scss/style.scss')
         .pipe(compass({
             config_file: './config.rb',
-            css: 'assets/css',
+            css: './',
             sass: 'assets/scss'
         }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('temp/css'))
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename('style.css'))
         .pipe(minifycss())
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Styles task complete' }));
 } );
 
@@ -50,7 +50,6 @@ gulp.task('vendor', function(){
     return gulp.src([
         'bower_components/modernizr/modernizr.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'bower_components/viewportsize/viewportSize.js',
         'bower_components/fitvids/jquery.fitvids.js'
     ])
     .pipe(concat('vendor.js'))
