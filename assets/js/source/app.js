@@ -19,11 +19,9 @@
 		$('[data-toggle="popover"]').popover();
 
 		var windowResize = function() {
-			var $width = viewportSize.getWidth();
+			var $width = document.documentElement.clientWidth;
 			
-			console.log( $width );
-			
-			if ( $width > 768 ) {
+			if ( $width >= 768 ) {
 				// @link http://wpeden.com/tipsntuts/twitter-bootstrap-dropdown-on-hover-and-activating-click-event-on-parent-item/
 				$('.navbar .dropdown, .navbar .dropdown-submenu').hover(function() {
 		            $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();

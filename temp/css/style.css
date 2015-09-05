@@ -1,4 +1,17 @@
 @charset "UTF-8";
+/*!
+    Theme Name: Bootstrap for Genesis
+    Description: Twitter Bootstrap-powered Genesis child theme.
+    Author: SuperFastBusiness
+    Author URI: http://www.superfastbusiness.com/
+    Version: 1.0.2
+    Tags: responsive-layout, white, blue, one-column, two-columns, three-columns, fixed-width, theme-options, bootstrap
+    Template: genesis
+    Template Version: 2.0
+    License: GPL-2.0+
+    License URI: http://www.opensource.org/licenses/gpl-license.php
+    GitHub Theme URI: https://github.com/webdevsuperfast/Bootstrap-for-Genesis
+*/
 .hide-text { text-indent: 100%; white-space: nowrap; overflow: hidden; }
 
 /*!
@@ -105,7 +118,7 @@ td, th { padding: 0; }
   .table, .entry table, .widget_calendar table { border-collapse: collapse !important; }
   .table td, .entry table td, .widget_calendar table td, .table th, .entry table th, .widget_calendar table th { background-color: #fff !important; }
   .table-bordered th, .entry table th, .table-bordered td, .entry table td { border: 1px solid #ddd !important; } }
-@font-face { font-family: 'Glyphicons Halflings'; src: url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.eot"); src: url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../../assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+@font-face { font-family: 'Glyphicons Halflings'; src: url("assets/fonts/bootstrap/glyphicons-halflings-regular.eot"); src: url("assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .glyphicon-asterisk:before { content: "\2a"; }
