@@ -1,6 +1,6 @@
 <?php
 /**
- * Customizer Options 
+ * Customizer Options
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
@@ -15,16 +15,16 @@ add_action( 'init', 'bfg_customizer_options' );
 function bfg_customizer_options() {
 	// Stores all the controls that will be added
 	$options = array();
-	
+
 	// Stores all the sections to be added
 	$sections = array();
-	
+
 	// Stores all the panels to be added
 	$panels = array();
-	
+
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
-	
+
 	// Logo
 	$section = 'logo';
 	$sections[] = array(
@@ -32,7 +32,7 @@ function bfg_customizer_options() {
 		'title' => __( 'Logo', 'bfg' ),
 		'priority' => '25'
 	);
-	
+
 	$options['logo'] = array(
 		'id' => 'logo',
 		'label' => __( 'Upload logo', 'bfg' ),
@@ -40,7 +40,7 @@ function bfg_customizer_options() {
 		'section' => $section,
 		'default' => ''
 	);
-	
+
 	// Typography
 	$section = 'typography';
 	$font_choices = customizer_library_get_font_choices();
@@ -65,10 +65,10 @@ function bfg_customizer_options() {
 		'choices' => $font_choices,
 		'default' => 'Roboto'
 	);
-	
+
 	// Footer
 	$section = 'footer';
-	
+
 	$sections[] = array(
 		'id' => $section,
 		'title' => __( 'Footer', 'bfg' ),
@@ -82,15 +82,15 @@ function bfg_customizer_options() {
 		'type' => 'text',
 		'default' => ''
 	);
-		
+
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
-	
+
 	// Adds the panels to the $options array
 	$options['panels'] = $panels;
 	$customizer_library = Customizer_Library::Instance();
 	$customizer_library->add_options( $options );
-	
+
 	// To delete custom mods use: customizer_library_remove_theme_mods();
 }
 
@@ -103,13 +103,13 @@ function bfg_customizer_fonts() {
 		get_theme_mod( 'body-font', customizer_library_get_default( 'heading-font' ) )
 	);
 	$font_uri = customizer_library_get_google_font_uri( $fonts );
-	
+
 	// Load Google Fonts
 	wp_enqueue_style( 'customizer-fonts', $font_uri, array(), null, 'screen' );
 }
 
 if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) {
-	
+
 	add_action( 'customizer_library_styles', 'bfg_customizer_build_styles' );
 	function bfg_customizer_build_styles() {
 		// Heading font
@@ -140,7 +140,7 @@ if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Custom
 				)
 			) );
 		}
-		
+
 		// Body Font
 		$setting = 'body-font';
 		$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
@@ -167,9 +167,9 @@ if ( !function_exists( 'bfg_library_styles' ) ) {
 	add_action( 'wp_head', 'bfg_library_styles' );
 	function bfg_library_styles() {
 		do_action( 'customizer_library_styles' );
-		
+
 		$css = Customizer_Library_Styles()->build();
-		
+
 		if ( !empty( $css ) ) {
 			echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"bfg-custom-css\">\n";
 				echo $css;
