@@ -140,3 +140,15 @@ function bfg_modify_classes_based_on_template( $classes_to_add, $context, $attr 
 
     return $classes_to_add;
 }
+
+// Skip Navigation
+add_action( 'genesis_before', 'bfg_skip_navigation' );
+function bfg_skip_navigation() {
+    echo '<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>';
+}
+
+add_filter( 'genesis_attr_content', 'bfg_attr_content' );
+function bfg_attr_content( $attr ) {
+    $attr['id'] = 'content';
+    return $attr;
+}
