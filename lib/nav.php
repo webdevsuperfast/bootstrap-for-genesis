@@ -59,25 +59,24 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
             <span class="icon-bar"></span>
           </button>
 EOT;
-        // only include blog name and description in the nav
-        // if it is the primary nav location
-        if ( 'primary' === $args->theme_location ) {
-            $output .= apply_filters( 'bfg_navbar_brand', bfg_navbar_brand_markup() );
-        }
-        $output .= '</div>'; // .navbar-header
-        $output .= "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
-            $output .= $html;
-        $output .= '</div>'; // .collapse .navbar-collapse
+    // only include blog name and description in the nav
+    // if it is the primary nav location
+    if ( 'primary' === $args->theme_location ) {
+        $output .= apply_filters( 'bfg_navbar_brand', bfg_navbar_brand_markup() );
+    }
+    $output .= '</div>'; // .navbar-header
+    $output .= "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
+    $output .= $html;
+    $output .= '</div>'; // .collapse .navbar-collapse
+    
     return $output;
 }
 
 function bfg_navbar_brand_markup() {
-    $custom_header = get_custom_header();
-    $logo = get_custom_header()->url;
-
     $output = '<a class="navbar-brand visible-xs-block" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
     
-    $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
+    // $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
+    $output .= get_theme_mod( 'logo', false ) ? '<img src="'.get_theme_mod( 'logo' ).'" alt="'.esc_attr( get_bloginfo( 'description' ) ).'" />' : get_bloginfo( 'name' );
 
     $output .= '</a>';
 
