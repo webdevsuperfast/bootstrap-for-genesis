@@ -76,6 +76,7 @@ EOT;
 }
 
 function bfg_navbar_brand_markup() {
+    // Display navbar brand on small displays 
     $output = '<a class="navbar-brand visible-xs-block" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
     
     // $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
@@ -86,6 +87,7 @@ function bfg_navbar_brand_markup() {
     return $output;
 }
 
+// Navigation Extra
 function bfg_navbar_content_markup() {
     $url = get_home_url();
     

@@ -44,7 +44,7 @@ function bfg_customizer_options() {
 	// Navigation Extras
 	$section = 'navextra';
 	
-	$chooses = array(
+	$choices = array(
 		'date' => __( 'Date', 'bfg' ),
 		'search' => __( 'Search Form', 'bfg' )
 	);
@@ -65,10 +65,10 @@ function bfg_customizer_options() {
 	
 	$options['select'] = array(
 		'id' => 'select',
-		'label' => __( 'Select extra', 'bfg' ),
+		'label' => __( 'Select Navigation Extra', 'bfg' ),
 		'section' => $section,
 		'type' => 'select',
-		'choices' => $chooses,
+		'choices' => $choices,
 		'default' => 'search'
 	);
 
