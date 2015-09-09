@@ -2370,6 +2370,9 @@ body { font-weight: 300; }
 ----------------------------------------------------------------------------- */
 .label, .badge { border-radius: 0; }
 
+.form-control, .widget_categories select, .widget_archive select { box-shadow: none; }
+.form-control:focus, .widget_categories select:focus, .widget_archive select:focus { box-shadow: none; }
+
 /** Site Header
 ----------------------------------------------------------------------------- */
 .site-header { background: #fff; margin: 0; padding: 26px 0; }
