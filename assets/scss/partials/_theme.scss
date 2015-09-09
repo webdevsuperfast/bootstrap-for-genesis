@@ -10,6 +10,13 @@ body {
 	@include border-radius(0);
 }
 
+.form-control {
+	box-shadow: none;
+	&:focus {
+		box-shadow: none;
+	}
+}
+
 /** Site Header
 ----------------------------------------------------------------------------- */
 .site-header {
