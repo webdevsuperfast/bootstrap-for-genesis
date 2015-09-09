@@ -41,6 +41,37 @@ function bfg_customizer_options() {
 		'default' => ''
 	);
 
+	// Navigation Extras
+	$section = 'navextra';
+	
+	$chooses = array(
+		'date' => __( 'Date', 'bfg' ),
+		'search' => __( 'Search Form', 'bfg' )
+	);
+	
+	$sections[] = array(
+		'id' => $section,
+		'title' => __( 'Navigation Extras', 'bfg' ),
+		'priority' => '30'
+	);
+
+	$options['navextra'] = array(
+		'id' => 'navextra',
+		'label' => __( 'Display navigation extras', 'bfg' ),
+		'section' => $section,
+		'type' => 'checkbox',
+		'default' => false
+	);
+	
+	$options['select'] = array(
+		'id' => 'select',
+		'label' => __( 'Select extra', 'bfg' ),
+		'section' => $section,
+		'type' => 'select',
+		'choices' => $chooses,
+		'default' => 'search'
+	);
+
 	// Typography
 	$section = 'typography';
 	$font_choices = customizer_library_get_font_choices();

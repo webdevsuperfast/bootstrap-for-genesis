@@ -67,6 +67,9 @@ EOT;
     $output .= '</div>'; // .navbar-header
     $output .= "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
     $output .= $html;
+    if ( get_theme_mod( 'navextra', false ) ) {
+        $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
+    }
     $output .= '</div>'; // .collapse .navbar-collapse
     
     return $output;
@@ -81,4 +84,28 @@ function bfg_navbar_brand_markup() {
     $output .= '</a>';
 
     return $output;
+}
+
+function bfg_navbar_content_markup() {
+    $url = get_home_url();
+    
+    $choices = get_theme_mod( 'select', false );
+    switch( $choices ) {
+        case 'search':
+        default:
+            $output = '<form method="get" class="navbar-form navbar-right" action="' .  $url . '" role="search">';
+            $output .= '<div class="form-group">';
+            $output .= '<input class="form-control" name="s" placeholder="Search" type="text">';
+            $output .= '</div>';
+            $output .= '<button class="btn btn-default" value="Search" type="submit">Submit</button>';
+            $output .= '</form>';       
+            break;
+        case 'date': 
+            $output = '<p class="navbar-text navbar-right">';
+            $output .= date_i18n( get_option( 'date_format' ) );
+            $output .= '</p>';
+            break;
+    }
+
+	return $output;
 }
