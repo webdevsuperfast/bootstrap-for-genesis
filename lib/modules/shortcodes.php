@@ -134,13 +134,14 @@ if ( shortcode_exists( 'text' ) ) {
 function bfg_button_shortcode( $atts, $content = null ) {
 	$defaults = array(
 		'class' => '',
-		'link' => ''
+		'link' => '',
+		'target' => '_self'
 	);
 
 	$atts = shortcode_atts( $defaults, $atts, 'button' );
 
-	$output = '';
-	$output .= ( !empty( $atts['link'] ) ? '<a href="'.$atts['link'].'" role="button"' : '<button ' );
+	$output = ( !empty( $atts['link'] ) ? '<a href="'.$atts['link'].'" role="button"' : '<button ' );
+	$output .= ( !empty( $atts['link'] ) ? 'target="'.$atts['target'].'"' : '' );
 	$output .= 'class="btn' .( !empty( $atts['class'] ) ? ' ' . $atts['class'] : ' btn-default' ).'">';
 	$output .= do_shortcode( $content );
 	$output .= ( !empty( $atts['link'] ) ? '</a>' : '</button>' );
