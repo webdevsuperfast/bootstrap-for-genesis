@@ -41,6 +41,37 @@ function bfg_customizer_options() {
 		'default' => ''
 	);
 
+	// Navigation Extras
+	$section = 'navextra';
+	
+	$choices = array(
+		'date' => __( 'Date', 'bfg' ),
+		'search' => __( 'Search Form', 'bfg' )
+	);
+	
+	$sections[] = array(
+		'id' => $section,
+		'title' => __( 'Navigation Extras', 'bfg' ),
+		'priority' => '30'
+	);
+
+	$options['navextra'] = array(
+		'id' => 'navextra',
+		'label' => __( 'Display navigation extras', 'bfg' ),
+		'section' => $section,
+		'type' => 'checkbox',
+		'default' => false
+	);
+	
+	$options['select'] = array(
+		'id' => 'select',
+		'label' => __( 'Select Navigation Extra', 'bfg' ),
+		'section' => $section,
+		'type' => 'select',
+		'choices' => $choices,
+		'default' => 'search'
+	);
+
 	// Typography
 	$section = 'typography';
 	$font_choices = customizer_library_get_font_choices();
@@ -48,6 +79,13 @@ function bfg_customizer_options() {
 		'id' => $section,
 		'title' => __( 'Typography', 'bfg' ),
 		'priority' => '30'
+	);
+	$options['custom-font'] = array(
+		'id' => 'custom-font',
+		'label' => __( 'Enable custom font', 'bfg' ),
+		'section' => $section,
+		'type' => 'checkbox',
+		'default' => false	
 	);
 	$options['heading-font'] = array(
 		'id' => 'heading-font',
@@ -104,63 +142,70 @@ function bfg_customizer_fonts() {
 	);
 	$font_uri = customizer_library_get_google_font_uri( $fonts );
 
-	// Load Google Fonts
-	wp_enqueue_style( 'customizer-fonts', $font_uri, array(), null, 'screen' );
+	if ( get_theme_mod( 'custom-font', false ) ) {
+		// Load Google Fonts
+		wp_enqueue_style( 'customizer-fonts', $font_uri, array(), null, 'screen' );
+		
+		// Remove default font enqueue
+		remove_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
+	}
 }
 
 if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) {
 
 	add_action( 'customizer_library_styles', 'bfg_customizer_build_styles' );
 	function bfg_customizer_build_styles() {
-		// Heading font
-		$setting = 'heading-font';
-		$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-		$stack = customizer_library_get_font_stack( $mod );
-		if ( $mod != customizer_library_get_default( $setting ) ) {
-			Customizer_Library_Styles()->add( array(
-				'selectors' => array(
-					'.footer-widgets .widgettitle',
-					'.widgettitle',
-					'.h1',
-					'.h2',
-					'.h3',
-					'.h4',
-					'.h5',
-					'.h6',
-					'h1',
-					'h2',
-					'h3',
-					'h4',
-					'h5',
-					'h6',
-					'.widget_recent_entries li a',
-				),
-				'declarations' => array(
-					'font-family' => $stack
-				)
-			) );
-		}
-
-		// Body Font
-		$setting = 'body-font';
-		$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-		$stack = customizer_library_get_font_stack( $mod );
-		if ( $mod != customizer_library_get_default( $setting ) ) {
-			Customizer_Library_Styles()->add( array(
-				'selectors' => array(
-					'body',
-					'.popover',
-					'.tooltip',
-					'.widget_recent_entries li span',
-					'.site-header .site-description'
-				),
-				'declarations' => array(
-					'font-family' => $stack
-				)
-			) );
+		if ( get_theme_mod( 'custom-font', false ) ) {
+			// Heading font
+			$setting = 'heading-font';
+			$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+			$stack = customizer_library_get_font_stack( $mod );
+			if ( $mod != customizer_library_get_default( $setting ) ) {
+				Customizer_Library_Styles()->add( array(
+					'selectors' => array(
+						'.footer-widgets .widgettitle',
+						'.widgettitle',
+						'.h1',
+						'.h2',
+						'.h3',
+						'.h4',
+						'.h5',
+						'.h6',
+						'h1',
+						'h2',
+						'h3',
+						'h4',
+						'h5',
+						'h6',
+						'.widget_recent_entries li a',
+					),
+					'declarations' => array(
+						'font-family' => $stack
+					)
+				) );
+			}
+	
+			// Body Font
+			$setting = 'body-font';
+			$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+			$stack = customizer_library_get_font_stack( $mod );
+			if ( $mod != customizer_library_get_default( $setting ) ) {
+				Customizer_Library_Styles()->add( array(
+					'selectors' => array(
+						'body',
+						'.popover',
+						'.tooltip',
+						'.widget_recent_entries li span',
+						'.site-header .site-description'
+					),
+					'declarations' => array(
+						'font-family' => $stack
+					)
+				) );
+			}
 		}
 	}
-
+	
 }
 
 if ( !function_exists( 'bfg_library_styles' ) ) {

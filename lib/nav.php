@@ -59,27 +59,55 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
             <span class="icon-bar"></span>
           </button>
 EOT;
-        // only include blog name and description in the nav
-        // if it is the primary nav location
-        if ( 'primary' === $args->theme_location ) {
-            $output .= apply_filters( 'bfg_navbar_brand', bfg_navbar_brand_markup() );
-        }
-        $output .= '</div>'; // .navbar-header
-        $output .= "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
-            $output .= $html;
-        $output .= '</div>'; // .collapse .navbar-collapse
+    // only include blog name and description in the nav
+    // if it is the primary nav location
+    if ( 'primary' === $args->theme_location ) {
+        $output .= apply_filters( 'bfg_navbar_brand', bfg_navbar_brand_markup() );
+    }
+    $output .= '</div>'; // .navbar-header
+    $output .= "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
+    $output .= $html;
+    if ( get_theme_mod( 'navextra', false ) ) {
+        $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
+    }
+    $output .= '</div>'; // .collapse .navbar-collapse
+    
     return $output;
 }
 
 function bfg_navbar_brand_markup() {
-    $custom_header = get_custom_header();
-    $logo = get_custom_header()->url;
-
+    // Display navbar brand on small displays 
     $output = '<a class="navbar-brand visible-xs-block" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
     
-    $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
+    // $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
+    $output .= get_theme_mod( 'logo', false ) ? '<img src="'.get_theme_mod( 'logo' ).'" alt="'.esc_attr( get_bloginfo( 'description' ) ).'" />' : get_bloginfo( 'name' );
 
     $output .= '</a>';
 
     return $output;
+}
+
+// Navigation Extra
+function bfg_navbar_content_markup() {
+    $url = get_home_url();
+    
+    $choices = get_theme_mod( 'select', false );
+    switch( $choices ) {
+        case 'search':
+        default:
+            $output = '<form method="get" class="navbar-form navbar-right" action="' .  $url . '" role="search">';
+            $output .= '<div class="form-group">';
+            $output .= '<input class="form-control" name="s" placeholder="Search" type="text">';
+            $output .= '</div>';
+            $output .= '<button class="btn btn-default" value="Search" type="submit">Submit</button>';
+            $output .= '</form>';       
+            break;
+        case 'date': 
+            $output = '<p class="navbar-text navbar-right">';
+            $output .= date_i18n( get_option( 'date_format' ) );
+            $output .= '</p>';
+            break;
+    }
+
+	return $output;
 }
