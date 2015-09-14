@@ -43,7 +43,7 @@ body {
 			display: inline-block;
 		}
 		a {
-			@include hide-text();
+			// @include hide-text();
 		}
 	}
 	.site-description {
@@ -55,14 +55,6 @@ body {
 ----------------------------------------------------------------------------- */
 .nav-secondary {
 	z-index: 999;
-}
-
-.dropdown {
-	& > li {
-		& > a {
-			// font-weight: $body-font-weight;
-		}
-	}
 }
 
 .navbar-nav {
