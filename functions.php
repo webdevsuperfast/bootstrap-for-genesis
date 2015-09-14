@@ -16,7 +16,7 @@ function bfg_childtheme_setup() {
 	define( 'BFG_THEME_MODULES', CHILD_DIR . '/lib/modules/' );
 
 	//* Enqueue Google Fonts
-	add_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
+	// add_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
 	function bfg_google_fonts() {
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,300,700,500|Roboto:400,400italic,700,700italic,300italic,300', array(), BFG_THEME_VERSION );
 	}
