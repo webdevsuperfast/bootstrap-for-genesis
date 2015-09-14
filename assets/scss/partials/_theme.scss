@@ -1,7 +1,7 @@
 /** Body 
 ----------------------------------------------------------------------------- */
 body {
-	font-weight: $body-font-weight;
+	// font-weight: $body-font-weight;
 }
 
 /** Bootstrap
@@ -30,7 +30,7 @@ body {
 		color: $gray-light;
 		font-family: $font-family-base;
 		font-size: $font-size-base;
-		font-weight: $body-font-weight;
+		// font-weight: $body-font-weight;
 		margin: 0;
 	}
 }
@@ -53,10 +53,14 @@ body {
 
 /** Navigation 
 ----------------------------------------------------------------------------- */
+.nav-secondary {
+	z-index: 999;
+}
+
 .dropdown {
 	& > li {
 		& > a {
-			font-weight: $body-font-weight;
+			// font-weight: $body-font-weight;
 		}
 	}
 }
@@ -178,7 +182,7 @@ body {
 	background: $gray-dark;
 	color: $gray-lighter;
 	font-size: 14px;
-	padding: $line-height-computed 0;
+	padding: $line-height-computed/2 0;
 	.copyright {
 		text-align: center;
 		margin-bottom: $line-height-computed/2;
