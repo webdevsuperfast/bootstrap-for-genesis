@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    compass = require('gulp-compass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
@@ -13,11 +13,7 @@ var gulp = require('gulp'),
 // CSS
 gulp.task('styles', function(){
     return gulp.src('assets/scss/style.scss')
-        .pipe(compass({
-            config_file: './config.rb',
-            css: './',
-            sass: 'assets/scss'
-        }))
+        .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('style.css'))
