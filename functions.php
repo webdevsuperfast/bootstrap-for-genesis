@@ -59,14 +59,14 @@ function bfg_childtheme_setup() {
 	// Custom Image Size
 	add_image_size( 'bootstrap-featured', 750, 422, true );
 
-	// Add AQ Resizer Support
-	add_theme_support( 'bfg-module-aqresizer' );
+	// TGM Plugin Activation
+	require_once( BFG_THEME_MODULES . 'tgm-plugin-activation.php' );
 
-	// Add Shortcode Support
-	add_theme_support( 'bfg-module-shortcodes' );
+	// Bootstrap Shortcodes
+	require_once( BFG_THEME_MODULES . 'shortcodes.php' );
 
-	// Add TGM Plugin Activation Support
-	add_theme_support( 'bfg-module-tgm' );
+	// Mr Image Resize
+	require_once( BFG_THEME_MODULES . 'mr-image-resize.php' );
 
 	// Customizer Helper
 	require_once( BFG_THEME_MODULES . 'customizer-library/customizer-library.php' );
