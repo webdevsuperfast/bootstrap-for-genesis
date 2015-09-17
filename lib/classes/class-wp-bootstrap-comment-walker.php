@@ -54,6 +54,10 @@ class Bootstrap_Comment_Walker extends Walker_Comment {
 				<div class="comment-content">
 					<?php comment_text(); ?>
 				</div><!-- .comment-content -->
+
+				<?php $comment_type = get_comment_type(); ?>
+
+				<?php if ( $comment_type == 'comment' ) { ?>
 				
 				<ul class="list-inline">
 					<?php edit_comment_link( __( 'Edit' ), '<li class="edit-link">', '</li>' ); ?>
@@ -69,7 +73,7 @@ class Bootstrap_Comment_Walker extends Walker_Comment {
 					?>
 
 				</ul>
-
+				<?php } ?>
 			</div>		
 <?php
 	}	
