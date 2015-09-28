@@ -25,6 +25,7 @@ body {
 	padding: $line-height-computed 0;
 	.site-title {
 		margin: 0;
+		@extend .h1;
 	}
 	.site-description {
 		color: $gray-light;

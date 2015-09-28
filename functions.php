@@ -1,11 +1,23 @@
 <?php
+/**
+ * Functions
+ *
+ * @package      Bootstrap for Genesis
+ * @since        1.0
+ * @link         http://www.superfastbusiness.com
+ * @author       SuperFastBusiness <www.superfastbusiness.com>
+ * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ *
+*/
+
 add_action( 'genesis_setup', 'bfg_childtheme_setup', 15 );
 
 function bfg_childtheme_setup() {
-	//* Start the engine
+	// Start the engine
 	include_once( get_template_directory() . '/lib/init.php' );
 
-	//* Child theme (do not remove)
+	// Child theme (do not remove)
 	define( 'BFG_THEME_NAME', 'Bootstrap for Genesis' );
 	define( 'BFG_THEME_URL', 'http://www.superfastbusiness.com/' );
 	define( 'BFG_THEME_LIB', CHILD_DIR . '/lib/' );
@@ -15,8 +27,8 @@ function bfg_childtheme_setup() {
 	define( 'BFG_THEME_CSS', CHILD_URL . '/assets/css/' ); 
 	define( 'BFG_THEME_MODULES', CHILD_DIR . '/lib/modules/' );
 
-	//* Enqueue Google Fonts
-	// add_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
+	// Enqueue Google Fonts
+	add_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
 	function bfg_google_fonts() {
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,300,700,500|Roboto:400,400italic,700,700italic,300italic,300', array(), BFG_THEME_VERSION );
 	}

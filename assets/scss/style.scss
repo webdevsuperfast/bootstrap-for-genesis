@@ -12,7 +12,26 @@
     GitHub Theme URI: https://github.com/webdevsuperfast/Bootstrap-for-Genesis
 */
 
-// @import "compass/css3";
-@import "modules/modules";
+// Variables
+@import "modules/variables";
+
+// Bootstrap
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
-@import "partials/partials";
+
+// Modules
+@import "modules/extends";
+@import "modules/mixins";
+
+// Partials
+@import "partials/base";
+@import "partials/gallery";
+@import "partials/avatar";
+@import "partials/wordpress";
+@import "partials/genesis";
+@import "partials/comments";
+@import "partials/pagination";
+@import "partials/content";
+@import "partials/widgets";
+@import "partials/shortcodes";
+@import "partials/breadcrumbs";
+@import "partials/theme";
