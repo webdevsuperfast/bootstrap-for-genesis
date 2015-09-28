@@ -28,18 +28,7 @@ function bfg_do_plugins_register() {
             'name'      => 'SiteOrigin Widgets Bundle',
             'slug'      => 'so-widgets-bundle',
             'required'  => false
-        ),
-
-        array(
-            'name'               => 'GitHub Updater', // The plugin name.
-            'slug'               => 'github-updater', // The plugin slug (typically the folder name).
-            'source'             => 'http://cdn.superfasttests.com/github-updater.zip', // The plugin source.
-            'required'           => false,
-            'version'            => '',
-            'force_activation'   => false,
-            'force_deactivation' => false,
-            'external_url'       => 'https://github.com/afragen/github-updater',
-        ),
+        )
     );
 
     $config = array(
