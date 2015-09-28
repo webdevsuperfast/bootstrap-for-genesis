@@ -52,7 +52,7 @@ Without these projects, this theme wouldn't be where it is today.
 * [Genesis Framework](http://my.studiopress.com/themes/genesis/)
 * [Bootstrap](http://getbootstrap.com)
 * [SASS / SCSS](http://sass-lang.com/)
-* [Compass](http://compass-style.org)
+* ~~[Compass](http://compass-style.org)~~
 * [Gulp](http://gulpjs.com/)
 * [Bower](https://github.com/bower/bower)
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
@@ -62,6 +62,7 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
-* [AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)
+* ~~[AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)~~
 * [Customizer Library](https://github.com/devinsays/customizer-library)
-* [GitHub Updater](https://github.com/afragen/github-updater)
+* ~~[GitHub Updater](https://github.com/afragen/github-updater)~~
+* [Mr Image Resize](https://github.com/mendezcode/mr-image-resize)
