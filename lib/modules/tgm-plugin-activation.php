@@ -19,14 +19,26 @@ function bfg_do_plugins_register() {
 
     $plugins = array(
         array(
-            'name'      => 'Page Builder by SiteOrigin',
+            'name'      => __( 'Page Builder by SiteOrigin', 'bfg' ),
             'slug'      => 'siteorigin-panels',
             'required'  => false
         ),
 
         array(
-            'name'      => 'SiteOrigin Widgets Bundle',
+            'name'      => __( 'SiteOrigin Widgets Bundle', 'bfg' ),
             'slug'      => 'so-widgets-bundle',
+            'required'  => false
+        ),
+        
+        array(
+            'name'      => __( 'Shortcodes Ultimate', 'bfg' ),
+            'slug'      => 'shortcodes-ultimate',
+            'required'  => false 
+        ),
+        
+        array(
+            'name'      => __( 'Widget CSS Classes', 'bfg' ),
+            'slug'      => 'widget-css-classes',
             'required'  => false
         )
     );
