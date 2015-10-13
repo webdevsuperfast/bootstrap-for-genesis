@@ -38,12 +38,13 @@ Bootstrap for Genesis is a genesis child theme which integrates [Twitter Bootstr
 	* Tooltip
 	* Well
 	* Popover
-10. Bootstrap Widgets
-	* Accordion Widget
-	* Tab Widget
-	* Modal Widget
-11. Github Updater Support
+10. ~~Bootstrap Widgets~~
+	* ~~Accordion Widget~~
+	* ~~Tab Widget~~
+	* ~~Modal Widget~~
+11. ~~Github Updater Support~~
 12. Customizer Library Support
+13. Shortcodes Ultimate Support
 
 ## Credits
 
@@ -61,8 +62,13 @@ Without these projects, this theme wouldn't be where it is today.
 * [WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
-* [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
+* ~~[SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)~~
 * ~~[AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)~~
 * [Customizer Library](https://github.com/devinsays/customizer-library)
 * ~~[GitHub Updater](https://github.com/afragen/github-updater)~~
 * [Mr Image Resize](https://github.com/mendezcode/mr-image-resize)
+* [Shortcodes Ultimate](http://gndev.info/shortcodes-ultimate/)
+
+## Update
+
+We're moving away from traditional shortcode building and we'll be using [Shortcodes Ultimate](http://gndev.info/shortcodes-ultimate/) API to for our shortcodes.
