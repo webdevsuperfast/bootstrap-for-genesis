@@ -140,8 +140,8 @@ function bfg_register_shortcodes( $shortcodes ) {
 		'function' => 'bfg_custom_text_shortcode'	
 	);
 	
-	$shortcodes['bfg_thumbnail'] = array(
-		'name' => __( 'BFG Thumbnail', 'bfg' ),
+	$shortcodes['bfg_image'] = array(
+		'name' => __( 'BFG Image', 'bfg' ),
 		'type' => 'single',
 		'group' => 'bootstrap',
 		'atts' => array(
@@ -149,7 +149,31 @@ function bfg_register_shortcodes( $shortcodes ) {
 				'type' => 'text',
 				'default' => '',
 				'name' => __( 'Class', 'bfg' ),
-				'desc' => __( 'Text class', 'bfg' )
+				'desc' => __( 'Image class', 'bfg' )
+			),
+			'image' => array(
+				'type' => 'upload',
+				'default' => '',
+				'name' => __( 'Image Source', 'bfg' ),
+				'desc' => __( 'Off-site images won\'t be resized.', 'bfg' )	
+			),
+			'alt' => array(
+				'type' => 'text',
+				'default' => '',
+				'name' => __( 'Alt', 'bfg' ),
+				'desc' => __( 'Alt text', 'bfg' )	
+			),
+			'style' => array(
+				'type' => 'select',
+				'values' => array(
+					'' => 'None',
+					'img-rounded' => 'Rounded',
+					'img-circle' => 'Circle',
+					'img-thumbnail' => 'Thumbnail'
+				),
+				'default' => '',
+				'name' => __( 'Style', 'bfg' ),
+				'desc' => __( 'Image style', 'bfg' )	
 			),
 			'width' => array(
 				'type' => 'number',
@@ -157,14 +181,27 @@ function bfg_register_shortcodes( $shortcodes ) {
 				'name' => __( 'Width', 'bfg' ),
 				'desc' => __( 'Image width', 'bfg' )
 			),
+			'height' => array(
+				'type' => 'number',
+				'default' => '',
+				'name' => __( 'Height', 'bfg' ),
+				'desc' => __( 'Image height', 'bfg' )
+			),
+			'url' => array(
+				'type' => 'text',
+				'default' => '',
+				'name' => __( 'Link', 'bfg' ),
+				'desc' => __( 'Image link', 'bfg' )	
+			),
 			'alignment' => array(
 				'type' => 'select',
 				'values' => array(
-					'center' => 'Center',
-					'left' => 'Left',
-					'right' => 'Right'
+					'alignnone' => 'None',
+					'aligncenter' => 'Center',
+					'alignleft' => 'Left',
+					'alignright' => 'Right'
 				),
-				'default' => 'left',
+				'default' => 'alignnone',
 				'name' => __( 'Alignment', 'bfg' ),
 				'desc' => __( 'Text alignment', 'bfg' )
 			),
@@ -181,12 +218,13 @@ function bfg_register_shortcodes( $shortcodes ) {
 		'content' => __( '', 'bfg' ),
 		'desc' => __( 'Text content', 'bfg' ),
 		'icon' => 'code',
-		'function' => 'bfg_custom_thumbnail_shortcode'
+		'function' => 'bfg_custom_image_shortcode'
 	);
 	
 	return $shortcodes;
 }
 
+// Button
 function bfg_custom_button_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		'class' => '',
@@ -214,6 +252,7 @@ function bfg_custom_button_shortcode( $atts, $content = null ) {
 	return $output;
 }
 
+// Text
 function bfg_custom_text_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		'class' => '',
@@ -241,4 +280,42 @@ function bfg_custom_text_shortcode( $atts, $content = null ) {
 	$output .= $atts['tag'] ? '</' . $atts['tag'] . '>' : '</span>';
 
 	return $output;
+}
+
+// Image
+function bfg_custom_image_shortcode( $atts, $content = null ) {
+	$atts = shortcode_atts( array(
+		'class' => '',
+		'image' => '',
+		'url' => '',
+		'width' => '',
+		'height' => '',
+		'margin' => '',
+		'alignment' => '',
+		'style' => '',
+		'alt' => ''
+	), $atts, 'bfg_image' );
+	
+	$image = $atts['image'];
+	
+	if ( $image ) {
+		$image = bfg_thumb( $image, $atts['width'] ? $atts['width'] : 0, $atts['height'] ? $atts['height'] : 0 );
+	} else {
+		$image = $image;
+	}
+	
+	$output = $atts['url'] ? '<a href="'.esc_url( $atts['url'] ).'">' : '';
+	$output .= $atts['image'] ? '<img src="'.esc_url( $image ).'"' : '';
+	$output .= ' class="';
+	$output .= $atts['alignment'] ? esc_attr( $atts['alignment'] ) : 'alignnone';
+	$output .= $atts['class'] ? ' ' . esc_attr( $atts['class'] ) : '';
+	$output .= $atts['style'] ? ' ' . esc_attr( $atts['style'] ) : '';
+	$output .= '" style="';
+	$output .= $atts['margin'] ? esc_attr( $atts['margin'] ) . 'px;' : '0';
+	$output .= '"';
+	$output .= $atts['alt'] ? 'alt="'. esc_attr( $atts['alt'] ) .'"' : '';
+	$output .= $atts['image'] ? '/>' : '';
+	$output .= $atts['url'] ? '</a>' : '';
+	
+	return apply_filters( 'bfg_custom_image_shortcode', $output, $atts );
 } 
