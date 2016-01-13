@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
+    cssnano = require('gulp-cssnano'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -17,7 +17,7 @@ gulp.task('styles', function(){
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('style.css'))
-        .pipe(minifycss())
+        .pipe(cssnano())
         .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Styles task complete' }));
 } );
@@ -63,8 +63,8 @@ gulp.task('clean', function(cb) {
 });
 
 // Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'lint', 'source', 'vendor', 'watch');
+gulp.task('default', function() {
+    gulp.start('clean', 'styles', 'lint', 'source', 'vendor', 'watch');
 });
 
 // Watch
