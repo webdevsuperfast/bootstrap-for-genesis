@@ -15,6 +15,6 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "fitvids": "~1.1.0",
-    "modernizr": "~2.8.3"
+    "modernizr": "~3.2.0"
   }
 }
