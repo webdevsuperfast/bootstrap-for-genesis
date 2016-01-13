@@ -1,6 +1,6 @@
 <?php
 /**
- * SiteOrigin Widgets
+ * SiteOrigin Settings
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
@@ -11,10 +11,27 @@
  *
 */
 
-// SiteOrigin Widgets
-function bfg_siteorigin_widgets( $folders ){
-	$folders[] = BFG_THEME_MODULES . 'siteorigin/widgets/';
-	return $folders;
-}
+// Filter Default SiteOrigin Settings
+add_filter( 'siteorigin_panels_settings_defaults', 'bfg_siteorigin_settings' );
+function bfg_siteorigin_settings( $defaults ) {
+	// Widgets field
+	$defaults['title-html'] = '<h4 class="widgettitle">{{title}}</h4>';
+	$defaults['recommended-widgets'] = false;
 
-add_filter( 'siteorigin_widgets_widget_folders', 'bfg_siteorigin_widgets' );
+	// Bottom margin
+	$defaults['margin-bottom'] = 0;
+
+	// Side margins
+	$defaults['margin-sides'] = 30;
+
+	// Layout field
+	$defaults['mobile-width'] = 767;
+	
+	// Content field
+	$defaults['copy-content'] = false;
+
+	// Post types
+	$defaults['post-types'] = array('page');
+
+	return $defaults;
+}

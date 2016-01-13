@@ -67,7 +67,7 @@ function bfg_do_home_featured() {
 
 // Body Class
 function bfg_body_class( $args ) {
-	if ( is_page_template( 'page_blog.php' ) ) 
+	if ( is_page_template( 'page_blog.php' ) )
 		$args[] = 'blog';
 
 	return $args;
@@ -75,9 +75,9 @@ function bfg_body_class( $args ) {
 
 // Better Linebreaks
 // @link https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap/blob/master/functions.php
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'bfg_wpautop' , 99);
-add_filter( 'the_content', 'shortcode_unautop', 100 );
+// remove_filter( 'the_content', 'wpautop' );
+// add_filter( 'the_content', 'bfg_wpautop' , 99);
+// add_filter( 'the_content', 'shortcode_unautop', 100 );
 
 function bfg_wpautop( $pee ) {
 	return wpautop( $pee, false );
@@ -104,4 +104,9 @@ function bfg_execute_php( $html ) {
 	}
 
 	return $html;
+}
+
+// Mr Image Resize functionn
+function bfg_thumb($url, $width, $height=0, $align='') {
+	return mr_image_resize($url, $width, $height, true, $align, false);
 }
