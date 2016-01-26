@@ -5,13 +5,6 @@
 		// Add class to featured image links
 		$('.entry').find('img').parent('a').addClass('imgwrap');
 
-		// FitVids
-		var container = $( '.video, .content' );
-		container.fitVids();
-		container.fitVids( {
-			customSelector: "iframe[src*='//fast.wistia.net']"
-		} );
-
 		//Tooltip
 		$('[data-toggle="tooltip"]').tooltip();
 
