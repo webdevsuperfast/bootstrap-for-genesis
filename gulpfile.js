@@ -44,10 +44,8 @@ gulp.task('source', function() {
 
 gulp.task('vendor', function(){
     return gulp.src([
-        'bower_components/modernizr/modernizr.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'bower_components/fitvids/jquery.fitvids.js',
-        'assets/js/vendor/uilang.js'
+        'assets/js/vendor/*.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('temp/js'))
