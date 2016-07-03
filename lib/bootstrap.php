@@ -4,9 +4,9 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.superfastbusiness.com
- * @author       SuperFastBusiness <www.superfastbusiness.com>
- * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @link         http://www.recommendwp.com
+ * @author       RecommendWP <www.recommendwp.com>
+ * @copyright    Copyright (c) 2015, RecommendWP
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
@@ -35,9 +35,9 @@ function bfg_add_markup_class( $attr, $context ) {
     $classes_to_add = apply_filters ('bfg-classes-to-add',
         // default bootstrap markup values
         array(
-            'nav-primary' => 'navbar navbar-default navbar-static-top',
-            'nav-secondary' => 'navbar navbar-inverse navbar-static-top',
-            'site-header' => 'page-header',
+            'site-header' => 'navbar navbar-default navbar-static-top',
+            // 'nav-secondary' => 'navbar navbar-inverse navbar-static-top',
+            // 'site-header' => 'page-header',
             'content-sidebar-wrap' => 'row',
             'content' => 'col-sm-8',
             'sidebar-primary' => 'col-sm-4',
@@ -46,9 +46,9 @@ function bfg_add_markup_class( $attr, $context ) {
             'entry-content' => 'clearfix',
             'entry-pagination' => 'clearfix bfg-pagination-numeric',
             'structural-wrap' => 'container',
-            'title-area' => !is_active_sidebar( 'header-right' ) ? 'col-sm-12' : 'col-sm-4',
-            'header-widget-area' => 'col-sm-8',
-            'copyright' => !is_active_sidebar( 'footer-right' ) ? 'col-sm-12 no-widget-area' : 'col-sm-6',
+            // 'title-area' => !is_active_sidebar( 'header-right' ) ? 'col-sm-12' : 'col-sm-4',
+            // 'header-widget-area' => 'col-sm-8',
+            // 'copyright' => !is_active_sidebar( 'footer-right' ) ? 'col-sm-12 no-widget-area' : 'col-sm-6',
             'footer-widget-area' => 'col-sm-6',
             'comment-list' => 'list-unstyled',
             'home-featured' => 'jumbotron'
@@ -72,9 +72,9 @@ function bfg_add_markup_class( $attr, $context ) {
 }
 
 // Add row class after wrap
-add_filter( 'genesis_structural_wrap-header', 'bfg_filter_structural_wrap', 10, 2 );
+// add_filter( 'genesis_structural_wrap-header', 'bfg_filter_structural_wrap', 10, 2 );
 // add_filter( 'genesis_structural_wrap-site-inner', 'bfg_filter_structural_wrap', 10, 2 );
-add_filter( 'genesis_structural_wrap-footer', 'bfg_filter_structural_wrap', 10, 2 );
+// add_filter( 'genesis_structural_wrap-footer', 'bfg_filter_structural_wrap', 10, 2 );
 add_filter( 'genesis_structural_wrap-footer-widgets', 'bfg_filter_structural_wrap', 10, 2 );
 function bfg_filter_structural_wrap( $output, $original_output ) {
     if( 'close' == $original_output ) {
