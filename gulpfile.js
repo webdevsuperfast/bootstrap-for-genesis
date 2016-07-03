@@ -1,13 +1,16 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
+    minifycss = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
+    prettify = require('gulp-jsbeautifier'),
+    vinylpaths = require('vinyl-paths'),
+    cmq = require('gulp-combine-mq'),
     del = require('del');
 
 // CSS
@@ -15,10 +18,11 @@ gulp.task('styles', function(){
     return gulp.src('assets/scss/style.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
-        .pipe(rename('style.css'))
-        .pipe(minifycss())
-        .pipe(gulp.dest('./'))
+        .pipe(rename('app.css'))
+        .pipe(prettify())
+        .pipe(gulp.dest('assets/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 } );
 
@@ -36,18 +40,14 @@ gulp.task('source', function() {
     ])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('temp/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    .pipe(prettify())
     .pipe(gulp.dest('assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 gulp.task('vendor', function(){
     return gulp.src([
-        'bower_components/modernizr/modernizr.js',
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'bower_components/fitvids/jquery.fitvids.js',
-        'assets/js/vendor/uilang.js'
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('temp/js'))
@@ -59,7 +59,8 @@ gulp.task('vendor', function(){
 
 // Clean
 gulp.task('clean', function(cb) {
-    del(['temp/css', 'temp/js'], cb)
+    return gulp.src('temp/*')
+    .pipe(vinylpaths(del))
 });
 
 // Default task

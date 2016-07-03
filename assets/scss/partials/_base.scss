@@ -34,12 +34,6 @@ select {
     max-width: 100%;
 }
 
-.form-control {
-	&:focus {
-		box-shadow: none;
-	}
-}
-
 // Table
 .entry table {
     @extend .table;

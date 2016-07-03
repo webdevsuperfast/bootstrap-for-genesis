@@ -14,7 +14,7 @@ $vars: txt, bg, btn;
 			}
 			
 			@if ($var == btn) {
-				@include button-variant($light-color, $value, $value);
+				@include button-variant('#fff', $value, $value);
 			}
 		}
 	}
