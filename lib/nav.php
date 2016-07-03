@@ -18,11 +18,6 @@ if ( class_exists( 'UberMenuStandard' ) ) {
 // remove primary & secondary nav from default position
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav' );
-// remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-
-// add primary & secondary nav to top of the page
-// add_action( 'genesis_before', 'genesis_do_nav' );
-// add_action( 'genesis_before', 'genesis_do_subnav' );
 
 // filter menu args for bootstrap walker and other settings
 add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
@@ -31,7 +26,7 @@ add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
 add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_args_filter( $args ) {
 
-    require_once( BFG_THEME_LIB . 'classes/wp_bootstrap_navwalker.php' );
+    require_once( BFG_THEME_MODULES . 'wp_bootstrap_navwalker.php' );
     
     if ( 'primary' === $args['theme_location'] ) {
         $args['menu_class'] = 'nav navbar-nav';
@@ -87,7 +82,7 @@ function bfg_navbar_brand_markup() {
     return $output;
 }
 
-// Navigation Extra
+//* Navigation Extras
 function bfg_navbar_content_markup() {
     $url = get_home_url();
     
@@ -112,8 +107,10 @@ function bfg_navbar_content_markup() {
 	return $output;
 }
 
-add_filter( 'genesis_do_nav', 'override_do_nav', 10, 3 );
-function override_do_nav($nav_output, $nav, $args) {
+//* Filter primary navigation output to match Bootstrap markup
+// @link http://wordpress.stackexchange.com/questions/58377/using-a-filter-to-modify-genesis-wp-nav-menu/58394#58394
+add_filter( 'genesis_do_nav', 'bfg_override_do_nav', 10, 3 );
+function bfg_override_do_nav($nav_output, $nav, $args) {
     // return the modified result
     return sprintf( '%1$s', $nav );
 

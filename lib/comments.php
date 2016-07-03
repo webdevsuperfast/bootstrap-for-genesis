@@ -14,7 +14,7 @@
 // Integrate Bootstrap Media List on comment lists
 add_filter( 'genesis_comment_list_args', 'bfg_comment_list_args', 10, 2 );
 function bfg_comment_list_args( $args ) {
-	require_once( 'classes/class-wp-bootstrap-comment-walker.php' );
+	require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
 
 	$args['avatar_size'] = 64;
 	$args['walker'] = new Bootstrap_Comment_Walker();
