@@ -43,12 +43,12 @@ function bfg_customizer_options() {
 
 	// Navigation Extras
 	$section = 'navextra';
-	
+
 	$choices = array(
 		'date' => __( 'Date', 'bfg' ),
 		'search' => __( 'Search Form', 'bfg' )
 	);
-	
+
 	$sections[] = array(
 		'id' => $section,
 		'title' => __( 'Navigation Extras', 'bfg' ),
@@ -62,7 +62,7 @@ function bfg_customizer_options() {
 		'type' => 'checkbox',
 		'default' => false
 	);
-	
+
 	$options['select'] = array(
 		'id' => 'select',
 		'label' => __( 'Select Navigation Extra', 'bfg' ),
@@ -85,7 +85,7 @@ function bfg_customizer_options() {
 		'label' => __( 'Enable custom font', 'bfg' ),
 		'section' => $section,
 		'type' => 'checkbox',
-		'default' => false	
+		'default' => false
 	);
 	$options['heading-font'] = array(
 		'id' => 'heading-font',
@@ -113,12 +113,12 @@ function bfg_customizer_options() {
 		'priority' => '35',
 		'description' => __( '', 'bfg' )
 	);
-	$options['footer'] = array(
+	$options['creds'] = array(
 		'id' => 'creds',
 		'label' => __( 'Copyright', 'bfg' ),
 		'section' => $section,
 		'type' => 'text',
-		'default' => ''
+		'default' => '[footer_copyright] &middot; <a href="http://www.recommendwp.com">RecommendWP</a> &middot; Built on the <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis Framework</a>'
 	);
 
 	// Adds the sections to the $options array
@@ -145,7 +145,7 @@ function bfg_customizer_fonts() {
 	if ( get_theme_mod( 'custom-font', false ) ) {
 		// Load Google Fonts
 		wp_enqueue_style( 'customizer-fonts', $font_uri, array(), null, 'screen' );
-		
+
 		// Remove default font enqueue
 		remove_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
 	}
@@ -184,7 +184,7 @@ if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Custom
 					)
 				) );
 			}
-	
+
 			// Body Font
 			$setting = 'body-font';
 			$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
@@ -205,7 +205,7 @@ if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Custom
 			}
 		}
 	}
-	
+
 }
 
 if ( !function_exists( 'bfg_library_styles' ) ) {
