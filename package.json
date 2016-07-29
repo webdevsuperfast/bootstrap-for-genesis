@@ -15,7 +15,7 @@
   "license": "MIT",
   "homepage": "https://bitbucket.com/webdevsuperfast/Bootstrap-for-Genesis#readme",
   "devDependencies": {
-    "gulp-clean-css": "^2.0.10",
+    "gulp-clean-css": "^2.0.12",
     "gulp-combine-mq": "^0.4.0",
     "gulp-jsbeautifier": "^2.0.3",
     "gulp-sass": "^2.3.2",
