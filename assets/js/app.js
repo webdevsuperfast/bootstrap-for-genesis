@@ -7,6 +7,12 @@
 
         // Popover
         $('[data-toggle="popover"]').popover();
+
+        $('.dropdown-submenu > a').on("click", function(e) {
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
     });
 
     // Window load event with minimum delay
