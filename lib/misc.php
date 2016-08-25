@@ -87,3 +87,8 @@ function bfg_categories_postcount_filter( $variable ) {
 function bfg_thumb($url, $width, $height=0, $align='') {
 	return mr_image_resize($url, $width, $height, true, $align, false);
 }
+
+add_action( 'wp_footer', 'bfg_after_footer' );
+function bfg_after_footer() {
+	echo '<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>';
+}
