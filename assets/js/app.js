@@ -8,6 +8,7 @@
         // Popover
         $('[data-toggle="popover"]').popover();
 
+        // Multi-level bootstrap submenu
         $('.dropdown-submenu > a').on("click", function(e) {
             $(this).next('ul').toggle();
             e.stopPropagation();
