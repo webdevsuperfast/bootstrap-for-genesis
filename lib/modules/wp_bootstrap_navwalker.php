@@ -65,6 +65,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children )
 				$class_names .= ' dropdown';
 
+			if ( $args->has_children && $depth > 0 ) 
+				$class_names .= ' dropdown-submenu';
+
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
 
@@ -81,8 +84,10 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
 
 			// If item has_children add atts to a.
-			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']   		= '#';
+			// if ( $args->has_children && $depth === 0 ) {
+			if ( $args->has_children ) {
+				// $atts['href']   		= '#';
+				$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
 				$atts['data-toggle']	= 'dropdown';
 				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
@@ -115,7 +120,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$item_output .= '<a'. $attributes .'>';
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			// $item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			$item_output .= ( $args->has_children ) ? ' <span class="caret"></span></a>' : '</a>';
 			$item_output .= $args->after;
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
