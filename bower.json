@@ -13,6 +13,7 @@
   "license": "MIT",
   "homepage": "http://www.recommendwp.com",
   "dependencies": {
-    "bootstrap-sass": "~3.3.7"
+    "bootstrap-sass": "~3.3.7",
+    "smartmenus": "^1.0.0"
   }
 }

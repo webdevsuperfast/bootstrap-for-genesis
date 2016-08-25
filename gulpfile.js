@@ -11,12 +11,22 @@ var gulp = require('gulp'),
     prettify = require('gulp-jsbeautifier'),
     vinylpaths = require('vinyl-paths'),
     cmq = require('gulp-combine-mq'),
+    merge = require('merge-stream'),
     del = require('del');
 
 // CSS
 gulp.task('styles', function(){
-    return gulp.src('assets/scss/style.scss')
+    var cssStream = gulp.src([
+        'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.css'
+    ])
+    .pipe(concat('smartmenus.css'));
+
+    var sassStream = gulp.src('assets/scss/style.scss')
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(concat('app.scss'))
+    
+    var mergeStream = merge(sassStream, cssStream)
+        .pipe(concat('app.css'))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
@@ -24,7 +34,9 @@ gulp.task('styles', function(){
         .pipe(prettify())
         .pipe(gulp.dest('assets/css'))
         .pipe(notify({ message: 'Styles task complete' }));
-} );
+    
+    return mergeStream;
+});
 
 // JSHint
 gulp.task('lint', function(){
@@ -47,7 +59,9 @@ gulp.task('source', function() {
 
 gulp.task('vendor', function(){
     return gulp.src([
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+        'bower_components/smartmenus/src/jquery.smartmenus.js',
+        'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('temp/js'))
