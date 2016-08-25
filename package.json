@@ -15,20 +15,21 @@
   "license": "MIT",
   "homepage": "https://bitbucket.com/webdevsuperfast/Bootstrap-for-Genesis#readme",
   "devDependencies": {
-    "gulp-clean-css": "^2.0.12",
-    "gulp-combine-mq": "^0.4.0",
-    "gulp-jsbeautifier": "^2.0.3",
-    "gulp-sass": "^2.3.2",
-    "jshint": "^2.9.3",
-    "vinyl-paths": "^2.1.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cache": "^0.4.5",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.0",
+    "gulp-jsbeautifier": "^2.0.3",
     "gulp-jshint": "^2.0.1",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^2.0.0"
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.3",
+    "merge-stream": "^1.0.0",
+    "vinyl-paths": "^2.1.0"
   }
 }
