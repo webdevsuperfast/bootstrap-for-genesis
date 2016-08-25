@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to compile CSS, JS, Bower to install dependencies and SASS for CSS. 
+Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to compile CSS, JS, Bower to install dependencies and Sass for CSS. 
 
 ## Installation Instructions
 
@@ -13,15 +13,14 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 
 ## Features
 
-1. Bootstrap v3.3.6
+1. Bootstrap v3.3.7
 2. Bootstrap components
 	* Comment Form
-	* Media List
+	* Media List(Used in comments)
 	* Search Form
 	* Jumbotron
 	* Navbar
-	* Page header
-3. SASS
+3. Sass
 4. Bower
 5. Gulp
 6. Footer Widgets(modified to add bootstrap column classes based on the number of widget areas)
@@ -36,7 +35,7 @@ Without these projects, this theme wouldn't be where it is today.
 
 * [Genesis Framework](http://my.studiopress.com/themes/genesis/)
 * [Bootstrap](http://getbootstrap.com)
-* [SASS / SCSS](http://sass-lang.com/)
+* [Sass](http://sass-lang.com/)
 * [Gulp](http://gulpjs.com/)
 * [Bower](https://github.com/bower/bower)
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
@@ -45,3 +44,8 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
 * [Customizer Library](https://github.com/devinsays/customizer-library)
+
+## Recommended Plugins
+
+* [Ninja Forms](https://ninjaforms.com/)
+* [Bootstrap Ninja Forms](https://github.com/bostondv/bootstrap-ninja-forms)
