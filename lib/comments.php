@@ -58,7 +58,7 @@ function bootstrap3_comment_form_fields( $fields ) {
 
 add_filter( 'genesis_ping_list_args', 'bsg_ping_list_args' );
 function bsg_ping_list_args( $args ) {
-    require_once( 'classes/class-wp-bootstrap-comment-walker.php' );
+    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
     
     $args['walker'] = new Bootstrap_Comment_Walker();
     $args['avatar_size'] = 0;
