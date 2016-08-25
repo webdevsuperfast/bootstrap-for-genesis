@@ -28,6 +28,7 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 	* Home Featured(jumbotron)
 8. TGM Plugin Activation Support
 9. Customizer Library Support
+10. Multi-level dropdown menus using SmartMenus Bootstrap Addon
 
 ## Credits
 
@@ -44,6 +45,7 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
 * [Customizer Library](https://github.com/devinsays/customizer-library)
+* [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
 
 ## Recommended Plugins
 
