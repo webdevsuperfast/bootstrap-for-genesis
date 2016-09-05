@@ -36,9 +36,6 @@ function bfg_childtheme_setup() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link' );
 	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-	// Remove WP Version
-	add_filter( 'the_generator', 'mb_remove_wp_version' );
-
 	// Add HTML5 markup structure
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
