@@ -24,7 +24,7 @@ function bfg_childtheme_setup() {
 	define( 'BFG_THEME_LIB_URL', CHILD_URL . '/lib/' );
 	define( 'BFG_THEME_IMAGES', CHILD_URL . '/images/' );
 	define( 'BFG_THEME_JS', CHILD_URL . '/assets/js/' );
-	define( 'BFG_THEME_CSS', CHILD_URL . '/assets/css/' ); 
+	define( 'BFG_THEME_CSS', CHILD_URL . '/assets/css/' );
 	define( 'BFG_THEME_MODULES', CHILD_DIR . '/lib/modules/' );
 
 	// Cleanup WP Head
@@ -66,13 +66,15 @@ function bfg_childtheme_setup() {
 	// TGM Plugin Activation
 	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
 
-	// Customizer Helper
-	require_once( BFG_THEME_MODULES . 'customizer-library/customizer-library.php' );
+	//* Kirki Helper
+	foreach ( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
+		require_once $file;
+	}
 
 	// Include php files from lib folder
 	// @link https://gist.github.com/theandystratton/5924570
-	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) { 
-		include $file; 
+	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
+		include $file;
 	}
 
 	// Move Sidebar Secondary After Content
