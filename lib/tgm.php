@@ -17,37 +17,43 @@ function bfg_do_plugins_register() {
 
 	$plugins = array(
 		array(
-			'name'      => __( 'Page Builder by SiteOrigin', 'bfg' ),
+			'name'      => __( 'Page Builder by SiteOrigin', 'bootstrap-for-genesis' ),
 			'slug'      => 'siteorigin-panels',
 			'required'  => false
 		),
 
 		array(
-			'name'      => __( 'SiteOrigin Widgets Bundle', 'bfg' ),
+			'name'      => __( 'SiteOrigin Widgets Bundle', 'bootstrap-for-genesis' ),
 			'slug'      => 'so-widgets-bundle',
 			'required'  => false
 		),
 		
 		array(
-			'name'      => __( 'Shortcodes Ultimate', 'bfg' ),
+			'name'      => __( 'Shortcodes Ultimate', 'bootstrap-for-genesis' ),
 			'slug'      => 'shortcodes-ultimate',
 			'required'  => false 
 		),
 		
 		array(
-			'name'      => __( 'Widget CSS Classes', 'bfg' ),
+			'name'      => __( 'Widget CSS Classes', 'bootstrap-for-genesis' ),
 			'slug'      => 'widget-css-classes',
 			'required'  => false
 		),
 
 		array(
-			'name' => __( 'Ninja Forms', 'bfg' ),
+			'name'		=> __( 'Kirki', 'bootstrap-for-genesis' ),
+			'slug'		=> 'kirki',
+			'required' 	=> true
+		),
+
+		array(
+			'name' => __( 'Ninja Forms', 'bootstrap-for-genesis' ),
 			'slug' => 'ninja-forms',
 			'required' => false
 		),
 
 		array(
-			'name' => __( 'Bootstrap Ninja Forms', 'bfg' ),
+			'name' => __( 'Bootstrap Ninja Forms', 'bootstrap-for-genesis' ),
 			'slug' => 'bootstrap-ninja-forms',
 			'source' => 'https://github.com/bostondv/bootstrap-ninja-forms/archive/master.zip'
 		)
