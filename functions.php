@@ -60,6 +60,9 @@ function bfg_childtheme_setup() {
 	// WooCommerce Support
 	add_theme_support( 'genesis-connect-woocommerce' );
 
+	// Remove unneeded widget areas
+	unregister_sidebar( 'header-right' );
+
 	// Custom Image Size
 	add_image_size( 'bootstrap-featured', 750, 422, true );
 
