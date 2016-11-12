@@ -18,10 +18,19 @@ function bfg_theme_scripts() {
 	if ( !is_admin() ) {
 		wp_enqueue_style( 'app-css', BFG_THEME_CSS . 'app.css' );
 
-		wp_register_script( 'vendor-js', BFG_THEME_JS . 'vendor.min.js', array( 'jquery' ), $version, true );
-		wp_enqueue_script( 'vendor-js' );
+		// Bootstrap JS
+		wp_register_script( 'app-bootstrap-js', BFG_THEME_JS . 'bootstrap.min.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'app-bootstrap-js' );
 
-		wp_register_script( 'app-js', BFG_THEME_JS . 'app.js', array( 'jquery' ), $version, true );
+		// Smart Menu JS
+		wp_register_script( 'app-smartmenu-js', BFG_THEME_JS . 'jquery.smartmenus.min.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'app-smartmenu-js' );
+
+		// Smart Menu Boostrap Addon Js
+		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'app-smartmenu-bootstrap-js' );
+
+		wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
 	}
 }
