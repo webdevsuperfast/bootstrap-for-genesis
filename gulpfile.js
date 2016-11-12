@@ -50,7 +50,7 @@ gulp.task('lint', function(){
 // Scripts
 gulp.task('scripts', function() {
     return gulp.src([
-        'js/source/*.js',
+        'assets/js/source/*.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
         'bower_components/smartmenus/src/jquery.smartmenus.js',
         'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.js'
@@ -62,7 +62,7 @@ gulp.task('scripts', function() {
             .pipe(rename({suffix: '.min'}))
             .pipe(gulp.dest('temp/js'))
     }))
-    .pipe(gulp.dest('js'))
+    .pipe(gulp.dest('assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
