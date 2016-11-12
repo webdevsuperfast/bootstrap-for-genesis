@@ -1,6 +1,4 @@
 (function($){
-	"use strict";
-	
 	$(document).ready(function(){
 		//Tooltip
 		$('[data-toggle="tooltip"]').tooltip();
