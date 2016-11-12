@@ -47,7 +47,7 @@
     font-weight: bold;
 }
 
-.navbar-nav.sm-collapsible .open> a> .caret:before {
+.navbar-nav.sm-collapsible .open>a>.caret:before {
     content: '-';
 }
 
@@ -118,22 +118,22 @@
 
 /* add more indentation for 2+ level sub in collapsible mode - Bootstrap normally supports just 1 level sub menus */
 
-.navbar-nav.sm-collapsible ul .dropdown-menu> li> a,
+.navbar-nav.sm-collapsible ul .dropdown-menu>li>a,
 .navbar-nav.sm-collapsible ul .dropdown-menu .dropdown-header {
     padding-left: 35px;
 }
 
-.navbar-nav.sm-collapsible ul ul .dropdown-menu> li> a,
+.navbar-nav.sm-collapsible ul ul .dropdown-menu>li>a,
 .navbar-nav.sm-collapsible ul ul .dropdown-menu .dropdown-header {
     padding-left: 45px;
 }
 
-.navbar-nav.sm-collapsible ul ul ul .dropdown-menu> li> a,
+.navbar-nav.sm-collapsible ul ul ul .dropdown-menu>li>a,
 .navbar-nav.sm-collapsible ul ul ul .dropdown-menu .dropdown-header {
     padding-left: 55px;
 }
 
-.navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu> li> a,
+.navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu>li>a,
 .navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu .dropdown-header {
     padding-left: 65px;
 }
@@ -141,15 +141,15 @@
 
 /* fix SmartMenus sub menus auto width (subMenusMinWidth and subMenusMaxWidth options) */
 
-.navbar-nav .dropdown-menu> li> a {
+.navbar-nav .dropdown-menu>li>a {
     white-space: normal;
 }
 
-.navbar-nav ul.sm-nowrap> li> a {
+.navbar-nav ul.sm-nowrap>li>a {
     white-space: nowrap;
 }
 
-.navbar-nav.sm-collapsible ul.sm-nowrap> li> a {
+.navbar-nav.sm-collapsible ul.sm-nowrap>li>a {
     white-space: normal;
 }
 
@@ -1896,7 +1896,7 @@ ol ol {
     margin-left: -5px;
 }
 
-.list-inline> li {
+.list-inline>li {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
@@ -2413,61 +2413,61 @@ th {
     margin-bottom: 20px;
 }
 
-.table> thead> tr> th,
-.entry table> thead> tr> th,
-.widget_calendar table> thead> tr> th,
-.table> thead> tr> td,
-.entry table> thead> tr> td,
-.widget_calendar table> thead> tr> td,
-.table> tbody> tr> th,
-.entry table> tbody> tr> th,
-.widget_calendar table> tbody> tr> th,
-.table> tbody> tr> td,
-.entry table> tbody> tr> td,
-.widget_calendar table> tbody> tr> td,
-.table> tfoot> tr> th,
-.entry table> tfoot> tr> th,
-.widget_calendar table> tfoot> tr> th,
-.table> tfoot> tr> td,
-.entry table> tfoot> tr> td,
-.widget_calendar table> tfoot> tr> td {
+.table>thead>tr>th,
+.entry table>thead>tr>th,
+.widget_calendar table>thead>tr>th,
+.table>thead>tr>td,
+.entry table>thead>tr>td,
+.widget_calendar table>thead>tr>td,
+.table>tbody>tr>th,
+.entry table>tbody>tr>th,
+.widget_calendar table>tbody>tr>th,
+.table>tbody>tr>td,
+.entry table>tbody>tr>td,
+.widget_calendar table>tbody>tr>td,
+.table>tfoot>tr>th,
+.entry table>tfoot>tr>th,
+.widget_calendar table>tfoot>tr>th,
+.table>tfoot>tr>td,
+.entry table>tfoot>tr>td,
+.widget_calendar table>tfoot>tr>td {
     padding: 8px;
     line-height: 1.42857;
     vertical-align: top;
     border-top: 1px solid #ddd;
 }
 
-.table> thead> tr> th,
-.entry table> thead> tr> th,
-.widget_calendar table> thead> tr> th {
+.table>thead>tr>th,
+.entry table>thead>tr>th,
+.widget_calendar table>thead>tr>th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
 }
 
-.table> caption+ thead> tr:first-child> th,
-.entry table> caption+ thead> tr:first-child> th,
-.widget_calendar table> caption+ thead> tr:first-child> th,
-.table> caption+ thead> tr:first-child> td,
-.entry table> caption+ thead> tr:first-child> td,
-.widget_calendar table> caption+ thead> tr:first-child> td,
-.table> colgroup+ thead> tr:first-child> th,
-.entry table> colgroup+ thead> tr:first-child> th,
-.widget_calendar table> colgroup+ thead> tr:first-child> th,
-.table> colgroup+ thead> tr:first-child> td,
-.entry table> colgroup+ thead> tr:first-child> td,
-.widget_calendar table> colgroup+ thead> tr:first-child> td,
-.table> thead:first-child> tr:first-child> th,
-.entry table> thead:first-child> tr:first-child> th,
-.widget_calendar table> thead:first-child> tr:first-child> th,
-.table> thead:first-child> tr:first-child> td,
-.entry table> thead:first-child> tr:first-child> td,
-.widget_calendar table> thead:first-child> tr:first-child> td {
+.table>caption+thead>tr:first-child>th,
+.entry table>caption+thead>tr:first-child>th,
+.widget_calendar table>caption+thead>tr:first-child>th,
+.table>caption+thead>tr:first-child>td,
+.entry table>caption+thead>tr:first-child>td,
+.widget_calendar table>caption+thead>tr:first-child>td,
+.table>colgroup+thead>tr:first-child>th,
+.entry table>colgroup+thead>tr:first-child>th,
+.widget_calendar table>colgroup+thead>tr:first-child>th,
+.table>colgroup+thead>tr:first-child>td,
+.entry table>colgroup+thead>tr:first-child>td,
+.widget_calendar table>colgroup+thead>tr:first-child>td,
+.table>thead:first-child>tr:first-child>th,
+.entry table>thead:first-child>tr:first-child>th,
+.widget_calendar table>thead:first-child>tr:first-child>th,
+.table>thead:first-child>tr:first-child>td,
+.entry table>thead:first-child>tr:first-child>td,
+.widget_calendar table>thead:first-child>tr:first-child>td {
     border-top: 0;
 }
 
-.table> tbody+ tbody,
-.entry table> tbody+ tbody,
-.widget_calendar table> tbody+ tbody {
+.table>tbody+tbody,
+.entry table>tbody+tbody,
+.widget_calendar table>tbody+tbody {
     border-top: 2px solid #ddd;
 }
 
@@ -2483,12 +2483,12 @@ th {
     background-color: #fff;
 }
 
-.table-condensed> thead> tr> th,
-.table-condensed> thead> tr> td,
-.table-condensed> tbody> tr> th,
-.table-condensed> tbody> tr> td,
-.table-condensed> tfoot> tr> th,
-.table-condensed> tfoot> tr> td {
+.table-condensed>thead>tr>th,
+.table-condensed>thead>tr>td,
+.table-condensed>tbody>tr>th,
+.table-condensed>tbody>tr>td,
+.table-condensed>tfoot>tr>th,
+.table-condensed>tfoot>tr>td {
     padding: 5px;
 }
 
@@ -2497,34 +2497,34 @@ th {
     border: 1px solid #ddd;
 }
 
-.table-bordered> thead> tr> th,
-.entry table> thead> tr> th,
-.table-bordered> thead> tr> td,
-.entry table> thead> tr> td,
-.table-bordered> tbody> tr> th,
-.entry table> tbody> tr> th,
-.table-bordered> tbody> tr> td,
-.entry table> tbody> tr> td,
-.table-bordered> tfoot> tr> th,
-.entry table> tfoot> tr> th,
-.table-bordered> tfoot> tr> td,
-.entry table> tfoot> tr> td {
+.table-bordered>thead>tr>th,
+.entry table>thead>tr>th,
+.table-bordered>thead>tr>td,
+.entry table>thead>tr>td,
+.table-bordered>tbody>tr>th,
+.entry table>tbody>tr>th,
+.table-bordered>tbody>tr>td,
+.entry table>tbody>tr>td,
+.table-bordered>tfoot>tr>th,
+.entry table>tfoot>tr>th,
+.table-bordered>tfoot>tr>td,
+.entry table>tfoot>tr>td {
     border: 1px solid #ddd;
 }
 
-.table-bordered> thead> tr> th,
-.entry table> thead> tr> th,
-.table-bordered> thead> tr> td,
-.entry table> thead> tr> td {
+.table-bordered>thead>tr>th,
+.entry table>thead>tr>th,
+.table-bordered>thead>tr>td,
+.entry table>thead>tr>td {
     border-bottom-width: 2px;
 }
 
-.table-striped> tbody> tr:nth-of-type(odd),
-.widget_calendar table> tbody> tr:nth-of-type(odd) {
+.table-striped>tbody>tr:nth-of-type(odd),
+.widget_calendar table>tbody>tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
 
-.table-hover> tbody> tr:hover {
+.table-hover>tbody>tr:hover {
     background-color: #f5f5f5;
 }
 
@@ -2541,238 +2541,238 @@ table th[class*="col-"] {
     display: table-cell;
 }
 
-.table> thead> tr> td.active,
-.entry table> thead> tr> td.active,
-.widget_calendar table> thead> tr> td.active,
-.table> thead> tr> th.active,
-.entry table> thead> tr> th.active,
-.widget_calendar table> thead> tr> th.active,
-.table> thead> tr.active> td,
-.entry table> thead> tr.active> td,
-.widget_calendar table> thead> tr.active> td,
-.table> thead> tr.active> th,
-.entry table> thead> tr.active> th,
-.widget_calendar table> thead> tr.active> th,
-.table> tbody> tr> td.active,
-.entry table> tbody> tr> td.active,
-.widget_calendar table> tbody> tr> td.active,
-.table> tbody> tr> th.active,
-.entry table> tbody> tr> th.active,
-.widget_calendar table> tbody> tr> th.active,
-.table> tbody> tr.active> td,
-.entry table> tbody> tr.active> td,
-.widget_calendar table> tbody> tr.active> td,
-.table> tbody> tr.active> th,
-.entry table> tbody> tr.active> th,
-.widget_calendar table> tbody> tr.active> th,
-.table> tfoot> tr> td.active,
-.entry table> tfoot> tr> td.active,
-.widget_calendar table> tfoot> tr> td.active,
-.table> tfoot> tr> th.active,
-.entry table> tfoot> tr> th.active,
-.widget_calendar table> tfoot> tr> th.active,
-.table> tfoot> tr.active> td,
-.entry table> tfoot> tr.active> td,
-.widget_calendar table> tfoot> tr.active> td,
-.table> tfoot> tr.active> th,
-.entry table> tfoot> tr.active> th,
-.widget_calendar table> tfoot> tr.active> th {
+.table>thead>tr>td.active,
+.entry table>thead>tr>td.active,
+.widget_calendar table>thead>tr>td.active,
+.table>thead>tr>th.active,
+.entry table>thead>tr>th.active,
+.widget_calendar table>thead>tr>th.active,
+.table>thead>tr.active>td,
+.entry table>thead>tr.active>td,
+.widget_calendar table>thead>tr.active>td,
+.table>thead>tr.active>th,
+.entry table>thead>tr.active>th,
+.widget_calendar table>thead>tr.active>th,
+.table>tbody>tr>td.active,
+.entry table>tbody>tr>td.active,
+.widget_calendar table>tbody>tr>td.active,
+.table>tbody>tr>th.active,
+.entry table>tbody>tr>th.active,
+.widget_calendar table>tbody>tr>th.active,
+.table>tbody>tr.active>td,
+.entry table>tbody>tr.active>td,
+.widget_calendar table>tbody>tr.active>td,
+.table>tbody>tr.active>th,
+.entry table>tbody>tr.active>th,
+.widget_calendar table>tbody>tr.active>th,
+.table>tfoot>tr>td.active,
+.entry table>tfoot>tr>td.active,
+.widget_calendar table>tfoot>tr>td.active,
+.table>tfoot>tr>th.active,
+.entry table>tfoot>tr>th.active,
+.widget_calendar table>tfoot>tr>th.active,
+.table>tfoot>tr.active>td,
+.entry table>tfoot>tr.active>td,
+.widget_calendar table>tfoot>tr.active>td,
+.table>tfoot>tr.active>th,
+.entry table>tfoot>tr.active>th,
+.widget_calendar table>tfoot>tr.active>th {
     background-color: #f5f5f5;
 }
 
-.table-hover> tbody> tr> td.active:hover,
-.table-hover> tbody> tr> th.active:hover,
-.table-hover> tbody> tr.active:hover> td,
-.table-hover> tbody> tr:hover> .active,
-.table-hover> tbody> tr.active:hover> th {
+.table-hover>tbody>tr>td.active:hover,
+.table-hover>tbody>tr>th.active:hover,
+.table-hover>tbody>tr.active:hover>td,
+.table-hover>tbody>tr:hover>.active,
+.table-hover>tbody>tr.active:hover>th {
     background-color: #e8e8e8;
 }
 
-.table> thead> tr> td.success,
-.entry table> thead> tr> td.success,
-.widget_calendar table> thead> tr> td.success,
-.table> thead> tr> th.success,
-.entry table> thead> tr> th.success,
-.widget_calendar table> thead> tr> th.success,
-.table> thead> tr.success> td,
-.entry table> thead> tr.success> td,
-.widget_calendar table> thead> tr.success> td,
-.table> thead> tr.success> th,
-.entry table> thead> tr.success> th,
-.widget_calendar table> thead> tr.success> th,
-.table> tbody> tr> td.success,
-.entry table> tbody> tr> td.success,
-.widget_calendar table> tbody> tr> td.success,
-.table> tbody> tr> th.success,
-.entry table> tbody> tr> th.success,
-.widget_calendar table> tbody> tr> th.success,
-.table> tbody> tr.success> td,
-.entry table> tbody> tr.success> td,
-.widget_calendar table> tbody> tr.success> td,
-.table> tbody> tr.success> th,
-.entry table> tbody> tr.success> th,
-.widget_calendar table> tbody> tr.success> th,
-.table> tfoot> tr> td.success,
-.entry table> tfoot> tr> td.success,
-.widget_calendar table> tfoot> tr> td.success,
-.table> tfoot> tr> th.success,
-.entry table> tfoot> tr> th.success,
-.widget_calendar table> tfoot> tr> th.success,
-.table> tfoot> tr.success> td,
-.entry table> tfoot> tr.success> td,
-.widget_calendar table> tfoot> tr.success> td,
-.table> tfoot> tr.success> th,
-.entry table> tfoot> tr.success> th,
-.widget_calendar table> tfoot> tr.success> th {
+.table>thead>tr>td.success,
+.entry table>thead>tr>td.success,
+.widget_calendar table>thead>tr>td.success,
+.table>thead>tr>th.success,
+.entry table>thead>tr>th.success,
+.widget_calendar table>thead>tr>th.success,
+.table>thead>tr.success>td,
+.entry table>thead>tr.success>td,
+.widget_calendar table>thead>tr.success>td,
+.table>thead>tr.success>th,
+.entry table>thead>tr.success>th,
+.widget_calendar table>thead>tr.success>th,
+.table>tbody>tr>td.success,
+.entry table>tbody>tr>td.success,
+.widget_calendar table>tbody>tr>td.success,
+.table>tbody>tr>th.success,
+.entry table>tbody>tr>th.success,
+.widget_calendar table>tbody>tr>th.success,
+.table>tbody>tr.success>td,
+.entry table>tbody>tr.success>td,
+.widget_calendar table>tbody>tr.success>td,
+.table>tbody>tr.success>th,
+.entry table>tbody>tr.success>th,
+.widget_calendar table>tbody>tr.success>th,
+.table>tfoot>tr>td.success,
+.entry table>tfoot>tr>td.success,
+.widget_calendar table>tfoot>tr>td.success,
+.table>tfoot>tr>th.success,
+.entry table>tfoot>tr>th.success,
+.widget_calendar table>tfoot>tr>th.success,
+.table>tfoot>tr.success>td,
+.entry table>tfoot>tr.success>td,
+.widget_calendar table>tfoot>tr.success>td,
+.table>tfoot>tr.success>th,
+.entry table>tfoot>tr.success>th,
+.widget_calendar table>tfoot>tr.success>th {
     background-color: #dff0d8;
 }
 
-.table-hover> tbody> tr> td.success:hover,
-.table-hover> tbody> tr> th.success:hover,
-.table-hover> tbody> tr.success:hover> td,
-.table-hover> tbody> tr:hover> .success,
-.table-hover> tbody> tr.success:hover> th {
+.table-hover>tbody>tr>td.success:hover,
+.table-hover>tbody>tr>th.success:hover,
+.table-hover>tbody>tr.success:hover>td,
+.table-hover>tbody>tr:hover>.success,
+.table-hover>tbody>tr.success:hover>th {
     background-color: #d0e9c6;
 }
 
-.table> thead> tr> td.info,
-.entry table> thead> tr> td.info,
-.widget_calendar table> thead> tr> td.info,
-.table> thead> tr> th.info,
-.entry table> thead> tr> th.info,
-.widget_calendar table> thead> tr> th.info,
-.table> thead> tr.info> td,
-.entry table> thead> tr.info> td,
-.widget_calendar table> thead> tr.info> td,
-.table> thead> tr.info> th,
-.entry table> thead> tr.info> th,
-.widget_calendar table> thead> tr.info> th,
-.table> tbody> tr> td.info,
-.entry table> tbody> tr> td.info,
-.widget_calendar table> tbody> tr> td.info,
-.table> tbody> tr> th.info,
-.entry table> tbody> tr> th.info,
-.widget_calendar table> tbody> tr> th.info,
-.table> tbody> tr.info> td,
-.entry table> tbody> tr.info> td,
-.widget_calendar table> tbody> tr.info> td,
-.table> tbody> tr.info> th,
-.entry table> tbody> tr.info> th,
-.widget_calendar table> tbody> tr.info> th,
-.table> tfoot> tr> td.info,
-.entry table> tfoot> tr> td.info,
-.widget_calendar table> tfoot> tr> td.info,
-.table> tfoot> tr> th.info,
-.entry table> tfoot> tr> th.info,
-.widget_calendar table> tfoot> tr> th.info,
-.table> tfoot> tr.info> td,
-.entry table> tfoot> tr.info> td,
-.widget_calendar table> tfoot> tr.info> td,
-.table> tfoot> tr.info> th,
-.entry table> tfoot> tr.info> th,
-.widget_calendar table> tfoot> tr.info> th {
+.table>thead>tr>td.info,
+.entry table>thead>tr>td.info,
+.widget_calendar table>thead>tr>td.info,
+.table>thead>tr>th.info,
+.entry table>thead>tr>th.info,
+.widget_calendar table>thead>tr>th.info,
+.table>thead>tr.info>td,
+.entry table>thead>tr.info>td,
+.widget_calendar table>thead>tr.info>td,
+.table>thead>tr.info>th,
+.entry table>thead>tr.info>th,
+.widget_calendar table>thead>tr.info>th,
+.table>tbody>tr>td.info,
+.entry table>tbody>tr>td.info,
+.widget_calendar table>tbody>tr>td.info,
+.table>tbody>tr>th.info,
+.entry table>tbody>tr>th.info,
+.widget_calendar table>tbody>tr>th.info,
+.table>tbody>tr.info>td,
+.entry table>tbody>tr.info>td,
+.widget_calendar table>tbody>tr.info>td,
+.table>tbody>tr.info>th,
+.entry table>tbody>tr.info>th,
+.widget_calendar table>tbody>tr.info>th,
+.table>tfoot>tr>td.info,
+.entry table>tfoot>tr>td.info,
+.widget_calendar table>tfoot>tr>td.info,
+.table>tfoot>tr>th.info,
+.entry table>tfoot>tr>th.info,
+.widget_calendar table>tfoot>tr>th.info,
+.table>tfoot>tr.info>td,
+.entry table>tfoot>tr.info>td,
+.widget_calendar table>tfoot>tr.info>td,
+.table>tfoot>tr.info>th,
+.entry table>tfoot>tr.info>th,
+.widget_calendar table>tfoot>tr.info>th {
     background-color: #d9edf7;
 }
 
-.table-hover> tbody> tr> td.info:hover,
-.table-hover> tbody> tr> th.info:hover,
-.table-hover> tbody> tr.info:hover> td,
-.table-hover> tbody> tr:hover> .info,
-.table-hover> tbody> tr.info:hover> th {
+.table-hover>tbody>tr>td.info:hover,
+.table-hover>tbody>tr>th.info:hover,
+.table-hover>tbody>tr.info:hover>td,
+.table-hover>tbody>tr:hover>.info,
+.table-hover>tbody>tr.info:hover>th {
     background-color: #c4e3f3;
 }
 
-.table> thead> tr> td.warning,
-.entry table> thead> tr> td.warning,
-.widget_calendar table> thead> tr> td.warning,
-.table> thead> tr> th.warning,
-.entry table> thead> tr> th.warning,
-.widget_calendar table> thead> tr> th.warning,
-.table> thead> tr.warning> td,
-.entry table> thead> tr.warning> td,
-.widget_calendar table> thead> tr.warning> td,
-.table> thead> tr.warning> th,
-.entry table> thead> tr.warning> th,
-.widget_calendar table> thead> tr.warning> th,
-.table> tbody> tr> td.warning,
-.entry table> tbody> tr> td.warning,
-.widget_calendar table> tbody> tr> td.warning,
-.table> tbody> tr> th.warning,
-.entry table> tbody> tr> th.warning,
-.widget_calendar table> tbody> tr> th.warning,
-.table> tbody> tr.warning> td,
-.entry table> tbody> tr.warning> td,
-.widget_calendar table> tbody> tr.warning> td,
-.table> tbody> tr.warning> th,
-.entry table> tbody> tr.warning> th,
-.widget_calendar table> tbody> tr.warning> th,
-.table> tfoot> tr> td.warning,
-.entry table> tfoot> tr> td.warning,
-.widget_calendar table> tfoot> tr> td.warning,
-.table> tfoot> tr> th.warning,
-.entry table> tfoot> tr> th.warning,
-.widget_calendar table> tfoot> tr> th.warning,
-.table> tfoot> tr.warning> td,
-.entry table> tfoot> tr.warning> td,
-.widget_calendar table> tfoot> tr.warning> td,
-.table> tfoot> tr.warning> th,
-.entry table> tfoot> tr.warning> th,
-.widget_calendar table> tfoot> tr.warning> th {
+.table>thead>tr>td.warning,
+.entry table>thead>tr>td.warning,
+.widget_calendar table>thead>tr>td.warning,
+.table>thead>tr>th.warning,
+.entry table>thead>tr>th.warning,
+.widget_calendar table>thead>tr>th.warning,
+.table>thead>tr.warning>td,
+.entry table>thead>tr.warning>td,
+.widget_calendar table>thead>tr.warning>td,
+.table>thead>tr.warning>th,
+.entry table>thead>tr.warning>th,
+.widget_calendar table>thead>tr.warning>th,
+.table>tbody>tr>td.warning,
+.entry table>tbody>tr>td.warning,
+.widget_calendar table>tbody>tr>td.warning,
+.table>tbody>tr>th.warning,
+.entry table>tbody>tr>th.warning,
+.widget_calendar table>tbody>tr>th.warning,
+.table>tbody>tr.warning>td,
+.entry table>tbody>tr.warning>td,
+.widget_calendar table>tbody>tr.warning>td,
+.table>tbody>tr.warning>th,
+.entry table>tbody>tr.warning>th,
+.widget_calendar table>tbody>tr.warning>th,
+.table>tfoot>tr>td.warning,
+.entry table>tfoot>tr>td.warning,
+.widget_calendar table>tfoot>tr>td.warning,
+.table>tfoot>tr>th.warning,
+.entry table>tfoot>tr>th.warning,
+.widget_calendar table>tfoot>tr>th.warning,
+.table>tfoot>tr.warning>td,
+.entry table>tfoot>tr.warning>td,
+.widget_calendar table>tfoot>tr.warning>td,
+.table>tfoot>tr.warning>th,
+.entry table>tfoot>tr.warning>th,
+.widget_calendar table>tfoot>tr.warning>th {
     background-color: #fcf8e3;
 }
 
-.table-hover> tbody> tr> td.warning:hover,
-.table-hover> tbody> tr> th.warning:hover,
-.table-hover> tbody> tr.warning:hover> td,
-.table-hover> tbody> tr:hover> .warning,
-.table-hover> tbody> tr.warning:hover> th {
+.table-hover>tbody>tr>td.warning:hover,
+.table-hover>tbody>tr>th.warning:hover,
+.table-hover>tbody>tr.warning:hover>td,
+.table-hover>tbody>tr:hover>.warning,
+.table-hover>tbody>tr.warning:hover>th {
     background-color: #faf2cc;
 }
 
-.table> thead> tr> td.danger,
-.entry table> thead> tr> td.danger,
-.widget_calendar table> thead> tr> td.danger,
-.table> thead> tr> th.danger,
-.entry table> thead> tr> th.danger,
-.widget_calendar table> thead> tr> th.danger,
-.table> thead> tr.danger> td,
-.entry table> thead> tr.danger> td,
-.widget_calendar table> thead> tr.danger> td,
-.table> thead> tr.danger> th,
-.entry table> thead> tr.danger> th,
-.widget_calendar table> thead> tr.danger> th,
-.table> tbody> tr> td.danger,
-.entry table> tbody> tr> td.danger,
-.widget_calendar table> tbody> tr> td.danger,
-.table> tbody> tr> th.danger,
-.entry table> tbody> tr> th.danger,
-.widget_calendar table> tbody> tr> th.danger,
-.table> tbody> tr.danger> td,
-.entry table> tbody> tr.danger> td,
-.widget_calendar table> tbody> tr.danger> td,
-.table> tbody> tr.danger> th,
-.entry table> tbody> tr.danger> th,
-.widget_calendar table> tbody> tr.danger> th,
-.table> tfoot> tr> td.danger,
-.entry table> tfoot> tr> td.danger,
-.widget_calendar table> tfoot> tr> td.danger,
-.table> tfoot> tr> th.danger,
-.entry table> tfoot> tr> th.danger,
-.widget_calendar table> tfoot> tr> th.danger,
-.table> tfoot> tr.danger> td,
-.entry table> tfoot> tr.danger> td,
-.widget_calendar table> tfoot> tr.danger> td,
-.table> tfoot> tr.danger> th,
-.entry table> tfoot> tr.danger> th,
-.widget_calendar table> tfoot> tr.danger> th {
+.table>thead>tr>td.danger,
+.entry table>thead>tr>td.danger,
+.widget_calendar table>thead>tr>td.danger,
+.table>thead>tr>th.danger,
+.entry table>thead>tr>th.danger,
+.widget_calendar table>thead>tr>th.danger,
+.table>thead>tr.danger>td,
+.entry table>thead>tr.danger>td,
+.widget_calendar table>thead>tr.danger>td,
+.table>thead>tr.danger>th,
+.entry table>thead>tr.danger>th,
+.widget_calendar table>thead>tr.danger>th,
+.table>tbody>tr>td.danger,
+.entry table>tbody>tr>td.danger,
+.widget_calendar table>tbody>tr>td.danger,
+.table>tbody>tr>th.danger,
+.entry table>tbody>tr>th.danger,
+.widget_calendar table>tbody>tr>th.danger,
+.table>tbody>tr.danger>td,
+.entry table>tbody>tr.danger>td,
+.widget_calendar table>tbody>tr.danger>td,
+.table>tbody>tr.danger>th,
+.entry table>tbody>tr.danger>th,
+.widget_calendar table>tbody>tr.danger>th,
+.table>tfoot>tr>td.danger,
+.entry table>tfoot>tr>td.danger,
+.widget_calendar table>tfoot>tr>td.danger,
+.table>tfoot>tr>th.danger,
+.entry table>tfoot>tr>th.danger,
+.widget_calendar table>tfoot>tr>th.danger,
+.table>tfoot>tr.danger>td,
+.entry table>tfoot>tr.danger>td,
+.widget_calendar table>tfoot>tr.danger>td,
+.table>tfoot>tr.danger>th,
+.entry table>tfoot>tr.danger>th,
+.widget_calendar table>tfoot>tr.danger>th {
     background-color: #f2dede;
 }
 
-.table-hover> tbody> tr> td.danger:hover,
-.table-hover> tbody> tr> th.danger:hover,
-.table-hover> tbody> tr.danger:hover> td,
-.table-hover> tbody> tr:hover> .danger,
-.table-hover> tbody> tr.danger:hover> th {
+.table-hover>tbody>tr>td.danger:hover,
+.table-hover>tbody>tr>th.danger:hover,
+.table-hover>tbody>tr.danger:hover>td,
+.table-hover>tbody>tr:hover>.danger,
+.table-hover>tbody>tr.danger:hover>th {
     background-color: #ebcccc;
 }
 
@@ -2964,8 +2964,8 @@ input[type="search"] {
     margin-top: 4px \9;
 }
 
-.radio+ .radio,
-.checkbox+ .checkbox {
+.radio+.radio,
+.checkbox+.checkbox {
     margin-top: -5px;
 }
 
@@ -2980,8 +2980,8 @@ input[type="search"] {
     cursor: pointer;
 }
 
-.radio-inline+ .radio-inline,
-.checkbox-inline+ .checkbox-inline {
+.radio-inline+.radio-inline,
+.checkbox-inline+.checkbox-inline {
     margin-top: 0;
     margin-left: 10px;
 }
@@ -3017,30 +3017,30 @@ fieldset[disabled] .checkbox label {
 }
 
 .form-control-static.input-lg,
-.input-group-lg> .form-control-static.form-control,
-.widget_categories .input-group-lg> select.form-control-static,
-.widget_archive .input-group-lg> select.form-control-static,
-.input-group-lg> .form-control-static.input-group-addon,
-.input-group-lg> .input-group-btn> .form-control-static.btn,
-.widget_tag_cloud .tagcloud .input-group-lg> .input-group-btn> a.form-control-static,
+.input-group-lg>.form-control-static.form-control,
+.widget_categories .input-group-lg>select.form-control-static,
+.widget_archive .input-group-lg>select.form-control-static,
+.input-group-lg>.form-control-static.input-group-addon,
+.input-group-lg>.input-group-btn>.form-control-static.btn,
+.widget_tag_cloud .tagcloud .input-group-lg>.input-group-btn>a.form-control-static,
 .form-control-static.input-sm,
-.input-group-sm> .form-control-static.form-control,
-.widget_categories .input-group-sm> select.form-control-static,
-.widget_archive .input-group-sm> select.form-control-static,
-.input-group-sm> .form-control-static.input-group-addon,
-.input-group-sm> .input-group-btn> .form-control-static.btn,
-.widget_tag_cloud .tagcloud .input-group-sm> .input-group-btn> a.form-control-static {
+.input-group-sm>.form-control-static.form-control,
+.widget_categories .input-group-sm>select.form-control-static,
+.widget_archive .input-group-sm>select.form-control-static,
+.input-group-sm>.form-control-static.input-group-addon,
+.input-group-sm>.input-group-btn>.form-control-static.btn,
+.widget_tag_cloud .tagcloud .input-group-sm>.input-group-btn>a.form-control-static {
     padding-left: 0;
     padding-right: 0;
 }
 
 .input-sm,
-.input-group-sm> .form-control,
-.widget_categories .input-group-sm> select,
-.widget_archive .input-group-sm> select,
-.input-group-sm> .input-group-addon,
-.input-group-sm> .input-group-btn> .btn,
-.widget_tag_cloud .tagcloud .input-group-sm> .input-group-btn> a {
+.input-group-sm>.form-control,
+.widget_categories .input-group-sm>select,
+.widget_archive .input-group-sm>select,
+.input-group-sm>.input-group-addon,
+.input-group-sm>.input-group-btn>.btn,
+.widget_tag_cloud .tagcloud .input-group-sm>.input-group-btn>a {
     height: 30px;
     padding: 5px 10px;
     font-size: 12px;
@@ -3049,25 +3049,25 @@ fieldset[disabled] .checkbox label {
 }
 
 select.input-sm,
-.input-group-sm> select.form-control,
-.widget_categories .input-group-sm> select,
-.widget_archive .input-group-sm> select,
-.input-group-sm> select.input-group-addon,
-.input-group-sm> .input-group-btn> select.btn {
+.input-group-sm>select.form-control,
+.widget_categories .input-group-sm>select,
+.widget_archive .input-group-sm>select,
+.input-group-sm>select.input-group-addon,
+.input-group-sm>.input-group-btn>select.btn {
     height: 30px;
     line-height: 30px;
 }
 
 textarea.input-sm,
-.input-group-sm> textarea.form-control,
-.input-group-sm> textarea.input-group-addon,
-.input-group-sm> .input-group-btn> textarea.btn,
+.input-group-sm>textarea.form-control,
+.input-group-sm>textarea.input-group-addon,
+.input-group-sm>.input-group-btn>textarea.btn,
 select[multiple].input-sm,
-.input-group-sm> select[multiple].form-control,
-.widget_categories .input-group-sm> select[multiple],
-.widget_archive .input-group-sm> select[multiple],
-.input-group-sm> select[multiple].input-group-addon,
-.input-group-sm> .input-group-btn> select[multiple].btn {
+.input-group-sm>select[multiple].form-control,
+.widget_categories .input-group-sm>select[multiple],
+.widget_archive .input-group-sm>select[multiple],
+.input-group-sm>select[multiple].input-group-addon,
+.input-group-sm>.input-group-btn>select[multiple].btn {
     height: auto;
 }
 
@@ -3110,12 +3110,12 @@ select[multiple].input-sm,
 }
 
 .input-lg,
-.input-group-lg> .form-control,
-.widget_categories .input-group-lg> select,
-.widget_archive .input-group-lg> select,
-.input-group-lg> .input-group-addon,
-.input-group-lg> .input-group-btn> .btn,
-.widget_tag_cloud .tagcloud .input-group-lg> .input-group-btn> a {
+.input-group-lg>.form-control,
+.widget_categories .input-group-lg>select,
+.widget_archive .input-group-lg>select,
+.input-group-lg>.input-group-addon,
+.input-group-lg>.input-group-btn>.btn,
+.widget_tag_cloud .tagcloud .input-group-lg>.input-group-btn>a {
     height: 46px;
     padding: 10px 16px;
     font-size: 18px;
@@ -3124,25 +3124,25 @@ select[multiple].input-sm,
 }
 
 select.input-lg,
-.input-group-lg> select.form-control,
-.widget_categories .input-group-lg> select,
-.widget_archive .input-group-lg> select,
-.input-group-lg> select.input-group-addon,
-.input-group-lg> .input-group-btn> select.btn {
+.input-group-lg>select.form-control,
+.widget_categories .input-group-lg>select,
+.widget_archive .input-group-lg>select,
+.input-group-lg>select.input-group-addon,
+.input-group-lg>.input-group-btn>select.btn {
     height: 46px;
     line-height: 46px;
 }
 
 textarea.input-lg,
-.input-group-lg> textarea.form-control,
-.input-group-lg> textarea.input-group-addon,
-.input-group-lg> .input-group-btn> textarea.btn,
+.input-group-lg>textarea.form-control,
+.input-group-lg>textarea.input-group-addon,
+.input-group-lg>.input-group-btn>textarea.btn,
 select[multiple].input-lg,
-.input-group-lg> select[multiple].form-control,
-.widget_categories .input-group-lg> select[multiple],
-.widget_archive .input-group-lg> select[multiple],
-.input-group-lg> select[multiple].input-group-addon,
-.input-group-lg> .input-group-btn> select[multiple].btn {
+.input-group-lg>select[multiple].form-control,
+.widget_categories .input-group-lg>select[multiple],
+.widget_archive .input-group-lg>select[multiple],
+.input-group-lg>select[multiple].input-group-addon,
+.input-group-lg>.input-group-btn>select[multiple].btn {
     height: auto;
 }
 
@@ -3209,37 +3209,37 @@ select[multiple].input-lg,
     pointer-events: none;
 }
 
-.input-lg+ .form-control-feedback,
-.input-group-lg> .form-control+ .form-control-feedback,
-.widget_categories .input-group-lg> select+ .form-control-feedback,
-.widget_archive .input-group-lg> select+ .form-control-feedback,
-.input-group-lg> .input-group-addon+ .form-control-feedback,
-.input-group-lg> .input-group-btn> .btn+ .form-control-feedback,
-.widget_tag_cloud .tagcloud .input-group-lg> .input-group-btn> a+ .form-control-feedback,
-.input-group-lg+ .form-control-feedback,
-.form-group-lg .form-control+ .form-control-feedback,
-.form-group-lg .widget_categories select+ .form-control-feedback,
-.widget_categories .form-group-lg select+ .form-control-feedback,
-.form-group-lg .widget_archive select+ .form-control-feedback,
-.widget_archive .form-group-lg select+ .form-control-feedback {
+.input-lg+.form-control-feedback,
+.input-group-lg>.form-control+.form-control-feedback,
+.widget_categories .input-group-lg>select+.form-control-feedback,
+.widget_archive .input-group-lg>select+.form-control-feedback,
+.input-group-lg>.input-group-addon+.form-control-feedback,
+.input-group-lg>.input-group-btn>.btn+.form-control-feedback,
+.widget_tag_cloud .tagcloud .input-group-lg>.input-group-btn>a+.form-control-feedback,
+.input-group-lg+.form-control-feedback,
+.form-group-lg .form-control+.form-control-feedback,
+.form-group-lg .widget_categories select+.form-control-feedback,
+.widget_categories .form-group-lg select+.form-control-feedback,
+.form-group-lg .widget_archive select+.form-control-feedback,
+.widget_archive .form-group-lg select+.form-control-feedback {
     width: 46px;
     height: 46px;
     line-height: 46px;
 }
 
-.input-sm+ .form-control-feedback,
-.input-group-sm> .form-control+ .form-control-feedback,
-.widget_categories .input-group-sm> select+ .form-control-feedback,
-.widget_archive .input-group-sm> select+ .form-control-feedback,
-.input-group-sm> .input-group-addon+ .form-control-feedback,
-.input-group-sm> .input-group-btn> .btn+ .form-control-feedback,
-.widget_tag_cloud .tagcloud .input-group-sm> .input-group-btn> a+ .form-control-feedback,
-.input-group-sm+ .form-control-feedback,
-.form-group-sm .form-control+ .form-control-feedback,
-.form-group-sm .widget_categories select+ .form-control-feedback,
-.widget_categories .form-group-sm select+ .form-control-feedback,
-.form-group-sm .widget_archive select+ .form-control-feedback,
-.widget_archive .form-group-sm select+ .form-control-feedback {
+.input-sm+.form-control-feedback,
+.input-group-sm>.form-control+.form-control-feedback,
+.widget_categories .input-group-sm>select+.form-control-feedback,
+.widget_archive .input-group-sm>select+.form-control-feedback,
+.input-group-sm>.input-group-addon+.form-control-feedback,
+.input-group-sm>.input-group-btn>.btn+.form-control-feedback,
+.widget_tag_cloud .tagcloud .input-group-sm>.input-group-btn>a+.form-control-feedback,
+.input-group-sm+.form-control-feedback,
+.form-group-sm .form-control+.form-control-feedback,
+.form-group-sm .widget_categories select+.form-control-feedback,
+.widget_categories .form-group-sm select+.form-control-feedback,
+.form-group-sm .widget_archive select+.form-control-feedback,
+.widget_archive .form-group-sm select+.form-control-feedback {
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -3368,11 +3368,11 @@ select[multiple].input-lg,
     color: #a94442;
 }
 
-.has-feedback label~ .form-control-feedback {
+.has-feedback label~.form-control-feedback {
     top: 25px;
 }
 
-.has-feedback label.sr-only~ .form-control-feedback {
+.has-feedback label.sr-only~.form-control-feedback {
     top: 0;
 }
 
@@ -3522,8 +3522,8 @@ fieldset[disabled] .widget_tag_cloud .tagcloud a,
 .widget_tag_cloud .tagcloud a:active,
 .btn-default.active,
 .widget_tag_cloud .tagcloud a.active,
-.open> .btn-default.dropdown-toggle,
-.widget_tag_cloud .tagcloud .open> a.dropdown-toggle {
+.open>.btn-default.dropdown-toggle,
+.widget_tag_cloud .tagcloud .open>a.dropdown-toggle {
     color: #333;
     background-color: #e6e6e6;
     border-color: #adadad;
@@ -3541,12 +3541,12 @@ fieldset[disabled] .widget_tag_cloud .tagcloud a,
 .widget_tag_cloud .tagcloud a.active:focus,
 .btn-default.active.focus,
 .widget_tag_cloud .tagcloud a.active.focus,
-.open> .btn-default.dropdown-toggle:hover,
-.widget_tag_cloud .tagcloud .open> a.dropdown-toggle:hover,
-.open> .btn-default.dropdown-toggle:focus,
-.widget_tag_cloud .tagcloud .open> a.dropdown-toggle:focus,
-.open> .btn-default.dropdown-toggle.focus,
-.widget_tag_cloud .tagcloud .open> a.dropdown-toggle.focus {
+.open>.btn-default.dropdown-toggle:hover,
+.widget_tag_cloud .tagcloud .open>a.dropdown-toggle:hover,
+.open>.btn-default.dropdown-toggle:focus,
+.widget_tag_cloud .tagcloud .open>a.dropdown-toggle:focus,
+.open>.btn-default.dropdown-toggle.focus,
+.widget_tag_cloud .tagcloud .open>a.dropdown-toggle.focus {
     color: #333;
     background-color: #d4d4d4;
     border-color: #8c8c8c;
@@ -3556,8 +3556,8 @@ fieldset[disabled] .widget_tag_cloud .tagcloud a,
 .widget_tag_cloud .tagcloud a:active,
 .btn-default.active,
 .widget_tag_cloud .tagcloud a.active,
-.open> .btn-default.dropdown-toggle,
-.widget_tag_cloud .tagcloud .open> a.dropdown-toggle {
+.open>.btn-default.dropdown-toggle,
+.widget_tag_cloud .tagcloud .open>a.dropdown-toggle {
     background-image: none;
 }
 
@@ -3619,8 +3619,8 @@ fieldset[disabled] .widget_tag_cloud .tagcloud a.focus,
 .sidebar .widget_tag_cloud .tagcloud a:active,
 .btn-primary.active,
 .sidebar .widget_tag_cloud .tagcloud a.active,
-.open> .btn-primary.dropdown-toggle,
-.sidebar .widget_tag_cloud .tagcloud .open> a.dropdown-toggle {
+.open>.btn-primary.dropdown-toggle,
+.sidebar .widget_tag_cloud .tagcloud .open>a.dropdown-toggle {
     color: #fff;
     background-color: #286090;
     border-color: #204d74;
@@ -3638,12 +3638,12 @@ fieldset[disabled] .widget_tag_cloud .tagcloud a.focus,
 .sidebar .widget_tag_cloud .tagcloud a.active:focus,
 .btn-primary.active.focus,
 .sidebar .widget_tag_cloud .tagcloud a.active.focus,
-.open> .btn-primary.dropdown-toggle:hover,
-.sidebar .widget_tag_cloud .tagcloud .open> a.dropdown-toggle:hover,
-.open> .btn-primary.dropdown-toggle:focus,
-.sidebar .widget_tag_cloud .tagcloud .open> a.dropdown-toggle:focus,
-.open> .btn-primary.dropdown-toggle.focus,
-.sidebar .widget_tag_cloud .tagcloud .open> a.dropdown-toggle.focus {
+.open>.btn-primary.dropdown-toggle:hover,
+.sidebar .widget_tag_cloud .tagcloud .open>a.dropdown-toggle:hover,
+.open>.btn-primary.dropdown-toggle:focus,
+.sidebar .widget_tag_cloud .tagcloud .open>a.dropdown-toggle:focus,
+.open>.btn-primary.dropdown-toggle.focus,
+.sidebar .widget_tag_cloud .tagcloud .open>a.dropdown-toggle.focus {
     color: #fff;
     background-color: #204d74;
     border-color: #122b40;
@@ -3653,8 +3653,8 @@ fieldset[disabled] .widget_tag_cloud .tagcloud a.focus,
 .sidebar .widget_tag_cloud .tagcloud a:active,
 .btn-primary.active,
 .sidebar .widget_tag_cloud .tagcloud a.active,
-.open> .btn-primary.dropdown-toggle,
-.sidebar .widget_tag_cloud .tagcloud .open> a.dropdown-toggle {
+.open>.btn-primary.dropdown-toggle,
+.sidebar .widget_tag_cloud .tagcloud .open>a.dropdown-toggle {
     background-image: none;
 }
 
@@ -3710,7 +3710,7 @@ fieldset[disabled] .sidebar .widget_tag_cloud .tagcloud a.focus,
 
 .btn-success:active,
 .btn-success.active,
-.open> .btn-success.dropdown-toggle {
+.open>.btn-success.dropdown-toggle {
     color: #fff;
     background-color: #449d44;
     border-color: #398439;
@@ -3722,9 +3722,9 @@ fieldset[disabled] .sidebar .widget_tag_cloud .tagcloud a.focus,
 .btn-success.active:hover,
 .btn-success.active:focus,
 .btn-success.active.focus,
-.open> .btn-success.dropdown-toggle:hover,
-.open> .btn-success.dropdown-toggle:focus,
-.open> .btn-success.dropdown-toggle.focus {
+.open>.btn-success.dropdown-toggle:hover,
+.open>.btn-success.dropdown-toggle:focus,
+.open>.btn-success.dropdown-toggle.focus {
     color: #fff;
     background-color: #398439;
     border-color: #255625;
@@ -3732,7 +3732,7 @@ fieldset[disabled] .sidebar .widget_tag_cloud .tagcloud a.focus,
 
 .btn-success:active,
 .btn-success.active,
-.open> .btn-success.dropdown-toggle {
+.open>.btn-success.dropdown-toggle {
     background-image: none;
 }
 
@@ -3775,7 +3775,7 @@ fieldset[disabled] .btn-success.focus {
 
 .btn-info:active,
 .btn-info.active,
-.open> .btn-info.dropdown-toggle {
+.open>.btn-info.dropdown-toggle {
     color: #fff;
     background-color: #31b0d5;
     border-color: #269abc;
@@ -3787,9 +3787,9 @@ fieldset[disabled] .btn-success.focus {
 .btn-info.active:hover,
 .btn-info.active:focus,
 .btn-info.active.focus,
-.open> .btn-info.dropdown-toggle:hover,
-.open> .btn-info.dropdown-toggle:focus,
-.open> .btn-info.dropdown-toggle.focus {
+.open>.btn-info.dropdown-toggle:hover,
+.open>.btn-info.dropdown-toggle:focus,
+.open>.btn-info.dropdown-toggle.focus {
     color: #fff;
     background-color: #269abc;
     border-color: #1b6d85;
@@ -3797,7 +3797,7 @@ fieldset[disabled] .btn-success.focus {
 
 .btn-info:active,
 .btn-info.active,
-.open> .btn-info.dropdown-toggle {
+.open>.btn-info.dropdown-toggle {
     background-image: none;
 }
 
@@ -3840,7 +3840,7 @@ fieldset[disabled] .btn-info.focus {
 
 .btn-warning:active,
 .btn-warning.active,
-.open> .btn-warning.dropdown-toggle {
+.open>.btn-warning.dropdown-toggle {
     color: #fff;
     background-color: #ec971f;
     border-color: #d58512;
@@ -3852,9 +3852,9 @@ fieldset[disabled] .btn-info.focus {
 .btn-warning.active:hover,
 .btn-warning.active:focus,
 .btn-warning.active.focus,
-.open> .btn-warning.dropdown-toggle:hover,
-.open> .btn-warning.dropdown-toggle:focus,
-.open> .btn-warning.dropdown-toggle.focus {
+.open>.btn-warning.dropdown-toggle:hover,
+.open>.btn-warning.dropdown-toggle:focus,
+.open>.btn-warning.dropdown-toggle.focus {
     color: #fff;
     background-color: #d58512;
     border-color: #985f0d;
@@ -3862,7 +3862,7 @@ fieldset[disabled] .btn-info.focus {
 
 .btn-warning:active,
 .btn-warning.active,
-.open> .btn-warning.dropdown-toggle {
+.open>.btn-warning.dropdown-toggle {
     background-image: none;
 }
 
@@ -3905,7 +3905,7 @@ fieldset[disabled] .btn-warning.focus {
 
 .btn-danger:active,
 .btn-danger.active,
-.open> .btn-danger.dropdown-toggle {
+.open>.btn-danger.dropdown-toggle {
     color: #fff;
     background-color: #c9302c;
     border-color: #ac2925;
@@ -3917,9 +3917,9 @@ fieldset[disabled] .btn-warning.focus {
 .btn-danger.active:hover,
 .btn-danger.active:focus,
 .btn-danger.active.focus,
-.open> .btn-danger.dropdown-toggle:hover,
-.open> .btn-danger.dropdown-toggle:focus,
-.open> .btn-danger.dropdown-toggle.focus {
+.open>.btn-danger.dropdown-toggle:hover,
+.open>.btn-danger.dropdown-toggle:focus,
+.open>.btn-danger.dropdown-toggle.focus {
     color: #fff;
     background-color: #ac2925;
     border-color: #761c19;
@@ -3927,7 +3927,7 @@ fieldset[disabled] .btn-warning.focus {
 
 .btn-danger:active,
 .btn-danger.active,
-.open> .btn-danger.dropdown-toggle {
+.open>.btn-danger.dropdown-toggle {
     background-image: none;
 }
 
@@ -3987,8 +3987,8 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn-lg,
-.btn-group-lg> .btn,
-.widget_tag_cloud .tagcloud .btn-group-lg> a {
+.btn-group-lg>.btn,
+.widget_tag_cloud .tagcloud .btn-group-lg>a {
     padding: 10px 16px;
     font-size: 18px;
     line-height: 1.33333;
@@ -3996,8 +3996,8 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn-sm,
-.btn-group-sm> .btn,
-.widget_tag_cloud .tagcloud .btn-group-sm> a {
+.btn-group-sm>.btn,
+.widget_tag_cloud .tagcloud .btn-group-sm>a {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
@@ -4005,7 +4005,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn-xs,
-.btn-group-xs> .btn,
+.btn-group-xs>.btn,
 .widget_tag_cloud .tagcloud a {
     padding: 1px 5px;
     font-size: 12px;
@@ -4018,7 +4018,7 @@ fieldset[disabled] .btn-link:focus {
     width: 100%;
 }
 
-.btn-block+ .btn-block {
+.btn-block+.btn-block {
     margin-top: 5px;
 }
 
@@ -4116,7 +4116,7 @@ tbody.collapse.in {
     background-color: #e5e5e5;
 }
 
-.dropdown-menu> li> a {
+.dropdown-menu>li>a {
     display: block;
     padding: 3px 20px;
     clear: both;
@@ -4126,30 +4126,30 @@ tbody.collapse.in {
     white-space: nowrap;
 }
 
-.dropdown-menu> li> a:hover,
-.dropdown-menu> li> a:focus {
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
     text-decoration: none;
     color: #262626;
     background-color: #f5f5f5;
 }
 
-.dropdown-menu> .active> a,
-.dropdown-menu> .active> a:hover,
-.dropdown-menu> .active> a:focus {
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus {
     color: #fff;
     text-decoration: none;
     outline: 0;
     background-color: #337ab7;
 }
 
-.dropdown-menu> .disabled> a,
-.dropdown-menu> .disabled> a:hover,
-.dropdown-menu> .disabled> a:focus {
+.dropdown-menu>.disabled>a,
+.dropdown-menu>.disabled>a:hover,
+.dropdown-menu>.disabled>a:focus {
     color: #777777;
 }
 
-.dropdown-menu> .disabled> a:hover,
-.dropdown-menu> .disabled> a:focus {
+.dropdown-menu>.disabled>a:hover,
+.dropdown-menu>.disabled>a:focus {
     text-decoration: none;
     background-color: transparent;
     background-image: none;
@@ -4157,11 +4157,11 @@ tbody.collapse.in {
     cursor: not-allowed;
 }
 
-.open> .dropdown-menu {
+.open>.dropdown-menu {
     display: block;
 }
 
-.open> a {
+.open>a {
     outline: 0;
 }
 
@@ -4193,7 +4193,7 @@ tbody.collapse.in {
     z-index: 990;
 }
 
-.pull-right> .dropdown-menu {
+.pull-right>.dropdown-menu {
     right: 0;
     left: auto;
 }
@@ -4220,47 +4220,47 @@ tbody.collapse.in {
     vertical-align: middle;
 }
 
-.btn-group> .btn,
-.widget_tag_cloud .tagcloud .btn-group> a,
-.btn-group-vertical> .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a {
+.btn-group>.btn,
+.widget_tag_cloud .tagcloud .btn-group>a,
+.btn-group-vertical>.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a {
     position: relative;
     float: left;
 }
 
-.btn-group> .btn:hover,
-.widget_tag_cloud .tagcloud .btn-group> a:hover,
-.btn-group> .btn:focus,
-.widget_tag_cloud .tagcloud .btn-group> a:focus,
-.btn-group> .btn:active,
-.widget_tag_cloud .tagcloud .btn-group> a:active,
-.btn-group> .btn.active,
-.widget_tag_cloud .tagcloud .btn-group> a.active,
-.btn-group-vertical> .btn:hover,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a:hover,
-.btn-group-vertical> .btn:focus,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a:focus,
-.btn-group-vertical> .btn:active,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a:active,
-.btn-group-vertical> .btn.active,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a.active {
+.btn-group>.btn:hover,
+.widget_tag_cloud .tagcloud .btn-group>a:hover,
+.btn-group>.btn:focus,
+.widget_tag_cloud .tagcloud .btn-group>a:focus,
+.btn-group>.btn:active,
+.widget_tag_cloud .tagcloud .btn-group>a:active,
+.btn-group>.btn.active,
+.widget_tag_cloud .tagcloud .btn-group>a.active,
+.btn-group-vertical>.btn:hover,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a:hover,
+.btn-group-vertical>.btn:focus,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a:focus,
+.btn-group-vertical>.btn:active,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a:active,
+.btn-group-vertical>.btn.active,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a.active {
     z-index: 2;
 }
 
-.btn-group .btn+ .btn,
-.btn-group .widget_tag_cloud .tagcloud a+ .btn,
-.widget_tag_cloud .tagcloud .btn-group a+ .btn,
-.btn-group .widget_tag_cloud .tagcloud .btn+ a,
-.widget_tag_cloud .tagcloud .btn-group .btn+ a,
-.btn-group .widget_tag_cloud .tagcloud a+ a,
-.widget_tag_cloud .tagcloud .btn-group a+ a,
-.btn-group .btn+ .btn-group,
-.btn-group .widget_tag_cloud .tagcloud a+ .btn-group,
-.widget_tag_cloud .tagcloud .btn-group a+ .btn-group,
-.btn-group .btn-group+ .btn,
-.btn-group .widget_tag_cloud .tagcloud .btn-group+ a,
-.widget_tag_cloud .tagcloud .btn-group .btn-group+ a,
-.btn-group .btn-group+ .btn-group {
+.btn-group .btn+.btn,
+.btn-group .widget_tag_cloud .tagcloud a+.btn,
+.widget_tag_cloud .tagcloud .btn-group a+.btn,
+.btn-group .widget_tag_cloud .tagcloud .btn+a,
+.widget_tag_cloud .tagcloud .btn-group .btn+a,
+.btn-group .widget_tag_cloud .tagcloud a+a,
+.widget_tag_cloud .tagcloud .btn-group a+a,
+.btn-group .btn+.btn-group,
+.btn-group .widget_tag_cloud .tagcloud a+.btn-group,
+.widget_tag_cloud .tagcloud .btn-group a+.btn-group,
+.btn-group .btn-group+.btn,
+.btn-group .widget_tag_cloud .tagcloud .btn-group+a,
+.widget_tag_cloud .tagcloud .btn-group .btn-group+a,
+.btn-group .btn-group+.btn-group {
     margin-left: -1px;
 }
 
@@ -4286,54 +4286,54 @@ tbody.collapse.in {
     float: left;
 }
 
-.btn-toolbar> .btn,
-.widget_tag_cloud .tagcloud .btn-toolbar> a,
-.btn-toolbar> .btn-group,
-.btn-toolbar> .input-group {
+.btn-toolbar>.btn,
+.widget_tag_cloud .tagcloud .btn-toolbar>a,
+.btn-toolbar>.btn-group,
+.btn-toolbar>.input-group {
     margin-left: 5px;
 }
 
-.btn-group> .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.widget_tag_cloud .tagcloud .btn-group> a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.widget_tag_cloud .tagcloud .btn-group>a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
     border-radius: 0;
 }
 
-.btn-group> .btn:first-child,
-.widget_tag_cloud .tagcloud .btn-group> a:first-child {
+.btn-group>.btn:first-child,
+.widget_tag_cloud .tagcloud .btn-group>a:first-child {
     margin-left: 0;
 }
 
-.btn-group> .btn:first-child:not(:last-child):not(.dropdown-toggle),
-.widget_tag_cloud .tagcloud .btn-group> a:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle),
+.widget_tag_cloud .tagcloud .btn-group>a:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.btn-group> .btn:last-child:not(:first-child),
-.widget_tag_cloud .tagcloud .btn-group> a:last-child:not(:first-child),
-.btn-group> .dropdown-toggle:not(:first-child) {
+.btn-group>.btn:last-child:not(:first-child),
+.widget_tag_cloud .tagcloud .btn-group>a:last-child:not(:first-child),
+.btn-group>.dropdown-toggle:not(:first-child) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.btn-group> .btn-group {
+.btn-group>.btn-group {
     float: left;
 }
 
-.btn-group> .btn-group:not(:first-child):not(:last-child)> .btn,
-.widget_tag_cloud .tagcloud .btn-group> .btn-group:not(:first-child):not(:last-child)> a {
+.btn-group>.btn-group:not(:first-child):not(:last-child)>.btn,
+.widget_tag_cloud .tagcloud .btn-group>.btn-group:not(:first-child):not(:last-child)>a {
     border-radius: 0;
 }
 
-.btn-group> .btn-group:first-child:not(:last-child)> .btn:last-child,
-.widget_tag_cloud .tagcloud .btn-group> .btn-group:first-child:not(:last-child)> a:last-child,
-.btn-group> .btn-group:first-child:not(:last-child)> .dropdown-toggle {
+.btn-group>.btn-group:first-child:not(:last-child)>.btn:last-child,
+.widget_tag_cloud .tagcloud .btn-group>.btn-group:first-child:not(:last-child)>a:last-child,
+.btn-group>.btn-group:first-child:not(:last-child)>.dropdown-toggle {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.btn-group> .btn-group:last-child:not(:first-child)> .btn:first-child,
-.widget_tag_cloud .tagcloud .btn-group> .btn-group:last-child:not(:first-child)> a:first-child {
+.btn-group>.btn-group:last-child:not(:first-child)>.btn:first-child,
+.widget_tag_cloud .tagcloud .btn-group>.btn-group:last-child:not(:first-child)>a:first-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -4343,15 +4343,15 @@ tbody.collapse.in {
     outline: 0;
 }
 
-.btn-group> .btn+ .dropdown-toggle,
-.widget_tag_cloud .tagcloud .btn-group> a+ .dropdown-toggle {
+.btn-group>.btn+.dropdown-toggle,
+.widget_tag_cloud .tagcloud .btn-group>a+.dropdown-toggle {
     padding-left: 8px;
     padding-right: 8px;
 }
 
-.btn-group> .btn-lg+ .dropdown-toggle,
-.btn-group-lg.btn-group> .btn+ .dropdown-toggle,
-.widget_tag_cloud .tagcloud .btn-group-lg.btn-group> a+ .dropdown-toggle {
+.btn-group>.btn-lg+.dropdown-toggle,
+.btn-group-lg.btn-group>.btn+.dropdown-toggle,
+.widget_tag_cloud .tagcloud .btn-group-lg.btn-group>a+.dropdown-toggle {
     padding-left: 12px;
     padding-right: 12px;
 }
@@ -4370,93 +4370,93 @@ tbody.collapse.in {
 }
 
 .btn-lg .caret,
-.btn-group-lg> .btn .caret,
-.widget_tag_cloud .tagcloud .btn-group-lg> a .caret {
+.btn-group-lg>.btn .caret,
+.widget_tag_cloud .tagcloud .btn-group-lg>a .caret {
     border-width: 5px 5px 0;
     border-bottom-width: 0;
 }
 
 .dropup .btn-lg .caret,
-.dropup .btn-group-lg> .btn .caret,
-.dropup .widget_tag_cloud .tagcloud .btn-group-lg> a .caret,
-.widget_tag_cloud .tagcloud .dropup .btn-group-lg> a .caret {
+.dropup .btn-group-lg>.btn .caret,
+.dropup .widget_tag_cloud .tagcloud .btn-group-lg>a .caret,
+.widget_tag_cloud .tagcloud .dropup .btn-group-lg>a .caret {
     border-width: 0 5px 5px;
 }
 
-.btn-group-vertical> .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a,
-.btn-group-vertical> .btn-group,
-.btn-group-vertical> .btn-group> .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn-group> a {
+.btn-group-vertical>.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a,
+.btn-group-vertical>.btn-group,
+.btn-group-vertical>.btn-group>.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn-group>a {
     display: block;
     float: none;
     width: 100%;
     max-width: 100%;
 }
 
-.btn-group-vertical> .btn-group:before,
-.btn-group-vertical> .btn-group:after {
+.btn-group-vertical>.btn-group:before,
+.btn-group-vertical>.btn-group:after {
     content: " ";
     display: table;
 }
 
-.btn-group-vertical> .btn-group:after {
+.btn-group-vertical>.btn-group:after {
     clear: both;
 }
 
-.btn-group-vertical> .btn-group> .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn-group> a {
+.btn-group-vertical>.btn-group>.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn-group>a {
     float: none;
 }
 
-.btn-group-vertical> .btn+ .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a+ .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn+ a,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a+ a,
-.btn-group-vertical> .btn+ .btn-group,
-.widget_tag_cloud .tagcloud .btn-group-vertical> a+ .btn-group,
-.btn-group-vertical> .btn-group+ .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn-group+ a,
-.btn-group-vertical> .btn-group+ .btn-group {
+.btn-group-vertical>.btn+.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a+.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn+a,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a+a,
+.btn-group-vertical>.btn+.btn-group,
+.widget_tag_cloud .tagcloud .btn-group-vertical>a+.btn-group,
+.btn-group-vertical>.btn-group+.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn-group+a,
+.btn-group-vertical>.btn-group+.btn-group {
     margin-top: -1px;
     margin-left: 0;
 }
 
-.btn-group-vertical> .btn:not(:first-child):not(:last-child),
-.widget_tag_cloud .tagcloud .btn-group-vertical> a:not(:first-child):not(:last-child) {
+.btn-group-vertical>.btn:not(:first-child):not(:last-child),
+.widget_tag_cloud .tagcloud .btn-group-vertical>a:not(:first-child):not(:last-child) {
     border-radius: 0;
 }
 
-.btn-group-vertical> .btn:first-child:not(:last-child),
-.widget_tag_cloud .tagcloud .btn-group-vertical> a:first-child:not(:last-child) {
+.btn-group-vertical>.btn:first-child:not(:last-child),
+.widget_tag_cloud .tagcloud .btn-group-vertical>a:first-child:not(:last-child) {
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical> .btn:last-child:not(:first-child),
-.widget_tag_cloud .tagcloud .btn-group-vertical> a:last-child:not(:first-child) {
+.btn-group-vertical>.btn:last-child:not(:first-child),
+.widget_tag_cloud .tagcloud .btn-group-vertical>a:last-child:not(:first-child) {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 }
 
-.btn-group-vertical> .btn-group:not(:first-child):not(:last-child)> .btn,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn-group:not(:first-child):not(:last-child)> a {
+.btn-group-vertical>.btn-group:not(:first-child):not(:last-child)>.btn,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn-group:not(:first-child):not(:last-child)>a {
     border-radius: 0;
 }
 
-.btn-group-vertical> .btn-group:first-child:not(:last-child)> .btn:last-child,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn-group:first-child:not(:last-child)> a:last-child,
-.btn-group-vertical> .btn-group:first-child:not(:last-child)> .dropdown-toggle {
+.btn-group-vertical>.btn-group:first-child:not(:last-child)>.btn:last-child,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn-group:first-child:not(:last-child)>a:last-child,
+.btn-group-vertical>.btn-group:first-child:not(:last-child)>.dropdown-toggle {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical> .btn-group:last-child:not(:first-child)> .btn:first-child,
-.widget_tag_cloud .tagcloud .btn-group-vertical> .btn-group:last-child:not(:first-child)> a:first-child {
+.btn-group-vertical>.btn-group:last-child:not(:first-child)>.btn:first-child,
+.widget_tag_cloud .tagcloud .btn-group-vertical>.btn-group:last-child:not(:first-child)>a:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
@@ -4468,32 +4468,32 @@ tbody.collapse.in {
     border-collapse: separate;
 }
 
-.btn-group-justified> .btn,
-.widget_tag_cloud .tagcloud .btn-group-justified> a,
-.btn-group-justified> .btn-group {
+.btn-group-justified>.btn,
+.widget_tag_cloud .tagcloud .btn-group-justified>a,
+.btn-group-justified>.btn-group {
     float: none;
     display: table-cell;
     width: 1%;
 }
 
-.btn-group-justified> .btn-group .btn,
-.btn-group-justified> .btn-group .widget_tag_cloud .tagcloud a,
-.widget_tag_cloud .tagcloud .btn-group-justified> .btn-group a {
+.btn-group-justified>.btn-group .btn,
+.btn-group-justified>.btn-group .widget_tag_cloud .tagcloud a,
+.widget_tag_cloud .tagcloud .btn-group-justified>.btn-group a {
     width: 100%;
 }
 
-.btn-group-justified> .btn-group .dropdown-menu {
+.btn-group-justified>.btn-group .dropdown-menu {
     left: auto;
 }
 
-[data-toggle="buttons"]> .btn input[type="radio"],
-.widget_tag_cloud .tagcloud [data-toggle="buttons"]> a input[type="radio"],
-[data-toggle="buttons"]> .btn input[type="checkbox"],
-.widget_tag_cloud .tagcloud [data-toggle="buttons"]> a input[type="checkbox"],
-[data-toggle="buttons"]> .btn-group> .btn input[type="radio"],
-.widget_tag_cloud .tagcloud [data-toggle="buttons"]> .btn-group> a input[type="radio"],
-[data-toggle="buttons"]> .btn-group> .btn input[type="checkbox"],
-.widget_tag_cloud .tagcloud [data-toggle="buttons"]> .btn-group> a input[type="checkbox"] {
+[data-toggle="buttons"]>.btn input[type="radio"],
+.widget_tag_cloud .tagcloud [data-toggle="buttons"]>a input[type="radio"],
+[data-toggle="buttons"]>.btn input[type="checkbox"],
+.widget_tag_cloud .tagcloud [data-toggle="buttons"]>a input[type="checkbox"],
+[data-toggle="buttons"]>.btn-group>.btn input[type="radio"],
+.widget_tag_cloud .tagcloud [data-toggle="buttons"]>.btn-group>a input[type="radio"],
+[data-toggle="buttons"]>.btn-group>.btn input[type="checkbox"],
+.widget_tag_cloud .tagcloud [data-toggle="buttons"]>.btn-group>a input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
@@ -4571,22 +4571,22 @@ tbody.collapse.in {
 }
 
 .input-group-addon.input-sm,
-.widget_categories .input-group-sm> select.input-group-addon,
-.widget_archive .input-group-sm> select.input-group-addon,
-.input-group-sm> .input-group-addon,
-.input-group-sm> .input-group-btn> .input-group-addon.btn,
-.widget_tag_cloud .tagcloud .input-group-sm> .input-group-btn> a.input-group-addon {
+.widget_categories .input-group-sm>select.input-group-addon,
+.widget_archive .input-group-sm>select.input-group-addon,
+.input-group-sm>.input-group-addon,
+.input-group-sm>.input-group-btn>.input-group-addon.btn,
+.widget_tag_cloud .tagcloud .input-group-sm>.input-group-btn>a.input-group-addon {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px;
 }
 
 .input-group-addon.input-lg,
-.widget_categories .input-group-lg> select.input-group-addon,
-.widget_archive .input-group-lg> select.input-group-addon,
-.input-group-lg> .input-group-addon,
-.input-group-lg> .input-group-btn> .input-group-addon.btn,
-.widget_tag_cloud .tagcloud .input-group-lg> .input-group-btn> a.input-group-addon {
+.widget_categories .input-group-lg>select.input-group-addon,
+.widget_archive .input-group-lg>select.input-group-addon,
+.input-group-lg>.input-group-addon,
+.input-group-lg>.input-group-btn>.input-group-addon.btn,
+.widget_tag_cloud .tagcloud .input-group-lg>.input-group-btn>a.input-group-addon {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px;
@@ -4603,15 +4603,15 @@ tbody.collapse.in {
 .input-group .widget_archive select:first-child,
 .widget_archive .input-group select:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:first-child> a,
-.input-group-btn:first-child> .btn-group> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:first-child> .btn-group> a,
-.input-group-btn:first-child> .dropdown-toggle,
-.input-group-btn:last-child> .btn:not(:last-child):not(.dropdown-toggle),
-.widget_tag_cloud .tagcloud .input-group-btn:last-child> a:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child> .btn-group:not(:last-child)> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:last-child> .btn-group:not(:last-child)> a {
+.input-group-btn:first-child>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:first-child>a,
+.input-group-btn:first-child>.btn-group>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:first-child>.btn-group>a,
+.input-group-btn:first-child>.dropdown-toggle,
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle),
+.widget_tag_cloud .tagcloud .input-group-btn:last-child>a:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child>.btn-group:not(:last-child)>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:last-child>.btn-group:not(:last-child)>a {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
@@ -4626,15 +4626,15 @@ tbody.collapse.in {
 .input-group .widget_archive select:last-child,
 .widget_archive .input-group select:last-child,
 .input-group-addon:last-child,
-.input-group-btn:last-child> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:last-child> a,
-.input-group-btn:last-child> .btn-group> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:last-child> .btn-group> a,
-.input-group-btn:last-child> .dropdown-toggle,
-.input-group-btn:first-child> .btn:not(:first-child),
-.widget_tag_cloud .tagcloud .input-group-btn:first-child> a:not(:first-child),
-.input-group-btn:first-child> .btn-group:not(:first-child)> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:first-child> .btn-group:not(:first-child)> a {
+.input-group-btn:last-child>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:last-child>a,
+.input-group-btn:last-child>.btn-group>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:last-child>.btn-group>a,
+.input-group-btn:last-child>.dropdown-toggle,
+.input-group-btn:first-child>.btn:not(:first-child),
+.widget_tag_cloud .tagcloud .input-group-btn:first-child>a:not(:first-child),
+.input-group-btn:first-child>.btn-group:not(:first-child)>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:first-child>.btn-group:not(:first-child)>a {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -4649,36 +4649,36 @@ tbody.collapse.in {
     white-space: nowrap;
 }
 
-.input-group-btn> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn> a {
+.input-group-btn>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn>a {
     position: relative;
 }
 
-.input-group-btn> .btn+ .btn,
-.widget_tag_cloud .tagcloud .input-group-btn> a+ .btn,
-.widget_tag_cloud .tagcloud .input-group-btn> .btn+ a,
-.widget_tag_cloud .tagcloud .input-group-btn> a+ a {
+.input-group-btn>.btn+.btn,
+.widget_tag_cloud .tagcloud .input-group-btn>a+.btn,
+.widget_tag_cloud .tagcloud .input-group-btn>.btn+a,
+.widget_tag_cloud .tagcloud .input-group-btn>a+a {
     margin-left: -1px;
 }
 
-.input-group-btn> .btn:hover,
-.widget_tag_cloud .tagcloud .input-group-btn> a:hover,
-.input-group-btn> .btn:focus,
-.widget_tag_cloud .tagcloud .input-group-btn> a:focus,
-.input-group-btn> .btn:active,
-.widget_tag_cloud .tagcloud .input-group-btn> a:active {
+.input-group-btn>.btn:hover,
+.widget_tag_cloud .tagcloud .input-group-btn>a:hover,
+.input-group-btn>.btn:focus,
+.widget_tag_cloud .tagcloud .input-group-btn>a:focus,
+.input-group-btn>.btn:active,
+.widget_tag_cloud .tagcloud .input-group-btn>a:active {
     z-index: 2;
 }
 
-.input-group-btn:first-child> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:first-child> a,
-.input-group-btn:first-child> .btn-group {
+.input-group-btn:first-child>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:first-child>a,
+.input-group-btn:first-child>.btn-group {
     margin-right: -1px;
 }
 
-.input-group-btn:last-child> .btn,
-.widget_tag_cloud .tagcloud .input-group-btn:last-child> a,
-.input-group-btn:last-child> .btn-group {
+.input-group-btn:last-child>.btn,
+.widget_tag_cloud .tagcloud .input-group-btn:last-child>a,
+.input-group-btn:last-child>.btn-group {
     z-index: 2;
     margin-left: -1px;
 }
@@ -4699,38 +4699,38 @@ tbody.collapse.in {
     clear: both;
 }
 
-.nav> li {
+.nav>li {
     position: relative;
     display: block;
 }
 
-.nav> li> a {
+.nav>li>a {
     position: relative;
     display: block;
     padding: 10px 15px;
 }
 
-.nav> li> a:hover,
-.nav> li> a:focus {
+.nav>li>a:hover,
+.nav>li>a:focus {
     text-decoration: none;
     background-color: #eeeeee;
 }
 
-.nav> li.disabled> a {
+.nav>li.disabled>a {
     color: #777777;
 }
 
-.nav> li.disabled> a:hover,
-.nav> li.disabled> a:focus {
+.nav>li.disabled>a:hover,
+.nav>li.disabled>a:focus {
     color: #777777;
     text-decoration: none;
     background-color: transparent;
     cursor: not-allowed;
 }
 
-.nav .open> a,
-.nav .open> a:hover,
-.nav .open> a:focus {
+.nav .open>a,
+.nav .open>a:hover,
+.nav .open>a:focus {
     background-color: #eeeeee;
     border-color: #337ab7;
 }
@@ -4742,7 +4742,7 @@ tbody.collapse.in {
     background-color: #e5e5e5;
 }
 
-.nav> li> a> img {
+.nav>li>a>img {
     max-width: none;
 }
 
@@ -4750,25 +4750,25 @@ tbody.collapse.in {
     border-bottom: 1px solid #ddd;
 }
 
-.nav-tabs> li {
+.nav-tabs>li {
     float: left;
     margin-bottom: -1px;
 }
 
-.nav-tabs> li> a {
+.nav-tabs>li>a {
     margin-right: 2px;
     line-height: 1.42857;
     border: 1px solid transparent;
     border-radius: 4px 4px 0 0;
 }
 
-.nav-tabs> li> a:hover {
+.nav-tabs>li>a:hover {
     border-color: #eeeeee #eeeeee #ddd;
 }
 
-.nav-tabs> li.active> a,
-.nav-tabs> li.active> a:hover,
-.nav-tabs> li.active> a:focus {
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus {
     color: #555555;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -4776,30 +4776,30 @@ tbody.collapse.in {
     cursor: default;
 }
 
-.nav-pills> li {
+.nav-pills>li {
     float: left;
 }
 
-.nav-pills> li> a {
+.nav-pills>li>a {
     border-radius: 4px;
 }
 
-.nav-pills> li+ li {
+.nav-pills>li+li {
     margin-left: 2px;
 }
 
-.nav-pills> li.active> a,
-.nav-pills> li.active> a:hover,
-.nav-pills> li.active> a:focus {
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus {
     color: #fff;
     background-color: #337ab7;
 }
 
-.nav-stacked> li {
+.nav-stacked>li {
     float: none;
 }
 
-.nav-stacked> li+ li {
+.nav-stacked>li+li {
     margin-top: 2px;
     margin-left: 0;
 }
@@ -4809,18 +4809,18 @@ tbody.collapse.in {
     width: 100%;
 }
 
-.nav-justified> li,
-.nav-tabs.nav-justified> li {
+.nav-justified>li,
+.nav-tabs.nav-justified>li {
     float: none;
 }
 
-.nav-justified> li> a,
-.nav-tabs.nav-justified> li> a {
+.nav-justified>li>a,
+.nav-tabs.nav-justified>li>a {
     text-align: center;
     margin-bottom: 5px;
 }
 
-.nav-justified> .dropdown .dropdown-menu {
+.nav-justified>.dropdown .dropdown-menu {
     top: auto;
     left: auto;
 }
@@ -4830,26 +4830,26 @@ tbody.collapse.in {
     border-bottom: 0;
 }
 
-.nav-tabs-justified> li> a,
-.nav-tabs.nav-justified> li> a {
+.nav-tabs-justified>li>a,
+.nav-tabs.nav-justified>li>a {
     margin-right: 0;
     border-radius: 4px;
 }
 
-.nav-tabs-justified> .active> a,
-.nav-tabs.nav-justified> .active> a,
-.nav-tabs-justified> .active> a:hover,
-.nav-tabs.nav-justified> .active> a:hover,
-.nav-tabs-justified> .active> a:focus,
-.nav-tabs.nav-justified> .active> a:focus {
+.nav-tabs-justified>.active>a,
+.nav-tabs.nav-justified>.active>a,
+.nav-tabs-justified>.active>a:hover,
+.nav-tabs.nav-justified>.active>a:hover,
+.nav-tabs-justified>.active>a:focus,
+.nav-tabs.nav-justified>.active>a:focus {
     border: 1px solid #ddd;
 }
 
-.tab-content> .tab-pane {
+.tab-content>.tab-pane {
     display: none;
 }
 
-.tab-content> .active {
+.tab-content>.active {
     display: block;
 }
 
@@ -4914,10 +4914,10 @@ tbody.collapse.in {
     max-height: 340px;
 }
 
-.container> .navbar-header,
-.container> .navbar-collapse,
-.container-fluid> .navbar-header,
-.container-fluid> .navbar-collapse {
+.container>.navbar-header,
+.container>.navbar-collapse,
+.container-fluid>.navbar-header,
+.container-fluid>.navbar-collapse {
     margin-right: -15px;
     margin-left: -15px;
 }
@@ -4959,7 +4959,7 @@ tbody.collapse.in {
     text-decoration: none;
 }
 
-.navbar-brand> img {
+.navbar-brand>img {
     display: block;
 }
 
@@ -4987,7 +4987,7 @@ tbody.collapse.in {
     border-radius: 1px;
 }
 
-.navbar-toggle .icon-bar+ .icon-bar {
+.navbar-toggle .icon-bar+.icon-bar {
     margin-top: 4px;
 }
 
@@ -4995,7 +4995,7 @@ tbody.collapse.in {
     margin: 7.5px -15px;
 }
 
-.navbar-nav> li> a {
+.navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 20px;
@@ -5012,13 +5012,13 @@ tbody.collapse.in {
     margin-bottom: 8px;
 }
 
-.navbar-nav> li> .dropdown-menu {
+.navbar-nav>li>.dropdown-menu {
     margin-top: 0;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
 
-.navbar-fixed-bottom .navbar-nav> li> .dropdown-menu {
+.navbar-fixed-bottom .navbar-nav>li>.dropdown-menu {
     margin-bottom: 0;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
@@ -5032,14 +5032,14 @@ tbody.collapse.in {
 }
 
 .navbar-btn.btn-sm,
-.btn-group-sm> .navbar-btn.btn,
-.widget_tag_cloud .tagcloud .btn-group-sm> a.navbar-btn {
+.btn-group-sm>.navbar-btn.btn,
+.widget_tag_cloud .tagcloud .btn-group-sm>a.navbar-btn {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .navbar-btn.btn-xs,
-.btn-group-xs> .navbar-btn.btn,
+.btn-group-xs>.navbar-btn.btn,
 .widget_tag_cloud .tagcloud a.navbar-btn {
     margin-top: 14px;
     margin-bottom: 14px;
@@ -5069,26 +5069,26 @@ tbody.collapse.in {
     color: #777;
 }
 
-.navbar-default .navbar-nav> li> a {
+.navbar-default .navbar-nav>li>a {
     color: #777;
 }
 
-.navbar-default .navbar-nav> li> a:hover,
-.navbar-default .navbar-nav> li> a:focus {
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
     color: #333;
     background-color: transparent;
 }
 
-.navbar-default .navbar-nav> .active> a,
-.navbar-default .navbar-nav> .active> a:hover,
-.navbar-default .navbar-nav> .active> a:focus {
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
     color: #555;
     background-color: #e7e7e7;
 }
 
-.navbar-default .navbar-nav> .disabled> a,
-.navbar-default .navbar-nav> .disabled> a:hover,
-.navbar-default .navbar-nav> .disabled> a:focus {
+.navbar-default .navbar-nav>.disabled>a,
+.navbar-default .navbar-nav>.disabled>a:hover,
+.navbar-default .navbar-nav>.disabled>a:focus {
     color: #ccc;
     background-color: transparent;
 }
@@ -5111,9 +5111,9 @@ tbody.collapse.in {
     border-color: #e7e7e7;
 }
 
-.navbar-default .navbar-nav> .open> a,
-.navbar-default .navbar-nav> .open> a:hover,
-.navbar-default .navbar-nav> .open> a:focus {
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
     background-color: #e7e7e7;
     color: #555;
 }
@@ -5161,26 +5161,26 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     color: #9d9d9d;
 }
 
-.navbar-inverse .navbar-nav> li> a {
+.navbar-inverse .navbar-nav>li>a {
     color: #9d9d9d;
 }
 
-.navbar-inverse .navbar-nav> li> a:hover,
-.navbar-inverse .navbar-nav> li> a:focus {
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
     color: #fff;
     background-color: transparent;
 }
 
-.navbar-inverse .navbar-nav> .active> a,
-.navbar-inverse .navbar-nav> .active> a:hover,
-.navbar-inverse .navbar-nav> .active> a:focus {
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
     color: #fff;
     background-color: #090909;
 }
 
-.navbar-inverse .navbar-nav> .disabled> a,
-.navbar-inverse .navbar-nav> .disabled> a:hover,
-.navbar-inverse .navbar-nav> .disabled> a:focus {
+.navbar-inverse .navbar-nav>.disabled>a,
+.navbar-inverse .navbar-nav>.disabled>a:hover,
+.navbar-inverse .navbar-nav>.disabled>a:focus {
     color: #444;
     background-color: transparent;
 }
@@ -5203,9 +5203,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     border-color: #101010;
 }
 
-.navbar-inverse .navbar-nav> .open> a,
-.navbar-inverse .navbar-nav> .open> a:hover,
-.navbar-inverse .navbar-nav> .open> a:focus {
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus {
     background-color: #090909;
     color: #fff;
 }
@@ -5242,17 +5242,17 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     border-radius: 4px;
 }
 
-.breadcrumb> li {
+.breadcrumb>li {
     display: inline-block;
 }
 
-.breadcrumb> li+ li:before {
+.breadcrumb>li+li:before {
     content: "/ ";
     padding: 0 5px;
     color: #ccc;
 }
 
-.breadcrumb> .active {
+.breadcrumb>.active {
     color: #777777;
 }
 
@@ -5264,15 +5264,15 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     border-radius: 4px;
 }
 
-.pagination> li,
-.bfg-pagination-numeric ul> li {
+.pagination>li,
+.bfg-pagination-numeric ul>li {
     display: inline;
 }
 
-.pagination> li> a,
-.bfg-pagination-numeric ul> li> a,
-.pagination> li> span,
-.bfg-pagination-numeric ul> li> span {
+.pagination>li>a,
+.bfg-pagination-numeric ul>li>a,
+.pagination>li>span,
+.bfg-pagination-numeric ul>li>span {
     position: relative;
     float: left;
     padding: 6px 12px;
@@ -5284,49 +5284,49 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     margin-left: -1px;
 }
 
-.pagination> li:first-child> a,
-.bfg-pagination-numeric ul> li:first-child> a,
-.pagination> li:first-child> span,
-.bfg-pagination-numeric ul> li:first-child> span {
+.pagination>li:first-child>a,
+.bfg-pagination-numeric ul>li:first-child>a,
+.pagination>li:first-child>span,
+.bfg-pagination-numeric ul>li:first-child>span {
     margin-left: 0;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
 }
 
-.pagination> li:last-child> a,
-.bfg-pagination-numeric ul> li:last-child> a,
-.pagination> li:last-child> span,
-.bfg-pagination-numeric ul> li:last-child> span {
+.pagination>li:last-child>a,
+.bfg-pagination-numeric ul>li:last-child>a,
+.pagination>li:last-child>span,
+.bfg-pagination-numeric ul>li:last-child>span {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
 }
 
-.pagination> li> a:hover,
-.bfg-pagination-numeric ul> li> a:hover,
-.pagination> li> a:focus,
-.bfg-pagination-numeric ul> li> a:focus,
-.pagination> li> span:hover,
-.bfg-pagination-numeric ul> li> span:hover,
-.pagination> li> span:focus,
-.bfg-pagination-numeric ul> li> span:focus {
+.pagination>li>a:hover,
+.bfg-pagination-numeric ul>li>a:hover,
+.pagination>li>a:focus,
+.bfg-pagination-numeric ul>li>a:focus,
+.pagination>li>span:hover,
+.bfg-pagination-numeric ul>li>span:hover,
+.pagination>li>span:focus,
+.bfg-pagination-numeric ul>li>span:focus {
     z-index: 2;
     color: #23527c;
     background-color: #eeeeee;
     border-color: #ddd;
 }
 
-.pagination> .active> a,
-.bfg-pagination-numeric ul> .active> a,
-.pagination> .active> a:hover,
-.bfg-pagination-numeric ul> .active> a:hover,
-.pagination> .active> a:focus,
-.bfg-pagination-numeric ul> .active> a:focus,
-.pagination> .active> span,
-.bfg-pagination-numeric ul> .active> span,
-.pagination> .active> span:hover,
-.bfg-pagination-numeric ul> .active> span:hover,
-.pagination> .active> span:focus,
-.bfg-pagination-numeric ul> .active> span:focus {
+.pagination>.active>a,
+.bfg-pagination-numeric ul>.active>a,
+.pagination>.active>a:hover,
+.bfg-pagination-numeric ul>.active>a:hover,
+.pagination>.active>a:focus,
+.bfg-pagination-numeric ul>.active>a:focus,
+.pagination>.active>span,
+.bfg-pagination-numeric ul>.active>span,
+.pagination>.active>span:hover,
+.bfg-pagination-numeric ul>.active>span:hover,
+.pagination>.active>span:focus,
+.bfg-pagination-numeric ul>.active>span:focus {
     z-index: 3;
     color: #fff;
     background-color: #337ab7;
@@ -5334,58 +5334,58 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     cursor: default;
 }
 
-.pagination> .disabled> span,
-.bfg-pagination-numeric ul> .disabled> span,
-.pagination> .disabled> span:hover,
-.bfg-pagination-numeric ul> .disabled> span:hover,
-.pagination> .disabled> span:focus,
-.bfg-pagination-numeric ul> .disabled> span:focus,
-.pagination> .disabled> a,
-.bfg-pagination-numeric ul> .disabled> a,
-.pagination> .disabled> a:hover,
-.bfg-pagination-numeric ul> .disabled> a:hover,
-.pagination> .disabled> a:focus,
-.bfg-pagination-numeric ul> .disabled> a:focus {
+.pagination>.disabled>span,
+.bfg-pagination-numeric ul>.disabled>span,
+.pagination>.disabled>span:hover,
+.bfg-pagination-numeric ul>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.bfg-pagination-numeric ul>.disabled>span:focus,
+.pagination>.disabled>a,
+.bfg-pagination-numeric ul>.disabled>a,
+.pagination>.disabled>a:hover,
+.bfg-pagination-numeric ul>.disabled>a:hover,
+.pagination>.disabled>a:focus,
+.bfg-pagination-numeric ul>.disabled>a:focus {
     color: #777777;
     background-color: #fff;
     border-color: #ddd;
     cursor: not-allowed;
 }
 
-.pagination-lg> li> a,
-.pagination-lg> li> span {
+.pagination-lg>li>a,
+.pagination-lg>li>span {
     padding: 10px 16px;
     font-size: 18px;
     line-height: 1.33333;
 }
 
-.pagination-lg> li:first-child> a,
-.pagination-lg> li:first-child> span {
+.pagination-lg>li:first-child>a,
+.pagination-lg>li:first-child>span {
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
 }
 
-.pagination-lg> li:last-child> a,
-.pagination-lg> li:last-child> span {
+.pagination-lg>li:last-child>a,
+.pagination-lg>li:last-child>span {
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
 }
 
-.pagination-sm> li> a,
-.pagination-sm> li> span {
+.pagination-sm>li>a,
+.pagination-sm>li>span {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
 }
 
-.pagination-sm> li:first-child> a,
-.pagination-sm> li:first-child> span {
+.pagination-sm>li:first-child>a,
+.pagination-sm>li:first-child>span {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-.pagination-sm> li:last-child> a,
-.pagination-sm> li:last-child> span {
+.pagination-sm>li:last-child>a,
+.pagination-sm>li:last-child>span {
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -5411,8 +5411,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: inline;
 }
 
-.pager li> a,
-.pager li> span {
+.pager li>a,
+.pager li>span {
     display: inline-block;
     padding: 5px 14px;
     background-color: #fff;
@@ -5420,26 +5420,26 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     border-radius: 15px;
 }
 
-.pager li> a:hover,
-.pager li> a:focus {
+.pager li>a:hover,
+.pager li>a:focus {
     text-decoration: none;
     background-color: #eeeeee;
 }
 
-.pager .next> a,
-.pager .next> span {
+.pager .next>a,
+.pager .next>span {
     float: right;
 }
 
-.pager .previous> a,
-.pager .previous> span {
+.pager .previous>a,
+.pager .previous>span {
     float: left;
 }
 
-.pager .disabled> a,
-.pager .disabled> a:hover,
-.pager .disabled> a:focus,
-.pager .disabled> span {
+.pager .disabled>a,
+.pager .disabled>a:hover,
+.pager .disabled>a:focus,
+.pager .disabled>span {
     color: #777777;
     background-color: #fff;
     cursor: not-allowed;
@@ -5555,29 +5555,29 @@ a.label:focus {
 }
 
 .btn-xs .badge,
-.btn-group-xs> .btn .badge,
+.btn-group-xs>.btn .badge,
 .widget_tag_cloud .tagcloud a .badge,
-.btn-group-xs> .btn .badge,
-.widget_tag_cloud .tagcloud .btn-group-xs> a .badge {
+.btn-group-xs>.btn .badge,
+.widget_tag_cloud .tagcloud .btn-group-xs>a .badge {
     top: 0;
     padding: 1px 5px;
 }
 
-.list-group-item.active> .badge,
-.nav-pills> .active> a> .badge {
+.list-group-item.active>.badge,
+.nav-pills>.active>a>.badge {
     color: #337ab7;
     background-color: #fff;
 }
 
-.list-group-item> .badge {
+.list-group-item>.badge {
     float: right;
 }
 
-.list-group-item> .badge+ .badge {
+.list-group-item>.badge+.badge {
     margin-right: 5px;
 }
 
-.nav-pills> li> a> .badge {
+.nav-pills>li>a>.badge {
     margin-left: 3px;
 }
 
@@ -5609,7 +5609,7 @@ a.badge:focus {
     font-weight: 200;
 }
 
-.jumbotron> hr {
+.jumbotron>hr {
     border-top-color: #d5d5d5;
 }
 
@@ -5637,12 +5637,12 @@ a.badge:focus {
     transition: border 0.2s ease-in-out;
 }
 
-.thumbnail> img,
-.gallery-item .gallery-icon a> img,
-.wp-caption> img,
-.thumbnail a> img,
-.gallery-item .gallery-icon a a> img,
-.wp-caption a> img {
+.thumbnail>img,
+.gallery-item .gallery-icon a>img,
+.wp-caption>img,
+.thumbnail a>img,
+.gallery-item .gallery-icon a a>img,
+.wp-caption a>img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -5688,12 +5688,12 @@ a.active.wp-caption {
     font-weight: bold;
 }
 
-.alert> p,
-.alert> ul {
+.alert>p,
+.alert>ul {
     margin-bottom: 0;
 }
 
-.alert> p+ p {
+.alert>p+p {
     margin-top: 5px;
 }
 
@@ -5858,12 +5858,12 @@ a.active.wp-caption {
 }
 
 .media-right,
-.media> .pull-right {
+.media>.pull-right {
     padding-left: 10px;
 }
 
 .media-left,
-.media> .pull-left {
+.media>.pull-left {
     padding-right: 10px;
 }
 
@@ -5971,14 +5971,14 @@ button.list-group-item {
 }
 
 .list-group-item.active .list-group-item-heading,
-.list-group-item.active .list-group-item-heading> small,
-.list-group-item.active .list-group-item-heading> .small,
+.list-group-item.active .list-group-item-heading>small,
+.list-group-item.active .list-group-item-heading>.small,
 .list-group-item.active:hover .list-group-item-heading,
-.list-group-item.active:hover .list-group-item-heading> small,
-.list-group-item.active:hover .list-group-item-heading> .small,
+.list-group-item.active:hover .list-group-item-heading>small,
+.list-group-item.active:hover .list-group-item-heading>.small,
 .list-group-item.active:focus .list-group-item-heading,
-.list-group-item.active:focus .list-group-item-heading> small,
-.list-group-item.active:focus .list-group-item-heading> .small {
+.list-group-item.active:focus .list-group-item-heading>small,
+.list-group-item.active:focus .list-group-item-heading>.small {
     color: inherit;
 }
 
@@ -6163,7 +6163,7 @@ button.list-group-item-danger.active:focus {
     border-top-left-radius: 3px;
 }
 
-.panel-heading> .dropdown .dropdown-toggle {
+.panel-heading>.dropdown .dropdown-toggle {
     color: inherit;
 }
 
@@ -6174,11 +6174,11 @@ button.list-group-item-danger.active:focus {
     color: inherit;
 }
 
-.panel-title> a,
-.panel-title> small,
-.panel-title> .small,
-.panel-title> small> a,
-.panel-title> .small> a {
+.panel-title>a,
+.panel-title>small,
+.panel-title>.small,
+.panel-title>small>a,
+.panel-title>.small>a {
     color: inherit;
 }
 
@@ -6190,511 +6190,511 @@ button.list-group-item-danger.active:focus {
     border-bottom-left-radius: 3px;
 }
 
-.panel> .list-group,
-.panel> .panel-collapse> .list-group {
+.panel>.list-group,
+.panel>.panel-collapse>.list-group {
     margin-bottom: 0;
 }
 
-.panel> .list-group .list-group-item,
-.panel> .panel-collapse> .list-group .list-group-item {
+.panel>.list-group .list-group-item,
+.panel>.panel-collapse>.list-group .list-group-item {
     border-width: 1px 0;
     border-radius: 0;
 }
 
-.panel> .list-group:first-child .list-group-item:first-child,
-.panel> .panel-collapse> .list-group:first-child .list-group-item:first-child {
+.panel>.list-group:first-child .list-group-item:first-child,
+.panel>.panel-collapse>.list-group:first-child .list-group-item:first-child {
     border-top: 0;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-.panel> .list-group:last-child .list-group-item:last-child,
-.panel> .panel-collapse> .list-group:last-child .list-group-item:last-child {
+.panel>.list-group:last-child .list-group-item:last-child,
+.panel>.panel-collapse>.list-group:last-child .list-group-item:last-child {
     border-bottom: 0;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
-.panel> .panel-heading+ .panel-collapse> .list-group .list-group-item:first-child {
+.panel>.panel-heading+.panel-collapse>.list-group .list-group-item:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
 
-.panel-heading+ .list-group .list-group-item:first-child {
+.panel-heading+.list-group .list-group-item:first-child {
     border-top-width: 0;
 }
 
-.list-group+ .panel-footer {
+.list-group+.panel-footer {
     border-top-width: 0;
 }
 
-.panel> .table,
-.entry .panel> table,
-.widget_calendar .panel> table,
-.panel> .table-responsive> .table,
-.widget_calendar .panel> table> .table,
-.entry .panel> .table-responsive> table,
-.widget_calendar .entry .panel> table> table,
-.entry .widget_calendar .panel> table> table,
-.widget_calendar .panel> .table-responsive> table,
-.widget_calendar .panel> table> table,
-.panel> .panel-collapse> .table,
-.entry .panel> .panel-collapse> table,
-.widget_calendar .panel> .panel-collapse> table {
+.panel>.table,
+.entry .panel>table,
+.widget_calendar .panel>table,
+.panel>.table-responsive>.table,
+.widget_calendar .panel>table>.table,
+.entry .panel>.table-responsive>table,
+.widget_calendar .entry .panel>table>table,
+.entry .widget_calendar .panel>table>table,
+.widget_calendar .panel>.table-responsive>table,
+.widget_calendar .panel>table>table,
+.panel>.panel-collapse>.table,
+.entry .panel>.panel-collapse>table,
+.widget_calendar .panel>.panel-collapse>table {
     margin-bottom: 0;
 }
 
-.panel> .table caption,
-.entry .panel> table caption,
-.widget_calendar .panel> table caption,
-.panel> .table-responsive> .table caption,
-.widget_calendar .panel> table> .table caption,
-.entry .panel> .table-responsive> table caption,
-.widget_calendar .entry .panel> table> table caption,
-.entry .widget_calendar .panel> table> table caption,
-.widget_calendar .panel> .table-responsive> table caption,
-.widget_calendar .panel> table> table caption,
-.panel> .panel-collapse> .table caption,
-.entry .panel> .panel-collapse> table caption,
-.widget_calendar .panel> .panel-collapse> table caption {
+.panel>.table caption,
+.entry .panel>table caption,
+.widget_calendar .panel>table caption,
+.panel>.table-responsive>.table caption,
+.widget_calendar .panel>table>.table caption,
+.entry .panel>.table-responsive>table caption,
+.widget_calendar .entry .panel>table>table caption,
+.entry .widget_calendar .panel>table>table caption,
+.widget_calendar .panel>.table-responsive>table caption,
+.widget_calendar .panel>table>table caption,
+.panel>.panel-collapse>.table caption,
+.entry .panel>.panel-collapse>table caption,
+.widget_calendar .panel>.panel-collapse>table caption {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.panel> .table:first-child,
-.entry .panel> table:first-child,
-.widget_calendar .panel> table:first-child,
-.panel> .table-responsive:first-child> .table:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child,
-.widget_calendar .panel> table:first-child> table:first-child {
+.panel>.table:first-child,
+.entry .panel>table:first-child,
+.widget_calendar .panel>table:first-child,
+.panel>.table-responsive:first-child>.table:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child,
+.widget_calendar .panel>table:first-child>table:first-child {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-.panel> .table:first-child> thead:first-child> tr:first-child,
-.entry .panel> table:first-child> thead:first-child> tr:first-child,
-.widget_calendar .panel> table:first-child> thead:first-child> tr:first-child,
-.panel> .table:first-child> tbody:first-child> tr:first-child,
-.entry .panel> table:first-child> tbody:first-child> tr:first-child,
-.widget_calendar .panel> table:first-child> tbody:first-child> tr:first-child,
-.panel> .table-responsive:first-child> .table:first-child> thead:first-child> tr:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child> thead:first-child> tr:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> thead:first-child> tr:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child,
-.widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child,
-.panel> .table-responsive:first-child> .table:first-child> tbody:first-child> tr:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child> tbody:first-child> tr:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child,
-.widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child {
+.panel>.table:first-child>thead:first-child>tr:first-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>thead:first-child>tr:first-child,
+.panel>.table:first-child>tbody:first-child>tr:first-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child,
+.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
+.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
-.panel> .table:first-child> thead:first-child> tr:first-child td:first-child,
-.entry .panel> table:first-child> thead:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> table:first-child> thead:first-child> tr:first-child td:first-child,
-.panel> .table:first-child> thead:first-child> tr:first-child th:first-child,
-.entry .panel> table:first-child> thead:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> table:first-child> thead:first-child> tr:first-child th:first-child,
-.panel> .table:first-child> tbody:first-child> tr:first-child td:first-child,
-.entry .panel> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.panel> .table:first-child> tbody:first-child> tr:first-child th:first-child,
-.entry .panel> table:first-child> tbody:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> table:first-child> tbody:first-child> tr:first-child th:first-child,
-.panel> .table-responsive:first-child> .table:first-child> thead:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child> thead:first-child> tr:first-child td:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child td:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> thead:first-child> tr:first-child td:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child td:first-child,
-.panel> .table-responsive:first-child> .table:first-child> thead:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child> thead:first-child> tr:first-child th:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child th:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> thead:first-child> tr:first-child th:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child th:first-child,
-.panel> .table-responsive:first-child> .table:first-child> tbody:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child> tbody:first-child> tr:first-child td:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child td:first-child,
-.panel> .table-responsive:first-child> .table:first-child> tbody:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> table:first-child> .table:first-child> tbody:first-child> tr:first-child th:first-child,
-.entry .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child th:first-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child th:first-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child th:first-child,
-.widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child th:first-child {
+.panel>.table:first-child>thead:first-child>tr:first-child td:first-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>thead:first-child>tr:first-child td:first-child,
+.panel>.table:first-child>thead:first-child>tr:first-child th:first-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>thead:first-child>tr:first-child th:first-child,
+.panel>.table:first-child>tbody:first-child>tr:first-child td:first-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.panel>.table:first-child>tbody:first-child>tr:first-child th:first-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child,
+.entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child {
     border-top-left-radius: 3px;
 }
 
-.panel> .table:first-child> thead:first-child> tr:first-child td:last-child,
-.entry .panel> table:first-child> thead:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> table:first-child> thead:first-child> tr:first-child td:last-child,
-.panel> .table:first-child> thead:first-child> tr:first-child th:last-child,
-.entry .panel> table:first-child> thead:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> table:first-child> thead:first-child> tr:first-child th:last-child,
-.panel> .table:first-child> tbody:first-child> tr:first-child td:last-child,
-.entry .panel> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.panel> .table:first-child> tbody:first-child> tr:first-child th:last-child,
-.entry .panel> table:first-child> tbody:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> table:first-child> tbody:first-child> tr:first-child th:last-child,
-.panel> .table-responsive:first-child> .table:first-child> thead:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> table:first-child> .table:first-child> thead:first-child> tr:first-child td:last-child,
-.entry .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child td:last-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> thead:first-child> tr:first-child td:last-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child td:last-child,
-.panel> .table-responsive:first-child> .table:first-child> thead:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> table:first-child> .table:first-child> thead:first-child> tr:first-child th:last-child,
-.entry .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child th:last-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> thead:first-child> tr:first-child th:last-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> thead:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> table:first-child> table:first-child> thead:first-child> tr:first-child th:last-child,
-.panel> .table-responsive:first-child> .table:first-child> tbody:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> table:first-child> .table:first-child> tbody:first-child> tr:first-child td:last-child,
-.entry .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child td:last-child,
-.panel> .table-responsive:first-child> .table:first-child> tbody:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> table:first-child> .table:first-child> tbody:first-child> tr:first-child th:last-child,
-.entry .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child th:last-child,
-.widget_calendar .entry .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child th:last-child,
-.entry .widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> .table-responsive:first-child> table:first-child> tbody:first-child> tr:first-child th:last-child,
-.widget_calendar .panel> table:first-child> table:first-child> tbody:first-child> tr:first-child th:last-child {
+.panel>.table:first-child>thead:first-child>tr:first-child td:last-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>thead:first-child>tr:first-child td:last-child,
+.panel>.table:first-child>thead:first-child>tr:first-child th:last-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>thead:first-child>tr:first-child th:last-child,
+.panel>.table:first-child>tbody:first-child>tr:first-child td:last-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.panel>.table:first-child>tbody:first-child>tr:first-child th:last-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,
+.entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,
+.entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,
+.entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child,
+.entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child {
     border-top-right-radius: 3px;
 }
 
-.panel> .table:last-child,
-.entry .panel> table:last-child,
-.widget_calendar .panel> table:last-child,
-.panel> .table-responsive:last-child> .table:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child,
-.widget_calendar .panel> table:last-child> table:last-child {
+.panel>.table:last-child,
+.entry .panel>table:last-child,
+.widget_calendar .panel>table:last-child,
+.panel>.table-responsive:last-child>.table:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child,
+.widget_calendar .panel>table:last-child>table:last-child {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
-.panel> .table:last-child> tbody:last-child> tr:last-child,
-.entry .panel> table:last-child> tbody:last-child> tr:last-child,
-.widget_calendar .panel> table:last-child> tbody:last-child> tr:last-child,
-.panel> .table:last-child> tfoot:last-child> tr:last-child,
-.entry .panel> table:last-child> tfoot:last-child> tr:last-child,
-.widget_calendar .panel> table:last-child> tfoot:last-child> tr:last-child,
-.panel> .table-responsive:last-child> .table:last-child> tbody:last-child> tr:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tbody:last-child> tr:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child,
-.widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child,
-.panel> .table-responsive:last-child> .table:last-child> tfoot:last-child> tr:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tfoot:last-child> tr:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child,
-.widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child {
+.panel>.table:last-child>tbody:last-child>tr:last-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child,
+.panel>.table:last-child>tfoot:last-child>tr:last-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child,
+.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
+.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
 
-.panel> .table:last-child> tbody:last-child> tr:last-child td:first-child,
-.entry .panel> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.panel> .table:last-child> tbody:last-child> tr:last-child th:first-child,
-.entry .panel> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.panel> .table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.entry .panel> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.panel> .table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.entry .panel> table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.panel> .table-responsive:last-child> .table:last-child> tbody:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tbody:last-child> tr:last-child td:first-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child td:first-child,
-.panel> .table-responsive:last-child> .table:last-child> tbody:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tbody:last-child> tr:last-child th:first-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child th:first-child,
-.panel> .table-responsive:last-child> .table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child td:first-child,
-.panel> .table-responsive:last-child> .table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child th:first-child,
-.widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child th:first-child {
+.panel>.table:last-child>tbody:last-child>tr:last-child td:first-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.panel>.table:last-child>tbody:last-child>tr:last-child th:first-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.panel>.table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.panel>.table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child {
     border-bottom-left-radius: 3px;
 }
 
-.panel> .table:last-child> tbody:last-child> tr:last-child td:last-child,
-.entry .panel> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.panel> .table:last-child> tbody:last-child> tr:last-child th:last-child,
-.entry .panel> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.panel> .table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.entry .panel> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.panel> .table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.entry .panel> table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.panel> .table-responsive:last-child> .table:last-child> tbody:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tbody:last-child> tr:last-child td:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child td:last-child,
-.panel> .table-responsive:last-child> .table:last-child> tbody:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tbody:last-child> tr:last-child th:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> table:last-child> table:last-child> tbody:last-child> tr:last-child th:last-child,
-.panel> .table-responsive:last-child> .table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child td:last-child,
-.panel> .table-responsive:last-child> .table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> table:last-child> .table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.entry .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.widget_calendar .entry .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.entry .widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> .table-responsive:last-child> table:last-child> tfoot:last-child> tr:last-child th:last-child,
-.widget_calendar .panel> table:last-child> table:last-child> tfoot:last-child> tr:last-child th:last-child {
+.panel>.table:last-child>tbody:last-child>tr:last-child td:last-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.panel>.table:last-child>tbody:last-child>tr:last-child th:last-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.panel>.table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.panel>.table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child {
     border-bottom-right-radius: 3px;
 }
 
-.panel> .panel-body+ .table,
-.entry .panel> .panel-body+ table,
-.widget_calendar .panel> .panel-body+ table,
-.panel> .panel-body+ .table-responsive,
-.widget_calendar .panel> .panel-body+ table,
-.panel> .table+ .panel-body,
-.entry .panel> table+ .panel-body,
-.widget_calendar .panel> table+ .panel-body,
-.panel> .table-responsive+ .panel-body,
-.widget_calendar .panel> table+ .panel-body {
+.panel>.panel-body+.table,
+.entry .panel>.panel-body+table,
+.widget_calendar .panel>.panel-body+table,
+.panel>.panel-body+.table-responsive,
+.widget_calendar .panel>.panel-body+table,
+.panel>.table+.panel-body,
+.entry .panel>table+.panel-body,
+.widget_calendar .panel>table+.panel-body,
+.panel>.table-responsive+.panel-body,
+.widget_calendar .panel>table+.panel-body {
     border-top: 1px solid #ddd;
 }
 
-.panel> .table> tbody:first-child> tr:first-child th,
-.entry .panel> table> tbody:first-child> tr:first-child th,
-.widget_calendar .panel> table> tbody:first-child> tr:first-child th,
-.panel> .table> tbody:first-child> tr:first-child td,
-.entry .panel> table> tbody:first-child> tr:first-child td,
-.widget_calendar .panel> table> tbody:first-child> tr:first-child td {
+.panel>.table>tbody:first-child>tr:first-child th,
+.entry .panel>table>tbody:first-child>tr:first-child th,
+.widget_calendar .panel>table>tbody:first-child>tr:first-child th,
+.panel>.table>tbody:first-child>tr:first-child td,
+.entry .panel>table>tbody:first-child>tr:first-child td,
+.widget_calendar .panel>table>tbody:first-child>tr:first-child td {
     border-top: 0;
 }
 
-.panel> .table-bordered,
-.entry .panel> table,
-.panel> .table-responsive> .table-bordered,
-.widget_calendar .panel> table> .table-bordered,
-.entry .panel> .table-responsive> table,
-.widget_calendar .entry .panel> table> table,
-.entry .widget_calendar .panel> table> table {
+.panel>.table-bordered,
+.entry .panel>table,
+.panel>.table-responsive>.table-bordered,
+.widget_calendar .panel>table>.table-bordered,
+.entry .panel>.table-responsive>table,
+.widget_calendar .entry .panel>table>table,
+.entry .widget_calendar .panel>table>table {
     border: 0;
 }
 
-.panel> .table-bordered> thead> tr> th:first-child,
-.entry .panel> table> thead> tr> th:first-child,
-.panel> .table-bordered> thead> tr> td:first-child,
-.entry .panel> table> thead> tr> td:first-child,
-.panel> .table-bordered> tbody> tr> th:first-child,
-.entry .panel> table> tbody> tr> th:first-child,
-.panel> .table-bordered> tbody> tr> td:first-child,
-.entry .panel> table> tbody> tr> td:first-child,
-.panel> .table-bordered> tfoot> tr> th:first-child,
-.entry .panel> table> tfoot> tr> th:first-child,
-.panel> .table-bordered> tfoot> tr> td:first-child,
-.entry .panel> table> tfoot> tr> td:first-child,
-.panel> .table-responsive> .table-bordered> thead> tr> th:first-child,
-.widget_calendar .panel> table> .table-bordered> thead> tr> th:first-child,
-.entry .panel> .table-responsive> table> thead> tr> th:first-child,
-.widget_calendar .entry .panel> table> table> thead> tr> th:first-child,
-.entry .widget_calendar .panel> table> table> thead> tr> th:first-child,
-.panel> .table-responsive> .table-bordered> thead> tr> td:first-child,
-.widget_calendar .panel> table> .table-bordered> thead> tr> td:first-child,
-.entry .panel> .table-responsive> table> thead> tr> td:first-child,
-.widget_calendar .entry .panel> table> table> thead> tr> td:first-child,
-.entry .widget_calendar .panel> table> table> thead> tr> td:first-child,
-.panel> .table-responsive> .table-bordered> tbody> tr> th:first-child,
-.widget_calendar .panel> table> .table-bordered> tbody> tr> th:first-child,
-.entry .panel> .table-responsive> table> tbody> tr> th:first-child,
-.widget_calendar .entry .panel> table> table> tbody> tr> th:first-child,
-.entry .widget_calendar .panel> table> table> tbody> tr> th:first-child,
-.panel> .table-responsive> .table-bordered> tbody> tr> td:first-child,
-.widget_calendar .panel> table> .table-bordered> tbody> tr> td:first-child,
-.entry .panel> .table-responsive> table> tbody> tr> td:first-child,
-.widget_calendar .entry .panel> table> table> tbody> tr> td:first-child,
-.entry .widget_calendar .panel> table> table> tbody> tr> td:first-child,
-.panel> .table-responsive> .table-bordered> tfoot> tr> th:first-child,
-.widget_calendar .panel> table> .table-bordered> tfoot> tr> th:first-child,
-.entry .panel> .table-responsive> table> tfoot> tr> th:first-child,
-.widget_calendar .entry .panel> table> table> tfoot> tr> th:first-child,
-.entry .widget_calendar .panel> table> table> tfoot> tr> th:first-child,
-.panel> .table-responsive> .table-bordered> tfoot> tr> td:first-child,
-.widget_calendar .panel> table> .table-bordered> tfoot> tr> td:first-child,
-.entry .panel> .table-responsive> table> tfoot> tr> td:first-child,
-.widget_calendar .entry .panel> table> table> tfoot> tr> td:first-child,
-.entry .widget_calendar .panel> table> table> tfoot> tr> td:first-child {
+.panel>.table-bordered>thead>tr>th:first-child,
+.entry .panel>table>thead>tr>th:first-child,
+.panel>.table-bordered>thead>tr>td:first-child,
+.entry .panel>table>thead>tr>td:first-child,
+.panel>.table-bordered>tbody>tr>th:first-child,
+.entry .panel>table>tbody>tr>th:first-child,
+.panel>.table-bordered>tbody>tr>td:first-child,
+.entry .panel>table>tbody>tr>td:first-child,
+.panel>.table-bordered>tfoot>tr>th:first-child,
+.entry .panel>table>tfoot>tr>th:first-child,
+.panel>.table-bordered>tfoot>tr>td:first-child,
+.entry .panel>table>tfoot>tr>td:first-child,
+.panel>.table-responsive>.table-bordered>thead>tr>th:first-child,
+.widget_calendar .panel>table>.table-bordered>thead>tr>th:first-child,
+.entry .panel>.table-responsive>table>thead>tr>th:first-child,
+.widget_calendar .entry .panel>table>table>thead>tr>th:first-child,
+.entry .widget_calendar .panel>table>table>thead>tr>th:first-child,
+.panel>.table-responsive>.table-bordered>thead>tr>td:first-child,
+.widget_calendar .panel>table>.table-bordered>thead>tr>td:first-child,
+.entry .panel>.table-responsive>table>thead>tr>td:first-child,
+.widget_calendar .entry .panel>table>table>thead>tr>td:first-child,
+.entry .widget_calendar .panel>table>table>thead>tr>td:first-child,
+.panel>.table-responsive>.table-bordered>tbody>tr>th:first-child,
+.widget_calendar .panel>table>.table-bordered>tbody>tr>th:first-child,
+.entry .panel>.table-responsive>table>tbody>tr>th:first-child,
+.widget_calendar .entry .panel>table>table>tbody>tr>th:first-child,
+.entry .widget_calendar .panel>table>table>tbody>tr>th:first-child,
+.panel>.table-responsive>.table-bordered>tbody>tr>td:first-child,
+.widget_calendar .panel>table>.table-bordered>tbody>tr>td:first-child,
+.entry .panel>.table-responsive>table>tbody>tr>td:first-child,
+.widget_calendar .entry .panel>table>table>tbody>tr>td:first-child,
+.entry .widget_calendar .panel>table>table>tbody>tr>td:first-child,
+.panel>.table-responsive>.table-bordered>tfoot>tr>th:first-child,
+.widget_calendar .panel>table>.table-bordered>tfoot>tr>th:first-child,
+.entry .panel>.table-responsive>table>tfoot>tr>th:first-child,
+.widget_calendar .entry .panel>table>table>tfoot>tr>th:first-child,
+.entry .widget_calendar .panel>table>table>tfoot>tr>th:first-child,
+.panel>.table-responsive>.table-bordered>tfoot>tr>td:first-child,
+.widget_calendar .panel>table>.table-bordered>tfoot>tr>td:first-child,
+.entry .panel>.table-responsive>table>tfoot>tr>td:first-child,
+.widget_calendar .entry .panel>table>table>tfoot>tr>td:first-child,
+.entry .widget_calendar .panel>table>table>tfoot>tr>td:first-child {
     border-left: 0;
 }
 
-.panel> .table-bordered> thead> tr> th:last-child,
-.entry .panel> table> thead> tr> th:last-child,
-.panel> .table-bordered> thead> tr> td:last-child,
-.entry .panel> table> thead> tr> td:last-child,
-.panel> .table-bordered> tbody> tr> th:last-child,
-.entry .panel> table> tbody> tr> th:last-child,
-.panel> .table-bordered> tbody> tr> td:last-child,
-.entry .panel> table> tbody> tr> td:last-child,
-.panel> .table-bordered> tfoot> tr> th:last-child,
-.entry .panel> table> tfoot> tr> th:last-child,
-.panel> .table-bordered> tfoot> tr> td:last-child,
-.entry .panel> table> tfoot> tr> td:last-child,
-.panel> .table-responsive> .table-bordered> thead> tr> th:last-child,
-.widget_calendar .panel> table> .table-bordered> thead> tr> th:last-child,
-.entry .panel> .table-responsive> table> thead> tr> th:last-child,
-.widget_calendar .entry .panel> table> table> thead> tr> th:last-child,
-.entry .widget_calendar .panel> table> table> thead> tr> th:last-child,
-.panel> .table-responsive> .table-bordered> thead> tr> td:last-child,
-.widget_calendar .panel> table> .table-bordered> thead> tr> td:last-child,
-.entry .panel> .table-responsive> table> thead> tr> td:last-child,
-.widget_calendar .entry .panel> table> table> thead> tr> td:last-child,
-.entry .widget_calendar .panel> table> table> thead> tr> td:last-child,
-.panel> .table-responsive> .table-bordered> tbody> tr> th:last-child,
-.widget_calendar .panel> table> .table-bordered> tbody> tr> th:last-child,
-.entry .panel> .table-responsive> table> tbody> tr> th:last-child,
-.widget_calendar .entry .panel> table> table> tbody> tr> th:last-child,
-.entry .widget_calendar .panel> table> table> tbody> tr> th:last-child,
-.panel> .table-responsive> .table-bordered> tbody> tr> td:last-child,
-.widget_calendar .panel> table> .table-bordered> tbody> tr> td:last-child,
-.entry .panel> .table-responsive> table> tbody> tr> td:last-child,
-.widget_calendar .entry .panel> table> table> tbody> tr> td:last-child,
-.entry .widget_calendar .panel> table> table> tbody> tr> td:last-child,
-.panel> .table-responsive> .table-bordered> tfoot> tr> th:last-child,
-.widget_calendar .panel> table> .table-bordered> tfoot> tr> th:last-child,
-.entry .panel> .table-responsive> table> tfoot> tr> th:last-child,
-.widget_calendar .entry .panel> table> table> tfoot> tr> th:last-child,
-.entry .widget_calendar .panel> table> table> tfoot> tr> th:last-child,
-.panel> .table-responsive> .table-bordered> tfoot> tr> td:last-child,
-.widget_calendar .panel> table> .table-bordered> tfoot> tr> td:last-child,
-.entry .panel> .table-responsive> table> tfoot> tr> td:last-child,
-.widget_calendar .entry .panel> table> table> tfoot> tr> td:last-child,
-.entry .widget_calendar .panel> table> table> tfoot> tr> td:last-child {
+.panel>.table-bordered>thead>tr>th:last-child,
+.entry .panel>table>thead>tr>th:last-child,
+.panel>.table-bordered>thead>tr>td:last-child,
+.entry .panel>table>thead>tr>td:last-child,
+.panel>.table-bordered>tbody>tr>th:last-child,
+.entry .panel>table>tbody>tr>th:last-child,
+.panel>.table-bordered>tbody>tr>td:last-child,
+.entry .panel>table>tbody>tr>td:last-child,
+.panel>.table-bordered>tfoot>tr>th:last-child,
+.entry .panel>table>tfoot>tr>th:last-child,
+.panel>.table-bordered>tfoot>tr>td:last-child,
+.entry .panel>table>tfoot>tr>td:last-child,
+.panel>.table-responsive>.table-bordered>thead>tr>th:last-child,
+.widget_calendar .panel>table>.table-bordered>thead>tr>th:last-child,
+.entry .panel>.table-responsive>table>thead>tr>th:last-child,
+.widget_calendar .entry .panel>table>table>thead>tr>th:last-child,
+.entry .widget_calendar .panel>table>table>thead>tr>th:last-child,
+.panel>.table-responsive>.table-bordered>thead>tr>td:last-child,
+.widget_calendar .panel>table>.table-bordered>thead>tr>td:last-child,
+.entry .panel>.table-responsive>table>thead>tr>td:last-child,
+.widget_calendar .entry .panel>table>table>thead>tr>td:last-child,
+.entry .widget_calendar .panel>table>table>thead>tr>td:last-child,
+.panel>.table-responsive>.table-bordered>tbody>tr>th:last-child,
+.widget_calendar .panel>table>.table-bordered>tbody>tr>th:last-child,
+.entry .panel>.table-responsive>table>tbody>tr>th:last-child,
+.widget_calendar .entry .panel>table>table>tbody>tr>th:last-child,
+.entry .widget_calendar .panel>table>table>tbody>tr>th:last-child,
+.panel>.table-responsive>.table-bordered>tbody>tr>td:last-child,
+.widget_calendar .panel>table>.table-bordered>tbody>tr>td:last-child,
+.entry .panel>.table-responsive>table>tbody>tr>td:last-child,
+.widget_calendar .entry .panel>table>table>tbody>tr>td:last-child,
+.entry .widget_calendar .panel>table>table>tbody>tr>td:last-child,
+.panel>.table-responsive>.table-bordered>tfoot>tr>th:last-child,
+.widget_calendar .panel>table>.table-bordered>tfoot>tr>th:last-child,
+.entry .panel>.table-responsive>table>tfoot>tr>th:last-child,
+.widget_calendar .entry .panel>table>table>tfoot>tr>th:last-child,
+.entry .widget_calendar .panel>table>table>tfoot>tr>th:last-child,
+.panel>.table-responsive>.table-bordered>tfoot>tr>td:last-child,
+.widget_calendar .panel>table>.table-bordered>tfoot>tr>td:last-child,
+.entry .panel>.table-responsive>table>tfoot>tr>td:last-child,
+.widget_calendar .entry .panel>table>table>tfoot>tr>td:last-child,
+.entry .widget_calendar .panel>table>table>tfoot>tr>td:last-child {
     border-right: 0;
 }
 
-.panel> .table-bordered> thead> tr:first-child> td,
-.entry .panel> table> thead> tr:first-child> td,
-.panel> .table-bordered> thead> tr:first-child> th,
-.entry .panel> table> thead> tr:first-child> th,
-.panel> .table-bordered> tbody> tr:first-child> td,
-.entry .panel> table> tbody> tr:first-child> td,
-.panel> .table-bordered> tbody> tr:first-child> th,
-.entry .panel> table> tbody> tr:first-child> th,
-.panel> .table-responsive> .table-bordered> thead> tr:first-child> td,
-.widget_calendar .panel> table> .table-bordered> thead> tr:first-child> td,
-.entry .panel> .table-responsive> table> thead> tr:first-child> td,
-.widget_calendar .entry .panel> table> table> thead> tr:first-child> td,
-.entry .widget_calendar .panel> table> table> thead> tr:first-child> td,
-.panel> .table-responsive> .table-bordered> thead> tr:first-child> th,
-.widget_calendar .panel> table> .table-bordered> thead> tr:first-child> th,
-.entry .panel> .table-responsive> table> thead> tr:first-child> th,
-.widget_calendar .entry .panel> table> table> thead> tr:first-child> th,
-.entry .widget_calendar .panel> table> table> thead> tr:first-child> th,
-.panel> .table-responsive> .table-bordered> tbody> tr:first-child> td,
-.widget_calendar .panel> table> .table-bordered> tbody> tr:first-child> td,
-.entry .panel> .table-responsive> table> tbody> tr:first-child> td,
-.widget_calendar .entry .panel> table> table> tbody> tr:first-child> td,
-.entry .widget_calendar .panel> table> table> tbody> tr:first-child> td,
-.panel> .table-responsive> .table-bordered> tbody> tr:first-child> th,
-.widget_calendar .panel> table> .table-bordered> tbody> tr:first-child> th,
-.entry .panel> .table-responsive> table> tbody> tr:first-child> th,
-.widget_calendar .entry .panel> table> table> tbody> tr:first-child> th,
-.entry .widget_calendar .panel> table> table> tbody> tr:first-child> th {
+.panel>.table-bordered>thead>tr:first-child>td,
+.entry .panel>table>thead>tr:first-child>td,
+.panel>.table-bordered>thead>tr:first-child>th,
+.entry .panel>table>thead>tr:first-child>th,
+.panel>.table-bordered>tbody>tr:first-child>td,
+.entry .panel>table>tbody>tr:first-child>td,
+.panel>.table-bordered>tbody>tr:first-child>th,
+.entry .panel>table>tbody>tr:first-child>th,
+.panel>.table-responsive>.table-bordered>thead>tr:first-child>td,
+.widget_calendar .panel>table>.table-bordered>thead>tr:first-child>td,
+.entry .panel>.table-responsive>table>thead>tr:first-child>td,
+.widget_calendar .entry .panel>table>table>thead>tr:first-child>td,
+.entry .widget_calendar .panel>table>table>thead>tr:first-child>td,
+.panel>.table-responsive>.table-bordered>thead>tr:first-child>th,
+.widget_calendar .panel>table>.table-bordered>thead>tr:first-child>th,
+.entry .panel>.table-responsive>table>thead>tr:first-child>th,
+.widget_calendar .entry .panel>table>table>thead>tr:first-child>th,
+.entry .widget_calendar .panel>table>table>thead>tr:first-child>th,
+.panel>.table-responsive>.table-bordered>tbody>tr:first-child>td,
+.widget_calendar .panel>table>.table-bordered>tbody>tr:first-child>td,
+.entry .panel>.table-responsive>table>tbody>tr:first-child>td,
+.widget_calendar .entry .panel>table>table>tbody>tr:first-child>td,
+.entry .widget_calendar .panel>table>table>tbody>tr:first-child>td,
+.panel>.table-responsive>.table-bordered>tbody>tr:first-child>th,
+.widget_calendar .panel>table>.table-bordered>tbody>tr:first-child>th,
+.entry .panel>.table-responsive>table>tbody>tr:first-child>th,
+.widget_calendar .entry .panel>table>table>tbody>tr:first-child>th,
+.entry .widget_calendar .panel>table>table>tbody>tr:first-child>th {
     border-bottom: 0;
 }
 
-.panel> .table-bordered> tbody> tr:last-child> td,
-.entry .panel> table> tbody> tr:last-child> td,
-.panel> .table-bordered> tbody> tr:last-child> th,
-.entry .panel> table> tbody> tr:last-child> th,
-.panel> .table-bordered> tfoot> tr:last-child> td,
-.entry .panel> table> tfoot> tr:last-child> td,
-.panel> .table-bordered> tfoot> tr:last-child> th,
-.entry .panel> table> tfoot> tr:last-child> th,
-.panel> .table-responsive> .table-bordered> tbody> tr:last-child> td,
-.widget_calendar .panel> table> .table-bordered> tbody> tr:last-child> td,
-.entry .panel> .table-responsive> table> tbody> tr:last-child> td,
-.widget_calendar .entry .panel> table> table> tbody> tr:last-child> td,
-.entry .widget_calendar .panel> table> table> tbody> tr:last-child> td,
-.panel> .table-responsive> .table-bordered> tbody> tr:last-child> th,
-.widget_calendar .panel> table> .table-bordered> tbody> tr:last-child> th,
-.entry .panel> .table-responsive> table> tbody> tr:last-child> th,
-.widget_calendar .entry .panel> table> table> tbody> tr:last-child> th,
-.entry .widget_calendar .panel> table> table> tbody> tr:last-child> th,
-.panel> .table-responsive> .table-bordered> tfoot> tr:last-child> td,
-.widget_calendar .panel> table> .table-bordered> tfoot> tr:last-child> td,
-.entry .panel> .table-responsive> table> tfoot> tr:last-child> td,
-.widget_calendar .entry .panel> table> table> tfoot> tr:last-child> td,
-.entry .widget_calendar .panel> table> table> tfoot> tr:last-child> td,
-.panel> .table-responsive> .table-bordered> tfoot> tr:last-child> th,
-.widget_calendar .panel> table> .table-bordered> tfoot> tr:last-child> th,
-.entry .panel> .table-responsive> table> tfoot> tr:last-child> th,
-.widget_calendar .entry .panel> table> table> tfoot> tr:last-child> th,
-.entry .widget_calendar .panel> table> table> tfoot> tr:last-child> th {
+.panel>.table-bordered>tbody>tr:last-child>td,
+.entry .panel>table>tbody>tr:last-child>td,
+.panel>.table-bordered>tbody>tr:last-child>th,
+.entry .panel>table>tbody>tr:last-child>th,
+.panel>.table-bordered>tfoot>tr:last-child>td,
+.entry .panel>table>tfoot>tr:last-child>td,
+.panel>.table-bordered>tfoot>tr:last-child>th,
+.entry .panel>table>tfoot>tr:last-child>th,
+.panel>.table-responsive>.table-bordered>tbody>tr:last-child>td,
+.widget_calendar .panel>table>.table-bordered>tbody>tr:last-child>td,
+.entry .panel>.table-responsive>table>tbody>tr:last-child>td,
+.widget_calendar .entry .panel>table>table>tbody>tr:last-child>td,
+.entry .widget_calendar .panel>table>table>tbody>tr:last-child>td,
+.panel>.table-responsive>.table-bordered>tbody>tr:last-child>th,
+.widget_calendar .panel>table>.table-bordered>tbody>tr:last-child>th,
+.entry .panel>.table-responsive>table>tbody>tr:last-child>th,
+.widget_calendar .entry .panel>table>table>tbody>tr:last-child>th,
+.entry .widget_calendar .panel>table>table>tbody>tr:last-child>th,
+.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>td,
+.widget_calendar .panel>table>.table-bordered>tfoot>tr:last-child>td,
+.entry .panel>.table-responsive>table>tfoot>tr:last-child>td,
+.widget_calendar .entry .panel>table>table>tfoot>tr:last-child>td,
+.entry .widget_calendar .panel>table>table>tfoot>tr:last-child>td,
+.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>th,
+.widget_calendar .panel>table>.table-bordered>tfoot>tr:last-child>th,
+.entry .panel>.table-responsive>table>tfoot>tr:last-child>th,
+.widget_calendar .entry .panel>table>table>tfoot>tr:last-child>th,
+.entry .widget_calendar .panel>table>table>tfoot>tr:last-child>th {
     border-bottom: 0;
 }
 
-.panel> .table-responsive,
-.widget_calendar .panel> table {
+.panel>.table-responsive,
+.widget_calendar .panel>table {
     border: 0;
     margin-bottom: 0;
 }
@@ -6708,7 +6708,7 @@ button.list-group-item-danger.active:focus {
     border-radius: 4px;
 }
 
-.panel-group .panel+ .panel {
+.panel-group .panel+.panel {
     margin-top: 5px;
 }
 
@@ -6716,8 +6716,8 @@ button.list-group-item-danger.active:focus {
     border-bottom: 0;
 }
 
-.panel-group .panel-heading+ .panel-collapse> .panel-body,
-.panel-group .panel-heading+ .panel-collapse> .list-group {
+.panel-group .panel-heading+.panel-collapse>.panel-body,
+.panel-group .panel-heading+.panel-collapse>.list-group {
     border-top: 1px solid #ddd;
 }
 
@@ -6725,7 +6725,7 @@ button.list-group-item-danger.active:focus {
     border-top: 0;
 }
 
-.panel-group .panel-footer+ .panel-collapse .panel-body {
+.panel-group .panel-footer+.panel-collapse .panel-body {
     border-bottom: 1px solid #ddd;
 }
 
@@ -6733,22 +6733,22 @@ button.list-group-item-danger.active:focus {
     border-color: #ddd;
 }
 
-.panel-default> .panel-heading {
+.panel-default>.panel-heading {
     color: #333333;
     background-color: #f5f5f5;
     border-color: #ddd;
 }
 
-.panel-default> .panel-heading+ .panel-collapse> .panel-body {
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #ddd;
 }
 
-.panel-default> .panel-heading .badge {
+.panel-default>.panel-heading .badge {
     color: #f5f5f5;
     background-color: #333333;
 }
 
-.panel-default> .panel-footer+ .panel-collapse> .panel-body {
+.panel-default>.panel-footer+.panel-collapse>.panel-body {
     border-bottom-color: #ddd;
 }
 
@@ -6756,22 +6756,22 @@ button.list-group-item-danger.active:focus {
     border-color: #337ab7;
 }
 
-.panel-primary> .panel-heading {
+.panel-primary>.panel-heading {
     color: #fff;
     background-color: #337ab7;
     border-color: #337ab7;
 }
 
-.panel-primary> .panel-heading+ .panel-collapse> .panel-body {
+.panel-primary>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #337ab7;
 }
 
-.panel-primary> .panel-heading .badge {
+.panel-primary>.panel-heading .badge {
     color: #337ab7;
     background-color: #fff;
 }
 
-.panel-primary> .panel-footer+ .panel-collapse> .panel-body {
+.panel-primary>.panel-footer+.panel-collapse>.panel-body {
     border-bottom-color: #337ab7;
 }
 
@@ -6779,22 +6779,22 @@ button.list-group-item-danger.active:focus {
     border-color: #d6e9c6;
 }
 
-.panel-success> .panel-heading {
+.panel-success>.panel-heading {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
 
-.panel-success> .panel-heading+ .panel-collapse> .panel-body {
+.panel-success>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #d6e9c6;
 }
 
-.panel-success> .panel-heading .badge {
+.panel-success>.panel-heading .badge {
     color: #dff0d8;
     background-color: #3c763d;
 }
 
-.panel-success> .panel-footer+ .panel-collapse> .panel-body {
+.panel-success>.panel-footer+.panel-collapse>.panel-body {
     border-bottom-color: #d6e9c6;
 }
 
@@ -6802,22 +6802,22 @@ button.list-group-item-danger.active:focus {
     border-color: #bce8f1;
 }
 
-.panel-info> .panel-heading {
+.panel-info>.panel-heading {
     color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;
 }
 
-.panel-info> .panel-heading+ .panel-collapse> .panel-body {
+.panel-info>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #bce8f1;
 }
 
-.panel-info> .panel-heading .badge {
+.panel-info>.panel-heading .badge {
     color: #d9edf7;
     background-color: #31708f;
 }
 
-.panel-info> .panel-footer+ .panel-collapse> .panel-body {
+.panel-info>.panel-footer+.panel-collapse>.panel-body {
     border-bottom-color: #bce8f1;
 }
 
@@ -6825,22 +6825,22 @@ button.list-group-item-danger.active:focus {
     border-color: #faebcc;
 }
 
-.panel-warning> .panel-heading {
+.panel-warning>.panel-heading {
     color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faebcc;
 }
 
-.panel-warning> .panel-heading+ .panel-collapse> .panel-body {
+.panel-warning>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #faebcc;
 }
 
-.panel-warning> .panel-heading .badge {
+.panel-warning>.panel-heading .badge {
     color: #fcf8e3;
     background-color: #8a6d3b;
 }
 
-.panel-warning> .panel-footer+ .panel-collapse> .panel-body {
+.panel-warning>.panel-footer+.panel-collapse>.panel-body {
     border-bottom-color: #faebcc;
 }
 
@@ -6848,22 +6848,22 @@ button.list-group-item-danger.active:focus {
     border-color: #ebccd1;
 }
 
-.panel-danger> .panel-heading {
+.panel-danger>.panel-heading {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
 }
 
-.panel-danger> .panel-heading+ .panel-collapse> .panel-body {
+.panel-danger>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #ebccd1;
 }
 
-.panel-danger> .panel-heading .badge {
+.panel-danger>.panel-heading .badge {
     color: #f2dede;
     background-color: #a94442;
 }
 
-.panel-danger> .panel-footer+ .panel-collapse> .panel-body {
+.panel-danger>.panel-footer+.panel-collapse>.panel-body {
     border-bottom-color: #ebccd1;
 }
 
@@ -7063,28 +7063,28 @@ button.close {
     clear: both;
 }
 
-.modal-footer .btn+ .btn,
-.modal-footer .widget_tag_cloud .tagcloud a+ .btn,
-.widget_tag_cloud .tagcloud .modal-footer a+ .btn,
-.modal-footer .widget_tag_cloud .tagcloud .btn+ a,
-.widget_tag_cloud .tagcloud .modal-footer .btn+ a,
-.modal-footer .widget_tag_cloud .tagcloud a+ a,
-.widget_tag_cloud .tagcloud .modal-footer a+ a {
+.modal-footer .btn+.btn,
+.modal-footer .widget_tag_cloud .tagcloud a+.btn,
+.widget_tag_cloud .tagcloud .modal-footer a+.btn,
+.modal-footer .widget_tag_cloud .tagcloud .btn+a,
+.widget_tag_cloud .tagcloud .modal-footer .btn+a,
+.modal-footer .widget_tag_cloud .tagcloud a+a,
+.widget_tag_cloud .tagcloud .modal-footer a+a {
     margin-left: 5px;
     margin-bottom: 0;
 }
 
-.modal-footer .btn-group .btn+ .btn,
-.modal-footer .btn-group .widget_tag_cloud .tagcloud a+ .btn,
-.widget_tag_cloud .tagcloud .modal-footer .btn-group a+ .btn,
-.modal-footer .btn-group .widget_tag_cloud .tagcloud .btn+ a,
-.widget_tag_cloud .tagcloud .modal-footer .btn-group .btn+ a,
-.modal-footer .btn-group .widget_tag_cloud .tagcloud a+ a,
-.widget_tag_cloud .tagcloud .modal-footer .btn-group a+ a {
+.modal-footer .btn-group .btn+.btn,
+.modal-footer .btn-group .widget_tag_cloud .tagcloud a+.btn,
+.widget_tag_cloud .tagcloud .modal-footer .btn-group a+.btn,
+.modal-footer .btn-group .widget_tag_cloud .tagcloud .btn+a,
+.widget_tag_cloud .tagcloud .modal-footer .btn-group .btn+a,
+.modal-footer .btn-group .widget_tag_cloud .tagcloud a+a,
+.widget_tag_cloud .tagcloud .modal-footer .btn-group a+a {
     margin-left: -1px;
 }
 
-.modal-footer .btn-block+ .btn-block {
+.modal-footer .btn-block+.btn-block {
     margin-left: 0;
 }
 
@@ -7287,8 +7287,8 @@ button.close {
     padding: 9px 14px;
 }
 
-.popover> .arrow,
-.popover> .arrow:after {
+.popover>.arrow,
+.popover>.arrow:after {
     position: absolute;
     display: block;
     width: 0;
@@ -7297,16 +7297,16 @@ button.close {
     border-style: solid;
 }
 
-.popover> .arrow {
+.popover>.arrow {
     border-width: 11px;
 }
 
-.popover> .arrow:after {
+.popover>.arrow:after {
     border-width: 10px;
     content: "";
 }
 
-.popover.top> .arrow {
+.popover.top>.arrow {
     left: 50%;
     margin-left: -11px;
     border-bottom-width: 0;
@@ -7315,7 +7315,7 @@ button.close {
     bottom: -11px;
 }
 
-.popover.top> .arrow:after {
+.popover.top>.arrow:after {
     content: " ";
     bottom: 1px;
     margin-left: -10px;
@@ -7323,7 +7323,7 @@ button.close {
     border-top-color: #fff;
 }
 
-.popover.right> .arrow {
+.popover.right>.arrow {
     top: 50%;
     left: -11px;
     margin-top: -11px;
@@ -7332,7 +7332,7 @@ button.close {
     border-right-color: rgba(0, 0, 0, 0.25);
 }
 
-.popover.right> .arrow:after {
+.popover.right>.arrow:after {
     content: " ";
     left: 1px;
     bottom: -10px;
@@ -7340,7 +7340,7 @@ button.close {
     border-right-color: #fff;
 }
 
-.popover.bottom> .arrow {
+.popover.bottom>.arrow {
     left: 50%;
     margin-left: -11px;
     border-top-width: 0;
@@ -7349,7 +7349,7 @@ button.close {
     top: -11px;
 }
 
-.popover.bottom> .arrow:after {
+.popover.bottom>.arrow:after {
     content: " ";
     top: 1px;
     margin-left: -10px;
@@ -7357,7 +7357,7 @@ button.close {
     border-bottom-color: #fff;
 }
 
-.popover.left> .arrow {
+.popover.left>.arrow {
     top: 50%;
     right: -11px;
     margin-top: -11px;
@@ -7366,7 +7366,7 @@ button.close {
     border-left-color: rgba(0, 0, 0, 0.25);
 }
 
-.popover.left> .arrow:after {
+.popover.left>.arrow:after {
     content: " ";
     right: 1px;
     border-right-width: 0;
@@ -7384,55 +7384,55 @@ button.close {
     width: 100%;
 }
 
-.carousel-inner> .item {
+.carousel-inner>.item {
     display: none;
     position: relative;
     transition: 0.6s ease-in-out left;
 }
 
-.carousel-inner> .item> img,
-.carousel-inner> .item> a> img {
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
     display: block;
     max-width: 100%;
     height: auto;
     line-height: 1;
 }
 
-.carousel-inner> .active,
-.carousel-inner> .next,
-.carousel-inner> .prev {
+.carousel-inner>.active,
+.carousel-inner>.next,
+.carousel-inner>.prev {
     display: block;
 }
 
-.carousel-inner> .active {
+.carousel-inner>.active {
     left: 0;
 }
 
-.carousel-inner> .next,
-.carousel-inner> .prev {
+.carousel-inner>.next,
+.carousel-inner>.prev {
     position: absolute;
     top: 0;
     width: 100%;
 }
 
-.carousel-inner> .next {
+.carousel-inner>.next {
     left: 100%;
 }
 
-.carousel-inner> .prev {
+.carousel-inner>.prev {
     left: -100%;
 }
 
-.carousel-inner> .next.left,
-.carousel-inner> .prev.right {
+.carousel-inner>.next.left,
+.carousel-inner>.prev.right {
     left: 0;
 }
 
-.carousel-inner> .active.left {
+.carousel-inner>.active.left {
     left: -100%;
 }
 
-.carousel-inner> .active.right {
+.carousel-inner>.active.right {
     left: 100%;
 }
 
@@ -8212,46 +8212,46 @@ p[class*="bg-"] {
         line-height: 34px;
     }
     input[type="date"].input-sm,
-    .input-group-sm> input[type="date"].form-control,
-    .input-group-sm> input[type="date"].input-group-addon,
-    .input-group-sm> .input-group-btn> input[type="date"].btn,
+    .input-group-sm>input[type="date"].form-control,
+    .input-group-sm>input[type="date"].input-group-addon,
+    .input-group-sm>.input-group-btn>input[type="date"].btn,
     .input-group-sm input[type="date"],
     input[type="time"].input-sm,
-    .input-group-sm> input[type="time"].form-control,
-    .input-group-sm> input[type="time"].input-group-addon,
-    .input-group-sm> .input-group-btn> input[type="time"].btn,
+    .input-group-sm>input[type="time"].form-control,
+    .input-group-sm>input[type="time"].input-group-addon,
+    .input-group-sm>.input-group-btn>input[type="time"].btn,
     .input-group-sm input[type="time"],
     input[type="datetime-local"].input-sm,
-    .input-group-sm> input[type="datetime-local"].form-control,
-    .input-group-sm> input[type="datetime-local"].input-group-addon,
-    .input-group-sm> .input-group-btn> input[type="datetime-local"].btn,
+    .input-group-sm>input[type="datetime-local"].form-control,
+    .input-group-sm>input[type="datetime-local"].input-group-addon,
+    .input-group-sm>.input-group-btn>input[type="datetime-local"].btn,
     .input-group-sm input[type="datetime-local"],
     input[type="month"].input-sm,
-    .input-group-sm> input[type="month"].form-control,
-    .input-group-sm> input[type="month"].input-group-addon,
-    .input-group-sm> .input-group-btn> input[type="month"].btn,
+    .input-group-sm>input[type="month"].form-control,
+    .input-group-sm>input[type="month"].input-group-addon,
+    .input-group-sm>.input-group-btn>input[type="month"].btn,
     .input-group-sm input[type="month"] {
         line-height: 30px;
     }
     input[type="date"].input-lg,
-    .input-group-lg> input[type="date"].form-control,
-    .input-group-lg> input[type="date"].input-group-addon,
-    .input-group-lg> .input-group-btn> input[type="date"].btn,
+    .input-group-lg>input[type="date"].form-control,
+    .input-group-lg>input[type="date"].input-group-addon,
+    .input-group-lg>.input-group-btn>input[type="date"].btn,
     .input-group-lg input[type="date"],
     input[type="time"].input-lg,
-    .input-group-lg> input[type="time"].form-control,
-    .input-group-lg> input[type="time"].input-group-addon,
-    .input-group-lg> .input-group-btn> input[type="time"].btn,
+    .input-group-lg>input[type="time"].form-control,
+    .input-group-lg>input[type="time"].input-group-addon,
+    .input-group-lg>.input-group-btn>input[type="time"].btn,
     .input-group-lg input[type="time"],
     input[type="datetime-local"].input-lg,
-    .input-group-lg> input[type="datetime-local"].form-control,
-    .input-group-lg> input[type="datetime-local"].input-group-addon,
-    .input-group-lg> .input-group-btn> input[type="datetime-local"].btn,
+    .input-group-lg>input[type="datetime-local"].form-control,
+    .input-group-lg>input[type="datetime-local"].input-group-addon,
+    .input-group-lg>.input-group-btn>input[type="datetime-local"].btn,
     .input-group-lg input[type="datetime-local"],
     input[type="month"].input-lg,
-    .input-group-lg> input[type="month"].form-control,
-    .input-group-lg> input[type="month"].input-group-addon,
-    .input-group-lg> .input-group-btn> input[type="month"].btn,
+    .input-group-lg>input[type="month"].form-control,
+    .input-group-lg>input[type="month"].input-group-addon,
+    .input-group-lg>.input-group-btn>input[type="month"].btn,
     .input-group-lg input[type="month"] {
         line-height: 46px;
     }
@@ -8266,25 +8266,25 @@ p[class*="bg-"] {
 
 @media all and (transform-3d),
 (-webkit-transform-3d) {
-    .carousel-inner> .item {
+    .carousel-inner>.item {
         transition: transform 0.6s ease-in-out;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         perspective: 1000px;
     }
-    .carousel-inner> .item.next,
-    .carousel-inner> .item.active.right {
+    .carousel-inner>.item.next,
+    .carousel-inner>.item.active.right {
         transform: translate3d(100%, 0, 0);
         left: 0;
     }
-    .carousel-inner> .item.prev,
-    .carousel-inner> .item.active.left {
+    .carousel-inner>.item.prev,
+    .carousel-inner>.item.active.left {
         transform: translate3d(-100%, 0, 0);
         left: 0;
     }
-    .carousel-inner> .item.next.left,
-    .carousel-inner> .item.prev.right,
-    .carousel-inner> .item.active {
+    .carousel-inner>.item.next.left,
+    .carousel-inner>.item.prev.right,
+    .carousel-inner>.item.active {
         transform: translate3d(0, 0, 0);
         left: 0;
     }
@@ -8506,11 +8506,11 @@ p[class*="bg-"] {
     .widget_archive .form-inline .input-group select {
         width: auto;
     }
-    .form-inline .input-group> .form-control,
-    .form-inline .widget_categories .input-group> select,
-    .widget_categories .form-inline .input-group> select,
-    .form-inline .widget_archive .input-group> select,
-    .widget_archive .form-inline .input-group> select {
+    .form-inline .input-group>.form-control,
+    .form-inline .widget_categories .input-group>select,
+    .widget_categories .form-inline .input-group>select,
+    .form-inline .widget_archive .input-group>select,
+    .widget_archive .form-inline .input-group>select {
         width: 100%;
     }
     .form-inline .control-label {
@@ -8557,26 +8557,26 @@ p[class*="bg-"] {
         left: 0;
         right: auto;
     }
-    .nav-justified> li,
-    .nav-tabs.nav-justified> li {
+    .nav-justified>li,
+    .nav-tabs.nav-justified>li {
         display: table-cell;
         width: 1%;
     }
-    .nav-justified> li> a,
-    .nav-tabs.nav-justified> li> a {
+    .nav-justified>li>a,
+    .nav-tabs.nav-justified>li>a {
         margin-bottom: 0;
     }
-    .nav-tabs-justified> li> a,
-    .nav-tabs.nav-justified> li> a {
+    .nav-tabs-justified>li>a,
+    .nav-tabs.nav-justified>li>a {
         border-bottom: 1px solid #ddd;
         border-radius: 4px 4px 0 0;
     }
-    .nav-tabs-justified> .active> a,
-    .nav-tabs.nav-justified> .active> a,
-    .nav-tabs-justified> .active> a:hover,
-    .nav-tabs.nav-justified> .active> a:hover,
-    .nav-tabs-justified> .active> a:focus,
-    .nav-tabs.nav-justified> .active> a:focus {
+    .nav-tabs-justified>.active>a,
+    .nav-tabs.nav-justified>.active>a,
+    .nav-tabs-justified>.active>a:hover,
+    .nav-tabs.nav-justified>.active>a:hover,
+    .nav-tabs-justified>.active>a:focus,
+    .nav-tabs.nav-justified>.active>a:focus {
         border-bottom-color: #fff;
     }
     .navbar {
@@ -8605,10 +8605,10 @@ p[class*="bg-"] {
         padding-left: 0;
         padding-right: 0;
     }
-    .container> .navbar-header,
-    .container> .navbar-collapse,
-    .container-fluid> .navbar-header,
-    .container-fluid> .navbar-collapse {
+    .container>.navbar-header,
+    .container>.navbar-collapse,
+    .container-fluid>.navbar-header,
+    .container-fluid>.navbar-collapse {
         margin-right: 0;
         margin-left: 0;
     }
@@ -8619,8 +8619,8 @@ p[class*="bg-"] {
     .navbar-fixed-bottom {
         border-radius: 0;
     }
-    .navbar> .container .navbar-brand,
-    .navbar> .container-fluid .navbar-brand {
+    .navbar>.container .navbar-brand,
+    .navbar>.container-fluid .navbar-brand {
         margin-left: -15px;
     }
     .navbar-toggle {
@@ -8630,10 +8630,10 @@ p[class*="bg-"] {
         float: left;
         margin: 0;
     }
-    .navbar-nav> li {
+    .navbar-nav>li {
         float: left;
     }
-    .navbar-nav> li> a {
+    .navbar-nav>li>a {
         padding-top: 15px;
         padding-bottom: 15px;
     }
@@ -8667,11 +8667,11 @@ p[class*="bg-"] {
     .widget_archive .navbar-form .input-group select {
         width: auto;
     }
-    .navbar-form .input-group> .form-control,
-    .navbar-form .widget_categories .input-group> select,
-    .widget_categories .navbar-form .input-group> select,
-    .navbar-form .widget_archive .input-group> select,
-    .widget_archive .navbar-form .input-group> select {
+    .navbar-form .input-group>.form-control,
+    .navbar-form .widget_categories .input-group>select,
+    .widget_categories .navbar-form .input-group>select,
+    .navbar-form .widget_archive .input-group>select,
+    .widget_archive .navbar-form .input-group>select {
         width: 100%;
     }
     .navbar-form .control-label {
@@ -8718,7 +8718,7 @@ p[class*="bg-"] {
         float: right !important;
         margin-right: -15px;
     }
-    .navbar-right~ .navbar-right {
+    .navbar-right~.navbar-right {
         margin-right: 0;
     }
     .modal-dialog {
@@ -9255,149 +9255,149 @@ p[class*="bg-"] {
         -ms-overflow-style: -ms-autohiding-scrollbar;
         border: 1px solid #ddd;
     }
-    .table-responsive> .table,
-    .widget_calendar table> .table,
-    .entry .table-responsive> table,
-    .widget_calendar .entry table> table,
-    .widget_calendar .table-responsive> table,
-    .widget_calendar table> table {
+    .table-responsive>.table,
+    .widget_calendar table>.table,
+    .entry .table-responsive>table,
+    .widget_calendar .entry table>table,
+    .widget_calendar .table-responsive>table,
+    .widget_calendar table>table {
         margin-bottom: 0;
     }
-    .table-responsive> .table> thead> tr> th,
-    .widget_calendar table> .table> thead> tr> th,
-    .entry .table-responsive> table> thead> tr> th,
-    .widget_calendar .entry table> table> thead> tr> th,
-    .entry .widget_calendar table> table> thead> tr> th,
-    .widget_calendar .table-responsive> table> thead> tr> th,
-    .widget_calendar table> table> thead> tr> th,
-    .table-responsive> .table> thead> tr> td,
-    .widget_calendar table> .table> thead> tr> td,
-    .entry .table-responsive> table> thead> tr> td,
-    .widget_calendar .entry table> table> thead> tr> td,
-    .entry .widget_calendar table> table> thead> tr> td,
-    .widget_calendar .table-responsive> table> thead> tr> td,
-    .widget_calendar table> table> thead> tr> td,
-    .table-responsive> .table> tbody> tr> th,
-    .widget_calendar table> .table> tbody> tr> th,
-    .entry .table-responsive> table> tbody> tr> th,
-    .widget_calendar .entry table> table> tbody> tr> th,
-    .entry .widget_calendar table> table> tbody> tr> th,
-    .widget_calendar .table-responsive> table> tbody> tr> th,
-    .widget_calendar table> table> tbody> tr> th,
-    .table-responsive> .table> tbody> tr> td,
-    .widget_calendar table> .table> tbody> tr> td,
-    .entry .table-responsive> table> tbody> tr> td,
-    .widget_calendar .entry table> table> tbody> tr> td,
-    .entry .widget_calendar table> table> tbody> tr> td,
-    .widget_calendar .table-responsive> table> tbody> tr> td,
-    .widget_calendar table> table> tbody> tr> td,
-    .table-responsive> .table> tfoot> tr> th,
-    .widget_calendar table> .table> tfoot> tr> th,
-    .entry .table-responsive> table> tfoot> tr> th,
-    .widget_calendar .entry table> table> tfoot> tr> th,
-    .entry .widget_calendar table> table> tfoot> tr> th,
-    .widget_calendar .table-responsive> table> tfoot> tr> th,
-    .widget_calendar table> table> tfoot> tr> th,
-    .table-responsive> .table> tfoot> tr> td,
-    .widget_calendar table> .table> tfoot> tr> td,
-    .entry .table-responsive> table> tfoot> tr> td,
-    .widget_calendar .entry table> table> tfoot> tr> td,
-    .entry .widget_calendar table> table> tfoot> tr> td,
-    .widget_calendar .table-responsive> table> tfoot> tr> td,
-    .widget_calendar table> table> tfoot> tr> td {
+    .table-responsive>.table>thead>tr>th,
+    .widget_calendar table>.table>thead>tr>th,
+    .entry .table-responsive>table>thead>tr>th,
+    .widget_calendar .entry table>table>thead>tr>th,
+    .entry .widget_calendar table>table>thead>tr>th,
+    .widget_calendar .table-responsive>table>thead>tr>th,
+    .widget_calendar table>table>thead>tr>th,
+    .table-responsive>.table>thead>tr>td,
+    .widget_calendar table>.table>thead>tr>td,
+    .entry .table-responsive>table>thead>tr>td,
+    .widget_calendar .entry table>table>thead>tr>td,
+    .entry .widget_calendar table>table>thead>tr>td,
+    .widget_calendar .table-responsive>table>thead>tr>td,
+    .widget_calendar table>table>thead>tr>td,
+    .table-responsive>.table>tbody>tr>th,
+    .widget_calendar table>.table>tbody>tr>th,
+    .entry .table-responsive>table>tbody>tr>th,
+    .widget_calendar .entry table>table>tbody>tr>th,
+    .entry .widget_calendar table>table>tbody>tr>th,
+    .widget_calendar .table-responsive>table>tbody>tr>th,
+    .widget_calendar table>table>tbody>tr>th,
+    .table-responsive>.table>tbody>tr>td,
+    .widget_calendar table>.table>tbody>tr>td,
+    .entry .table-responsive>table>tbody>tr>td,
+    .widget_calendar .entry table>table>tbody>tr>td,
+    .entry .widget_calendar table>table>tbody>tr>td,
+    .widget_calendar .table-responsive>table>tbody>tr>td,
+    .widget_calendar table>table>tbody>tr>td,
+    .table-responsive>.table>tfoot>tr>th,
+    .widget_calendar table>.table>tfoot>tr>th,
+    .entry .table-responsive>table>tfoot>tr>th,
+    .widget_calendar .entry table>table>tfoot>tr>th,
+    .entry .widget_calendar table>table>tfoot>tr>th,
+    .widget_calendar .table-responsive>table>tfoot>tr>th,
+    .widget_calendar table>table>tfoot>tr>th,
+    .table-responsive>.table>tfoot>tr>td,
+    .widget_calendar table>.table>tfoot>tr>td,
+    .entry .table-responsive>table>tfoot>tr>td,
+    .widget_calendar .entry table>table>tfoot>tr>td,
+    .entry .widget_calendar table>table>tfoot>tr>td,
+    .widget_calendar .table-responsive>table>tfoot>tr>td,
+    .widget_calendar table>table>tfoot>tr>td {
         white-space: nowrap;
     }
-    .table-responsive> .table-bordered,
-    .widget_calendar table> .table-bordered,
-    .entry .table-responsive> table,
-    .widget_calendar .entry table> table,
-    .entry .widget_calendar table> table {
+    .table-responsive>.table-bordered,
+    .widget_calendar table>.table-bordered,
+    .entry .table-responsive>table,
+    .widget_calendar .entry table>table,
+    .entry .widget_calendar table>table {
         border: 0;
     }
-    .table-responsive> .table-bordered> thead> tr> th:first-child,
-    .widget_calendar table> .table-bordered> thead> tr> th:first-child,
-    .entry .table-responsive> table> thead> tr> th:first-child,
-    .widget_calendar .entry table> table> thead> tr> th:first-child,
-    .entry .widget_calendar table> table> thead> tr> th:first-child,
-    .table-responsive> .table-bordered> thead> tr> td:first-child,
-    .widget_calendar table> .table-bordered> thead> tr> td:first-child,
-    .entry .table-responsive> table> thead> tr> td:first-child,
-    .widget_calendar .entry table> table> thead> tr> td:first-child,
-    .entry .widget_calendar table> table> thead> tr> td:first-child,
-    .table-responsive> .table-bordered> tbody> tr> th:first-child,
-    .widget_calendar table> .table-bordered> tbody> tr> th:first-child,
-    .entry .table-responsive> table> tbody> tr> th:first-child,
-    .widget_calendar .entry table> table> tbody> tr> th:first-child,
-    .entry .widget_calendar table> table> tbody> tr> th:first-child,
-    .table-responsive> .table-bordered> tbody> tr> td:first-child,
-    .widget_calendar table> .table-bordered> tbody> tr> td:first-child,
-    .entry .table-responsive> table> tbody> tr> td:first-child,
-    .widget_calendar .entry table> table> tbody> tr> td:first-child,
-    .entry .widget_calendar table> table> tbody> tr> td:first-child,
-    .table-responsive> .table-bordered> tfoot> tr> th:first-child,
-    .widget_calendar table> .table-bordered> tfoot> tr> th:first-child,
-    .entry .table-responsive> table> tfoot> tr> th:first-child,
-    .widget_calendar .entry table> table> tfoot> tr> th:first-child,
-    .entry .widget_calendar table> table> tfoot> tr> th:first-child,
-    .table-responsive> .table-bordered> tfoot> tr> td:first-child,
-    .widget_calendar table> .table-bordered> tfoot> tr> td:first-child,
-    .entry .table-responsive> table> tfoot> tr> td:first-child,
-    .widget_calendar .entry table> table> tfoot> tr> td:first-child,
-    .entry .widget_calendar table> table> tfoot> tr> td:first-child {
+    .table-responsive>.table-bordered>thead>tr>th:first-child,
+    .widget_calendar table>.table-bordered>thead>tr>th:first-child,
+    .entry .table-responsive>table>thead>tr>th:first-child,
+    .widget_calendar .entry table>table>thead>tr>th:first-child,
+    .entry .widget_calendar table>table>thead>tr>th:first-child,
+    .table-responsive>.table-bordered>thead>tr>td:first-child,
+    .widget_calendar table>.table-bordered>thead>tr>td:first-child,
+    .entry .table-responsive>table>thead>tr>td:first-child,
+    .widget_calendar .entry table>table>thead>tr>td:first-child,
+    .entry .widget_calendar table>table>thead>tr>td:first-child,
+    .table-responsive>.table-bordered>tbody>tr>th:first-child,
+    .widget_calendar table>.table-bordered>tbody>tr>th:first-child,
+    .entry .table-responsive>table>tbody>tr>th:first-child,
+    .widget_calendar .entry table>table>tbody>tr>th:first-child,
+    .entry .widget_calendar table>table>tbody>tr>th:first-child,
+    .table-responsive>.table-bordered>tbody>tr>td:first-child,
+    .widget_calendar table>.table-bordered>tbody>tr>td:first-child,
+    .entry .table-responsive>table>tbody>tr>td:first-child,
+    .widget_calendar .entry table>table>tbody>tr>td:first-child,
+    .entry .widget_calendar table>table>tbody>tr>td:first-child,
+    .table-responsive>.table-bordered>tfoot>tr>th:first-child,
+    .widget_calendar table>.table-bordered>tfoot>tr>th:first-child,
+    .entry .table-responsive>table>tfoot>tr>th:first-child,
+    .widget_calendar .entry table>table>tfoot>tr>th:first-child,
+    .entry .widget_calendar table>table>tfoot>tr>th:first-child,
+    .table-responsive>.table-bordered>tfoot>tr>td:first-child,
+    .widget_calendar table>.table-bordered>tfoot>tr>td:first-child,
+    .entry .table-responsive>table>tfoot>tr>td:first-child,
+    .widget_calendar .entry table>table>tfoot>tr>td:first-child,
+    .entry .widget_calendar table>table>tfoot>tr>td:first-child {
         border-left: 0;
     }
-    .table-responsive> .table-bordered> thead> tr> th:last-child,
-    .widget_calendar table> .table-bordered> thead> tr> th:last-child,
-    .entry .table-responsive> table> thead> tr> th:last-child,
-    .widget_calendar .entry table> table> thead> tr> th:last-child,
-    .entry .widget_calendar table> table> thead> tr> th:last-child,
-    .table-responsive> .table-bordered> thead> tr> td:last-child,
-    .widget_calendar table> .table-bordered> thead> tr> td:last-child,
-    .entry .table-responsive> table> thead> tr> td:last-child,
-    .widget_calendar .entry table> table> thead> tr> td:last-child,
-    .entry .widget_calendar table> table> thead> tr> td:last-child,
-    .table-responsive> .table-bordered> tbody> tr> th:last-child,
-    .widget_calendar table> .table-bordered> tbody> tr> th:last-child,
-    .entry .table-responsive> table> tbody> tr> th:last-child,
-    .widget_calendar .entry table> table> tbody> tr> th:last-child,
-    .entry .widget_calendar table> table> tbody> tr> th:last-child,
-    .table-responsive> .table-bordered> tbody> tr> td:last-child,
-    .widget_calendar table> .table-bordered> tbody> tr> td:last-child,
-    .entry .table-responsive> table> tbody> tr> td:last-child,
-    .widget_calendar .entry table> table> tbody> tr> td:last-child,
-    .entry .widget_calendar table> table> tbody> tr> td:last-child,
-    .table-responsive> .table-bordered> tfoot> tr> th:last-child,
-    .widget_calendar table> .table-bordered> tfoot> tr> th:last-child,
-    .entry .table-responsive> table> tfoot> tr> th:last-child,
-    .widget_calendar .entry table> table> tfoot> tr> th:last-child,
-    .entry .widget_calendar table> table> tfoot> tr> th:last-child,
-    .table-responsive> .table-bordered> tfoot> tr> td:last-child,
-    .widget_calendar table> .table-bordered> tfoot> tr> td:last-child,
-    .entry .table-responsive> table> tfoot> tr> td:last-child,
-    .widget_calendar .entry table> table> tfoot> tr> td:last-child,
-    .entry .widget_calendar table> table> tfoot> tr> td:last-child {
+    .table-responsive>.table-bordered>thead>tr>th:last-child,
+    .widget_calendar table>.table-bordered>thead>tr>th:last-child,
+    .entry .table-responsive>table>thead>tr>th:last-child,
+    .widget_calendar .entry table>table>thead>tr>th:last-child,
+    .entry .widget_calendar table>table>thead>tr>th:last-child,
+    .table-responsive>.table-bordered>thead>tr>td:last-child,
+    .widget_calendar table>.table-bordered>thead>tr>td:last-child,
+    .entry .table-responsive>table>thead>tr>td:last-child,
+    .widget_calendar .entry table>table>thead>tr>td:last-child,
+    .entry .widget_calendar table>table>thead>tr>td:last-child,
+    .table-responsive>.table-bordered>tbody>tr>th:last-child,
+    .widget_calendar table>.table-bordered>tbody>tr>th:last-child,
+    .entry .table-responsive>table>tbody>tr>th:last-child,
+    .widget_calendar .entry table>table>tbody>tr>th:last-child,
+    .entry .widget_calendar table>table>tbody>tr>th:last-child,
+    .table-responsive>.table-bordered>tbody>tr>td:last-child,
+    .widget_calendar table>.table-bordered>tbody>tr>td:last-child,
+    .entry .table-responsive>table>tbody>tr>td:last-child,
+    .widget_calendar .entry table>table>tbody>tr>td:last-child,
+    .entry .widget_calendar table>table>tbody>tr>td:last-child,
+    .table-responsive>.table-bordered>tfoot>tr>th:last-child,
+    .widget_calendar table>.table-bordered>tfoot>tr>th:last-child,
+    .entry .table-responsive>table>tfoot>tr>th:last-child,
+    .widget_calendar .entry table>table>tfoot>tr>th:last-child,
+    .entry .widget_calendar table>table>tfoot>tr>th:last-child,
+    .table-responsive>.table-bordered>tfoot>tr>td:last-child,
+    .widget_calendar table>.table-bordered>tfoot>tr>td:last-child,
+    .entry .table-responsive>table>tfoot>tr>td:last-child,
+    .widget_calendar .entry table>table>tfoot>tr>td:last-child,
+    .entry .widget_calendar table>table>tfoot>tr>td:last-child {
         border-right: 0;
     }
-    .table-responsive> .table-bordered> tbody> tr:last-child> th,
-    .widget_calendar table> .table-bordered> tbody> tr:last-child> th,
-    .entry .table-responsive> table> tbody> tr:last-child> th,
-    .widget_calendar .entry table> table> tbody> tr:last-child> th,
-    .entry .widget_calendar table> table> tbody> tr:last-child> th,
-    .table-responsive> .table-bordered> tbody> tr:last-child> td,
-    .widget_calendar table> .table-bordered> tbody> tr:last-child> td,
-    .entry .table-responsive> table> tbody> tr:last-child> td,
-    .widget_calendar .entry table> table> tbody> tr:last-child> td,
-    .entry .widget_calendar table> table> tbody> tr:last-child> td,
-    .table-responsive> .table-bordered> tfoot> tr:last-child> th,
-    .widget_calendar table> .table-bordered> tfoot> tr:last-child> th,
-    .entry .table-responsive> table> tfoot> tr:last-child> th,
-    .widget_calendar .entry table> table> tfoot> tr:last-child> th,
-    .entry .widget_calendar table> table> tfoot> tr:last-child> th,
-    .table-responsive> .table-bordered> tfoot> tr:last-child> td,
-    .widget_calendar table> .table-bordered> tfoot> tr:last-child> td,
-    .entry .table-responsive> table> tfoot> tr:last-child> td,
-    .widget_calendar .entry table> table> tfoot> tr:last-child> td,
-    .entry .widget_calendar table> table> tfoot> tr:last-child> td {
+    .table-responsive>.table-bordered>tbody>tr:last-child>th,
+    .widget_calendar table>.table-bordered>tbody>tr:last-child>th,
+    .entry .table-responsive>table>tbody>tr:last-child>th,
+    .widget_calendar .entry table>table>tbody>tr:last-child>th,
+    .entry .widget_calendar table>table>tbody>tr:last-child>th,
+    .table-responsive>.table-bordered>tbody>tr:last-child>td,
+    .widget_calendar table>.table-bordered>tbody>tr:last-child>td,
+    .entry .table-responsive>table>tbody>tr:last-child>td,
+    .widget_calendar .entry table>table>tbody>tr:last-child>td,
+    .entry .widget_calendar table>table>tbody>tr:last-child>td,
+    .table-responsive>.table-bordered>tfoot>tr:last-child>th,
+    .widget_calendar table>.table-bordered>tfoot>tr:last-child>th,
+    .entry .table-responsive>table>tfoot>tr:last-child>th,
+    .widget_calendar .entry table>table>tfoot>tr:last-child>th,
+    .entry .widget_calendar table>table>tfoot>tr:last-child>th,
+    .table-responsive>.table-bordered>tfoot>tr:last-child>td,
+    .widget_calendar table>.table-bordered>tfoot>tr:last-child>td,
+    .entry .table-responsive>table>tfoot>tr:last-child>td,
+    .widget_calendar .entry table>table>tfoot>tr:last-child>td,
+    .entry .widget_calendar table>table>tfoot>tr:last-child>td {
         border-bottom: 0;
     }
 }
@@ -9412,15 +9412,15 @@ p[class*="bg-"] {
         border: 0;
         box-shadow: none;
     }
-    .navbar-nav .open .dropdown-menu> li> a,
+    .navbar-nav .open .dropdown-menu>li>a,
     .navbar-nav .open .dropdown-menu .dropdown-header {
         padding: 5px 15px 5px 25px;
     }
-    .navbar-nav .open .dropdown-menu> li> a {
+    .navbar-nav .open .dropdown-menu>li>a {
         line-height: 20px;
     }
-    .navbar-nav .open .dropdown-menu> li> a:hover,
-    .navbar-nav .open .dropdown-menu> li> a:focus {
+    .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-nav .open .dropdown-menu>li>a:focus {
         background-image: none;
     }
     .navbar-form .form-group {
@@ -9429,49 +9429,49 @@ p[class*="bg-"] {
     .navbar-form .form-group:last-child {
         margin-bottom: 0;
     }
-    .navbar-default .navbar-nav .open .dropdown-menu> li> a {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
         color: #777;
     }
-    .navbar-default .navbar-nav .open .dropdown-menu> li> a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu> li> a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
         color: #333;
         background-color: transparent;
     }
-    .navbar-default .navbar-nav .open .dropdown-menu> .active> a,
-    .navbar-default .navbar-nav .open .dropdown-menu> .active> a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu> .active> a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
         color: #555;
         background-color: #e7e7e7;
     }
-    .navbar-default .navbar-nav .open .dropdown-menu> .disabled> a,
-    .navbar-default .navbar-nav .open .dropdown-menu> .disabled> a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu> .disabled> a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus {
         color: #ccc;
         background-color: transparent;
     }
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .dropdown-header {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header {
         border-color: #090909;
     }
     .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
         background-color: #090909;
     }
-    .navbar-inverse .navbar-nav .open .dropdown-menu> li> a {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
         color: #9d9d9d;
     }
-    .navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover,
-    .navbar-inverse .navbar-nav .open .dropdown-menu> li> a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus {
         color: #fff;
         background-color: transparent;
     }
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .active> a,
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .active> a:hover,
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .active> a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus {
         color: #fff;
         background-color: #090909;
     }
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .disabled> a,
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .disabled> a:hover,
-    .navbar-inverse .navbar-nav .open .dropdown-menu> .disabled> a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus {
         color: #444;
         background-color: transparent;
     }
@@ -9553,10 +9553,10 @@ p[class*="bg-"] {
     .navbar {
         display: none;
     }
-    .btn> .caret,
-    .widget_tag_cloud .tagcloud a> .caret,
-    .dropup> .btn> .caret,
-    .widget_tag_cloud .tagcloud .dropup> a> .caret {
+    .btn>.caret,
+    .widget_tag_cloud .tagcloud a>.caret,
+    .dropup>.btn>.caret,
+    .widget_tag_cloud .tagcloud .dropup>a>.caret {
         border-top-color: #000 !important;
     }
     .label {
