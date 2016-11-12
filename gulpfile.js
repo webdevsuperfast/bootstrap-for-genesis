@@ -12,6 +12,8 @@ var gulp = require('gulp'),
     vinylpaths = require('vinyl-paths'),
     cmq = require('gulp-combine-mq'),
     merge = require('merge-stream'),
+    foreach = require('gulp-flatmap'),
+    changed = require('gulp-changed'),
     del = require('del');
 
 // CSS
@@ -46,28 +48,21 @@ gulp.task('lint', function(){
 });
 
 // Scripts
-gulp.task('source', function() {
+gulp.task('scripts', function() {
     return gulp.src([
-        'assets/js/source/*.js'
-    ])
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('temp/js'))
-    .pipe(prettify())
-    .pipe(gulp.dest('assets/js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});
-
-gulp.task('vendor', function(){
-    return gulp.src([
+        'js/source/*.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
         'bower_components/smartmenus/src/jquery.smartmenus.js',
         'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.js'
     ])
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('temp/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
+    .pipe(changed('js'))
+    .pipe(foreach(function(stream, file){
+        return stream
+            .pipe(uglify())
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest('temp/js'))
+    }))
+    .pipe(gulp.dest('js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -79,7 +74,7 @@ gulp.task('clean', function(cb) {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'lint', 'source', 'vendor', 'watch');
+    gulp.start('styles', 'lint', 'scripts', 'watch');
 });
 
 // Watch
@@ -88,6 +83,5 @@ gulp.task('watch', function() {
     gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
 
     // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js'], ['vendor']);
-    gulp.watch(['assets/js/source/*.js'], ['source']);
+    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
 });
