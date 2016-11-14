@@ -11,7 +11,7 @@
  *
 */
 
-add_filter( 'genesis_footer_creds_text', 'bfg_footer_creds_text' );
+// add_filter( 'genesis_footer_creds_text', 'bfg_footer_creds_text' );
 function bfg_footer_creds_text( $creds ) {
     $creds = get_theme_mod( 'creds', '[footer_copyright] &middot; <a href="http://recommendwp.com">RecommendWP</a> &middot; Built on the <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis Framework</a>' );
     // $creds = $credits;
