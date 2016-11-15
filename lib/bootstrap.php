@@ -12,7 +12,6 @@
 */
 
 // Add row class after wrap
-// @link https://gist.github.com/bryanwillis/0f22c3ddb0d0b9453ad0
 add_filter( 'genesis_structural_wrap-footer-widgets', 'bfg_filter_structural_wrap', 10, 2 );
 function bfg_filter_structural_wrap( $output, $original_output ) {
     if( 'close' == $original_output ) {
@@ -26,6 +25,7 @@ function bfg_filter_structural_wrap( $output, $original_output ) {
 }
 
 // Adds Filters Automatically from Array Keys
+// @link https://gist.github.com/bryanwillis/0f22c3ddb0d0b9453ad0
 add_action( 'genesis_meta', 'bfg_add_array_filters_genesis_attr' );
 function bfg_add_array_filters_genesis_attr() {
     $filters = bfg_merge_genesis_attr_classes();
@@ -71,7 +71,7 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header' => 'navbar navbar-default navbar-static-top'
+            'site-header'               => 'navbar navbar-default navbar-static-top'
     );
     
     if ( has_filter( 'bfg_add_classes' ) ) {
