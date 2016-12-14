@@ -14,6 +14,6 @@
   "homepage": "http://www.recommendwp.com",
   "dependencies": {
     "bootstrap-sass": "~3.3.7",
-    "smartmenus": "^1.0.0"
+    "smartmenus": "^1.0.1"
   }
 }
