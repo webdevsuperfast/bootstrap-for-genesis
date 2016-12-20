@@ -27,9 +27,11 @@ add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_args_filter( $args ) {
 
     require_once( BFG_THEME_MODULES . 'wp_bootstrap_navwalker.php' );
+
+    $navalign = get_theme_mod( 'navalign', false );
     
     if ( 'primary' === $args['theme_location'] ) {
-        $args['menu_class'] = 'nav navbar-nav';
+        $args['menu_class'] = 'nav navbar-nav ' . $navalign;
         $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
         $args['walker'] = new wp_bootstrap_navwalker();
     }
