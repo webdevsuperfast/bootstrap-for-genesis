@@ -11,23 +11,8 @@
  *
 */
 
-// Add Type Class
+// Remove default pagination class
 remove_filter( 'genesis_attr_archive-pagination', 'genesis_attributes_pagination' );
-add_filter( 'bfg-add-class', 'bfg_prev_next_or_numeric_archive_pagination', 10, 2 );
-
-function bfg_prev_next_or_numeric_archive_pagination( $classes_array, $context ) {
-    if ( 'archive-pagination' !== $context ) {
-        return $classes_array;
-    }
-
-    if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
-        $classes_array[] = 'bfg-pagination-numeric';
-    } else {
-        $classes_array[] = 'bfg-pagination-prev-next';
-    }
-    
-    return $classes_array;
-}
 
 // Pagination Numeric
 add_filter( 'genesis_prev_link_text', 'bfg_genesis_prev_link_text_numeric' );
