@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
+    runSequence = require('run-sequence'),
     del = require('del');
 
 // CSS
@@ -81,8 +82,13 @@ gulp.task('copy', function() {
 });
 
 // Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'lint', 'scripts', 'watch');
+gulp.task('default', function() {
+    // gulp.start('styles', 'lint', 'scripts', 'watch');
+    runSequence(
+        'clean',
+        ['styles', 'lint', 'scripts'],
+        'watch'
+    );
 });
 
 // Watch
