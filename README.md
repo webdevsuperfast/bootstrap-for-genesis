@@ -71,4 +71,4 @@ Without these projects, this theme wouldn't be where it is today.
 
 ## Update
 
-We're moving away from traditional shortcode building and we'll be using [Shortcodes Ultimate](http://gndev.info/shortcodes-ultimate/) API to for our shortcodes.
+This project is now on [Bitbucket](https://bitbucket.org/recommendwp/bootstrap-for-genesis/).
