@@ -18,6 +18,10 @@ function bfg_theme_scripts() {
 	if ( !is_admin() ) {
 		wp_enqueue_style( 'app-css', BFG_THEME_CSS . 'app.css' );
 
+		// Disable the superfish script
+		wp_deregister_script( 'superfish' );
+		wp_deregister_script( 'superfish-args' );
+
 		// Bootstrap JS
 		wp_register_script( 'app-bootstrap-js', BFG_THEME_JS . 'bootstrap.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-bootstrap-js' );
