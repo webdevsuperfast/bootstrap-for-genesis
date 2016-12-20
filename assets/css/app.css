@@ -1,5 +1,188 @@
 @charset "UTF-8";
 
+/*
+ You probably do not need to edit this at all.
+
+ Add some SmartMenus required styles not covered in Bootstrap 3's default CSS.
+ These are theme independent and should work with any Bootstrap 3 theme mod.
+*/
+
+
+/* sub menus arrows on desktop */
+
+.navbar-nav:not(.sm-collapsible) ul .caret {
+    position: absolute;
+    right: 0;
+    margin-top: 6px;
+    margin-right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px dashed;
+}
+
+.navbar-nav:not(.sm-collapsible) ul a.has-submenu {
+    padding-right: 30px;
+}
+
+
+/* make sub menu arrows look like +/- buttons in collapsible mode */
+
+.navbar-nav.sm-collapsible .caret,
+.navbar-nav.sm-collapsible ul .caret {
+    position: absolute;
+    right: 0;
+    margin: -3px 15px 0 0;
+    padding: 0;
+    width: 32px;
+    height: 26px;
+    line-height: 24px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.navbar-nav.sm-collapsible .caret:before {
+    content: '+';
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.navbar-nav.sm-collapsible .open>a>.caret:before {
+    content: '-';
+}
+
+.navbar-nav.sm-collapsible a.has-submenu {
+    padding-right: 50px;
+}
+
+
+/* revert to Bootstrap's default carets in collapsible mode when the "data-sm-skip-collapsible-behavior" attribute is set to the ul.navbar-nav */
+
+.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] .caret,
+.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] ul .caret {
+    position: static;
+    margin: 0 0 0 2px;
+    padding: 0;
+    width: 0;
+    height: 0;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-bottom: 0;
+    border-left: 4px solid transparent;
+}
+
+.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] .caret:before {
+    content: '' !important;
+}
+
+.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] a.has-submenu {
+    padding-right: 15px;
+}
+
+
+/* scrolling arrows for tall menus */
+
+.navbar-nav span.scroll-up,
+.navbar-nav span.scroll-down {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar-nav span.scroll-up-arrow,
+.navbar-nav span.scroll-down-arrow {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: 7px dashed transparent;
+    border-right: 7px dashed transparent;
+    border-bottom: 7px solid;
+    border-left: 7px dashed transparent;
+}
+
+.navbar-nav span.scroll-down-arrow {
+    top: 6px;
+    border-top: 7px solid;
+    border-right: 7px dashed transparent;
+    border-bottom: 7px dashed transparent;
+    border-left: 7px dashed transparent;
+}
+
+
+/* add more indentation for 2+ level sub in collapsible mode - Bootstrap normally supports just 1 level sub menus */
+
+.navbar-nav.sm-collapsible ul .dropdown-menu>li>a,
+.navbar-nav.sm-collapsible ul .dropdown-menu .dropdown-header {
+    padding-left: 35px;
+}
+
+.navbar-nav.sm-collapsible ul ul .dropdown-menu>li>a,
+.navbar-nav.sm-collapsible ul ul .dropdown-menu .dropdown-header {
+    padding-left: 45px;
+}
+
+.navbar-nav.sm-collapsible ul ul ul .dropdown-menu>li>a,
+.navbar-nav.sm-collapsible ul ul ul .dropdown-menu .dropdown-header {
+    padding-left: 55px;
+}
+
+.navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu>li>a,
+.navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu .dropdown-header {
+    padding-left: 65px;
+}
+
+
+/* fix SmartMenus sub menus auto width (subMenusMinWidth and subMenusMaxWidth options) */
+
+.navbar-nav .dropdown-menu>li>a {
+    white-space: normal;
+}
+
+.navbar-nav ul.sm-nowrap>li>a {
+    white-space: nowrap;
+}
+
+.navbar-nav.sm-collapsible ul.sm-nowrap>li>a {
+    white-space: normal;
+}
+
+
+/* fix .navbar-right subs alignment */
+
+.navbar-right ul.dropdown-menu {
+    left: 0;
+    right: auto;
+}
+
+
+/*
+* Sass (http://sass-lang.com/) file to generate theme.css
+*/
+
+
+/* Bootstrap Core Override Variables
+------------------------------------------------------------ */
+
+
+/**
+ * This file should be used to override the Bootstrap core Sass variables
+ * See https://github.com/salcode/bootstrap-genesis/issues/83
+ *
+ * e.g. $brand-primary: #f00;
+ */
+
+
+/* Bootstrap Base
+------------------------------------------------------------ */
+
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -1410,7 +1593,6 @@ h4,
 h5,
 h6,
 .h1,
-.site-header .site-title,
 .h2,
 .h3,
 .h4,
@@ -1436,9 +1618,7 @@ h5 .small,
 h6 small,
 h6 .small,
 .h1 small,
-.site-header .site-title small,
 .h1 .small,
-.site-header .site-title .small,
 .h2 small,
 .h2 .small,
 .h3 small,
@@ -1458,7 +1638,6 @@ h6 .small,
 
 h1,
 .h1,
-.site-header .site-title,
 h2,
 .h2,
 h3,
@@ -1470,9 +1649,7 @@ h3,
 h1 small,
 h1 .small,
 .h1 small,
-.site-header .site-title small,
 .h1 .small,
-.site-header .site-title .small,
 h2 small,
 h2 .small,
 .h2 small,
@@ -1513,8 +1690,7 @@ h6 .small,
 }
 
 h1,
-.h1,
-.site-header .site-title {
+.h1 {
     font-size: 36px;
 }
 
@@ -1717,13 +1893,11 @@ ol ol {
 }
 
 .list-unstyled,
-.ping-list,
 .widget_categories ul,
 .widget_categories ol,
 .widget_archive ul,
 .widget_archive ol,
-.widget ul,
-.widget ol {
+.ping-list {
     padding-left: 0;
     list-style: none;
 }
@@ -1932,26 +2106,18 @@ pre code {
     clear: both;
 }
 
-.row,
-.gallery,
-.footer-widgets .widget_nav_menu ul {
+.row {
     margin-left: -15px;
     margin-right: -15px;
 }
 
 .row:before,
-.gallery:before,
-.footer-widgets .widget_nav_menu ul:before,
-.row:after,
-.gallery:after,
-.footer-widgets .widget_nav_menu ul:after {
+.row:after {
     content: " ";
     display: table;
 }
 
-.row:after,
-.gallery:after,
-.footer-widgets .widget_nav_menu ul:after {
+.row:after {
     clear: both;
 }
 
@@ -2244,31 +2410,38 @@ th {
 }
 
 .table,
-.entry table,
-.widget_calendar table {
+.widget table,
+.widget_calendar table,
+.entry table {
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
 }
 
 .table>thead>tr>th,
-.entry table>thead>tr>th,
+.widget table>thead>tr>th,
 .widget_calendar table>thead>tr>th,
+.entry table>thead>tr>th,
 .table>thead>tr>td,
-.entry table>thead>tr>td,
+.widget table>thead>tr>td,
 .widget_calendar table>thead>tr>td,
+.entry table>thead>tr>td,
 .table>tbody>tr>th,
-.entry table>tbody>tr>th,
+.widget table>tbody>tr>th,
 .widget_calendar table>tbody>tr>th,
+.entry table>tbody>tr>th,
 .table>tbody>tr>td,
-.entry table>tbody>tr>td,
+.widget table>tbody>tr>td,
 .widget_calendar table>tbody>tr>td,
+.entry table>tbody>tr>td,
 .table>tfoot>tr>th,
-.entry table>tfoot>tr>th,
+.widget table>tfoot>tr>th,
 .widget_calendar table>tfoot>tr>th,
+.entry table>tfoot>tr>th,
 .table>tfoot>tr>td,
-.entry table>tfoot>tr>td,
-.widget_calendar table>tfoot>tr>td {
+.widget table>tfoot>tr>td,
+.widget_calendar table>tfoot>tr>td,
+.entry table>tfoot>tr>td {
     padding: 8px;
     line-height: 1.42857;
     vertical-align: top;
@@ -2276,57 +2449,75 @@ th {
 }
 
 .table>thead>tr>th,
-.entry table>thead>tr>th,
-.widget_calendar table>thead>tr>th {
+.widget table>thead>tr>th,
+.widget_calendar table>thead>tr>th,
+.entry table>thead>tr>th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
 }
 
 .table>caption+thead>tr:first-child>th,
-.entry table>caption+thead>tr:first-child>th,
+.widget table>caption+thead>tr:first-child>th,
 .widget_calendar table>caption+thead>tr:first-child>th,
+.entry table>caption+thead>tr:first-child>th,
 .table>caption+thead>tr:first-child>td,
-.entry table>caption+thead>tr:first-child>td,
+.widget table>caption+thead>tr:first-child>td,
 .widget_calendar table>caption+thead>tr:first-child>td,
+.entry table>caption+thead>tr:first-child>td,
 .table>colgroup+thead>tr:first-child>th,
-.entry table>colgroup+thead>tr:first-child>th,
+.widget table>colgroup+thead>tr:first-child>th,
 .widget_calendar table>colgroup+thead>tr:first-child>th,
+.entry table>colgroup+thead>tr:first-child>th,
 .table>colgroup+thead>tr:first-child>td,
-.entry table>colgroup+thead>tr:first-child>td,
+.widget table>colgroup+thead>tr:first-child>td,
 .widget_calendar table>colgroup+thead>tr:first-child>td,
+.entry table>colgroup+thead>tr:first-child>td,
 .table>thead:first-child>tr:first-child>th,
-.entry table>thead:first-child>tr:first-child>th,
+.widget table>thead:first-child>tr:first-child>th,
 .widget_calendar table>thead:first-child>tr:first-child>th,
+.entry table>thead:first-child>tr:first-child>th,
 .table>thead:first-child>tr:first-child>td,
-.entry table>thead:first-child>tr:first-child>td,
-.widget_calendar table>thead:first-child>tr:first-child>td {
+.widget table>thead:first-child>tr:first-child>td,
+.widget_calendar table>thead:first-child>tr:first-child>td,
+.entry table>thead:first-child>tr:first-child>td {
     border-top: 0;
 }
 
 .table>tbody+tbody,
-.entry table>tbody+tbody,
-.widget_calendar table>tbody+tbody {
+.widget table>tbody+tbody,
+.widget_calendar table>tbody+tbody,
+.entry table>tbody+tbody {
     border-top: 2px solid #ddd;
 }
 
 .table .table,
-.entry table .table,
+.widget table .table,
 .widget_calendar table .table,
-.table .entry table,
-.entry .table table,
-.entry table table,
+.entry table .table,
+.table .widget table,
+.widget .table table,
+.widget table table,
 .table .widget_calendar table,
 .widget_calendar .table table,
-.widget_calendar table table {
+.widget_calendar table table,
+.table .entry table,
+.entry .table table,
+.entry table table {
     background-color: #fff;
 }
 
 .table-condensed>thead>tr>th,
+.widget table>thead>tr>th,
 .table-condensed>thead>tr>td,
+.widget table>thead>tr>td,
 .table-condensed>tbody>tr>th,
+.widget table>tbody>tr>th,
 .table-condensed>tbody>tr>td,
+.widget table>tbody>tr>td,
 .table-condensed>tfoot>tr>th,
-.table-condensed>tfoot>tr>td {
+.widget table>tfoot>tr>th,
+.table-condensed>tfoot>tr>td,
+.widget table>tfoot>tr>td {
     padding: 5px;
 }
 
@@ -2380,41 +2571,53 @@ table th[class*="col-"] {
 }
 
 .table>thead>tr>td.active,
-.entry table>thead>tr>td.active,
+.widget table>thead>tr>td.active,
 .widget_calendar table>thead>tr>td.active,
+.entry table>thead>tr>td.active,
 .table>thead>tr>th.active,
-.entry table>thead>tr>th.active,
+.widget table>thead>tr>th.active,
 .widget_calendar table>thead>tr>th.active,
+.entry table>thead>tr>th.active,
 .table>thead>tr.active>td,
-.entry table>thead>tr.active>td,
+.widget table>thead>tr.active>td,
 .widget_calendar table>thead>tr.active>td,
+.entry table>thead>tr.active>td,
 .table>thead>tr.active>th,
-.entry table>thead>tr.active>th,
+.widget table>thead>tr.active>th,
 .widget_calendar table>thead>tr.active>th,
+.entry table>thead>tr.active>th,
 .table>tbody>tr>td.active,
-.entry table>tbody>tr>td.active,
+.widget table>tbody>tr>td.active,
 .widget_calendar table>tbody>tr>td.active,
+.entry table>tbody>tr>td.active,
 .table>tbody>tr>th.active,
-.entry table>tbody>tr>th.active,
+.widget table>tbody>tr>th.active,
 .widget_calendar table>tbody>tr>th.active,
+.entry table>tbody>tr>th.active,
 .table>tbody>tr.active>td,
-.entry table>tbody>tr.active>td,
+.widget table>tbody>tr.active>td,
 .widget_calendar table>tbody>tr.active>td,
+.entry table>tbody>tr.active>td,
 .table>tbody>tr.active>th,
-.entry table>tbody>tr.active>th,
+.widget table>tbody>tr.active>th,
 .widget_calendar table>tbody>tr.active>th,
+.entry table>tbody>tr.active>th,
 .table>tfoot>tr>td.active,
-.entry table>tfoot>tr>td.active,
+.widget table>tfoot>tr>td.active,
 .widget_calendar table>tfoot>tr>td.active,
+.entry table>tfoot>tr>td.active,
 .table>tfoot>tr>th.active,
-.entry table>tfoot>tr>th.active,
+.widget table>tfoot>tr>th.active,
 .widget_calendar table>tfoot>tr>th.active,
+.entry table>tfoot>tr>th.active,
 .table>tfoot>tr.active>td,
-.entry table>tfoot>tr.active>td,
+.widget table>tfoot>tr.active>td,
 .widget_calendar table>tfoot>tr.active>td,
+.entry table>tfoot>tr.active>td,
 .table>tfoot>tr.active>th,
-.entry table>tfoot>tr.active>th,
-.widget_calendar table>tfoot>tr.active>th {
+.widget table>tfoot>tr.active>th,
+.widget_calendar table>tfoot>tr.active>th,
+.entry table>tfoot>tr.active>th {
     background-color: #f5f5f5;
 }
 
@@ -2427,41 +2630,53 @@ table th[class*="col-"] {
 }
 
 .table>thead>tr>td.success,
-.entry table>thead>tr>td.success,
+.widget table>thead>tr>td.success,
 .widget_calendar table>thead>tr>td.success,
+.entry table>thead>tr>td.success,
 .table>thead>tr>th.success,
-.entry table>thead>tr>th.success,
+.widget table>thead>tr>th.success,
 .widget_calendar table>thead>tr>th.success,
+.entry table>thead>tr>th.success,
 .table>thead>tr.success>td,
-.entry table>thead>tr.success>td,
+.widget table>thead>tr.success>td,
 .widget_calendar table>thead>tr.success>td,
+.entry table>thead>tr.success>td,
 .table>thead>tr.success>th,
-.entry table>thead>tr.success>th,
+.widget table>thead>tr.success>th,
 .widget_calendar table>thead>tr.success>th,
+.entry table>thead>tr.success>th,
 .table>tbody>tr>td.success,
-.entry table>tbody>tr>td.success,
+.widget table>tbody>tr>td.success,
 .widget_calendar table>tbody>tr>td.success,
+.entry table>tbody>tr>td.success,
 .table>tbody>tr>th.success,
-.entry table>tbody>tr>th.success,
+.widget table>tbody>tr>th.success,
 .widget_calendar table>tbody>tr>th.success,
+.entry table>tbody>tr>th.success,
 .table>tbody>tr.success>td,
-.entry table>tbody>tr.success>td,
+.widget table>tbody>tr.success>td,
 .widget_calendar table>tbody>tr.success>td,
+.entry table>tbody>tr.success>td,
 .table>tbody>tr.success>th,
-.entry table>tbody>tr.success>th,
+.widget table>tbody>tr.success>th,
 .widget_calendar table>tbody>tr.success>th,
+.entry table>tbody>tr.success>th,
 .table>tfoot>tr>td.success,
-.entry table>tfoot>tr>td.success,
+.widget table>tfoot>tr>td.success,
 .widget_calendar table>tfoot>tr>td.success,
+.entry table>tfoot>tr>td.success,
 .table>tfoot>tr>th.success,
-.entry table>tfoot>tr>th.success,
+.widget table>tfoot>tr>th.success,
 .widget_calendar table>tfoot>tr>th.success,
+.entry table>tfoot>tr>th.success,
 .table>tfoot>tr.success>td,
-.entry table>tfoot>tr.success>td,
+.widget table>tfoot>tr.success>td,
 .widget_calendar table>tfoot>tr.success>td,
+.entry table>tfoot>tr.success>td,
 .table>tfoot>tr.success>th,
-.entry table>tfoot>tr.success>th,
-.widget_calendar table>tfoot>tr.success>th {
+.widget table>tfoot>tr.success>th,
+.widget_calendar table>tfoot>tr.success>th,
+.entry table>tfoot>tr.success>th {
     background-color: #dff0d8;
 }
 
@@ -2474,41 +2689,53 @@ table th[class*="col-"] {
 }
 
 .table>thead>tr>td.info,
-.entry table>thead>tr>td.info,
+.widget table>thead>tr>td.info,
 .widget_calendar table>thead>tr>td.info,
+.entry table>thead>tr>td.info,
 .table>thead>tr>th.info,
-.entry table>thead>tr>th.info,
+.widget table>thead>tr>th.info,
 .widget_calendar table>thead>tr>th.info,
+.entry table>thead>tr>th.info,
 .table>thead>tr.info>td,
-.entry table>thead>tr.info>td,
+.widget table>thead>tr.info>td,
 .widget_calendar table>thead>tr.info>td,
+.entry table>thead>tr.info>td,
 .table>thead>tr.info>th,
-.entry table>thead>tr.info>th,
+.widget table>thead>tr.info>th,
 .widget_calendar table>thead>tr.info>th,
+.entry table>thead>tr.info>th,
 .table>tbody>tr>td.info,
-.entry table>tbody>tr>td.info,
+.widget table>tbody>tr>td.info,
 .widget_calendar table>tbody>tr>td.info,
+.entry table>tbody>tr>td.info,
 .table>tbody>tr>th.info,
-.entry table>tbody>tr>th.info,
+.widget table>tbody>tr>th.info,
 .widget_calendar table>tbody>tr>th.info,
+.entry table>tbody>tr>th.info,
 .table>tbody>tr.info>td,
-.entry table>tbody>tr.info>td,
+.widget table>tbody>tr.info>td,
 .widget_calendar table>tbody>tr.info>td,
+.entry table>tbody>tr.info>td,
 .table>tbody>tr.info>th,
-.entry table>tbody>tr.info>th,
+.widget table>tbody>tr.info>th,
 .widget_calendar table>tbody>tr.info>th,
+.entry table>tbody>tr.info>th,
 .table>tfoot>tr>td.info,
-.entry table>tfoot>tr>td.info,
+.widget table>tfoot>tr>td.info,
 .widget_calendar table>tfoot>tr>td.info,
+.entry table>tfoot>tr>td.info,
 .table>tfoot>tr>th.info,
-.entry table>tfoot>tr>th.info,
+.widget table>tfoot>tr>th.info,
 .widget_calendar table>tfoot>tr>th.info,
+.entry table>tfoot>tr>th.info,
 .table>tfoot>tr.info>td,
-.entry table>tfoot>tr.info>td,
+.widget table>tfoot>tr.info>td,
 .widget_calendar table>tfoot>tr.info>td,
+.entry table>tfoot>tr.info>td,
 .table>tfoot>tr.info>th,
-.entry table>tfoot>tr.info>th,
-.widget_calendar table>tfoot>tr.info>th {
+.widget table>tfoot>tr.info>th,
+.widget_calendar table>tfoot>tr.info>th,
+.entry table>tfoot>tr.info>th {
     background-color: #d9edf7;
 }
 
@@ -2521,41 +2748,53 @@ table th[class*="col-"] {
 }
 
 .table>thead>tr>td.warning,
-.entry table>thead>tr>td.warning,
+.widget table>thead>tr>td.warning,
 .widget_calendar table>thead>tr>td.warning,
+.entry table>thead>tr>td.warning,
 .table>thead>tr>th.warning,
-.entry table>thead>tr>th.warning,
+.widget table>thead>tr>th.warning,
 .widget_calendar table>thead>tr>th.warning,
+.entry table>thead>tr>th.warning,
 .table>thead>tr.warning>td,
-.entry table>thead>tr.warning>td,
+.widget table>thead>tr.warning>td,
 .widget_calendar table>thead>tr.warning>td,
+.entry table>thead>tr.warning>td,
 .table>thead>tr.warning>th,
-.entry table>thead>tr.warning>th,
+.widget table>thead>tr.warning>th,
 .widget_calendar table>thead>tr.warning>th,
+.entry table>thead>tr.warning>th,
 .table>tbody>tr>td.warning,
-.entry table>tbody>tr>td.warning,
+.widget table>tbody>tr>td.warning,
 .widget_calendar table>tbody>tr>td.warning,
+.entry table>tbody>tr>td.warning,
 .table>tbody>tr>th.warning,
-.entry table>tbody>tr>th.warning,
+.widget table>tbody>tr>th.warning,
 .widget_calendar table>tbody>tr>th.warning,
+.entry table>tbody>tr>th.warning,
 .table>tbody>tr.warning>td,
-.entry table>tbody>tr.warning>td,
+.widget table>tbody>tr.warning>td,
 .widget_calendar table>tbody>tr.warning>td,
+.entry table>tbody>tr.warning>td,
 .table>tbody>tr.warning>th,
-.entry table>tbody>tr.warning>th,
+.widget table>tbody>tr.warning>th,
 .widget_calendar table>tbody>tr.warning>th,
+.entry table>tbody>tr.warning>th,
 .table>tfoot>tr>td.warning,
-.entry table>tfoot>tr>td.warning,
+.widget table>tfoot>tr>td.warning,
 .widget_calendar table>tfoot>tr>td.warning,
+.entry table>tfoot>tr>td.warning,
 .table>tfoot>tr>th.warning,
-.entry table>tfoot>tr>th.warning,
+.widget table>tfoot>tr>th.warning,
 .widget_calendar table>tfoot>tr>th.warning,
+.entry table>tfoot>tr>th.warning,
 .table>tfoot>tr.warning>td,
-.entry table>tfoot>tr.warning>td,
+.widget table>tfoot>tr.warning>td,
 .widget_calendar table>tfoot>tr.warning>td,
+.entry table>tfoot>tr.warning>td,
 .table>tfoot>tr.warning>th,
-.entry table>tfoot>tr.warning>th,
-.widget_calendar table>tfoot>tr.warning>th {
+.widget table>tfoot>tr.warning>th,
+.widget_calendar table>tfoot>tr.warning>th,
+.entry table>tfoot>tr.warning>th {
     background-color: #fcf8e3;
 }
 
@@ -2568,41 +2807,53 @@ table th[class*="col-"] {
 }
 
 .table>thead>tr>td.danger,
-.entry table>thead>tr>td.danger,
+.widget table>thead>tr>td.danger,
 .widget_calendar table>thead>tr>td.danger,
+.entry table>thead>tr>td.danger,
 .table>thead>tr>th.danger,
-.entry table>thead>tr>th.danger,
+.widget table>thead>tr>th.danger,
 .widget_calendar table>thead>tr>th.danger,
+.entry table>thead>tr>th.danger,
 .table>thead>tr.danger>td,
-.entry table>thead>tr.danger>td,
+.widget table>thead>tr.danger>td,
 .widget_calendar table>thead>tr.danger>td,
+.entry table>thead>tr.danger>td,
 .table>thead>tr.danger>th,
-.entry table>thead>tr.danger>th,
+.widget table>thead>tr.danger>th,
 .widget_calendar table>thead>tr.danger>th,
+.entry table>thead>tr.danger>th,
 .table>tbody>tr>td.danger,
-.entry table>tbody>tr>td.danger,
+.widget table>tbody>tr>td.danger,
 .widget_calendar table>tbody>tr>td.danger,
+.entry table>tbody>tr>td.danger,
 .table>tbody>tr>th.danger,
-.entry table>tbody>tr>th.danger,
+.widget table>tbody>tr>th.danger,
 .widget_calendar table>tbody>tr>th.danger,
+.entry table>tbody>tr>th.danger,
 .table>tbody>tr.danger>td,
-.entry table>tbody>tr.danger>td,
+.widget table>tbody>tr.danger>td,
 .widget_calendar table>tbody>tr.danger>td,
+.entry table>tbody>tr.danger>td,
 .table>tbody>tr.danger>th,
-.entry table>tbody>tr.danger>th,
+.widget table>tbody>tr.danger>th,
 .widget_calendar table>tbody>tr.danger>th,
+.entry table>tbody>tr.danger>th,
 .table>tfoot>tr>td.danger,
-.entry table>tfoot>tr>td.danger,
+.widget table>tfoot>tr>td.danger,
 .widget_calendar table>tfoot>tr>td.danger,
+.entry table>tfoot>tr>td.danger,
 .table>tfoot>tr>th.danger,
-.entry table>tfoot>tr>th.danger,
+.widget table>tfoot>tr>th.danger,
 .widget_calendar table>tfoot>tr>th.danger,
+.entry table>tfoot>tr>th.danger,
 .table>tfoot>tr.danger>td,
-.entry table>tfoot>tr.danger>td,
+.widget table>tfoot>tr.danger>td,
 .widget_calendar table>tfoot>tr.danger>td,
+.entry table>tfoot>tr.danger>td,
 .table>tfoot>tr.danger>th,
-.entry table>tfoot>tr.danger>th,
-.widget_calendar table>tfoot>tr.danger>th {
+.widget table>tfoot>tr.danger>th,
+.widget_calendar table>tfoot>tr.danger>th,
+.entry table>tfoot>tr.danger>th {
     background-color: #f2dede;
 }
 
@@ -5095,7 +5346,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .pagination,
-.bfg-pagination-numeric ul {
+.bsg-pagination-numeric ul {
     display: inline-block;
     padding-left: 0;
     margin: 20px 0;
@@ -5103,14 +5354,14 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .pagination>li,
-.bfg-pagination-numeric ul>li {
+.bsg-pagination-numeric ul>li {
     display: inline;
 }
 
 .pagination>li>a,
-.bfg-pagination-numeric ul>li>a,
+.bsg-pagination-numeric ul>li>a,
 .pagination>li>span,
-.bfg-pagination-numeric ul>li>span {
+.bsg-pagination-numeric ul>li>span {
     position: relative;
     float: left;
     padding: 6px 12px;
@@ -5123,30 +5374,30 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .pagination>li:first-child>a,
-.bfg-pagination-numeric ul>li:first-child>a,
+.bsg-pagination-numeric ul>li:first-child>a,
 .pagination>li:first-child>span,
-.bfg-pagination-numeric ul>li:first-child>span {
+.bsg-pagination-numeric ul>li:first-child>span {
     margin-left: 0;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
 }
 
 .pagination>li:last-child>a,
-.bfg-pagination-numeric ul>li:last-child>a,
+.bsg-pagination-numeric ul>li:last-child>a,
 .pagination>li:last-child>span,
-.bfg-pagination-numeric ul>li:last-child>span {
+.bsg-pagination-numeric ul>li:last-child>span {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
 }
 
 .pagination>li>a:hover,
-.bfg-pagination-numeric ul>li>a:hover,
+.bsg-pagination-numeric ul>li>a:hover,
 .pagination>li>a:focus,
-.bfg-pagination-numeric ul>li>a:focus,
+.bsg-pagination-numeric ul>li>a:focus,
 .pagination>li>span:hover,
-.bfg-pagination-numeric ul>li>span:hover,
+.bsg-pagination-numeric ul>li>span:hover,
 .pagination>li>span:focus,
-.bfg-pagination-numeric ul>li>span:focus {
+.bsg-pagination-numeric ul>li>span:focus {
     z-index: 2;
     color: #23527c;
     background-color: #eeeeee;
@@ -5154,17 +5405,17 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .pagination>.active>a,
-.bfg-pagination-numeric ul>.active>a,
+.bsg-pagination-numeric ul>.active>a,
 .pagination>.active>a:hover,
-.bfg-pagination-numeric ul>.active>a:hover,
+.bsg-pagination-numeric ul>.active>a:hover,
 .pagination>.active>a:focus,
-.bfg-pagination-numeric ul>.active>a:focus,
+.bsg-pagination-numeric ul>.active>a:focus,
 .pagination>.active>span,
-.bfg-pagination-numeric ul>.active>span,
+.bsg-pagination-numeric ul>.active>span,
 .pagination>.active>span:hover,
-.bfg-pagination-numeric ul>.active>span:hover,
+.bsg-pagination-numeric ul>.active>span:hover,
 .pagination>.active>span:focus,
-.bfg-pagination-numeric ul>.active>span:focus {
+.bsg-pagination-numeric ul>.active>span:focus {
     z-index: 3;
     color: #fff;
     background-color: #337ab7;
@@ -5173,17 +5424,17 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .pagination>.disabled>span,
-.bfg-pagination-numeric ul>.disabled>span,
+.bsg-pagination-numeric ul>.disabled>span,
 .pagination>.disabled>span:hover,
-.bfg-pagination-numeric ul>.disabled>span:hover,
+.bsg-pagination-numeric ul>.disabled>span:hover,
 .pagination>.disabled>span:focus,
-.bfg-pagination-numeric ul>.disabled>span:focus,
+.bsg-pagination-numeric ul>.disabled>span:focus,
 .pagination>.disabled>a,
-.bfg-pagination-numeric ul>.disabled>a,
+.bsg-pagination-numeric ul>.disabled>a,
 .pagination>.disabled>a:hover,
-.bfg-pagination-numeric ul>.disabled>a:hover,
+.bsg-pagination-numeric ul>.disabled>a:hover,
 .pagination>.disabled>a:focus,
-.bfg-pagination-numeric ul>.disabled>a:focus {
+.bsg-pagination-numeric ul>.disabled>a:focus {
     color: #777777;
     background-color: #fff;
     border-color: #ddd;
@@ -5435,9 +5686,7 @@ a.badge:focus {
 }
 
 .jumbotron h1,
-.jumbotron .h1,
-.jumbotron .site-header .site-title,
-.site-header .jumbotron .site-title {
+.jumbotron .h1 {
     color: inherit;
 }
 
@@ -5462,9 +5711,7 @@ a.badge:focus {
     max-width: 100%;
 }
 
-.thumbnail,
-.gallery-item .gallery-icon a,
-.wp-caption {
+.thumbnail {
     display: block;
     padding: 4px;
     margin-bottom: 20px;
@@ -5476,11 +5723,7 @@ a.badge:focus {
 }
 
 .thumbnail>img,
-.gallery-item .gallery-icon a>img,
-.wp-caption>img,
-.thumbnail a>img,
-.gallery-item .gallery-icon a a>img,
-.wp-caption a>img {
+.thumbnail a>img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -5488,25 +5731,14 @@ a.badge:focus {
     margin-right: auto;
 }
 
-.thumbnail .caption,
-.gallery-item .gallery-icon a .caption,
-.wp-caption .caption,
-.gallery-item .gallery-icon a .wp-caption .wp-caption-text,
-.wp-caption .gallery-item .gallery-icon a .wp-caption-text,
-.wp-caption .wp-caption-text {
+.thumbnail .caption {
     padding: 9px;
     color: #333333;
 }
 
 a.thumbnail:hover,
-.gallery-item .gallery-icon a:hover,
-a.wp-caption:hover,
 a.thumbnail:focus,
-.gallery-item .gallery-icon a:focus,
-a.wp-caption:focus,
-a.thumbnail.active,
-.gallery-item .gallery-icon a.active,
-a.active.wp-caption {
+a.thumbnail.active {
     border-color: #337ab7;
 }
 
@@ -6067,305 +6299,407 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel>.table,
-.entry .panel>table,
+.widget .panel>table,
 .widget_calendar .panel>table,
+.entry .panel>table,
 .panel>.table-responsive>.table,
 .widget_calendar .panel>table>.table,
+.widget .panel>.table-responsive>table,
+.widget_calendar .widget .panel>table>table,
+.widget .widget_calendar .panel>table>table,
+.widget_calendar .panel>.table-responsive>table,
+.widget_calendar .panel>table>table,
 .entry .panel>.table-responsive>table,
 .widget_calendar .entry .panel>table>table,
 .entry .widget_calendar .panel>table>table,
-.widget_calendar .panel>.table-responsive>table,
-.widget_calendar .panel>table>table,
 .panel>.panel-collapse>.table,
-.entry .panel>.panel-collapse>table,
-.widget_calendar .panel>.panel-collapse>table {
+.widget .panel>.panel-collapse>table,
+.widget_calendar .panel>.panel-collapse>table,
+.entry .panel>.panel-collapse>table {
     margin-bottom: 0;
 }
 
 .panel>.table caption,
-.entry .panel>table caption,
+.widget .panel>table caption,
 .widget_calendar .panel>table caption,
+.entry .panel>table caption,
 .panel>.table-responsive>.table caption,
 .widget_calendar .panel>table>.table caption,
+.widget .panel>.table-responsive>table caption,
+.widget_calendar .widget .panel>table>table caption,
+.widget .widget_calendar .panel>table>table caption,
+.widget_calendar .panel>.table-responsive>table caption,
+.widget_calendar .panel>table>table caption,
 .entry .panel>.table-responsive>table caption,
 .widget_calendar .entry .panel>table>table caption,
 .entry .widget_calendar .panel>table>table caption,
-.widget_calendar .panel>.table-responsive>table caption,
-.widget_calendar .panel>table>table caption,
 .panel>.panel-collapse>.table caption,
-.entry .panel>.panel-collapse>table caption,
-.widget_calendar .panel>.panel-collapse>table caption {
+.widget .panel>.panel-collapse>table caption,
+.widget_calendar .panel>.panel-collapse>table caption,
+.entry .panel>.panel-collapse>table caption {
     padding-left: 15px;
     padding-right: 15px;
 }
 
 .panel>.table:first-child,
-.entry .panel>table:first-child,
+.widget .panel>table:first-child,
 .widget_calendar .panel>table:first-child,
+.entry .panel>table:first-child,
 .panel>.table-responsive:first-child>.table:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child,
+.widget_calendar .panel>table:first-child>table:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child,
-.entry .widget_calendar .panel>table:first-child>table:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child,
-.widget_calendar .panel>table:first-child>table:first-child {
+.entry .widget_calendar .panel>table:first-child>table:first-child {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
 .panel>.table:first-child>thead:first-child>tr:first-child,
-.entry .panel>table:first-child>thead:first-child>tr:first-child,
+.widget .panel>table:first-child>thead:first-child>tr:first-child,
 .widget_calendar .panel>table:first-child>thead:first-child>tr:first-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child,
 .panel>.table:first-child>tbody:first-child>tr:first-child,
-.entry .panel>table:first-child>tbody:first-child>tr:first-child,
+.widget .panel>table:first-child>tbody:first-child>tr:first-child,
 .widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child,
 .panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child,
-.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child,
 .panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
-.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child,
-.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child {
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
 .panel>.table:first-child>thead:first-child>tr:first-child td:first-child,
-.entry .panel>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget .panel>table:first-child>thead:first-child>tr:first-child td:first-child,
 .widget_calendar .panel>table:first-child>thead:first-child>tr:first-child td:first-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child td:first-child,
 .panel>.table:first-child>thead:first-child>tr:first-child th:first-child,
-.entry .panel>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget .panel>table:first-child>thead:first-child>tr:first-child th:first-child,
 .widget_calendar .panel>table:first-child>thead:first-child>tr:first-child th:first-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child th:first-child,
 .panel>.table:first-child>tbody:first-child>tr:first-child td:first-child,
-.entry .panel>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget .panel>table:first-child>tbody:first-child>tr:first-child td:first-child,
 .widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child td:first-child,
 .panel>.table:first-child>tbody:first-child>tr:first-child th:first-child,
-.entry .panel>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget .panel>table:first-child>tbody:first-child>tr:first-child th:first-child,
 .widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child th:first-child,
 .panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
-.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:first-child,
 .panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
-.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:first-child,
 .panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
-.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:first-child,
 .panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child,
 .widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
 .entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
-.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child,
-.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child {
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:first-child {
     border-top-left-radius: 3px;
 }
 
 .panel>.table:first-child>thead:first-child>tr:first-child td:last-child,
-.entry .panel>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget .panel>table:first-child>thead:first-child>tr:first-child td:last-child,
 .widget_calendar .panel>table:first-child>thead:first-child>tr:first-child td:last-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child td:last-child,
 .panel>.table:first-child>thead:first-child>tr:first-child th:last-child,
-.entry .panel>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget .panel>table:first-child>thead:first-child>tr:first-child th:last-child,
 .widget_calendar .panel>table:first-child>thead:first-child>tr:first-child th:last-child,
+.entry .panel>table:first-child>thead:first-child>tr:first-child th:last-child,
 .panel>.table:first-child>tbody:first-child>tr:first-child td:last-child,
-.entry .panel>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget .panel>table:first-child>tbody:first-child>tr:first-child td:last-child,
 .widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child td:last-child,
 .panel>.table:first-child>tbody:first-child>tr:first-child th:last-child,
-.entry .panel>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget .panel>table:first-child>tbody:first-child>tr:first-child th:last-child,
 .widget_calendar .panel>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.entry .panel>table:first-child>tbody:first-child>tr:first-child th:last-child,
 .panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,
 .widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
 .entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
-.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child td:last-child,
 .panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,
 .widget_calendar .panel>table:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
 .entry .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
-.widget_calendar .panel>table:first-child>table:first-child>thead:first-child>tr:first-child th:last-child,
 .panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,
 .widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
 .entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
 .entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
-.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child td:last-child,
 .panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child,
 .widget_calendar .panel>table:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .widget .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
+.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
 .entry .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
 .widget_calendar .entry .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
-.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
-.widget_calendar .panel>.table-responsive:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child,
-.widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child {
+.entry .widget_calendar .panel>table:first-child>table:first-child>tbody:first-child>tr:first-child th:last-child {
     border-top-right-radius: 3px;
 }
 
 .panel>.table:last-child,
-.entry .panel>table:last-child,
+.widget .panel>table:last-child,
 .widget_calendar .panel>table:last-child,
+.entry .panel>table:last-child,
 .panel>.table-responsive:last-child>.table:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child,
+.widget_calendar .panel>table:last-child>table:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child,
-.entry .widget_calendar .panel>table:last-child>table:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child,
-.widget_calendar .panel>table:last-child>table:last-child {
+.entry .widget_calendar .panel>table:last-child>table:last-child {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
 .panel>.table:last-child>tbody:last-child>tr:last-child,
-.entry .panel>table:last-child>tbody:last-child>tr:last-child,
+.widget .panel>table:last-child>tbody:last-child>tr:last-child,
 .widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child,
 .panel>.table:last-child>tfoot:last-child>tr:last-child,
-.entry .panel>table:last-child>tfoot:last-child>tr:last-child,
+.widget .panel>table:last-child>tfoot:last-child>tr:last-child,
 .widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child,
 .panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child,
-.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child,
 .panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
-.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child,
-.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child {
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
 
 .panel>.table:last-child>tbody:last-child>tr:last-child td:first-child,
-.entry .panel>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget .panel>table:last-child>tbody:last-child>tr:last-child td:first-child,
 .widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child td:first-child,
 .panel>.table:last-child>tbody:last-child>tr:last-child th:first-child,
-.entry .panel>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget .panel>table:last-child>tbody:last-child>tr:last-child th:first-child,
 .widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child th:first-child,
 .panel>.table:last-child>tfoot:last-child>tr:last-child td:first-child,
-.entry .panel>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget .panel>table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .panel>.table:last-child>tfoot:last-child>tr:last-child th:first-child,
-.entry .panel>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget .panel>table:last-child>tfoot:last-child>tr:last-child th:first-child,
 .widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child th:first-child,
 .panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
-.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:first-child,
 .panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
-.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:first-child,
 .panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
-.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:first-child,
 .panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
-.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child,
-.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child {
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:first-child {
     border-bottom-left-radius: 3px;
 }
 
 .panel>.table:last-child>tbody:last-child>tr:last-child td:last-child,
-.entry .panel>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget .panel>table:last-child>tbody:last-child>tr:last-child td:last-child,
 .widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child td:last-child,
 .panel>.table:last-child>tbody:last-child>tr:last-child th:last-child,
-.entry .panel>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget .panel>table:last-child>tbody:last-child>tr:last-child th:last-child,
 .widget_calendar .panel>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.entry .panel>table:last-child>tbody:last-child>tr:last-child th:last-child,
 .panel>.table:last-child>tfoot:last-child>tr:last-child td:last-child,
-.entry .panel>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget .panel>table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .panel>.table:last-child>tfoot:last-child>tr:last-child th:last-child,
-.entry .panel>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget .panel>table:last-child>tfoot:last-child>tr:last-child th:last-child,
 .widget_calendar .panel>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.entry .panel>table:last-child>tfoot:last-child>tr:last-child th:last-child,
 .panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
-.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child td:last-child,
 .panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
-.widget_calendar .panel>table:last-child>table:last-child>tbody:last-child>tr:last-child th:last-child,
 .panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
-.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child td:last-child,
 .panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child,
 .widget_calendar .panel>table:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .widget .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
+.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
 .entry .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
 .widget_calendar .entry .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
-.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
-.widget_calendar .panel>.table-responsive:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child,
-.widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child {
+.entry .widget_calendar .panel>table:last-child>table:last-child>tfoot:last-child>tr:last-child th:last-child {
     border-bottom-right-radius: 3px;
 }
 
 .panel>.panel-body+.table,
-.entry .panel>.panel-body+table,
+.widget .panel>.panel-body+table,
 .widget_calendar .panel>.panel-body+table,
+.entry .panel>.panel-body+table,
 .panel>.panel-body+.table-responsive,
 .widget_calendar .panel>.panel-body+table,
 .panel>.table+.panel-body,
-.entry .panel>table+.panel-body,
+.widget .panel>table+.panel-body,
 .widget_calendar .panel>table+.panel-body,
+.entry .panel>table+.panel-body,
 .panel>.table-responsive+.panel-body,
 .widget_calendar .panel>table+.panel-body {
     border-top: 1px solid #ddd;
 }
 
 .panel>.table>tbody:first-child>tr:first-child th,
-.entry .panel>table>tbody:first-child>tr:first-child th,
+.widget .panel>table>tbody:first-child>tr:first-child th,
 .widget_calendar .panel>table>tbody:first-child>tr:first-child th,
+.entry .panel>table>tbody:first-child>tr:first-child th,
 .panel>.table>tbody:first-child>tr:first-child td,
-.entry .panel>table>tbody:first-child>tr:first-child td,
-.widget_calendar .panel>table>tbody:first-child>tr:first-child td {
+.widget .panel>table>tbody:first-child>tr:first-child td,
+.widget_calendar .panel>table>tbody:first-child>tr:first-child td,
+.entry .panel>table>tbody:first-child>tr:first-child td {
     border-top: 0;
 }
 
@@ -7403,12 +7737,15 @@ button.close {
 }
 
 .clearfix:before,
-.clearfix:after {
+.widget:before,
+.clearfix:after,
+.widget:after {
     content: " ";
     display: table;
 }
 
-.clearfix:after {
+.clearfix:after,
+.widget:after {
     clear: both;
 }
 
@@ -7505,304 +7842,130 @@ button.close {
     display: none !important;
 }
 
-body {
-    overflow-x: hidden;
-}
 
-.site-container {
-    overflow-x: hidden;
-}
-
-a {
-    transition: all 300ms ease-in-out;
-    text-decoration: none;
-}
-
-img {
-    height: auto;
-    max-width: 100%;
-}
-
-.wp-caption,
-embed,
-iframe,
-object,
-video {
-    max-width: 100%;
-}
-
-input,
-textarea,
-select {
-    max-width: 100%;
-}
+/* Bootstrap Genesis Theme Variables
+------------------------------------------------------------ */
 
 
-/** Gallery
------------------------------------------------------------------------------ */
+/* Variables
+------------------------------------------------------------ */
 
-.gallery {
+
+/* Screen Reader Classes
+------------------------------------------------------------ */
+
+
+/* Genesis accessibility support for screen readers
+------------------------------------------------------------ */
+
+
+/* ## Screen reader text
+--------------------------------------------- */
+
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
     overflow: hidden;
 }
 
-.gallery-item {
-    text-align: center;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-2 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-3 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-4 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-5 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-6 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-7 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-8 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.gallery-columns-9 .gallery-item {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-
-/** Avatar
------------------------------------------------------------------------------ */
-
-.avatar {
-    float: left;
-}
-
-.alignleft .avatar,
-.author-box .avatar {
-    margin-right: 24px;
-}
-
-.alignright .avatar {
-    margin-left: 24px;
-}
-
-.comment .avatar {
-    margin: 0 16px 24px 0;
-}
-
-
-/** WordPress
------------------------------------------------------------------------------ */
-
-a.aligncenter img {
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus {
+    clip: auto !important;
+    height: auto;
+    width: auto;
     display: block;
-    margin: 0 auto;
-}
-
-a.alignnone {
-    display: inline-block;
-}
-
-.alignleft {
-    float: left;
-    text-align: left;
-}
-
-.alignright {
-    float: right;
-    text-align: right;
-}
-
-a.alignleft,
-a.alignnone,
-a.alignright {
-    max-width: 100%;
-}
-
-img.centered,
-.aligncenter {
-    display: block;
-    margin: 0 auto 24px;
-}
-
-img.alignnone,
-.alignnone {
-    margin-bottom: 12px;
-}
-
-a.alignleft,
-img.alignleft,
-.wp-caption.alignleft {
-    margin: 0 24px 24px 0;
-}
-
-a.alignright,
-img.alignright,
-.wp-caption.alignright {
-    margin: 0 0 24px 24px;
-}
-
-.wp-caption-text {
-    font-size: 14px;
-    font-weight: inherit;
-    text-align: center;
-}
-
-.entry-content p.wp-caption-text {
-    margin-bottom: 0;
-}
-
-
-/** Genesis
------------------------------------------------------------------------------ */
-
-.breadcrumb {
-    margin-bottom: 20px;
-}
-
-.archive-description,
-.author-box {
-    background-color: #fff;
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.author-box-title {
-    font-size: 16px;
-    margin-bottom: 4px;
-}
-
-.archive-description p:last-child,
-.author-box p:last-child {
-    margin-bottom: 0;
-}
-
-.entry-comments {
-    margin-bottom: 20px;
-}
-
-.entry-comments h3 {
-    margin-bottom: 20px;
-}
-
-.entry-comments .comment {
-    margin: 0;
-    margin-bottom: 20px;
-}
-
-.entry-comments .comment.parent {
-    margin-bottom: 0;
-}
-
-.entry-comments .comment .media-left img {
-    max-width: inherit;
-}
-
-.entry-comments .children {
-    margin-top: 20px;
-}
-
-.comment-form-author,
-.comment-form-email,
-.comment-form-url {
-    width: 50%;
-}
-
-.entry-pings .pingback {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
-.pagination-omission {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    line-height: 1.42857;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 15px 23px 14px;
+    color: #333;
+    background: #fff;
+    z-index: 100000;
+    /* Above WP toolbar. */
     text-decoration: none;
-    color: #337ab7;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin-left: -1px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-.content .entry {
-    margin-bottom: 20px;
+.more-link {
+    position: relative;
 }
 
-.content .entry .entry-header {
-    margin-bottom: 20px;
+
+/* Archive/Blog Styling
+------------------------------------------------------------ */
+
+
+/* Archive/Blog Styling
+------------------------------------------------------------ */
+
+body.archive .post,
+body.blog .post {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-.content .entry .entry-header .entry-meta {
-    color: #777777;
-    font-size: 14px;
-    margin-bottom: 0;
+
+/* Nav Styling
+------------------------------------------------------------ */
+
+
+/* fix styles for layered navigation menus */
+
+.nav-primary+.nav-secondary {
+    margin-top: 0;
+    z-index: 999;
 }
 
-.content .entry .entry-footer .entry-meta {
-    color: #777777;
-    font-size: 14px;
-    margin-bottom: 0;
-}
 
-.content .entry .entry-footer .entry-categories,
-.content .entry .entry-footer .entry-tags {
+/* Display Bootstrap Nav Secondary Items even when JavaScript is disabled */
+
+.no-js .menu-item-has-children:hover .dropdown-menu,
+.no-js .menu-item-has-children:focus .dropdown-menu {
     display: block;
 }
 
-.archive .entry,
-.blog .entry,
-.search .entry,
-.single .entry {
-    border-bottom: 1px solid #eeeeee;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+
+/* Widget Styling
+------------------------------------------------------------ */
+
+
+/* Widget Styling
+------------------------------------------------------------ */
+
+.widget {
+    background-color: transparent;
+    margin-bottom: 30px;
 }
 
+.widget ul {
+    padding-left: 0;
+}
 
-/** Widgets
------------------------------------------------------------------------------ */
+.widget ul ul {
+    padding-left: 16px;
+}
+
+.widget li {
+    list-style-type: none;
+    word-wrap: break-word;
+    padding-bottom: 10px;
+}
+
+.widget_search .search-query {
+    margin-bottom: 10px;
+}
+
+.widget_calendar #wp-calendar th,
+.widget_calendar #wp-calendar td {
+    padding: 0;
+}
 
 
 /** Recent Posts  */
@@ -7918,43 +8081,197 @@ img.alignright,
 }
 
 
-/** Navigation Widget
------------------------------------------------------------------------------ */
+/* WordPress Image Styling
+------------------------------------------------------------ */
 
-.footer-widgets .widget_nav_menu ul li {
+.alignleft,
+.alignright,
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text,
+.entry-caption,
+.gallery-caption {
+    color: #333333;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+img.wp-smiley,
+.rsswidget img {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.wp-caption.alignleft+ul,
+.wp-caption.alignleft+ol {
+    list-style-position: inside;
+}
+
+
+/* WordPress Responsive Styles
+------------------------------------------------------------ */
+
+
+/* All images are responsive by default */
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+
+/* Make sure videos, embeds, and captions fit their containers. */
+
+.wp-caption,
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+
+/* Make sure form elements fit their containers */
+
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+
+/* Long nonbreaking path name support
+ * see http://wptest.io/demo/non-breaking-text/
+------------------------------------------------------------ */
+
+
+/* based on http://wptest.io/demo/non-breaking-text/ */
+
+.breadcrumb,
+article {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+/* Table Styling
+------------------------------------------------------------ */
+
+
+/* Default table styling uses Bootstrap .table-bordered
+------------------------------------------------------------ */
+
+
+/* Pagination modifications to accomodate WordPress
+------------------------------------------------------------ */
+
+
+/* Pagination
+ * - Genesis Markup assigns class differently than Bootstrap
+ * extend .pagination to .bsg-pagination-numeric ul to accomodate
+ * - accomodate .pagination-omission, which is an empty li
+ * in Genesis, which differs from Bootstrap's markup.
+ * In Bootstrap a span inside the li would be preferred
+ * but this solution via CSS is simplier than modifying the markup
+ *---------------------------------------------------------- */
+
+.archive-pagination {
+    clear: both;
+}
+
+.pagination-omission {
     position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-bottom: 10px;
-}
-
-p[class*="bg-"] {
-    padding: 15px;
-}
-
-.breadcrumb {
-    font-size: 14px;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857;
+    text-decoration: none;
+    color: #337ab7;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
 }
 
 
-/** Site Header
------------------------------------------------------------------------------ */
+/* Comment Styles
+------------------------------------------------------------ */
 
-.site-header .site-title {
+.entry-comments {
+    margin-bottom: 20px;
+}
+
+.entry-comments h3 {
+    margin-bottom: 20px;
+}
+
+.entry-comments .comment {
     margin: 0;
+    margin-bottom: 20px;
 }
 
-.site-header .site-description {
-    color: #777777;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    margin: 0;
+.entry-comments .comment.parent {
+    margin-bottom: 0;
+}
+
+.entry-comments .comment .media-left img {
+    max-width: inherit;
+}
+
+.entry-comments .children {
+    margin-top: 20px;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+    width: 50%;
+}
+
+.entry-pings .pingback {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
-/** Widgets
------------------------------------------------------------------------------ */
+/* Skip to Main Content - Accessibility Link
+------------------------------------------------------------ */
+
+
+/* Skip to Main Content - Accessibility Link
+------------------------------------------------------------ */
+
+.skip-to-main-content {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-to-main-content:focus {
+    left: 0;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    z-index: 999999;
+}
+
+.skip-to-main-content:hover {
+    text-decoration: underline;
+}
+
+
+/* Theme settings
+------------------------------------------------------------ */
 
 
 /** Site Inner
@@ -7962,14 +8279,6 @@ p[class*="bg-"] {
 
 .site-inner {
     padding: 40px 0;
-}
-
-.sidebar .widget {
-    margin-bottom: 20px;
-}
-
-.sidebar .widget .widgettitle {
-    margin-bottom: 20px;
 }
 
 
@@ -8010,7 +8319,6 @@ p[class*="bg-"] {
     color: #eeeeee;
     font-size: 14px;
     padding: 10px 0;
-    text-align: center;
 }
 
 .site-footer p {
@@ -8026,183 +8334,57 @@ p[class*="bg-"] {
 }
 
 
-/* ## Go to top
+/* ## Skip Links
 ----------------------------------------------------------------------------- */
 
-.back-to-top {
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
+.genesis-skip-link {
+    margin: 0;
 }
 
-
-/*
- You probably do not need to edit this at all.
-
- Add some SmartMenus required styles not covered in Bootstrap 3's default CSS.
- These are theme independent and should work with any Bootstrap 3 theme mod.
-*/
-
-
-/* sub menus arrows on desktop */
-
-.navbar-nav:not(.sm-collapsible) ul .caret {
-    position: absolute;
-    right: 0;
-    margin-top: 6px;
-    margin-right: 15px;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 4px dashed;
+.genesis-skip-link li {
+    height: 0;
+    width: 0;
+    list-style: none;
 }
 
-.navbar-nav:not(.sm-collapsible) ul a.has-submenu {
-    padding-right: 30px;
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
 }
 
-
-/* make sub menu arrows look like +/- buttons in collapsible mode */
-
-.navbar-nav.sm-collapsible .caret,
-.navbar-nav.sm-collapsible ul .caret {
-    position: absolute;
-    right: 0;
-    margin: -3px 15px 0 0;
-    padding: 0;
-    width: 32px;
-    height: 26px;
-    line-height: 24px;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-}
-
-.navbar-nav.sm-collapsible .caret:before {
-    content: '+';
-    font-family: monospace;
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus {
+    clip: auto !important;
+    height: auto;
+    width: auto;
+    display: block;
+    font-size: 1em;
     font-weight: bold;
+    padding: 15px 23px 14px;
+    color: #333;
+    background: #fff;
+    z-index: 100000;
+    /* Above WP toolbar. */
+    text-decoration: none;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-.navbar-nav.sm-collapsible .open>a>.caret:before {
-    content: '-';
-}
-
-.navbar-nav.sm-collapsible a.has-submenu {
-    padding-right: 50px;
-}
-
-
-/* revert to Bootstrap's default carets in collapsible mode when the "data-sm-skip-collapsible-behavior" attribute is set to the ul.navbar-nav */
-
-.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] .caret,
-.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] ul .caret {
-    position: static;
-    margin: 0 0 0 2px;
-    padding: 0;
-    width: 0;
-    height: 0;
-    border-top: 4px dashed;
-    border-right: 4px solid transparent;
-    border-bottom: 0;
-    border-left: 4px solid transparent;
-}
-
-.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] .caret:before {
-    content: '' !important;
-}
-
-.navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] a.has-submenu {
-    padding-right: 15px;
-}
-
-
-/* scrolling arrows for tall menus */
-
-.navbar-nav span.scroll-up,
-.navbar-nav span.scroll-down {
-    position: absolute;
-    display: none;
-    visibility: hidden;
-    height: 20px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.navbar-nav span.scroll-up-arrow,
-.navbar-nav span.scroll-down-arrow {
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    margin-left: -8px;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    border-top: 7px dashed transparent;
-    border-right: 7px dashed transparent;
-    border-bottom: 7px solid;
-    border-left: 7px dashed transparent;
-}
-
-.navbar-nav span.scroll-down-arrow {
-    top: 6px;
-    border-top: 7px solid;
-    border-right: 7px dashed transparent;
-    border-bottom: 7px dashed transparent;
-    border-left: 7px dashed transparent;
-}
-
-
-/* add more indentation for 2+ level sub in collapsible mode - Bootstrap normally supports just 1 level sub menus */
-
-.navbar-nav.sm-collapsible ul .dropdown-menu>li>a,
-.navbar-nav.sm-collapsible ul .dropdown-menu .dropdown-header {
-    padding-left: 35px;
-}
-
-.navbar-nav.sm-collapsible ul ul .dropdown-menu>li>a,
-.navbar-nav.sm-collapsible ul ul .dropdown-menu .dropdown-header {
-    padding-left: 45px;
-}
-
-.navbar-nav.sm-collapsible ul ul ul .dropdown-menu>li>a,
-.navbar-nav.sm-collapsible ul ul ul .dropdown-menu .dropdown-header {
-    padding-left: 55px;
-}
-
-.navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu>li>a,
-.navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu .dropdown-header {
-    padding-left: 65px;
-}
-
-
-/* fix SmartMenus sub menus auto width (subMenusMinWidth and subMenusMaxWidth options) */
-
-.navbar-nav .dropdown-menu>li>a {
-    white-space: normal;
-}
-
-.navbar-nav ul.sm-nowrap>li>a {
-    white-space: nowrap;
-}
-
-.navbar-nav.sm-collapsible ul.sm-nowrap>li>a {
-    white-space: normal;
-}
-
-
-/* fix .navbar-right subs alignment */
-
-.navbar-right ul.dropdown-menu {
-    left: 0;
-    right: auto;
+strong {
+    color: inherit;
 }
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot");
-    src: url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff") format("woff"), url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+    src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
+    src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -8732,46 +8914,6 @@ p[class*="bg-"] {
     .modal-sm {
         width: 300px;
     }
-    .gallery-item {
-        float: left;
-        width: 100%;
-    }
-    .gallery-columns-2 .gallery-item {
-        float: left;
-        width: 50%;
-    }
-    .gallery-columns-3 .gallery-item {
-        float: left;
-        width: 33.33333%;
-    }
-    .gallery-columns-4 .gallery-item {
-        float: left;
-        width: 25%;
-    }
-    .gallery-columns-5 .gallery-item {
-        float: left;
-        width: 20%;
-    }
-    .gallery-columns-6 .gallery-item {
-        float: left;
-        width: 16.66667%;
-    }
-    .gallery-columns-7 .gallery-item {
-        float: left;
-        width: 14.28571%;
-    }
-    .gallery-columns-8 .gallery-item {
-        float: left;
-        width: 12.5%;
-    }
-    .gallery-columns-9 .gallery-item {
-        float: left;
-        width: 11.11111%;
-    }
-    .footer-widgets .widget_nav_menu ul li {
-        float: left;
-        width: 50%;
-    }
 }
 
 @media screen and (min-width: 768px) {
@@ -8785,9 +8927,7 @@ p[class*="bg-"] {
         padding-right: 60px;
     }
     .jumbotron h1,
-    .jumbotron .h1,
-    .jumbotron .site-header .site-title,
-    .site-header .jumbotron .site-title {
+    .jumbotron .h1 {
         font-size: 63px;
     }
     .carousel-control .glyphicon-chevron-left,
@@ -9018,6 +9158,35 @@ p[class*="bg-"] {
     }
     .modal-lg {
         width: 900px;
+    }
+    .alignleft {
+        float: left;
+    }
+    .alignright {
+        float: right;
+    }
+    .aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img.alignleft {
+        margin: 5px 20px 5px 0;
+    }
+    .wp-caption.alignleft {
+        margin: 5px 10px 5px 0;
+    }
+    img.alignright {
+        margin: 5px 0 5px 20px;
+    }
+    .wp-caption.alignright {
+        margin: 5px 0 5px 10px;
+    }
+    img.aligncenter {
+        margin: 5px auto;
+    }
+    img.alignnone {
+        margin: 5px 0;
     }
 }
 
@@ -9258,54 +9427,74 @@ p[class*="bg-"] {
     }
     .table-responsive>.table,
     .widget_calendar table>.table,
-    .entry .table-responsive>table,
-    .widget_calendar .entry table>table,
+    .widget .table-responsive>table,
+    .widget_calendar .widget table>table,
     .widget_calendar .table-responsive>table,
-    .widget_calendar table>table {
+    .widget_calendar table>table,
+    .entry .table-responsive>table,
+    .widget_calendar .entry table>table {
         margin-bottom: 0;
     }
     .table-responsive>.table>thead>tr>th,
     .widget_calendar table>.table>thead>tr>th,
+    .widget .table-responsive>table>thead>tr>th,
+    .widget_calendar .widget table>table>thead>tr>th,
+    .widget .widget_calendar table>table>thead>tr>th,
+    .widget_calendar .table-responsive>table>thead>tr>th,
+    .widget_calendar table>table>thead>tr>th,
     .entry .table-responsive>table>thead>tr>th,
     .widget_calendar .entry table>table>thead>tr>th,
     .entry .widget_calendar table>table>thead>tr>th,
-    .widget_calendar .table-responsive>table>thead>tr>th,
-    .widget_calendar table>table>thead>tr>th,
     .table-responsive>.table>thead>tr>td,
     .widget_calendar table>.table>thead>tr>td,
+    .widget .table-responsive>table>thead>tr>td,
+    .widget_calendar .widget table>table>thead>tr>td,
+    .widget .widget_calendar table>table>thead>tr>td,
+    .widget_calendar .table-responsive>table>thead>tr>td,
+    .widget_calendar table>table>thead>tr>td,
     .entry .table-responsive>table>thead>tr>td,
     .widget_calendar .entry table>table>thead>tr>td,
     .entry .widget_calendar table>table>thead>tr>td,
-    .widget_calendar .table-responsive>table>thead>tr>td,
-    .widget_calendar table>table>thead>tr>td,
     .table-responsive>.table>tbody>tr>th,
     .widget_calendar table>.table>tbody>tr>th,
+    .widget .table-responsive>table>tbody>tr>th,
+    .widget_calendar .widget table>table>tbody>tr>th,
+    .widget .widget_calendar table>table>tbody>tr>th,
+    .widget_calendar .table-responsive>table>tbody>tr>th,
+    .widget_calendar table>table>tbody>tr>th,
     .entry .table-responsive>table>tbody>tr>th,
     .widget_calendar .entry table>table>tbody>tr>th,
     .entry .widget_calendar table>table>tbody>tr>th,
-    .widget_calendar .table-responsive>table>tbody>tr>th,
-    .widget_calendar table>table>tbody>tr>th,
     .table-responsive>.table>tbody>tr>td,
     .widget_calendar table>.table>tbody>tr>td,
+    .widget .table-responsive>table>tbody>tr>td,
+    .widget_calendar .widget table>table>tbody>tr>td,
+    .widget .widget_calendar table>table>tbody>tr>td,
+    .widget_calendar .table-responsive>table>tbody>tr>td,
+    .widget_calendar table>table>tbody>tr>td,
     .entry .table-responsive>table>tbody>tr>td,
     .widget_calendar .entry table>table>tbody>tr>td,
     .entry .widget_calendar table>table>tbody>tr>td,
-    .widget_calendar .table-responsive>table>tbody>tr>td,
-    .widget_calendar table>table>tbody>tr>td,
     .table-responsive>.table>tfoot>tr>th,
     .widget_calendar table>.table>tfoot>tr>th,
+    .widget .table-responsive>table>tfoot>tr>th,
+    .widget_calendar .widget table>table>tfoot>tr>th,
+    .widget .widget_calendar table>table>tfoot>tr>th,
+    .widget_calendar .table-responsive>table>tfoot>tr>th,
+    .widget_calendar table>table>tfoot>tr>th,
     .entry .table-responsive>table>tfoot>tr>th,
     .widget_calendar .entry table>table>tfoot>tr>th,
     .entry .widget_calendar table>table>tfoot>tr>th,
-    .widget_calendar .table-responsive>table>tfoot>tr>th,
-    .widget_calendar table>table>tfoot>tr>th,
     .table-responsive>.table>tfoot>tr>td,
     .widget_calendar table>.table>tfoot>tr>td,
+    .widget .table-responsive>table>tfoot>tr>td,
+    .widget_calendar .widget table>table>tfoot>tr>td,
+    .widget .widget_calendar table>table>tfoot>tr>td,
+    .widget_calendar .table-responsive>table>tfoot>tr>td,
+    .widget_calendar table>table>tfoot>tr>td,
     .entry .table-responsive>table>tfoot>tr>td,
     .widget_calendar .entry table>table>tfoot>tr>td,
-    .entry .widget_calendar table>table>tfoot>tr>td,
-    .widget_calendar .table-responsive>table>tfoot>tr>td,
-    .widget_calendar table>table>tfoot>tr>td {
+    .entry .widget_calendar table>table>tfoot>tr>td {
         white-space: nowrap;
     }
     .table-responsive>.table-bordered,
@@ -9564,16 +9753,19 @@ p[class*="bg-"] {
         border: 1px solid #000;
     }
     .table,
-    .entry table,
-    .widget_calendar table {
+    .widget table,
+    .widget_calendar table,
+    .entry table {
         border-collapse: collapse !important;
     }
     .table td,
-    .entry table td,
+    .widget table td,
     .widget_calendar table td,
+    .entry table td,
     .table th,
-    .entry table th,
-    .widget_calendar table th {
+    .widget table th,
+    .widget_calendar table th,
+    .entry table th {
         background-color: #fff !important;
     }
     .table-bordered th,
