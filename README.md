@@ -44,10 +44,6 @@ Without these projects, this theme wouldn't be where it is today.
 * [WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
-* [Customizer Library](https://github.com/devinsays/customizer-library)
+* ~~[Customizer Library](https://github.com/devinsays/customizer-library)~~
 * [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
-
-## Recommended Plugins
-
-* [Ninja Forms](https://ninjaforms.com/)
-* [Bootstrap Ninja Forms](https://github.com/bostondv/bootstrap-ninja-forms)
+* [Kirki](http://kirki.org/)
