@@ -64,7 +64,7 @@ function bfg_merge_genesis_attr_classes() {
             'content'                   => 'col-sm-8',
             'sidebar-primary'           => 'col-sm-4',
             'sidebar-secondary'         => 'col-sm-2',
-            'archive-pagination'        => 'clearfix',
+            'archive-pagination'        => ( 'numeric' == genesis_get_option( 'posts_nav' ) ) ? 'clearfix bsg-pagination-numeric' : 'clearfix bsg-pagination-prev-next',
             'entry-content'             => 'clearfix',
             'entry-pagination'          => 'clearfix bfg-pagination-numeric',
             'structural-wrap'           => 'container',
@@ -90,7 +90,7 @@ function bfg_modify_classes_based_on_extras( $classes, $context, $attr ) {
 
 // Layout
 // Modify bootstrap classes based on genesis_site_layout
-add_filter('bfg-classes-to-add', 'bfg_modify_classes_based_on_template', 10, 3);
+add_filter('bfg_add_classes', 'bfg_modify_classes_based_on_template', 10, 3);
 
 // Remove unused layouts
 function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
