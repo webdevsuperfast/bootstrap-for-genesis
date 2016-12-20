@@ -59,6 +59,7 @@ function bfg_add_markup_sanitize_classes( $attr, $context ) {
 
 // Default array of classes to add
 function bfg_merge_genesis_attr_classes() {
+    $navclass = get_theme_mod( 'navtype', 'navbar-static-top' );
     $classes = array(
             'content-sidebar-wrap'      => 'row',
             'content'                   => 'col-sm-8',
@@ -71,7 +72,7 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-default navbar-static-top'
+            'site-header'               => 'navbar navbar-default ' . $navclass
     );
     
     if ( has_filter( 'bfg_add_classes' ) ) {

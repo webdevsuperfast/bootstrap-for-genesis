@@ -59,6 +59,22 @@ BFG_Kirki::add_section( 'navigation', array(
 ) );
 
 BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
+    'type' => 'select',
+    'settings' => 'navtype',
+    'section' => 'navigation',
+    'label' => __( 'Navigation Type', 'bootstrap-for-genesis' ),
+    'description' => __( '', 'bootstrap-for-genesis' ),
+    'priority' => 5,
+    'choices' => array(
+        'navbar-default' => __( 'Default', 'bootstrap-for-genesis' ),
+        'navbar-static-top' => __( 'Static Top', 'bootstrap-for-genesis' ),
+        'navbar-fixed-top' => __( 'Fixed Top', 'bootstrap-for-genesis' ),
+        'navbar-fixed-bottom' => __( 'Fixed Bottom', 'bootstrap-for-genesis' ),
+    ),
+    'default' => 'navbar-default'
+) );
+
+BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
 	'type' => 'checkbox',
 	'settings' => 'navextra',
 	'label' => __( 'Display navigation extras?', 'bootstrap-for-genesis' ),
