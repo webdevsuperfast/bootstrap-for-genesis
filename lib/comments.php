@@ -36,8 +36,8 @@ function bfg_comment_form_args( $args ) {
 }
 
 // @link http://www.codecheese.com/2013/11/wordpress-comment-form-with-twitter-bootstrap-3-supports/
-add_filter( 'comment_form_default_fields', 'bootstrap3_comment_form_fields' );
-function bootstrap3_comment_form_fields( $fields ) {
+add_filter( 'comment_form_default_fields', 'bfg_comment_form_fields' );
+function bfg_comment_form_fields( $fields ) {
     $commenter = wp_get_current_commenter();
     
     $req      = get_option( 'require_name_email' );
@@ -56,8 +56,8 @@ function bootstrap3_comment_form_fields( $fields ) {
     return $fields;
 }
 
-add_filter( 'genesis_ping_list_args', 'bsg_ping_list_args' );
-function bsg_ping_list_args( $args ) {
+add_filter( 'genesis_ping_list_args', 'bfg_ping_list_args' );
+function bfg_ping_list_args( $args ) {
     require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
     
     $args['walker'] = new Bootstrap_Comment_Walker();

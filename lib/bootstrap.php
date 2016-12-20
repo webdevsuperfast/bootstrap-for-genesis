@@ -65,7 +65,7 @@ function bfg_merge_genesis_attr_classes() {
             'content'                   => 'col-sm-8',
             'sidebar-primary'           => 'col-sm-4',
             'sidebar-secondary'         => 'col-sm-2',
-            'archive-pagination'        => ( 'numeric' == genesis_get_option( 'posts_nav' ) ) ? 'clearfix bsg-pagination-numeric' : 'clearfix bsg-pagination-prev-next',
+            'archive-pagination'        => ( 'numeric' == genesis_get_option( 'posts_nav' ) ) ? 'clearfix bfg-pagination-numeric' : 'clearfix bfg-pagination-prev-next',
             'entry-content'             => 'clearfix',
             'entry-pagination'          => 'clearfix bfg-pagination-numeric',
             'structural-wrap'           => 'container',
@@ -82,7 +82,7 @@ function bfg_merge_genesis_attr_classes() {
     return $classes;
 }
 
-// Adds classes array to bsg_add_markup_class() for cleaning
+// Adds classes array to bfg_add_markup_class() for cleaning
 add_filter( 'bfg_clean_classes_output', 'bfg_modify_classes_based_on_extras', 10, 3) ;
 function bfg_modify_classes_based_on_extras( $classes, $context, $attr ) {
     $classes = bfg_merge_genesis_attr_classes( $classes );
