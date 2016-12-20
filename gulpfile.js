@@ -72,6 +72,14 @@ gulp.task('clean', function(cb) {
     .pipe(vinylpaths(del))
 });
 
+// Copy bootstrap fonts to assets folder
+gulp.task('copy', function() {
+    return gulp.src(['bower_components/bootstrap-sass/assets/fonts/bootstrap/**/*'], {
+        base: 'bower_components/bootstrap-sass/assets/fonts'
+    })
+    .pipe(gulp.dest('assets/fonts'));
+});
+
 // Default task
 gulp.task('default', ['clean'], function() {
     gulp.start('styles', 'lint', 'scripts', 'watch');
