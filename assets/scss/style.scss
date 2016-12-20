@@ -1,24 +1,69 @@
-// Variables
-@import "modules/variables";
+/*
+* Sass (http://sass-lang.com/) file to generate theme.css
+*/
 
-// Bootstrap
+/* Bootstrap Core Override Variables
+------------------------------------------------------------ */
+@import "supporting/variables-bootstrap-core-override";
+
+/* Bootstrap Base
+------------------------------------------------------------ */
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
 
-$grid-float-breakpoint: $screen-md-min;
+/* Bootstrap Genesis Theme Variables
+------------------------------------------------------------ */
+@import "supporting/variables-bootstrap-genesis";
 
-// Modules
-@import "modules/mixins";
+/* Screen Reader Classes
+------------------------------------------------------------ */
+@import "supporting/screen-reader-text";
 
-// Partials
-@import "partials/base";
-@import "partials/gallery";
-@import "partials/avatar";
-@import "partials/wordpress";
-@import "partials/genesis";
-@import "partials/comments";
-@import "partials/pagination";
-@import "partials/content";
-@import "partials/widgets";
-@import "partials/shortcodes";
-@import "partials/breadcrumbs";
-@import "partials/theme";
+/* Archive/Blog Styling
+------------------------------------------------------------ */
+@import "supporting/archive";
+
+/* Nav Styling
+------------------------------------------------------------ */
+@import "supporting/nav";
+
+/* Widget Styling
+------------------------------------------------------------ */
+@import "supporting/widget";
+
+
+/* WordPress Image Styling
+------------------------------------------------------------ */
+@import "supporting/wordpress-image";
+
+
+/* WordPress Responsive Styles
+------------------------------------------------------------ */
+@import "supporting/wordpress-responsive";
+
+
+/* Long nonbreaking path name support
+ * see http://wptest.io/demo/non-breaking-text/
+------------------------------------------------------------ */
+@import "supporting/long-nonbreaking-path-name-support";
+
+
+/* Table Styling
+------------------------------------------------------------ */
+@import "supporting/tables";
+
+
+/* Pagination modifications to accomodate WordPress
+------------------------------------------------------------ */
+@import "supporting/pagination";
+
+/* Comment Styles
+------------------------------------------------------------ */
+@import "supporting/comments";
+
+/* Skip to Main Content - Accessibility Link
+------------------------------------------------------------ */
+@import "supporting/skip-to-main-content";
+
+/* Theme settings
+------------------------------------------------------------ */
+@import "supporting/genesis";
