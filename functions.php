@@ -63,23 +63,6 @@ function bfg_childtheme_setup() {
 	// Remove unneeded widget areas
 	unregister_sidebar( 'header-right' );
 
-	// Custom Image Size
-	add_image_size( 'bootstrap-featured', 750, 422, true );
-
-	// TGM Plugin Activation
-	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
-
-	//* Kirki Helper
-	foreach ( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
-		require_once $file;
-	}
-
-	// Include php files from lib folder
-	// @link https://gist.github.com/theandystratton/5924570
-	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
-		include $file;
-	}
-
 	// Move Sidebar Secondary After Content
 	remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
 	add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
@@ -94,4 +77,24 @@ function bfg_childtheme_setup() {
 	// Move Featured Image
 	remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 	add_action( 'genesis_entry_header',  'genesis_do_post_image', 0 );
+
+	// Custom Image Size
+	add_image_size( 'bootstrap-featured', 750, 422, true );
+
+	// Add Accessibility support
+	add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+
+	// TGM Plugin Activation
+	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
+
+	//* Kirki Helper
+	foreach ( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
+		require_once $file;
+	}
+
+	// Include php files from lib folder
+	// @link https://gist.github.com/theandystratton/5924570
+	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
+		include $file;
+	}
 }
