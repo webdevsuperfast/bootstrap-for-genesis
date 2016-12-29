@@ -29,12 +29,6 @@ function bfg_do_plugins_register() {
 		),
 		
 		array(
-			'name'      => __( 'Shortcodes Ultimate', 'bootstrap-for-genesis' ),
-			'slug'      => 'shortcodes-ultimate',
-			'required'  => false 
-		),
-		
-		array(
 			'name'      => __( 'Widget CSS Classes', 'bootstrap-for-genesis' ),
 			'slug'      => 'widget-css-classes',
 			'required'  => false
@@ -44,18 +38,6 @@ function bfg_do_plugins_register() {
 			'name'		=> __( 'Kirki', 'bootstrap-for-genesis' ),
 			'slug'		=> 'kirki',
 			'required' 	=> true
-		),
-
-		array(
-			'name' => __( 'Ninja Forms', 'bootstrap-for-genesis' ),
-			'slug' => 'ninja-forms',
-			'required' => false
-		),
-
-		array(
-			'name' => __( 'Bootstrap Ninja Forms', 'bootstrap-for-genesis' ),
-			'slug' => 'bootstrap-ninja-forms',
-			'source' => 'https://github.com/bostondv/bootstrap-ninja-forms/archive/master.zip'
 		)
 	);
 
