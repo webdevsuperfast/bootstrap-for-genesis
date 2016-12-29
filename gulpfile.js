@@ -86,6 +86,7 @@ gulp.task('default', function() {
     // gulp.start('styles', 'lint', 'scripts', 'watch');
     runSequence(
         'clean',
+        'copy',
         ['styles', 'lint', 'scripts'],
         'watch'
     );
