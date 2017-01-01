@@ -27,7 +27,7 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 7. Additional Widget Areas
 	* Home Featured(jumbotron)
 8. TGM Plugin Activation Support
-9. Customizer Library Support
+9. Kirki Toolkit support
 10. Multi-level dropdown menus using SmartMenus Bootstrap Addon
 
 ## Credits
