@@ -111,50 +111,6 @@ BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
     )
 ) );
 
-// Content Section
-BFG_Kirki::add_section( 'typography', array(
-	'title' => __( 'Typography', 'bootstrap-for-genesis' ),
-	'priority' => '3',
-	'capability' => 'edit_theme_options'
-) );
-
-BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
-	'type' => 'checkbox',
-	'settings' => 'custom-font',
-	'label' => __( 'Enable custom font?', 'bootstrap-for-genesis' ),
-	'section' => 'typography',
-	'default' => false,
-	'priority' => 10
-) );
-
-BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
-	'type' => 'typography',
-    'settings' => 'heading-font',
-    'label' => __( 'Heading Font', 'bootstrap-for-genesis' ),
-    'description' => __( '', 'bootstrap-for-genesis' ),
-    'section' => 'typography',
-    'default' => array(
-        'font-family' => 'Roboto',
-        'variant' => '400'
-    ),
-    'priority' => 10,
-) );
-
-BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
-	'type' => 'typography',
-    'settings' => 'body-font',
-    'label' => __( 'Body Font', 'bootstrap-for-genesis' ),
-    'description' => __( '', 'bootstrap-for-genesis' ),
-    'section' => 'typography',
-    'default' => array(
-        'font-family' => 'Roboto',
-        'variant' => '300',
-        'font-size' => '14px',
-        'line-height' => '1.5'
-    ),
-    'priority' => 15,
-) );
-
 // Footer Section
 BFG_Kirki::add_section( 'footer', array(
 	'title' => __( 'Footer', 'bootstrap-for-genesis' ),
