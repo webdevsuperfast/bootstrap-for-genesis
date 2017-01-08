@@ -7906,9 +7906,9 @@ button.close {
 
 body.archive .post,
 body.blog .post {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 40px;
-    margin-bottom: 50px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 
