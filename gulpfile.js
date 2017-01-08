@@ -15,7 +15,15 @@ var gulp = require('gulp'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     runSequence = require('run-sequence'),
+    browserSync = require('browser-sync').create();
     del = require('del');
+
+// Browser Sync
+gulp.task('browsersync',['styles', 'scripts'], function(){
+    browserSync.init({
+        proxy: 'http://localhost/test'
+    });
+});
 
 // CSS
 gulp.task('styles', function(){
@@ -36,6 +44,7 @@ gulp.task('styles', function(){
         .pipe(rename('app.css'))
         .pipe(prettify())
         .pipe(gulp.dest('assets/css'))
+        .pipe(browserSync.reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
     
     return mergeStream;
@@ -64,6 +73,7 @@ gulp.task('scripts', function() {
             .pipe(gulp.dest('temp/js'))
     }))
     .pipe(gulp.dest('assets/js'))
+    .pipe(browserSync.reload({stream: true}))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -93,10 +103,10 @@ gulp.task('default', function() {
 });
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', ['browsersync'], function() {
     // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']).on('change', browserSync.reload);
 
     // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
+    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']).on('change', browserSync.reload);
 });
