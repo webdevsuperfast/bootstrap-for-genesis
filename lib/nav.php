@@ -21,9 +21,6 @@ add_action( 'genesis_header', 'genesis_do_nav' );
 
 // filter menu args for bootstrap walker and other settings
 add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
-
-// add bootstrap markup around the nav
-add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_args_filter( $args ) {
 
     require_once( BFG_THEME_MODULES . 'wp_bootstrap_navwalker.php' );
@@ -37,6 +34,9 @@ function bfg_nav_menu_args_filter( $args ) {
     }
     return $args;
 }
+
+// add bootstrap markup around the nav
+add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_markup_filter( $html, $args ) {
     // only add additional Bootstrap markup to
     // primary and secondary nav locations
