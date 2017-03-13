@@ -134,7 +134,7 @@ function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
     return $classes_to_add;
 };
 
-function bfg_modify_classes_based_on_template( $classes_to_add, $context, $attr ) {
+function bfg_modify_classes_based_on_template( $classes_to_add ) {
     $classes_to_add = bfg_layout_options_modify_classes_to_add( $classes_to_add );
 
     return $classes_to_add;
