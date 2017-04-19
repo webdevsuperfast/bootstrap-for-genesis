@@ -15,15 +15,7 @@ var gulp = require('gulp'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     runSequence = require('run-sequence'),
-    browserSync = require('browser-sync').create();
     del = require('del');
-
-// Browser Sync
-gulp.task('browsersync',['styles', 'scripts'], function(){
-    browserSync.init({
-        proxy: 'http://localhost/test'
-    });
-});
 
 // CSS
 gulp.task('styles', function(){
@@ -73,7 +65,6 @@ gulp.task('scripts', function() {
             .pipe(gulp.dest('temp/js'))
     }))
     .pipe(gulp.dest('assets/js'))
-    .pipe(browserSync.reload({stream: true}))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -93,7 +84,6 @@ gulp.task('copy', function() {
 
 // Default task
 gulp.task('default', function() {
-    // gulp.start('styles', 'lint', 'scripts', 'watch');
     runSequence(
         'clean',
         'copy',
@@ -103,10 +93,10 @@ gulp.task('default', function() {
 });
 
 // Watch
-gulp.task('watch', ['browsersync'], function() {
+gulp.task('watch', function() {
     // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']).on('change', browserSync.reload);
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
 
     // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']).on('change', browserSync.reload);
+    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
 });
