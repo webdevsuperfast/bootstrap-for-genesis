@@ -51,12 +51,6 @@ Without these projects, this theme wouldn't be where it is today.
 * ~~[GitHub Updater](https://github.com/afragen/github-updater)~~
 * [Mr Image Resize](https://github.com/mendezcode/mr-image-resize)
 * [Shortcodes Ultimate](http://gndev.info/shortcodes-ultimate/)
-
-## Update
-
-This project is now on [Bitbucket](https://bitbucket.org/recommendwp/bootstrap-for-genesis/).
-=======
 * ~~[Customizer Library](https://github.com/devinsays/customizer-library)~~
 * [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
 * [Kirki](http://kirki.org/)
->>>>>>> bitbucket/master
