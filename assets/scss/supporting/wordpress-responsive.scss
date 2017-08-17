@@ -1,0 +1,21 @@
+/* All images are responsive by default */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Make sure videos, embeds, and captions fit their containers. */
+.wp-caption,
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+/* Make sure form elements fit their containers */
+input,
+textarea,
+select {
+    max-width: 100%;
+}

@@ -1,38 +1,69 @@
-/*!
-    Theme Name: Bootstrap for Genesis
-    Description: Twitter Bootstrap-powered Genesis child theme.
-    Author: SuperFastBusiness
-    Author URI: http://www.superfastbusiness.com/
-    Version: 1.0.3
-    Tags: responsive-layout, white, blue, one-column, two-columns, three-columns, fixed-width, theme-options, bootstrap
-    Template: genesis
-    Template Version: 2.0
-    License: GPL-2.0+
-    License URI: http://www.opensource.org/licenses/gpl-license.php
-    GitHub Theme URI: https://github.com/webdevsuperfast/Bootstrap-for-Genesis
+/*
+* Sass (http://sass-lang.com/) file to generate theme.css
 */
 
-// Variables
-@import "modules/variables";
+/* Bootstrap Core Override Variables
+------------------------------------------------------------ */
+@import "supporting/variables-bootstrap-core-override";
 
-// Bootstrap
+/* Bootstrap Base
+------------------------------------------------------------ */
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
 
-// Modules
-@import "modules/extends";
-@import "modules/mixins";
-@import "modules/loops";
+/* Bootstrap Genesis Theme Variables
+------------------------------------------------------------ */
+@import "supporting/variables-bootstrap-genesis";
 
-// Partials
-@import "partials/base";
-@import "partials/gallery";
-@import "partials/avatar";
-@import "partials/wordpress";
-@import "partials/genesis";
-@import "partials/comments";
-@import "partials/pagination";
-@import "partials/content";
-@import "partials/widgets";
-@import "partials/shortcodes";
-@import "partials/breadcrumbs";
-@import "partials/theme";
+/* Screen Reader Classes
+------------------------------------------------------------ */
+@import "supporting/screen-reader-text";
+
+/* Archive/Blog Styling
+------------------------------------------------------------ */
+@import "supporting/archive";
+
+/* Nav Styling
+------------------------------------------------------------ */
+@import "supporting/nav";
+
+/* Widget Styling
+------------------------------------------------------------ */
+@import "supporting/widget";
+
+
+/* WordPress Image Styling
+------------------------------------------------------------ */
+@import "supporting/wordpress-image";
+
+
+/* WordPress Responsive Styles
+------------------------------------------------------------ */
+@import "supporting/wordpress-responsive";
+
+
+/* Long nonbreaking path name support
+ * see http://wptest.io/demo/non-breaking-text/
+------------------------------------------------------------ */
+@import "supporting/long-nonbreaking-path-name-support";
+
+
+/* Table Styling
+------------------------------------------------------------ */
+@import "supporting/tables";
+
+
+/* Pagination modifications to accomodate WordPress
+------------------------------------------------------------ */
+@import "supporting/pagination";
+
+/* Comment Styles
+------------------------------------------------------------ */
+@import "supporting/comments";
+
+/* Skip to Main Content - Accessibility Link
+------------------------------------------------------------ */
+@import "supporting/skip-to-main-content";
+
+/* Theme settings
+------------------------------------------------------------ */
+@import "supporting/genesis";

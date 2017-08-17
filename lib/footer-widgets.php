@@ -4,18 +4,17 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.superfastbusiness.com
- * @author       SuperFastBusiness <www.superfastbusiness.com>
- * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @link         http://www.rotsenacob.com
+ * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
 
 // Custom footer widget area
-remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_before_footer', 'bfg_footer_widget_areas' );
+add_filter( 'genesis_footer_widget_areas', 'bfg_footer_widget_areas', 10, 2 );
 
-function bfg_footer_widget_areas() {
+function bfg_footer_widget_areas( $output, $footer_widgets ) {
 
     $footer_widgets = get_theme_support( 'genesis-footer-widgets' );
 
@@ -91,5 +90,5 @@ function bfg_footer_widget_areas() {
 
     }
 
-    echo apply_filters( 'genesis_footer_widget_areas', $output, $footer_widgets );
+    return $output;
 }

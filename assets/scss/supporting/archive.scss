@@ -1,0 +1,11 @@
+/* Archive/Blog Styling
+------------------------------------------------------------ */
+
+body.archive,
+body.blog {
+    .post {
+        border-bottom: 1px solid $hr-border;
+        padding-bottom: $grid-gutter-width;
+        margin-bottom: $grid-gutter-width;
+    }
+}

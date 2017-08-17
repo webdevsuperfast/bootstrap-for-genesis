@@ -4,9 +4,9 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.superfastbusiness.com
- * @author       SuperFastBusiness <www.superfastbusiness.com>
- * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @link         http://www.rotsenacob.com
+ * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
@@ -14,7 +14,7 @@
 // Integrate Bootstrap Media List on comment lists
 add_filter( 'genesis_comment_list_args', 'bfg_comment_list_args', 10, 2 );
 function bfg_comment_list_args( $args ) {
-	require_once( 'classes/class-wp-bootstrap-comment-walker.php' );
+	require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
 
 	$args['avatar_size'] = 64;
 	$args['walker'] = new Bootstrap_Comment_Walker();
@@ -36,8 +36,8 @@ function bfg_comment_form_args( $args ) {
 }
 
 // @link http://www.codecheese.com/2013/11/wordpress-comment-form-with-twitter-bootstrap-3-supports/
-add_filter( 'comment_form_default_fields', 'bootstrap3_comment_form_fields' );
-function bootstrap3_comment_form_fields( $fields ) {
+add_filter( 'comment_form_default_fields', 'bfg_comment_form_fields' );
+function bfg_comment_form_fields( $fields ) {
     $commenter = wp_get_current_commenter();
     
     $req      = get_option( 'require_name_email' );
@@ -56,9 +56,9 @@ function bootstrap3_comment_form_fields( $fields ) {
     return $fields;
 }
 
-add_filter( 'genesis_ping_list_args', 'bsg_ping_list_args' );
-function bsg_ping_list_args( $args ) {
-    require_once( 'classes/class-wp-bootstrap-comment-walker.php' );
+add_filter( 'genesis_ping_list_args', 'bfg_ping_list_args' );
+function bfg_ping_list_args( $args ) {
+    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
     
     $args['walker'] = new Bootstrap_Comment_Walker();
     $args['avatar_size'] = 0;
