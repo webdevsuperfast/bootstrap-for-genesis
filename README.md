@@ -44,7 +44,6 @@ Without these projects, this theme wouldn't be where it is today.
 * [WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
-<<<<<<< HEAD
 * ~~[SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)~~
 * ~~[AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)~~
 * [Customizer Library](https://github.com/devinsays/customizer-library)
