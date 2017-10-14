@@ -14,6 +14,6 @@
   "homepage": "http://www.rotsenacob.com",
   "dependencies": {
     "bootstrap-sass": "~3.3.7",
-    "smartmenus": "^1.0.1"
+    "smartmenus": "^1.1.0"
   }
 }
