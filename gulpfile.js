@@ -36,7 +36,6 @@ gulp.task('styles', function(){
         .pipe(rename('app.css'))
         .pipe(prettify())
         .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
     
     return mergeStream;
