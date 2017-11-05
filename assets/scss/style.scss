@@ -1,69 +1,42 @@
-/*
-* Sass (http://sass-lang.com/) file to generate theme.css
-*/
-
-/* Bootstrap Core Override Variables
------------------------------------------------------------- */
 @import "supporting/variables-bootstrap-core-override";
 
-/* Bootstrap Base
------------------------------------------------------------- */
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+/* Import Bootstrap Core
+----------------------------------------------------------------------------- */
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-/* Bootstrap Genesis Theme Variables
------------------------------------------------------------- */
-@import "supporting/variables-bootstrap-genesis";
+/* Import Fontawesome
+----------------------------------------------------------------------------- */
+@import "../../node_modules/@bower_components/font-awesome/scss/font-awesome.scss";
 
 /* Screen Reader Classes
------------------------------------------------------------- */
+----------------------------------------------------------------------------- */
 @import "supporting/screen-reader-text";
-
-/* Archive/Blog Styling
------------------------------------------------------------- */
-@import "supporting/archive";
-
-/* Nav Styling
------------------------------------------------------------- */
-@import "supporting/nav";
-
-/* Widget Styling
------------------------------------------------------------- */
-@import "supporting/widget";
-
-
-/* WordPress Image Styling
------------------------------------------------------------- */
-@import "supporting/wordpress-image";
-
-
-/* WordPress Responsive Styles
------------------------------------------------------------- */
-@import "supporting/wordpress-responsive";
-
 
 /* Long nonbreaking path name support
  * see http://wptest.io/demo/non-breaking-text/
------------------------------------------------------------- */
+----------------------------------------------------------------------------- */
 @import "supporting/long-nonbreaking-path-name-support";
 
-
-/* Table Styling
------------------------------------------------------------- */
-@import "supporting/tables";
-
-
-/* Pagination modifications to accomodate WordPress
------------------------------------------------------------- */
-@import "supporting/pagination";
-
-/* Comment Styles
------------------------------------------------------------- */
-@import "supporting/comments";
-
 /* Skip to Main Content - Accessibility Link
------------------------------------------------------------- */
+----------------------------------------------------------------------------- */
 @import "supporting/skip-to-main-content";
 
-/* Theme settings
------------------------------------------------------------- */
-@import "supporting/genesis";
+/* Comments
+----------------------------------------------------------------------------- */
+@import "supporting/comments";
+
+/* WordPress Images
+----------------------------------------------------------------------------- */
+@import "supporting/wordpress-images";
+
+/* Table
+----------------------------------------------------------------------------- */
+@import "supporting/table";
+
+/* Widgets
+----------------------------------------------------------------------------- */
+@import "supporting/widgets";
+
+/* Theme
+----------------------------------------------------------------------------- */
+@import "supporting/theme";

@@ -1,8 +1,13 @@
-/* Genesis accessibility support for screen readers
------------------------------------------------------------- */
+.genesis-skip-link {
+	margin: 0;
+}
 
-/* ## Screen reader text
---------------------------------------------- */
+.genesis-skip-link li {
+	height: 0;
+	width: 0;
+	list-style: none;
+}
+
 
 .screen-reader-text,
 .screen-reader-text span,

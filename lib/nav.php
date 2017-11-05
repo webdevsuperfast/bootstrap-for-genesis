@@ -23,14 +23,15 @@ add_action( 'genesis_header', 'genesis_do_nav' );
 add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
 function bfg_nav_menu_args_filter( $args ) {
 
-    require_once( BFG_THEME_MODULES . 'wp_bootstrap_navwalker.php' );
+    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-navwalker.php' );
 
     $navalign = get_theme_mod( 'navalign', false );
     
     if ( 'primary' === $args['theme_location'] ) {
-        $args['menu_class'] = 'nav navbar-nav ' . $navalign;
-        $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
-        $args['walker'] = new wp_bootstrap_navwalker();
+        $args['container'] = false;
+        $args['menu_class'] = 'navbar-nav mr-auto';
+        $args['fallback_cb'] = 'WP_Bootstrap_Navwalker::fallback';
+        $args['walker'] = new WP_Bootstrap_Navwalker();
     }
     return $args;
 }
@@ -44,43 +45,27 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
         return $html;
     }
 
-    $data_target = "nav-collapse" . sanitize_html_class( '-' . $args->theme_location );
-    $output = <<<EOT
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#{$data_target}">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-EOT;
+    $data_target = 'nav' . sanitize_html_class( '-' . $args->theme_location );
+    
+    $output = '';
+
     // only include blog name and description in the nav
     // if it is the primary nav location
     if ( 'primary' === $args->theme_location ) {
         $output .= apply_filters( 'bfg_navbar_brand', bfg_navbar_brand_markup() );
     }
-    $output .= '</div>'; // .navbar-header
-    $output .= genesis_html5() ? "<nav class=\"collapse navbar-collapse\" id=\"{$data_target}\">" : "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
+
+    $output .= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#'.$data_target.'" aria-controls="'.$data_target.'" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
+    $output .= '<div class="collapse navbar-collapse" id="'.$data_target.'">';
     $output .= $html;
-    
-    if ( get_theme_mod( 'navextra', false ) ) {
-        $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
-    }
-    $output .= genesis_html5() ? '</nav>' : '</div>'; // .collapse .navbar-collapse
+    $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
+    $output .= '</div>';
     
     return $output;
 }
 
 function bfg_navbar_brand_markup() {
-    // Display navbar brand on small displays 
-    $output = '<a class="navbar-brand" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
-    
-    // $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
-    $output .= get_theme_mod( 'logo', false ) ? '<img src="'.get_theme_mod( 'logo' ).'" alt="'.esc_attr( get_bloginfo( 'description' ) ).'" />' : get_bloginfo( 'name' );
-
-    $output .= '</a>';
-
+    $output = '<a class="navbar-brand" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo( 'name' ).'</a>';
     return $output;
 }
 
@@ -108,6 +93,15 @@ function bfg_navbar_content_markup() {
 
 	return $output;
 }
+
+add_filter( 'nav_menu_link_attributes', function( $atts ) {
+    $class = $atts['class'];
+    $classes = array();
+    $classes[] = $class;
+    $classes[] = 'nav-link';
+    $atts['class'] = esc_attr( implode( ' ', $classes ) );
+    return $atts;
+}, 10 );
 
 //* Filter primary navigation output to match Bootstrap markup
 // @link http://wordpress.stackexchange.com/questions/58377/using-a-filter-to-modify-genesis-wp-nav-menu/58394#58394

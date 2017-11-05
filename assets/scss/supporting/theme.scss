@@ -1,0 +1,86 @@
+/* Navbar
+----------------------------------------------------------------------------- */
+.navbar {
+    padding: {
+        right: 0;
+        left: 0;
+    }
+}
+
+.dropdown .nav-item {
+    float: none;
+    margin-left: 0 !important;
+}
+
+/* Site Header
+----------------------------------------------------------------------------- */
+.site-header {
+    padding: $spacer 0;
+    .site-title {
+        @extend .h1;
+    }
+    .site-description {
+        margin-bottom: 0;
+    }
+}
+
+/* Home Featured
+----------------------------------------------------------------------------- */
+.jumbotron {
+    border-radius: 0;
+    padding: {
+        right: 0;
+        left: 0;
+    }
+}
+
+/* Site Inner
+----------------------------------------------------------------------------- */
+.site-inner {
+    padding: $spacer*2 0;
+}
+
+/* Archive/Blog Styling
+----------------------------------------------------------------------------- */
+
+body.archive,
+body.blog {
+    .post {
+        border-bottom: 1px solid $hr-border-color;
+        padding-bottom: $spacer;
+        margin-bottom: $spacer;
+    }
+}
+
+.entry-image-link {
+    display: inline-block;
+    margin-bottom: $spacer;
+}
+
+/* Sidebar
+----------------------------------------------------------------------------- */
+.sidebar {
+    .widget {
+        margin-bottom: $spacer;
+        padding-bottom: $spacer;
+    }
+}
+
+/* Footer Widgets
+----------------------------------------------------------------------------- */
+.footer-widgets {
+    border-bottom: 1px solid $hr-border-color;
+    padding: $spacer*2 0;
+    ul, ol {
+        @include list-unstyled;
+    }
+}
+
+/* Site Footer
+----------------------------------------------------------------------------- */
+.site-footer {
+    padding: $spacer 0;
+    p {
+        margin-bottom: 0;
+    }
+}

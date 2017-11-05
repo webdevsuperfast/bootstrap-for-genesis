@@ -1,16 +1,14 @@
 // Comments
 .entry-comments {
-	margin-bottom: $line-height-computed;
+	margin-bottom: $spacer;
 	h3 {
-		margin-bottom: $line-height-computed;
+		margin-bottom: $spacer;
 	}
 	.comment {
 		margin: 0;
-		margin-bottom: $line-height-computed;
-		// padding-bottom: $line-height-computed;
+		margin-bottom: $spacer;
 		&.parent {
 			margin-bottom: 0;
-			// padding-bottom: 0;
 		}
 		.media-left {
 			img {
@@ -19,7 +17,8 @@
 		}
 	}
 	.children {
-		margin-top: $line-height-computed;
+		margin-top: $spacer;
+        list-style: none;
 	}
 }
 
@@ -32,11 +31,11 @@
 // Trackbacks
 .entry-pings {
 	.pingback {
-		margin-bottom: $line-height-computed;
-		padding-bottom: $line-height-computed;
+		margin-bottom: $spacer;
+		padding-bottom: $spacer;
 	}
 }
 
 .ping-list {
-	@extend .list-unstyled;
+	@include list-unstyled;
 }

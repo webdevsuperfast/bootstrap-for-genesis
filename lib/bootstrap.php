@@ -72,7 +72,10 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-default ' . $navclass
+            // 'site-header'               => 'navbar navbar-default ' . $navclass
+            
+            'site-header'               => 'navbar navbar-expand-lg navbar-light bg-light',
+            'entry-image'               => 'img-fluid'
     );
     
     if ( has_filter( 'bfg_add_classes' ) ) {

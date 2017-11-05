@@ -31,8 +31,11 @@ function bfg_theme_scripts() {
 		wp_enqueue_script( 'app-smartmenu-js' );
 
 		// Smart Menu Boostrap Addon Js
-		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap-4.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-smartmenu-bootstrap-js' );
+
+		wp_register_script( 'app-popper-js', BFG_THEME_JS . 'popper.min.js', array(), $version, true );
+		wp_enqueue_script( 'app-popper-js' );
 
 		wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
