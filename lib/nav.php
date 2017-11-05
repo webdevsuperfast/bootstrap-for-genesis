@@ -58,7 +58,11 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
     $output .= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#'.$data_target.'" aria-controls="'.$data_target.'" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
     $output .= '<div class="collapse navbar-collapse" id="'.$data_target.'">';
     $output .= $html;
-    $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
+    
+    if ( get_theme_mod( 'navextra', false ) ) {
+        $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
+    }
+
     $output .= '</div>';
     
     return $output;
@@ -77,11 +81,9 @@ function bfg_navbar_content_markup() {
     switch( $choices ) {
         case 'search':
         default:
-            $output = '<form method="get" class="navbar-form navbar-right" action="' .  $url . '" role="search">';
-            $output .= '<div class="form-group">';
-            $output .= '<input class="form-control" name="s" placeholder="Search" type="text">';
-            $output .= '</div>';
-            $output .= '<button class="btn btn-default" value="Search" type="submit">Submit</button>';
+            $output = '<form class="form-inline float-lg-right" method="get" action="'.$url.'" role="search">';
+            $output .= '<input class="form-control" type="text" placeholder="Search" name="s">';
+            $output .= '<button class="btn btn-outline-success" type="submit">Search</button>';
             $output .= '</form>';
             break;
         case 'date': 
