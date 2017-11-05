@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 // CSS
 gulp.task('styles', function(){
     var cssStream = gulp.src([
-        'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.css'
+        'node_modules/smartmenus/dist/addons/bootstrap/jquery.smartmenus.bootstrap.css'
     ])
     .pipe(concat('smartmenus.css'));
 
@@ -52,9 +52,9 @@ gulp.task('lint', function(){
 gulp.task('scripts', function() {
     return gulp.src([
         'assets/js/source/*.js',
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'bower_components/smartmenus/src/jquery.smartmenus.js',
-        'bower_components/smartmenus/src/addons/bootstrap/jquery.smartmenus.bootstrap.js'
+        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+        'node_modules/smartmenus/dist/jquery.smartmenus.js',
+        'node_modules/smartmenus/dist/addons/bootstrap/jquery.smartmenus.bootstrap.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){
@@ -75,8 +75,8 @@ gulp.task('clean', function(cb) {
 
 // Copy bootstrap fonts to assets folder
 gulp.task('copy', function() {
-    return gulp.src(['bower_components/bootstrap-sass/assets/fonts/bootstrap/**/*'], {
-        base: 'bower_components/bootstrap-sass/assets/fonts'
+    return gulp.src(['node_modules/bootstrap-sass/assets/fonts/bootstrap/**/*'], {
+        base: 'node_modules/bootstrap-sass/assets/fonts'
     })
     .pipe(gulp.dest('assets/fonts'));
 });
