@@ -72,7 +72,7 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-expand-lg navbar-dark bg-dark',
+            'site-header'               => 'navbar navbar-expand-lg navbar-light bg-light',
             'entry-image'               => 'img-fluid'
     );
     
@@ -105,8 +105,8 @@ function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // sidebar-content          // supported
     if ( 'sidebar-content' === $layout ) {
-        $classes_to_add['content'] = 'col-sm-8 col-sm-push-4';
-        $classes_to_add['sidebar-primary'] = 'col-sm-4 col-sm-pull-8';
+        $classes_to_add['content'] = 'col-sm-8';
+        $classes_to_add['sidebar-primary'] = 'order-first col-sm-4';
     }
 
     // content-sidebar-sidebar  // supported
@@ -119,17 +119,17 @@ function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // sidebar-sidebar-content  // supported
     if ( 'sidebar-sidebar-content' === $layout ) {
-        $classes_to_add['content'] = 'col-sm-6 col-sm-push-6';
-        $classes_to_add['sidebar-primary'] = 'col-sm-4 col-sm-pull-4';
-        $classes_to_add['sidebar-secondary'] = 'col-sm-2 col-sm-pull-10';
+        $classes_to_add['content'] = 'col-sm-6 order-3';
+        $classes_to_add['sidebar-primary'] = 'col-sm-4 order-2';
+        $classes_to_add['sidebar-secondary'] = 'col-sm-2 order-first';
     }
 
 
     // sidebar-content-sidebar  // supported
     if ( 'sidebar-content-sidebar' === $layout ) {
-        $classes_to_add['content'] = 'col-sm-6 col-sm-push-2';
-        $classes_to_add['sidebar-primary'] = 'col-sm-4 col-sm-push-2';
-        $classes_to_add['sidebar-secondary'] = 'col-sm-2 col-sm-pull-10';
+        $classes_to_add['content'] = 'col-sm-6';
+        $classes_to_add['sidebar-primary'] = 'col-sm-4';
+        $classes_to_add['sidebar-secondary'] = 'col-sm-2 order-first';
     }
 
     return $classes_to_add;
