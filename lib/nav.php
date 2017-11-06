@@ -82,7 +82,7 @@ function bfg_navbar_content_markup() {
         case 'search':
         default:
             $output = '<form class="form-inline float-lg-right" method="get" action="'.$url.'" role="search">';
-            $output .= '<input class="form-control" type="text" placeholder="Search" name="s">';
+            $output .= '<input class="form-control mr-sm-2" type="text" placeholder="Search" name="s">';
             $output .= '<button class="btn btn-outline-success" type="submit">Search</button>';
             $output .= '</form>';
             break;
