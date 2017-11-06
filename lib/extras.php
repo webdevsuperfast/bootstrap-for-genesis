@@ -37,7 +37,7 @@ function page_blog_class( $classes ) {
 add_filter( 'wp_list_categories', 'bfg_categories_postcount_filter', 10, 2 );
 add_filter( 'get_archives_link', 'bfg_categories_postcount_filter', 10, 2 );
 function bfg_categories_postcount_filter( $variable ) {
-   $variable = str_replace( '(', '<span class="tag tag-pill tag-default post-count">', $variable );
+   $variable = str_replace( '(', '<span class="badge badge-pill badge-primary tag-default post-count">', $variable );
    $variable = str_replace( ')', '</span>', $variable );
    return $variable;
 }
