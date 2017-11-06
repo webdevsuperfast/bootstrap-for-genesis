@@ -28,7 +28,7 @@ class Bootstrap_Comment_Walker extends Walker_Comment {
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '' ); ?>>
 			<div class="media">
 				<?php if ( 0 != $args['avatar_size'] ): ?>
-				<div class="media-left">
+				<div class="mr-3">
 					<a href="<?php echo get_comment_author_url(); ?>" class="media-object">
 						<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
 					</a>
