@@ -22,6 +22,10 @@ function bfg_theme_scripts() {
 		wp_deregister_script( 'superfish' );
 		wp_deregister_script( 'superfish-args' );
 
+		wp_deregister_script( 'jquery' );
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', $version, true );
+		wp_enqueue_script( 'jquery' );
+
 		// Popper JS
 		wp_register_script( 'app-popper-js', BFG_THEME_JS . 'popper.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-popper-js' );
