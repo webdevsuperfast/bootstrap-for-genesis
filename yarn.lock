@@ -2,16 +2,6 @@
 # yarn lockfile v1
 
 
-"@bower_components/font-awesome@FortAwesome/Font-Awesome#^4.7.0", font-awesome@FortAwesome/Font-Awesome#^4.7.0:
-  version "4.7.0"
-  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/a8386aae19e200ddb0f6845b5feeee5eb7013687"
-
-"@bower_components/smartmenus@vadikom/smartmenus#^1.1.0", smartmenus@vadikom/smartmenus#^1.1.0:
-  version "1.1.0"
-  resolved "https://codeload.github.com/vadikom/smartmenus/tar.gz/9a73dd16049c8ac0b000d0c7b23b47defed61015"
-  dependencies:
-    jquery ">=1.7.0"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -708,6 +698,10 @@ first-chunk-stream@^1.0.0:
 flagged-respawn@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-0.3.2.tgz#ff191eddcd7088a675b2610fffc976be9b8074b5"
+
+font-awesome@FortAwesome/Font-Awesome#^4.7.0:
+  version "4.7.0"
+  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/a8386aae19e200ddb0f6845b5feeee5eb7013687"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -2416,6 +2410,12 @@ sigmund@^1.0.1, sigmund@~1.0.0:
 signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+smartmenus@vadikom/smartmenus#^1.1.0:
+  version "1.1.0"
+  resolved "https://codeload.github.com/vadikom/smartmenus/tar.gz/9a73dd16049c8ac0b000d0c7b23b47defed61015"
+  dependencies:
+    jquery ">=1.7.0"
 
 sntp@2.x.x:
   version "2.1.0"
