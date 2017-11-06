@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 // CSS
 gulp.task('styles', function(){
     var cssStream = gulp.src([
-        'node_modules/@bower_components/smartmenus/dist/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.css'
+        'node_modules/smartmenus/dist/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.css'
     ])
     .pipe(concat('smartmenus.css'));
 
@@ -34,7 +34,7 @@ gulp.task('styles', function(){
         .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('app.css'))
-        .pipe(minifycss())
+        .pipe(prettify())
         .pipe(gulp.dest('assets/css'))
         .pipe(notify({ message: 'Styles task complete' }));
     
