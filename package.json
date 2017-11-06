@@ -1,8 +1,8 @@
 {
-  "name": "b4genesis",
+  "name": "bootstrap-for-genesis",
   "version": "0.0.1",
   "description": "Genesis child theme based on Bootstrap 4",
-  "repository": "git+https://bitbucket/recommendwp/b4genesis.git",
+  "repository": "git+https://github/webdevsuperfast/bootstrap-for-genesis.git",
   "keywords": [
     "bootstrap",
     "genesis",
@@ -10,7 +10,7 @@
   ],
   "author": "Rotsen Mark Acob",
   "license": "MIT",
-  "homepage": "https://bitbucket.com/recommendwp/b4genesis",
+  "homepage": "https://github.com/webdevsuperfast/bootstrap-for-genesis",
   "devDependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "del": "^3.0.0",
