@@ -138,11 +138,11 @@ function bfg_genesis_prev_next_posts_nav() {
 	$prev_link = get_previous_posts_link( apply_filters( 'genesis_prev_link_text', '<span aria-hidden="true">&larr;</span> ' . __( 'Previous Page', 'b4genesis' ) ) );
 	$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'b4genesis' ) . ' <span aria-hidden="true">&rarr;</span>' ) );
 
-	$prev = $prev_link ? '<li class="previous">' . $prev_link . '</li>' : '';
-	$next = $next_link ? '<li class="next">' . $next_link . '</li>' : '';
+	$prev = $prev_link ? '<li class="page-item previous">' . $prev_link . '</li>' : '';
+	$next = $next_link ? '<li class="page-item next">' . $next_link . '</li>' : '';
 
 	$nav = genesis_markup( array(
-		'html5'   => '<nav %s><ul class="pager">',
+		'html5'   => '<nav %s><ul class="pagination">',
 		'xhtml'   => '<div class="navigation">',
 		'context' => 'archive-pagination',
 		'echo'    => false,
