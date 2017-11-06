@@ -13,7 +13,7 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 
 ## Features
 
-1. Bootstrap v3.3.7
+1. Bootstrap v4-beta2
 2. Bootstrap components
 	* Comment Form
 	* Media List(Used in comments)
@@ -44,12 +44,5 @@ Without these projects, this theme wouldn't be where it is today.
 * [WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
-* ~~[SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)~~
-* ~~[AQ Resizer](https://github.com/syamilmj/Aqua-Resizer)~~
-* [Customizer Library](https://github.com/devinsays/customizer-library)
-* ~~[GitHub Updater](https://github.com/afragen/github-updater)~~
-* [Mr Image Resize](https://github.com/mendezcode/mr-image-resize)
-* [Shortcodes Ultimate](http://gndev.info/shortcodes-ultimate/)
-* ~~[Customizer Library](https://github.com/devinsays/customizer-library)~~
 * [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
 * [Kirki](http://kirki.org/)
