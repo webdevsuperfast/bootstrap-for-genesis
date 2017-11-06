@@ -6,3 +6,4 @@ tmp
 npm-debug.log
 dploy.yaml
 temp
+exclude.txt
