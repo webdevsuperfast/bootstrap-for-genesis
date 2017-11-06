@@ -13,8 +13,8 @@
 
 // Changing breadcrumbs to Bootstrap's format
 // @link http://jhtechservices.com/2015/05/integrate-bootstraps-breadcrumbs-into-genesis-theme/
-add_filter( 'genesis_breadcrumb_args', 'b4g_breadcrumb_args' );
-function b4g_breadcrumb_args( $args ){
+add_filter( 'genesis_breadcrumb_args', 'bfg_breadcrumb_args' );
+function bfg_breadcrumb_args( $args ){
 	$args['sep'] = '     ';
 	$args['prefix'] = sprintf( '<ol %s>', genesis_attr( 'breadcrumb' ) );
     $args['suffix'] = '</ol>';
@@ -30,8 +30,8 @@ function b4g_breadcrumb_args( $args ){
 	return $args;
 }
 
-add_filter( 'genesis_build_crumbs', 'b4g_build_crumbs', 10, 2 );
-function b4g_build_crumbs( $crumbs ){
+add_filter( 'genesis_build_crumbs', 'bfg_build_crumbs', 10, 2 );
+function bfg_build_crumbs( $crumbs ){
 
 	foreach( $crumbs as &$crumb ){
 		$crumb = str_replace( '     ','</li><li class="breadcrumb-item active">', $crumb );

@@ -12,8 +12,8 @@
 */
 // Add class to images
 // @link http://stackoverflow.com/a/22078964
-add_filter( 'the_content', 'b4g_image_responsive_class' );
-function b4g_image_responsive_class( $content ) {
+add_filter( 'the_content', 'bfg_image_responsive_class' );
+function bfg_image_responsive_class( $content ) {
    global $post;
    
    $pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
@@ -34,9 +34,9 @@ function page_blog_class( $classes ) {
 
 // Remove Parentheses on Archive/Categories
 // @link http://wordpress.stackexchange.com/questions/88545/how-to-remove-the-parentheses-from-the-category-widget
-add_filter( 'wp_list_categories', 'b4g_categories_postcount_filter', 10, 2 );
-add_filter( 'get_archives_link', 'b4g_categories_postcount_filter', 10, 2 );
-function b4g_categories_postcount_filter( $variable ) {
+add_filter( 'wp_list_categories', 'bfg_categories_postcount_filter', 10, 2 );
+add_filter( 'get_archives_link', 'bfg_categories_postcount_filter', 10, 2 );
+function bfg_categories_postcount_filter( $variable ) {
    $variable = str_replace( '(', '<span class="tag tag-pill tag-default post-count">', $variable );
    $variable = str_replace( ')', '</span>', $variable );
    return $variable;

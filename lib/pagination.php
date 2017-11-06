@@ -15,10 +15,10 @@
 remove_filter( 'genesis_attr_archive-pagination', 'genesis_attributes_pagination' );
 
 // Pagination Numeric
-add_filter( 'genesis_prev_link_text', 'b4g_genesis_prev_link_text_numeric' );
-add_filter( 'genesis_next_link_text', 'b4g_genesis_next_link_text_numeric' );
+add_filter( 'genesis_prev_link_text', 'bfg_genesis_prev_link_text_numeric' );
+add_filter( 'genesis_next_link_text', 'bfg_genesis_next_link_text_numeric' );
 
-function b4g_genesis_prev_link_text_numeric( $text ) {
+function bfg_genesis_prev_link_text_numeric( $text ) {
     if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
         return '<span aria-hidden="true">&laquo;</span>'
             . '<span class="sr-only">' . __( 'Previous Page', 'b4genesis' ) . '</span>';
@@ -26,7 +26,7 @@ function b4g_genesis_prev_link_text_numeric( $text ) {
     return $text;
 }
 
-function b4g_genesis_next_link_text_numeric( $text ) {
+function bfg_genesis_next_link_text_numeric( $text ) {
     if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
         return '<span class="sr-only">' . __( 'Next Page', 'b4genesis' ) . '</span>'
             . '<span aria-hidden="true">&raquo;</span>';
@@ -36,18 +36,18 @@ function b4g_genesis_next_link_text_numeric( $text ) {
 
 // Pagination Prev/Next
 remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-add_action( 'genesis_after_endwhile', 'b4g_genesis_posts_nav' );
+add_action( 'genesis_after_endwhile', 'bfg_genesis_posts_nav' );
 
-function b4g_genesis_posts_nav() {
+function bfg_genesis_posts_nav() {
     if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
-		// b4g_numeric_posts_nav();
-		b4st_pagination();
+		// bfg_numeric_posts_nav();
+		bfg_pagination();
     } else {
-        b4g_genesis_prev_next_posts_nav();
+        bfg_genesis_prev_next_posts_nav();
     }
 }
 
-function b4g_numeric_posts_nav() {
+function bfg_numeric_posts_nav() {
 
 	if( is_singular() )
 		return;
@@ -134,7 +134,7 @@ function b4g_numeric_posts_nav() {
 
 }
 
-function b4g_genesis_prev_next_posts_nav() {
+function bfg_genesis_prev_next_posts_nav() {
 	$prev_link = get_previous_posts_link( apply_filters( 'genesis_prev_link_text', '<span aria-hidden="true">&larr;</span> ' . __( 'Previous Page', 'b4genesis' ) ) );
 	$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'b4genesis' ) . ' <span aria-hidden="true">&rarr;</span>' ) );
 
@@ -158,10 +158,10 @@ function b4g_genesis_prev_next_posts_nav() {
 
 // Content Navigation
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
-add_action( 'genesis_entry_content', 'bsg_do_post_content_nav', 12 );
-add_filter( 'wp_link_pages_link', 'bsg_wp_link_pages_link' );
+add_action( 'genesis_entry_content', 'bfg_do_post_content_nav', 12 );
+add_filter( 'wp_link_pages_link', 'bfg_wp_link_pages_link' );
 
-function bsg_wp_link_pages_link( $link ) {
+function bfg_wp_link_pages_link( $link ) {
     if ( $link && '<' !== $link[0] ) {
         return '<li class="active"><a href="#">' . $link . '</a></li>';
     } else {
@@ -169,7 +169,7 @@ function bsg_wp_link_pages_link( $link ) {
     }
 }
 
-function bsg_do_post_content_nav( $attr ) {
+function bfg_do_post_content_nav( $attr ) {
     wp_link_pages( array(
         'before' => '<div class="bsg-post-content-nav">'
                 . '<p>' . __( 'Pages:', 'genesis' ) . '</p>'
@@ -183,8 +183,8 @@ function bsg_do_post_content_nav( $attr ) {
     ) );
 }
 
-if ( ! function_exists( 'b4st_pagination' ) ) {
-	function b4st_pagination() {
+if ( ! function_exists( 'bfg_pagination' ) ) {
+	function bfg_pagination() {
 		global $wp_query;
 		$big = 999999999; // This needs to be an unlikely integer
 		// For more options and info view the docs for paginate_links()
