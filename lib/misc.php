@@ -43,6 +43,8 @@ function bfg_do_meta() {
 
 	// Body Class
 	add_filter( 'body_class', 'bfg_body_class' );
+
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
 }
 
 // Jumbotron
