@@ -163,9 +163,9 @@ add_filter( 'wp_link_pages_link', 'bfg_wp_link_pages_link' );
 
 function bfg_wp_link_pages_link( $link ) {
     if ( $link && '<' !== $link[0] ) {
-        return '<li class="active"><a href="#">' . $link . '</a></li>';
+        return '<li class="page-item active"><a href="#">' . $link . '</a></li>';
     } else {
-        return '<li>' . $link . '</li>';
+        return '<li class="page-item">' . $link . '</li>';
     }
 }
 
@@ -174,8 +174,8 @@ function bfg_do_post_content_nav( $attr ) {
         'before' => '<div class="bsg-post-content-nav">'
                 . '<p>' . __( 'Pages:', 'genesis' ) . '</p>'
                 . genesis_markup( array(
-                    'html5'   => '<div %s><ul>',
-                    'xhtml'   => '<div %s><ul>',
+                    'html5'   => '<div %s><ul class="pagination">',
+                    'xhtml'   => '<div %s><ul class="pagination">',
                     'context' => 'entry-pagination',
                     'echo'    => false,
                 ) ),
