@@ -23,7 +23,7 @@ function bfg_theme_scripts() {
 		wp_deregister_script( 'superfish-args' );
 
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', '//code.jquery.com/jquery-3.2.1.slim.min.js', $version, true );
+		wp_register_script( 'jquery', '//code.jquery.com/jquery-3.2.1.slim.min.js', array(), $version, true );
 		wp_enqueue_script( 'jquery' );
 
 		// Popper JS
@@ -42,8 +42,8 @@ function bfg_theme_scripts() {
 		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap-4.min.js', array( 'app-smartmenu-js' ), $version, true );
 		wp_enqueue_script( 'app-smartmenu-bootstrap-js' );
 
-		// wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
-		// wp_enqueue_script( 'app-js' );
+		wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'app-js' );
 	}
 }
 
