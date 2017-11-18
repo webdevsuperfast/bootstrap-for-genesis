@@ -30,7 +30,7 @@ gulp.task('styles', function(){
     
     var mergeStream = merge(sassStream, cssStream)
         .pipe(concat('app.css'))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(autoprefixer('last 2 versions'))
         .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('app.css'))
