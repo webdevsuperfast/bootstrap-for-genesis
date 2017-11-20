@@ -43,15 +43,12 @@ function bfg_do_meta() {
 
 	// Body Class
 	add_filter( 'body_class', 'bfg_body_class' );
-
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
 }
 
 // Jumbotron
 function bfg_do_home_featured() {
 	genesis_markup( array(
-		'html5' => '<div %s>',
-		'xhtml' => '<div class="home-featured">',
+		'open' => '<div %s>',
 		'context' => 'home-featured'
 	) );
 
@@ -64,7 +61,10 @@ function bfg_do_home_featured() {
 
 	genesis_structural_wrap( 'home-featured', 'close' );
 
-	echo '</div>';
+	genesis_markup( array(
+		'close' => '</div>',
+		'context' => 'home-featured'
+	) );
 }
 
 // Body Class
@@ -73,9 +73,4 @@ function bfg_body_class( $args ) {
 		$args[] = 'blog';
 
 	return $args;
-}
-
-// Mr Image Resize functionn
-function bfg_thumb($url, $width, $height=0, $align='') {
-	return mr_image_resize($url, $width, $height, true, $align, false);
 }
