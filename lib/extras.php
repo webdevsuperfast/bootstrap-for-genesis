@@ -52,3 +52,9 @@ add_filter( 'the_password_form', function() {
     ';
     return $o;
 } );
+
+// Filter viewport meta values for Bootstrap
+add_filter( 'genesis_viewport_value', 'bfg_viewport_value' );
+function bfg_viewport_value() {
+    return 'width=device-width, initial-scale=1, shrink-to-fit=no';
+}
