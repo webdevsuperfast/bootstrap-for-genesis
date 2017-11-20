@@ -17,7 +17,7 @@ function bfg_register_sidebars() {
 	// Register Custom Sidebars
 	genesis_register_sidebar( array(
 		'id' => 'home-featured',
-		'name' => __( 'Home Featured', 'bfg' ),
-		'description' => __( 'This is the home featured area. It uses the jumbotron bootstrap section.', 'bfg' )
+		'name' => __( 'Home Featured', 'bootstrap-for-genesis' ),
+		'description' => __( 'This is the home featured area. It uses the jumbotron bootstrap section.', 'bootstrap-for-genesis' )
 	) );
 }
