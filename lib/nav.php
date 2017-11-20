@@ -41,7 +41,7 @@ add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_markup_filter( $html, $args ) {
     // only add additional Bootstrap markup to
     // primary and secondary nav locations
-    if ( 'primary'   !== $args->theme_location ) {
+    if ( 'primary' !== $args->theme_location ) {
         return $html;
     }
 
