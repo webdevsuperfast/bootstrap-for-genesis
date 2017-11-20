@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to compile CSS, JS, Bower to install dependencies and Sass for CSS. 
+Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to compile CSS, JS, Yarn to install dependencies and Sass for CSS. 
 
 ## Installation Instructions
 
@@ -21,14 +21,14 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 	* Jumbotron
 	* Navbar
 3. Sass
-4. Bower
+4. Yarn
 5. Gulp
 6. Footer Widgets(modified to add bootstrap column classes based on the number of widget areas)
 7. Additional Widget Areas
 	* Home Featured(jumbotron)
 8. TGM Plugin Activation Support
 9. Kirki Toolkit support
-10. Multi-level dropdown menus using SmartMenus Bootstrap Addon
+10. Multi-level dropdown menus using [SmartMenus](http://www.smartmenus.org/) Bootstrap Addon
 
 ## Credits
 
@@ -38,7 +38,7 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bootstrap](http://getbootstrap.com)
 * [Sass](http://sass-lang.com/)
 * [Gulp](http://gulpjs.com/)
-* [Bower](https://github.com/bower/bower)
+* [Yarn](https://yarnpkg.com/)
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
 * [WP Bootstrap Navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 * [WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)
