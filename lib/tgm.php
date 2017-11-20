@@ -17,18 +17,6 @@ function bfg_do_plugins_register() {
 
 	$plugins = array(
 		array(
-			'name'      => __( 'Page Builder by SiteOrigin', 'bootstrap-for-genesis' ),
-			'slug'      => 'siteorigin-panels',
-			'required'  => false
-		),
-
-		array(
-			'name'      => __( 'SiteOrigin Widgets Bundle', 'bootstrap-for-genesis' ),
-			'slug'      => 'so-widgets-bundle',
-			'required'  => false
-		),
-		
-		array(
 			'name'      => __( 'Widget CSS Classes', 'bootstrap-for-genesis' ),
 			'slug'      => 'widget-css-classes',
 			'required'  => false
