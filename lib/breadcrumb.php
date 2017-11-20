@@ -2,7 +2,7 @@
 /**
  * Breadcrumb
  *
- * @package      B4Genesis
+ * @package      Bootstrap for Genesis
  * @since        1.0
  * @link         http://rotsenacob.com
  * @author       Rotsen Mark Acob <rotsenacob.com>
