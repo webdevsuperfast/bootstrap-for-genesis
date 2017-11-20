@@ -52,6 +52,7 @@ gulp.task('lint', function(){
 gulp.task('scripts', function() {
     return gulp.src([
         'assets/js/source/*.js',
+        'node_modules/jquery/dist/jquery.slim.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/popper.js/dist/umd/popper.js',
         'node_modules/smartmenus/dist/jquery.smartmenus.js',
