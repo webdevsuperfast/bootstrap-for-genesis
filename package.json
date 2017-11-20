@@ -31,7 +31,7 @@
     "jquery": "^3.2.1",
     "jshint": "^2.9.5",
     "merge-stream": "^1.0.1",
-    "popper.js": "^1.12.6",
+    "popper.js": "^1.12.9",
     "run-sequence": "^2.2.0",
     "vinyl-paths": "^2.1.0"
   },
