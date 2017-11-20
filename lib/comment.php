@@ -11,17 +11,6 @@
  *
 */
 
-// Integrate Bootstrap Media List on comment lists
-add_filter( 'genesis_comment_list_args', 'bfg_comment_list_args', 10, 2 );
-function bfg_comment_list_args( $args ) {
-	require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
-
-	$args['avatar_size'] = 64;
-	$args['walker'] = new Bootstrap_Comment_Walker();
-	$args['callback'] = '';
-	return $args;
-}
-
 // Comment Form
 // @link http://www.codecheese.com/2013/11/wordpress-comment-form-with-twitter-bootstrap-3-supports/
 add_filter( 'comment_form_defaults', 'bfg_comment_form_args' );
@@ -54,13 +43,4 @@ function bfg_comment_form_fields( $fields ) {
     );
     
     return $fields;
-}
-
-add_filter( 'genesis_ping_list_args', 'bfg_ping_list_args' );
-function bfg_ping_list_args( $args ) {
-    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
-    
-    $args['walker'] = new Bootstrap_Comment_Walker();
-    $args['avatar_size'] = 0;
-    return $args;
 }
