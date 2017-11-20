@@ -9575,6 +9575,76 @@ img.wp-smiley,
     text-transform: uppercase;
 }
 
+/* Pagination
+----------------------------------------------------------------------------- */
+
+/* Pagination
+ * - Genesis Markup assigns class differently than Bootstrap
+ * extend .pagination to .bfg-pagination-numeric ul to accomodate
+ * - accomodate .pagination-omission, which is an empty li
+ * in Genesis, which differs from Bootstrap's markup.
+ * In Bootstrap a span inside the li would be preferred
+ * but this solution via CSS is simplier than modifying the markup
+ *---------------------------------------------------------- */
+
+.archive-pagination a {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.archive-pagination a:focus,
+.archive-pagination a:hover {
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #ddd;
+}
+
+.archive-pagination ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin-bottom: 0;
+}
+
+.archive-pagination ul li:first-child a {
+    margin-left: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.archive-pagination ul li:last-child a {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.archive-pagination ul li.active a {
+    z-index: 2;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.archive-pagination ul li.pagination-omission {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
 /* Theme
 ----------------------------------------------------------------------------- */
 
