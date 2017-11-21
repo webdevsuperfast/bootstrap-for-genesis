@@ -142,6 +142,9 @@
     white-space: nowrap;
 }
 
+/* Bootstrap Core Variable Override
+----------------------------------------------------------------------------- */
+
 /* Import Bootstrap Core
 ----------------------------------------------------------------------------- */
 
@@ -9241,6 +9244,12 @@ a.text-dark:hover {
     clip: auto;
 }
 
+/* Bootstrap Genesis Theme Variables
+----------------------------------------------------------------------------- */
+
+/* Variables
+------------------------------------------------------------ */
+
 /* Screen Reader Classes
 ----------------------------------------------------------------------------- */
 
@@ -9703,8 +9712,94 @@ body.blog .post {
 ----------------------------------------------------------------------------- */
 
 .sidebar .widget {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar .widget .widget-wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.sidebar .widgettitle {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.sidebar .widget_recent_entries .widget-wrap,
+.sidebar .widget_recent_comments .widget-wrap {
+    padding: 0;
+}
+
+.sidebar .widget_recent_entries ul,
+.sidebar .widget_recent_comments ul {
+    padding-left: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.sidebar .widget_recent_entries ul li,
+.sidebar .widget_recent_comments ul li {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: none;
+    border-right: none;
+}
+
+.sidebar .widget_recent_entries ul li:first-child,
+.sidebar .widget_recent_comments ul li:first-child {
+    border-top: none;
+}
+
+.sidebar .widget_recent_entries ul li:last-child,
+.sidebar .widget_recent_comments ul li:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom: none;
+}
+
+.sidebar .widget_recent_entries ul li:focus,
+.sidebar .widget_recent_entries ul li:hover,
+.sidebar .widget_recent_comments ul li:focus,
+.sidebar .widget_recent_comments ul li:hover {
+    text-decoration: none;
+}
+
+.sidebar .widget_recent_entries ul li:focus a,
+.sidebar .widget_recent_entries ul li:hover a,
+.sidebar .widget_recent_comments ul li:focus a,
+.sidebar .widget_recent_comments ul li:hover a {
+    text-decoration: none;
 }
 
 /* Footer Widgets
