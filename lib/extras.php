@@ -58,3 +58,28 @@ add_filter( 'genesis_viewport_value', 'bfg_viewport_value' );
 function bfg_viewport_value() {
     return 'width=device-width, initial-scale=1, shrink-to-fit=no';
 }
+
+add_filter( 'genesis_register_widget_area_defaults', function( $defaults ) {
+    global $wp_registered_sidebars;
+    global $wp_widget_factory;
+    // $test = $wp_widget_factory->widgets['WP_Widget_Recent_Posts'];
+
+    // if ( isset( $wp_registered_sidebars['sidebar'] ) ) {
+        $defaults = array(
+            'before_widget' => genesis_markup( array(
+                'open'    => '<section id="%%1$s" class="widget %%2$s">',
+                'context' => 'widget-wrap',
+                'echo'    => false,
+            ) ),
+            'after_widget'  => genesis_markup( array(
+                'close'   => '</section>' . "\n",
+                'context' => 'widget-wrap',
+                'echo'    => false
+            ) ),
+            'before_title'  => '<h4 class="widget-title widgettitle">',
+            'after_title'   => '</h4><div class="widget-wrap">',
+        );
+    // }
+
+    return $defaults;
+} );
