@@ -5,11 +5,11 @@
 		margin-bottom: $spacer;
 	}
 	.comment {
-		display: flex;
-		align-items: flex-start;
-		flex-direction: column;
+		// display: flex;
+		// align-items: flex-start;
+		// flex-direction: column;
 		margin: 0;
-		margin-bottom: $spacer;
+		margin-bottom: $spacer*2;
 		article[itemprop="comment"] {
 			background-color: $card-bg;
 			background-clip: border-box;
