@@ -11,9 +11,6 @@
  *
 */
 
-// Remove default pagination class
-// remove_filter( 'genesis_attr_archive-pagination', 'genesis_attributes_pagination' );
-
 // Pagination Numeric
 add_filter( 'genesis_prev_link_text', 'bfg_genesis_prev_link_text_numeric' );
 add_filter( 'genesis_next_link_text', 'bfg_genesis_next_link_text_numeric' );
