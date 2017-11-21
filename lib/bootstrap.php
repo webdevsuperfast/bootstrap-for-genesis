@@ -59,15 +59,15 @@ function bfg_add_markup_sanitize_classes( $attr, $context ) {
 
 // Default array of classes to add
 function bfg_merge_genesis_attr_classes() {
-    $navclass = get_theme_mod( 'navtype', 'navbar-static-top' );
+    global $wp_registered_sidebar;
     $classes = array(
             'content-sidebar-wrap'      => 'row',
             'content'                   => 'col-sm-8',
             'sidebar-primary'           => 'col-sm-4',
             'sidebar-secondary'         => 'col-sm-2',
-            'archive-pagination'        => ( 'numeric' == genesis_get_option( 'posts_nav' ) ) ? 'clearfix bfg-pagination-numeric' : 'clearfix bfg-pagination-prev-next',
+            'archive-pagination'        => 'clearfix',
             'entry-content'             => 'clearfix',
-            'entry-pagination'          => 'clearfix bfg-pagination-numeric',
+            'entry-pagination'          => 'clearfix',
             'structural-wrap'           => 'container',
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
