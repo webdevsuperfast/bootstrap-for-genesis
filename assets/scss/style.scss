@@ -1,3 +1,5 @@
+/* Bootstrap Core Variable Override
+----------------------------------------------------------------------------- */
 @import "supporting/variables-bootstrap-core-override";
 
 /* Import Bootstrap Core
@@ -7,6 +9,10 @@
 /* Import Fontawesome
 ----------------------------------------------------------------------------- */
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
+
+/* Bootstrap Genesis Theme Variables
+----------------------------------------------------------------------------- */
+@import "supporting/variables-bootstrap-genesis";
 
 /* Screen Reader Classes
 ----------------------------------------------------------------------------- */
