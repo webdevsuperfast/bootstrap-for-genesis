@@ -79,7 +79,7 @@ function bfg_childtheme_setup() {
 	add_action( 'genesis_entry_header',  'genesis_do_post_image', 0 );
 
 	// Custom Image Size
-	add_image_size( 'bootstrap-featured', 750, 422, true );
+	add_image_size( 'bootstrap-featured', 750, 0, true );
 
 	// Add Accessibility support
 	add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
