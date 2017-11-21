@@ -48,8 +48,7 @@ function bfg_do_meta() {
 // Jumbotron
 function bfg_do_home_featured() {
 	genesis_markup( array(
-		'html5' => '<div %s>',
-		'xhtml' => '<div class="home-featured">',
+		'open' => '<div %s>',
 		'context' => 'home-featured'
 	) );
 
@@ -62,7 +61,10 @@ function bfg_do_home_featured() {
 
 	genesis_structural_wrap( 'home-featured', 'close' );
 
-	echo '</div>';
+	genesis_markup( array(
+		'close' => '</div>',
+		'context' => 'home-featured'
+	) );
 }
 
 // Body Class
