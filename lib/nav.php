@@ -96,18 +96,6 @@ function bfg_navbar_content_markup() {
 	return $output;
 }
 
-add_filter( 'nav_menu_link_attributes', 'bfg_menu_link_attributes', 10, 4 );
-function bfg_menu_link_attributes( $atts, $item, $args ) {
-    if ( 'primary' === $args->theme_location ) {
-        $class = $atts['class'];
-        $classes = array();
-        $classes[] = $class;
-        $classes[] = 'nav-link';
-        $atts['class'] = esc_attr( implode( ' ', $classes ) );
-    }
-    return $atts;
-}
-
 //* Filter primary navigation output to match Bootstrap markup
 // @link http://wordpress.stackexchange.com/questions/58377/using-a-filter-to-modify-genesis-wp-nav-menu/58394#58394
 add_filter( 'genesis_do_nav', 'bfg_override_do_nav', 10, 3 );
