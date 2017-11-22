@@ -72,7 +72,7 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-expand-lg navbar-light bg-light',
+            'site-header'               => 'navbar navbar-expand-lg navbar-dark bg-dark',
             'entry-image'               => 'img-fluid'
     );
     
