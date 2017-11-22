@@ -1,0 +1,11 @@
+/* Site Footer
+----------------------------------------------------------------------------- */
+.site-footer {
+    padding: $spacer 0;
+    p {
+        margin-bottom: 0;
+    }
+    ul {
+        @include list-unstyled;
+    }
+}

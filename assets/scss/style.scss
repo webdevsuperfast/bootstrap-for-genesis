@@ -1,52 +1,59 @@
-/* Bootstrap Core Variable Override
------------------------------------------------------------------------------ */
+// Bootstrap Core Variable Override
 @import "supporting/variables-bootstrap-core-override";
 
-/* Import Bootstrap Core
------------------------------------------------------------------------------ */
+// Import Bootstrap Core
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-/* Import Fontawesome
------------------------------------------------------------------------------ */
+// Import Fontawesome
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
-/* Bootstrap Genesis Theme Variables
------------------------------------------------------------------------------ */
+// Bootstrap Genesis Theme Variables
 @import "supporting/variables-bootstrap-genesis";
 
-/* Screen Reader Classes
------------------------------------------------------------------------------ */
+// Screen Reader Classes
 @import "supporting/screen-reader-text";
 
-/* Long nonbreaking path name support
- * see http://wptest.io/demo/non-breaking-text/
------------------------------------------------------------------------------ */
+// Long nonbreaking path name support
 @import "supporting/long-nonbreaking-path-name-support";
 
-/* Skip to Main Content - Accessibility Link
------------------------------------------------------------------------------ */
+// Skip to Main Content - Accessibility Link
 @import "supporting/skip-to-main-content";
 
-/* Comments
------------------------------------------------------------------------------ */
+// Comments
 @import "supporting/comments";
 
-/* WordPress Images
------------------------------------------------------------------------------ */
+// Images
 @import "supporting/wordpress-images";
 
-/* Table
------------------------------------------------------------------------------ */
+// Table
 @import "supporting/table";
 
-/* Widgets
------------------------------------------------------------------------------ */
+// Widgets
 @import "supporting/widgets";
 
-/* Pagination
------------------------------------------------------------------------------ */
+// Pagination
 @import "supporting/pagination";
 
-/* Theme
------------------------------------------------------------------------------ */
-@import "supporting/theme";
+// Navigation
+@import "supporting/nav";
+
+// Header
+@import "supporting/header";
+
+// Jumbotron
+@import "supporting/jumbotron";
+
+// Site Inner
+@import "supporting/site-inner";
+
+// Archive/Blog
+@import "supporting/archive";
+
+// Sidebar
+@import "supporting/sidebar";
+
+// Footer Widgets
+@import "supporting/footer-widgets";
+
+// Site Footer
+@import "supporting/footer";

@@ -75,4 +75,39 @@
 
 .ping-list {
 	@include list-unstyled;
+	.comment-body {
+		background-color: $card-bg;
+		background-clip: border-box;
+		border: $card-border-width solid $card-border-color;
+		@include border-radius($card-border-radius);
+	}
+	.comment-meta {
+		padding: $card-spacer-y $card-spacer-x;
+		margin-bottom: 0;
+		background-color: $card-cap-bg;
+		border-bottom: $card-border-width solid $card-border-color;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: $spacer;
+		.says {
+			display: none;
+		}
+		.comment-author {
+			margin-right: auto;
+		}
+	}
+	.comment-content {
+		flex: 1 1 auto;
+		padding: $card-spacer-x;
+	}
+	.reply {
+		padding: $card-spacer-y $card-spacer-x;
+		background-color: $card-cap-bg;
+		border-top: $card-border-width solid $card-border-color;
+		.comment-reply-link {
+			@extend .btn;
+			@extend .btn-primary;
+		}
+	}
 }

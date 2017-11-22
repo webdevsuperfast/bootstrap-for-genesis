@@ -1,0 +1,11 @@
+/* Site Header
+----------------------------------------------------------------------------- */
+.site-header {
+    // padding: $spacer 0;
+    .site-title {
+        @extend .h1;
+    }
+    .site-description {
+        margin-bottom: 0;
+    }
+}

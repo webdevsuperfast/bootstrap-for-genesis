@@ -1,0 +1,9 @@
+/* Footer Widgets
+----------------------------------------------------------------------------- */
+.footer-widgets {
+    border-bottom: 1px solid $hr-border-color;
+    padding: $spacer*2 0;
+    ul, ol {
+        @include list-unstyled;
+    }
+}
