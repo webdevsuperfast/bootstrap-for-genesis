@@ -98,8 +98,7 @@ function bfg_navbar_content_markup() {
 
 add_filter( 'nav_menu_link_attributes', 'bfg_menu_link_attributes', 10, 4 );
 function bfg_menu_link_attributes( $atts, $item, $args ) {
-    if ( 'primary' === $args->menu->slug ) {
-    
+    if ( 'primary' === $args->theme_location ) {
         $class = $atts['class'];
         $classes = array();
         $classes[] = $class;
