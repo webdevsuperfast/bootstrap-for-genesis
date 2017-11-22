@@ -1,0 +1,12 @@
+/* ## Gallery
+----------------------------------------------------------------------------- */
+.gallery-item {
+    .gallery-columns-2 & {
+        @include media-breakpoint-up(sm) {
+        }
+    }
+    .gallery-columns-3 & {
+        @include media-breakpoint-up(sm) {
+        }
+    }
+}
