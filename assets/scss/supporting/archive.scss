@@ -3,10 +3,10 @@
 
 body.archive,
 body.blog {
-    .post {
+    .entry {
         border-bottom: 1px solid $hr-border-color;
-        padding-bottom: $spacer;
-        margin-bottom: $spacer;
+        padding-bottom: $spacer*2;
+        margin-bottom: $spacer*2;
     }
 }
 
