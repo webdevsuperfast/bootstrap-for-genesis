@@ -59,7 +59,9 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
     $output .= '<div class="collapse navbar-collapse" id="'.$data_target.'">';
     $output .= $html;
     
-    if ( get_theme_mod( 'navextra', false ) ) {
+    $navextra = get_theme_mod( 'navextra', false );
+    
+    if ( $navextra == true ) {
         $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
     }
 
@@ -77,17 +79,20 @@ function bfg_navbar_brand_markup() {
 function bfg_navbar_content_markup() {
     $url = get_home_url();
     
-    $choices = get_theme_mod( 'select', false );
+    $choices = get_theme_mod( 'select', 'search' );
+    
+    $output = '';
+    
     switch( $choices ) {
         case 'search':
         default:
-            $output = '<form class="form-inline float-lg-right" method="get" action="'.$url.'" role="search">';
+            $output .= '<form class="form-inline float-lg-right" method="get" action="'.$url.'" role="search">';
             $output .= '<input class="form-control mr-sm-2" type="text" placeholder="Search" name="s">';
             $output .= '<button class="btn btn-outline-success" type="submit">Search</button>';
             $output .= '</form>';
             break;
         case 'date': 
-            $output = '<p class="navbar-text navbar-right">';
+            $output .= '<p class="navbar-text navbar-right">';
             $output .= date_i18n( get_option( 'date_format' ) );
             $output .= '</p>';
             break;

@@ -72,9 +72,40 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-expand-lg navbar-dark bg-dark',
+            // 'site-header'               => 'navbar navbar-expand-lg navbar-dark bg-dark',
             'entry-image'               => 'img-fluid'
     );
+
+    $navclasses = array();
+
+    $navclasses[] = 'navbar';
+
+    $navposition = get_theme_mod( 'navposition', false );
+
+    $navclasses[] = $navposition;
+
+    $navcontainer = get_theme_mod( 'navcontainer', 'lg' );
+    $navclasses[] = 'navbar-expand-' . $navcontainer;
+
+    $navcolor = get_theme_mod( 'navcolor', 'dark' );
+
+    switch( $navcolor ) {
+        case 'light':
+            $navclasses[] = 'navbar-light';
+            $navclasses[] = 'bg-light';
+            break;
+        case 'dark':
+        default:
+            $navclasses[] = 'navbar-dark';
+            $navclasses[] = 'bg-dark';
+            break;
+        case 'primary':
+            $navclasses[] = 'navbar-dark';
+            $navclasses[] = 'bg-primary';
+            break;
+    }
+
+    $classes['site-header'] = esc_attr( implode( ' ', $navclasses ) );
     
     if ( has_filter( 'bfg_add_classes' ) ) {
         $classes = apply_filters( 'bfg_add_classes', $classes );

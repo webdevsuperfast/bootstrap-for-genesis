@@ -17,40 +17,6 @@ BFG_Kirki::add_config( 'bootstrap-for-genesis', array(
 	'option_type' => 'theme_mod'
 ) );
 
-// General Section
-BFG_Kirki::add_section( 'general', array(
-	'title' => __( 'General', 'bootstrap-for-genesis' ),
-	'priority' => '1',
-	'capability' => 'edit_theme_options'
-) );
-
-BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
-    'type' => 'image',
-    'settings' => 'logo',
-    'label' => __( 'Logo', 'bootstrap-for-genesis' ),
-    'description' => __( '', 'bootstrap-for-genesis' ),
-    'section' => 'general',
-    'default' => '',
-    'priority' => 10
-) );
-
-BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
-    'type' => 'image',
-    'settings' => 'favicon',
-    'label' => __( 'Favicon', 'bootstrap-for-genesis' ),
-    'description' => __( '', 'bootstrap-for-genesis' ),
-    'section' => 'general',
-    'default' => '',
-    'priority' => 15
-) );
-
-// Header Section
-BFG_Kirki::add_section( 'header', array(
-	'title' => __( 'Header', 'bootstrap-for-genesis' ),
-	'priority' => '2',
-	'capability' => 'edit_theme_options'
-) );
-
 // Navigation Section
 BFG_Kirki::add_section( 'navigation', array(
 	'title' => __( 'Navigation', 'bootstrap-for-genesis' ),
@@ -60,32 +26,49 @@ BFG_Kirki::add_section( 'navigation', array(
 
 BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
     'type' => 'select',
-    'settings' => 'navtype',
+    'settings' => 'navposition',
     'section' => 'navigation',
     'label' => __( 'Navigation Type', 'bootstrap-for-genesis' ),
     'description' => __( '', 'bootstrap-for-genesis' ),
     'priority' => 5,
     'choices' => array(
-        'navbar-default' => __( 'Default', 'bootstrap-for-genesis' ),
-        'navbar-static-top' => __( 'Static Top', 'bootstrap-for-genesis' ),
-        'navbar-fixed-top' => __( 'Fixed Top', 'bootstrap-for-genesis' ),
-        'navbar-fixed-bottom' => __( 'Fixed Bottom', 'bootstrap-for-genesis' ),
+        '' => __( 'Default', 'bootstrap-for-genesis' ),
+        'sticky-top' => __( 'Sticky Top', 'bootstrap-for-genesis' ),
+        'fixed-top' => __( 'Fixed Top', 'bootstrap-for-genesis' ),
+        'fixed-bottom' => __( 'Fixed Bottom', 'bootstrap-for-genesis' ),
     ),
-    'default' => 'navbar-default'
+    'default' => ''
 ) );
 
 BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
     'type' => 'select',
-    'settings' => 'navalign',
+    'settings' => 'navcontainer',
     'section' => 'navigation',
-    'label' => __( 'Navigation Alignment', 'bootstrap-for-genesis' ),
+    'label' => __( 'Navigation Container', 'bootstrap-for-genesis' ),
     'description' => __( '', 'bootstrap-for-genesis' ),
     'priority' => 10,
     'choices' => array(
-        'navbar-left' => __( 'Default', 'bootstrap-for-genesis' ),
-        'navbar-right' => __( 'Right', 'bootstrap-for-genesis' ),
+        'sm' => __( 'Small', 'bootstrap-for-genesis' ),
+        'md' => __( 'Medium', 'bootstrap-for-genesis' ),
+        'lg' => __( 'Large', 'bootstrap-for-genesis' ),
+        'xl' => __( 'Extra Large', 'bootstrap-for-genesis' )
     ),
-    'default' => ''
+    'default' => 'lg'
+) );
+
+BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
+    'type' => 'select',
+    'settings' => 'navcolor',
+    'section' => 'navigation',
+    'label' => __( 'Navigation Color Scheme', 'bootstrap-for-genesis' ),
+    'description' => __( '', 'bootstrap-for-genesis' ),
+    'priority' => 15,
+    'choices' => array(
+        'light' => __( 'Light', 'bootstrap-for-genesis' ),
+        'dark' => __( 'Dark', 'bootstrap-for-genesis' ),
+        'primary' => __( 'Primary', 'bootstrap-for-genesis' )
+    ),
+    'default' => 'dark'
 ) );
 
 BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
@@ -93,8 +76,8 @@ BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
 	'settings' => 'navextra',
 	'label' => __( 'Display navigation extras?', 'bootstrap-for-genesis' ),
 	'section' => 'navigation',
-	'default' => '0',
-	'priority' => 10
+	'default' => 0,
+	'priority' => 20
 ) );
 
 BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
@@ -104,7 +87,7 @@ BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
     'description' => __( '', 'bootstrap-for-genesis' ),
     'section' => 'navigation',
     'default' => 'search',
-    'priority' => 15,
+    'priority' => 25,
     'choices' => array(
         'date' => __( 'Date', 'bootstrap-for-genesis' ),
         'search' => __( 'Search Form', 'bootstrap-for-genesis' )
@@ -123,6 +106,6 @@ BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
 	'settings' => 'creds',
 	'label' => __( 'Footer Credits', 'bootstrap-for-genesis' ),
 	'section' => 'footer',
-	'default' => '[footer_copyright] &middot; <a href="http://www.rotsenacob.com">Rotsen Mark Acob</a> &middot; Built on the <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis Framework</a>',
+	'default' => '',
 	'priority' => 10
 ) );
