@@ -23,7 +23,7 @@
         background-color: $card-cap-bg;
         border-bottom: $card-border-width solid $card-border-color;
     }
-    .widget_recent_entries, .widget_recent_comments {
+    .widget_recent_entries, .widget_recent_comments, .widget_archive, .widget_categories, .widget_meta {
         .widget-wrap {
             padding: 0;
         }
