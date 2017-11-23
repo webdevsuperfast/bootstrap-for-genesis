@@ -83,3 +83,19 @@ add_filter( 'genesis_register_widget_area_defaults', function( $defaults ) {
 
     return $defaults;
 } );
+
+add_filter( 'wp_link_pages_args', function( $params ) {
+    $params['before'] = '<ul class="post-pagination">';
+    $params['after'] = '</ul>';
+    return $params;
+} );
+
+add_filter( 'wp_link_pages_link', function( $link ) {
+    // var_dump( $link[1] );
+    if ( $link && 'a' !== $link[1] ) {
+        $link = '<li class="page-item active"><a href="#">' . $link . '</a></li>';
+    } else {
+        $link = '<li class="page-item">' . $link . '</li>';
+    }
+    return $link;
+} );
