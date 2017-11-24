@@ -40,7 +40,6 @@ Without these projects, this theme wouldn't be where it is today.
 * [Yarn](https://yarnpkg.com/)
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
 * [WP Bootstrap Navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
-* ~~[WP Bootstrap Comment Walker](https://github.com/ediamin/wp-bootstrap-comment-walker)~~s
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
 * [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
