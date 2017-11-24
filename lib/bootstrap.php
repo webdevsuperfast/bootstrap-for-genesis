@@ -69,10 +69,8 @@ function bfg_merge_genesis_attr_classes() {
             'entry-content'             => 'clearfix',
             'entry-pagination'          => 'clearfix',
             'structural-wrap'           => 'container',
-            'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            // 'site-header'               => 'navbar navbar-expand-lg navbar-dark bg-dark',
             'entry-image'               => 'img-fluid'
     );
 
@@ -106,6 +104,32 @@ function bfg_merge_genesis_attr_classes() {
     }
 
     $classes['site-header'] = esc_attr( implode( ' ', $navclasses ) );
+
+    // Footer Class
+    $footerwidgetbg = get_theme_mod( 'footer-widget-bg', 'dark' );
+    
+    $footerwidgetclasses = array();
+    
+    if ( $footerwidgetbg !== 'primary' ) {
+        $footerwidgetclasses[] = 'text-muted';
+    }
+
+    $footerwidgetclasses[] = 'bg-' . $footerwidgetbg;
+
+    $classes['footer-widgets'] = esc_attr( implode( ' ', $footerwidgetclasses ) );
+
+    // Footer Class
+    $footerbg = get_theme_mod( 'footerbg', 'dark' );
+
+    $footerclasses = array();
+
+    if ( $footerbg !== 'primary' ) {
+        $footerclasses[] = 'text-muted';
+    }
+
+    $footerclasses[] = 'bg-' . $footerbg;
+
+    $classes['site-footer'] = esc_attr( implode( ' ', $footerclasses ) );
     
     if ( has_filter( 'bfg_add_classes' ) ) {
         $classes = apply_filters( 'bfg_add_classes', $classes );

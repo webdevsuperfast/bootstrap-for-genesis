@@ -94,11 +94,48 @@ BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
     )
 ) );
 
+// Footer Widget Section
+BFG_Kirki::add_section( 'footer-widget', array(
+	'title' => __( 'Footer Widget', 'bootstrap-for-genesis' ),
+	'priority' => '4',
+	'capability' => 'edit_theme_options'
+) );
+
+BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
+    'type' => 'select',
+    'settings' => 'footer-widget-bg',
+    'section' => 'footer-widget',
+    'label' => __( 'Footer Widget Background', 'bootstrap-for-genesis' ),
+    'description' => __( '', 'bootstrap-for-genesis' ),
+    'priority' => 15,
+    'choices' => array(
+        'light' => __( 'Light', 'bootstrap-for-genesis' ),
+        'dark' => __( 'Dark', 'bootstrap-for-genesis' ),
+        'primary' => __( 'Primary', 'bootstrap-for-genesis' )
+    ),
+    'default' => 'dark'
+) );
+
 // Footer Section
 BFG_Kirki::add_section( 'footer', array(
 	'title' => __( 'Footer', 'bootstrap-for-genesis' ),
-	'priority' => '4',
+	'priority' => '5',
 	'capability' => 'edit_theme_options'
+) );
+
+BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
+    'type' => 'select',
+    'settings' => 'footerbg',
+    'section' => 'footer',
+    'label' => __( 'Footer Background', 'bootstrap-for-genesis' ),
+    'description' => __( '', 'bootstrap-for-genesis' ),
+    'priority' => 15,
+    'choices' => array(
+        'light' => __( 'Light', 'bootstrap-for-genesis' ),
+        'dark' => __( 'Dark', 'bootstrap-for-genesis' ),
+        'primary' => __( 'Primary', 'bootstrap-for-genesis' )
+    ),
+    'default' => 'dark'
 ) );
 
 BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
@@ -107,5 +144,5 @@ BFG_Kirki::add_field( 'bootstrap-for-genesis', array(
 	'label' => __( 'Footer Credits', 'bootstrap-for-genesis' ),
 	'section' => 'footer',
 	'default' => '',
-	'priority' => 10
+	'priority' => 20
 ) );
