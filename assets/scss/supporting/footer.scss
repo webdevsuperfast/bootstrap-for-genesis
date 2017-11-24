@@ -8,4 +8,21 @@
     ul {
         @include list-unstyled;
     }
+    a {
+        color: inherit;
+    }
+    &.text-muted {
+        a {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    &.bg-primary {
+        a {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
 }

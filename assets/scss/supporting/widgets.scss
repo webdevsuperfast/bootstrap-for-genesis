@@ -26,18 +26,15 @@
 	li {
 		margin-bottom: $spacer;
 		a {
-			color: $body-color;
+			color: inherit;
 			font-family: $headings-font-family;
             font-weight: $headings-font-weight;
-            .footer-widgets & {
-            	color: $gray-100;
-            }
 			&:hover {
 				color: $link-color;
 			}
 		}
 		span {
-			color: $gray-300;
+			color: $text-muted;
 			display: block;
 			font-family: $font-family-sans-serif;
 			font-size: 12px;
