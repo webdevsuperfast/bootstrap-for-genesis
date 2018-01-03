@@ -12,7 +12,6 @@
   "license": "MIT",
   "homepage": "https://github.com/webdevsuperfast/bootstrap-for-genesis",
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
@@ -37,6 +36,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "4.0.0-beta.3",
     "font-awesome": "FortAwesome/Font-Awesome#^4.7.0",
     "smartmenus": "vadikom/smartmenus#^1.1.0"
   },
