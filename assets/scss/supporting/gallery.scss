@@ -61,7 +61,7 @@
         background-color: $thumbnail-bg;
         border: $thumbnail-border-width solid $thumbnail-border-color;
         @include border-radius($thumbnail-border-radius);
-        @include transition($thumbnail-transition);
+        @include transition($transition-base);
         @include box-shadow($thumbnail-box-shadow);
     }
 }
