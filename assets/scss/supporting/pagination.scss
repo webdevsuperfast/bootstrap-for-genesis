@@ -63,9 +63,10 @@
 }
 
 .post-pagination {
-    display: flex;
+    @include clearfix;
     @include list-unstyled;
     @include border-radius;
+    display: flex;
     margin-bottom: $spacer*2;
     a {
         position: relative;
