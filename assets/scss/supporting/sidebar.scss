@@ -14,7 +14,7 @@
         margin-bottom: $spacer*2;
         .widget-wrap {
             flex: 1 1 auto;
-            padding: $card-spacer-x;
+            padding: $card-spacer-y $card-spacer-x;
         }
     }
     .widgettitle {
