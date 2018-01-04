@@ -58,6 +58,9 @@
 
 /** Category Widget **/
 .widget_categories, .widget_archive {
+	form {
+		padding: $list-group-item-padding-y $list-group-item-padding-x;
+	}
 	select {
 		@extend .form-control;
 	}
@@ -121,6 +124,18 @@
 		caption {
 			text-align: center;
 			text-transform: uppercase;
+		}
+	}
+}
+
+/** ## Navigation Widget
+----------------------------------------------------------------------------- */
+.widget_nav_menu {
+	ul {
+		li {
+			a {
+				color: inherit;
+			}
 		}
 	}
 }
