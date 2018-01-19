@@ -11,9 +11,18 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 3. Activate the Bootstrap for Genesis theme.
 4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
 
+## Building from Source
+
+1. Clone the repository to your local machine.
+2. Install [Node](https://nodejs.org/en/).
+3. Install [Yarn](https://yarnpkg.com/en/)
+4. Install [Gulp](https://gulpjs.com/) globally.
+5. Install [Git](https://git-scm.com/).
+6. Run `gulp` through your favorite CLI program.
+
 ## Features
 
-1. Bootstrap v4-beta2
+1. Bootstrap v4
 2. Bootstrap components
 	* Comment Form
 	* Search Form
