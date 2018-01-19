@@ -20,10 +20,10 @@
     "gulp-clean-css": "^3.9.2",
     "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.1",
-    "gulp-flatmap": "^1.0.0",
+    "gulp-flatmap": "^1.0.2",
     "gulp-jsbeautifier": "^2.1.2",
     "gulp-jshint": "^2.1.0",
-    "gulp-notify": "^3.0.0",
+    "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
@@ -31,12 +31,12 @@
     "jshint": "^2.9.5",
     "merge-stream": "^1.0.1",
     "popper.js": "^1.12.9",
-    "run-sequence": "^2.2.0",
+    "run-sequence": "^2.2.1",
     "vinyl-paths": "^2.1.0"
   },
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "4.0.0-beta.3",
+    "bootstrap": "4.0.0",
     "font-awesome": "FortAwesome/Font-Awesome#^4.7.0",
     "smartmenus": "vadikom/smartmenus#^1.1.0"
   },
