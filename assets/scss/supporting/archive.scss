@@ -2,7 +2,8 @@
 ----------------------------------------------------------------------------- */
 
 body.archive,
-body.blog {
+body.blog,
+body.search {
     .entry {
         border-bottom: 1px solid $hr-border-color;
         padding-bottom: $spacer*2;
