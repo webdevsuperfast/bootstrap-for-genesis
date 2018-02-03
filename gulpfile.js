@@ -75,20 +75,12 @@ gulp.task('clean', function(cb) {
     .pipe(vinylpaths(del))
 });
 
-// Copy bootstrap fonts to assets folder
-gulp.task('copy', function() {
-    return gulp.src(['node_modules/font-awesome/fonts/**/**'], {
-        base: 'node_modules/font-awesome/fonts'
-    })
-    .pipe(gulp.dest('assets/fonts/fontawesome'));
-});
-
 // Default task
 gulp.task('default', function() {
     // gulp.start('styles', 'lint', 'scripts', 'watch');
     runSequence(
         'clean',
-        ['copy', 'styles', 'lint', 'scripts'],
+        ['styles', 'lint', 'scripts'],
         'watch'
     );
 });
