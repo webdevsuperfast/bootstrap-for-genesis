@@ -87,11 +87,6 @@ function bfg_childtheme_setup() {
 	// TGM Plugin Activation
 	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
 
-	//* Kirki Helper
-	foreach ( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
-		require_once $file;
-	}
-
 	// Include php files from lib folder
 	// @link https://gist.github.com/theandystratton/5924570
 	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {

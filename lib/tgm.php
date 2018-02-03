@@ -21,12 +21,6 @@ function bfg_do_plugins_register() {
 			'slug'      => 'widget-css-classes',
 			'required'  => false
 		),
-
-		array(
-			'name'		=> __( 'Kirki', 'bootstrap-for-genesis' ),
-			'slug'		=> 'kirki',
-			'required' 	=> true
-		)
 	);
 
 	$config = array(
