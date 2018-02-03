@@ -106,7 +106,7 @@ function bfg_merge_genesis_attr_classes() {
     $classes['site-header'] = esc_attr( implode( ' ', $navclasses ) );
 
     // Footer Class
-    $footerwidgetbg = get_theme_mod( 'footer-widget-bg', 'dark' );
+    $footerwidgetbg = get_theme_mod( 'footerwidgetbg', 'dark' );
     
     $footerwidgetclasses = array();
     

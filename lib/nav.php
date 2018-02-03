@@ -79,7 +79,7 @@ function bfg_navbar_brand_markup() {
 function bfg_navbar_content_markup() {
     $url = get_home_url();
     
-    $choices = get_theme_mod( 'select', 'search' );
+    $choices = get_theme_mod( 'navextra', 'search' );
     
     $output = '';
     
@@ -95,6 +95,9 @@ function bfg_navbar_content_markup() {
             $output .= '<p class="navbar-text navbar-right">';
             $output .= date_i18n( get_option( 'date_format' ) );
             $output .= '</p>';
+            break;
+        case '':
+            $output .= '';
             break;
     }
 
