@@ -1,4 +1,16 @@
 <?php
+/**
+ * Customizer
+ *
+ * @package      Bootstrap for Genesis
+ * @since        1.0
+ * @link         http://rotsenacob.com
+ * @author       Rotsen Mark Acob <rotsenacob.com>
+ * @copyright    Copyright (c) 2017, Rotsen Mark Acob
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ *
+*/
+
 add_action( 'customize_register', function( $wp_customize ) {
     // Add Default Settings
     $wp_customize->add_setting( 'bootstrap-for-genesis', array(
