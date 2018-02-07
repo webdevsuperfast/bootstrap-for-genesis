@@ -24,8 +24,6 @@ add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
 function bfg_nav_menu_args_filter( $args ) {
 
     require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-navwalker.php' );
-
-    $navalign = get_theme_mod( 'navalign', false );
     
     if ( 'primary' === $args['theme_location'] ) {
         $args['container'] = false;
@@ -71,7 +69,11 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
 }
 
 function bfg_navbar_brand_markup() {
-    $output = '<a class="navbar-brand" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo( 'name' ).'</a>';
+    if ( get_theme_mod( 'custom_logo' ) ) {
+        $output = get_custom_logo();
+    } else {
+        $output = '<a class="navbar-brand" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo( 'name' ).'</a>';
+    }
     return $output;
 }
 
