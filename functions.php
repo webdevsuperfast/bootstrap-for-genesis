@@ -48,6 +48,12 @@ function bfg_childtheme_setup() {
 	// Add support for 3-column footer widgets
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
+	// Custom Logo
+	add_theme_support( 'custom-logo', array(
+		'flex-width' => true,
+		'flex-height' => true
+	) );
+
 	// Structural Wraps
 	add_theme_support( 'genesis-structural-wraps', array(
 		'header',
