@@ -113,3 +113,10 @@ add_filter( 'the_content', 'bfg_filter_ptags_on_images' );
 function bfg_filter_ptags_on_images( $content ) {
 	return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
+
+// Replace custom logo class to bootstrap
+add_filter( 'get_custom_logo', function( $html ) {
+    $html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
+
+    return $html;
+}, 10 );
