@@ -69,6 +69,14 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Copy bootstrap fonts to assets folder
+gulp.task('copy', function() {
+    return gulp.src(['node_modules/font-awesome/fonts/**/**'], {
+        base: 'node_modules/font-awesome/fonts'
+    })
+    .pipe(gulp.dest('assets/fonts/fontawesome'));
+});
+
 // Clean
 gulp.task('clean', function(cb) {
     return gulp.src('temp/*')
@@ -77,10 +85,9 @@ gulp.task('clean', function(cb) {
 
 // Default task
 gulp.task('default', function() {
-    // gulp.start('styles', 'lint', 'scripts', 'watch');
     runSequence(
         'clean',
-        ['styles', 'lint', 'scripts'],
+        ['copy', 'styles', 'lint', 'scripts'],
         'watch'
     );
 });
