@@ -4,8 +4,8 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.rotsenacob.com
- * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
  * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
@@ -19,7 +19,7 @@ function bfg_childtheme_setup() {
 
 	// Child theme (do not remove)
 	define( 'BFG_THEME_NAME', 'Bootstrap for Genesis' );
-	define( 'BFG_THEME_URL', 'http://www.rotsenacob.com/' );
+	define( 'BFG_THEME_URL', 'http://webdevsuperfast.github.io/' );
 	define( 'BFG_THEME_LIB', CHILD_DIR . '/lib/' );
 	define( 'BFG_THEME_LIB_URL', CHILD_URL . '/lib/' );
 	define( 'BFG_THEME_IMAGES', CHILD_URL . '/images/' );
