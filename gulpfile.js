@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 // CSS
 gulp.task('styles', function(){
     var cssStream = gulp.src([
-        'node_modules/smartmenus/dist/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.css'
+        'node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.css'
     ])
     .pipe(concat('smartmenus.css'));
 
@@ -56,7 +56,7 @@ gulp.task('scripts', function() {
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/popper.js/dist/umd/popper.js',
         'node_modules/smartmenus/dist/jquery.smartmenus.js',
-        'node_modules/smartmenus/dist/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.js'
+        'node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.js'
     ])
     .pipe(changed('js'))
     .pipe(foreach(function(stream, file){
