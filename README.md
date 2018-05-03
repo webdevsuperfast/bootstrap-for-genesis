@@ -13,16 +13,16 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 
 ## Building from Source
 
-1. Clone the repository to your local machine.
-2. Install [Node](https://nodejs.org/en/).
-3. Install [Gulp](https://gulpjs.com/) globally.
-4. Install [Git](https://git-scm.com/).
+1. Install [Git](https://git-scm.com/).
+2. Clone the repository to your local machine.
+3. Install [Node](https://nodejs.org/en/).
+4. Install [Gulp](https://gulpjs.com/) globally.
 5. Run `npm install` to install dependencies through terminal/CLI program.
 6. Run `gulp` through your favorite CLI program.
 
 ## Features
 
-1. Bootstrap v4.1
+1. Bootstrap v4.1.1
 2. Bootstrap components
 	* Comment Form
 	* Search Form
