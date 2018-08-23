@@ -1,7 +1,3 @@
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 /*!
  * SmartMenus jQuery Plugin - v1.1.0 - September 17, 2017
  * http://www.smartmenus.org/
@@ -12,32 +8,26 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * Licensed MIT
  */
 
-(function (factory) {
+(function(factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD
 		define(['jquery'], factory);
-	} else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && _typeof(module.exports) === 'object') {
+	} else if (typeof module === 'object' && typeof module.exports === 'object') {
 		// CommonJS
 		module.exports = factory(require('jquery'));
 	} else {
 		// Global jQuery
 		factory(jQuery);
 	}
-})(function ($) {
+} (function($) {
 
 	var menuTrees = [],
-	    mouse = false,
-	    // optimize for touch by default - we will detect for mouse input
-	touchEvents = 'ontouchstart' in window,
-	    // we use this just to choose between toucn and pointer events, not for touch screen detection
-	mouseDetectionEnabled = false,
-	    requestAnimationFrame = window.requestAnimationFrame || function (callback) {
-		return setTimeout(callback, 1000 / 60);
-	},
-	    cancelAnimationFrame = window.cancelAnimationFrame || function (id) {
-		clearTimeout(id);
-	},
-	    canAnimate = !!$.fn.animate;
+		mouse = false, // optimize for touch by default - we will detect for mouse input
+		touchEvents = 'ontouchstart' in window, // we use this just to choose between toucn and pointer events, not for touch screen detection
+		mouseDetectionEnabled = false,
+		requestAnimationFrame = window.requestAnimationFrame || function(callback) { return setTimeout(callback, 1000 / 60); },
+		cancelAnimationFrame = window.cancelAnimationFrame || function(id) { clearTimeout(id); },
+		canAnimate = !!$.fn.animate;
 
 	// Handle detection for mouse input (i.e. desktop browsers, tablets with a mouse, etc.)
 	function initMouseDetection(disable) {
@@ -46,34 +36,34 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			// if we get two consecutive mousemoves within 2 pixels from each other and within 300ms, we assume a real mouse/cursor is present
 			// in practice, this seems like impossible to trick unintentianally with a real mouse and a pretty safe detection on touch devices (even with older browsers that do not support touch events)
 			var firstTime = true,
-			    lastMove = null,
-			    events = {
-				'mousemove': function mousemove(e) {
-					var thisMove = { x: e.pageX, y: e.pageY, timeStamp: new Date().getTime() };
-					if (lastMove) {
-						var deltaX = Math.abs(lastMove.x - thisMove.x),
-						    deltaY = Math.abs(lastMove.y - thisMove.y);
-						if ((deltaX > 0 || deltaY > 0) && deltaX <= 2 && deltaY <= 2 && thisMove.timeStamp - lastMove.timeStamp <= 300) {
-							mouse = true;
-							// if this is the first check after page load, check if we are not over some item by chance and call the mouseenter handler if yes
-							if (firstTime) {
-								var $a = $(e.target).closest('a');
-								if ($a.is('a')) {
-									$.each(menuTrees, function () {
-										if ($.contains(this.$root[0], $a[0])) {
-											this.itemEnter({ currentTarget: $a[0] });
-											return false;
-										}
-									});
+				lastMove = null,
+				events = {
+					'mousemove': function(e) {
+						var thisMove = { x: e.pageX, y: e.pageY, timeStamp: new Date().getTime() };
+						if (lastMove) {
+							var deltaX = Math.abs(lastMove.x - thisMove.x),
+								deltaY = Math.abs(lastMove.y - thisMove.y);
+		 					if ((deltaX > 0 || deltaY > 0) && deltaX <= 2 && deltaY <= 2 && thisMove.timeStamp - lastMove.timeStamp <= 300) {
+								mouse = true;
+								// if this is the first check after page load, check if we are not over some item by chance and call the mouseenter handler if yes
+								if (firstTime) {
+									var $a = $(e.target).closest('a');
+									if ($a.is('a')) {
+										$.each(menuTrees, function() {
+											if ($.contains(this.$root[0], $a[0])) {
+												this.itemEnter({ currentTarget: $a[0] });
+												return false;
+											}
+										});
+									}
+									firstTime = false;
 								}
-								firstTime = false;
 							}
 						}
+						lastMove = thisMove;
 					}
-					lastMove = thisMove;
-				}
-			};
-			events[touchEvents ? 'touchstart' : 'pointerover pointermove pointerout MSPointerOver MSPointerMove MSPointerOut'] = function (e) {
+				};
+			events[touchEvents ? 'touchstart' : 'pointerover pointermove pointerout MSPointerOver MSPointerMove MSPointerOut'] = function(e) {
 				if (isTouchEvent(e.originalEvent)) {
 					mouse = false;
 				}
@@ -102,7 +92,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		return eventsNS;
 	}
 
-	$.SmartMenus = function (elm, options) {
+	$.SmartMenus = function(elm, options) {
 		this.$root = $(elm);
 		this.opts = options;
 		this.rootId = ''; // internal
@@ -128,19 +118,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	$.extend($.SmartMenus, {
-		hideAll: function hideAll() {
-			$.each(menuTrees, function () {
+		hideAll: function() {
+			$.each(menuTrees, function() {
 				this.menuHideAll();
 			});
 		},
-		destroy: function destroy() {
+		destroy: function() {
 			while (menuTrees.length) {
 				menuTrees[0].destroy();
 			}
 			initMouseDetection(true);
 		},
 		prototype: {
-			init: function init(refresh) {
+			init: function(refresh) {
 				var self = this;
 
 				if (!refresh) {
@@ -155,18 +145,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 					// init root (main menu)
 					var eNS = '.smartmenus';
-					this.$root.data('smartmenus', this).attr('data-smartmenus-id', this.rootId).dataSM('level', 1).on(getEventsNS({
-						'mouseover focusin': $.proxy(this.rootOver, this),
-						'mouseout focusout': $.proxy(this.rootOut, this),
-						'keydown': $.proxy(this.rootKeyDown, this)
-					}, eNS)).on(getEventsNS({
-						'mouseenter': $.proxy(this.itemEnter, this),
-						'mouseleave': $.proxy(this.itemLeave, this),
-						'mousedown': $.proxy(this.itemDown, this),
-						'focus': $.proxy(this.itemFocus, this),
-						'blur': $.proxy(this.itemBlur, this),
-						'click': $.proxy(this.itemClick, this)
-					}, eNS), 'a');
+					this.$root
+						.data('smartmenus', this)
+						.attr('data-smartmenus-id', this.rootId)
+						.dataSM('level', 1)
+						.on(getEventsNS({
+							'mouseover focusin': $.proxy(this.rootOver, this),
+							'mouseout focusout': $.proxy(this.rootOut, this),
+							'keydown': $.proxy(this.rootKeyDown, this)
+						}, eNS))
+						.on(getEventsNS({
+							'mouseenter': $.proxy(this.itemEnter, this),
+							'mouseleave': $.proxy(this.itemLeave, this),
+							'mousedown': $.proxy(this.itemDown, this),
+							'focus': $.proxy(this.itemFocus, this),
+							'blur': $.proxy(this.itemBlur, this),
+							'click': $.proxy(this.itemClick, this)
+						}, eNS), 'a');
 
 					// hide menus on tap or click outside the root UL
 					eNS += this.rootId;
@@ -194,25 +189,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 
 				// init sub menus
-				this.$firstSub = this.$root.find('ul').each(function () {
-					self.menuInit($(this));
-				}).eq(0);
+				this.$firstSub = this.$root.find('ul').each(function() { self.menuInit($(this)); }).eq(0);
 
 				this.$firstLink = this.$root.find('a').eq(0);
 
 				// find current item
 				if (this.opts.markCurrentItem) {
 					var reDefaultDoc = /(index|default)\.[^#\?\/]*/i,
-					    reHash = /#.*/,
-					    locHref = window.location.href.replace(reDefaultDoc, ''),
-					    locHrefNoHash = locHref.replace(reHash, '');
-					this.$root.find('a').each(function () {
+						reHash = /#.*/,
+						locHref = window.location.href.replace(reDefaultDoc, ''),
+						locHrefNoHash = locHref.replace(reHash, '');
+					this.$root.find('a').each(function() {
 						var href = this.href.replace(reDefaultDoc, ''),
-						    $this = $(this);
+							$this = $(this);
 						if (href == locHref || href == locHrefNoHash) {
 							$this.addClass('current');
 							if (self.opts.markCurrentTree) {
-								$this.parentsUntil('[data-smartmenus-id]', 'ul').each(function () {
+								$this.parentsUntil('[data-smartmenus-id]', 'ul').each(function() {
 									$(this).dataSM('parent-a').addClass('current');
 								});
 							}
@@ -223,10 +216,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				// save initial state
 				this.wasCollapsible = this.isCollapsible();
 			},
-			destroy: function destroy(refresh) {
+			destroy: function(refresh) {
 				if (!refresh) {
 					var eNS = '.smartmenus';
-					this.$root.removeData('smartmenus').removeAttr('data-smartmenus-id').removeDataSM('level').off(eNS);
+					this.$root
+						.removeData('smartmenus')
+						.removeAttr('data-smartmenus-id')
+						.removeDataSM('level')
+						.off(eNS);
 					eNS += this.rootId;
 					$(document).off(eNS);
 					$(window).off(eNS);
@@ -236,30 +233,46 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				this.menuHideAll();
 				var self = this;
-				this.$root.find('ul').each(function () {
-					var $this = $(this);
-					if ($this.dataSM('scroll-arrows')) {
-						$this.dataSM('scroll-arrows').remove();
-					}
-					if ($this.dataSM('shown-before')) {
-						if (self.opts.subMenusMinWidth || self.opts.subMenusMaxWidth) {
-							$this.css({ width: '', minWidth: '', maxWidth: '' }).removeClass('sm-nowrap');
-						}
+				this.$root.find('ul').each(function() {
+						var $this = $(this);
 						if ($this.dataSM('scroll-arrows')) {
 							$this.dataSM('scroll-arrows').remove();
 						}
-						$this.css({ zIndex: '', top: '', left: '', marginLeft: '', marginTop: '', display: '' });
-					}
-					if (($this.attr('id') || '').indexOf(self.accessIdPrefix) == 0) {
-						$this.removeAttr('id');
-					}
-				}).removeDataSM('in-mega').removeDataSM('shown-before').removeDataSM('scroll-arrows').removeDataSM('parent-a').removeDataSM('level').removeDataSM('beforefirstshowfired').removeAttr('role').removeAttr('aria-hidden').removeAttr('aria-labelledby').removeAttr('aria-expanded');
-				this.$root.find('a.has-submenu').each(function () {
-					var $this = $(this);
-					if ($this.attr('id').indexOf(self.accessIdPrefix) == 0) {
-						$this.removeAttr('id');
-					}
-				}).removeClass('has-submenu').removeDataSM('sub').removeAttr('aria-haspopup').removeAttr('aria-controls').removeAttr('aria-expanded').closest('li').removeDataSM('sub');
+						if ($this.dataSM('shown-before')) {
+							if (self.opts.subMenusMinWidth || self.opts.subMenusMaxWidth) {
+								$this.css({ width: '', minWidth: '', maxWidth: '' }).removeClass('sm-nowrap');
+							}
+							if ($this.dataSM('scroll-arrows')) {
+								$this.dataSM('scroll-arrows').remove();
+							}
+							$this.css({ zIndex: '', top: '', left: '', marginLeft: '', marginTop: '', display: '' });
+						}
+						if (($this.attr('id') || '').indexOf(self.accessIdPrefix) == 0) {
+							$this.removeAttr('id');
+						}
+					})
+					.removeDataSM('in-mega')
+					.removeDataSM('shown-before')
+					.removeDataSM('scroll-arrows')
+					.removeDataSM('parent-a')
+					.removeDataSM('level')
+					.removeDataSM('beforefirstshowfired')
+					.removeAttr('role')
+					.removeAttr('aria-hidden')
+					.removeAttr('aria-labelledby')
+					.removeAttr('aria-expanded');
+				this.$root.find('a.has-submenu').each(function() {
+						var $this = $(this);
+						if ($this.attr('id').indexOf(self.accessIdPrefix) == 0) {
+							$this.removeAttr('id');
+						}
+					})
+					.removeClass('has-submenu')
+					.removeDataSM('sub')
+					.removeAttr('aria-haspopup')
+					.removeAttr('aria-controls')
+					.removeAttr('aria-expanded')
+					.closest('li').removeDataSM('sub');
 				if (this.opts.subIndicators) {
 					this.$root.find('span.sub-arrow').remove();
 				}
@@ -277,7 +290,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					menuTrees.splice($.inArray(this, menuTrees), 1);
 				}
 			},
-			disable: function disable(noOverlay) {
+			disable: function(noOverlay) {
 				if (!this.disabled) {
 					this.menuHideAll();
 					// display overlay over the menu to prevent interaction
@@ -296,7 +309,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.disabled = true;
 				}
 			},
-			docClick: function docClick(e) {
+			docClick: function(e) {
 				if (this.$touchScrollingSub) {
 					this.$touchScrollingSub = null;
 					return;
@@ -306,7 +319,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.menuHideAll();
 				}
 			},
-			docTouchEnd: function docTouchEnd(e) {
+			docTouchEnd: function(e) {
 				if (!this.lastTouch) {
 					return;
 				}
@@ -317,13 +330,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 					// hide with a delay to prevent triggering accidental unwanted click on some page element
 					var self = this;
-					this.hideTimeout = setTimeout(function () {
-						self.menuHideAll();
-					}, 350);
+					this.hideTimeout = setTimeout(function() { self.menuHideAll(); }, 350);
 				}
 				this.lastTouch = null;
 			},
-			docTouchMove: function docTouchMove(e) {
+			docTouchMove: function(e) {
 				if (!this.lastTouch) {
 					return;
 				}
@@ -331,11 +342,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				this.lastTouch.x2 = touchPoint.pageX;
 				this.lastTouch.y2 = touchPoint.pageY;
 			},
-			docTouchStart: function docTouchStart(e) {
+			docTouchStart: function(e) {
 				var touchPoint = e.originalEvent.touches[0];
 				this.lastTouch = { x1: touchPoint.pageX, y1: touchPoint.pageY, target: touchPoint.target };
 			},
-			enable: function enable() {
+			enable: function() {
 				if (this.disabled) {
 					if (this.$disableOverlay) {
 						this.$disableOverlay.remove();
@@ -344,25 +355,25 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.disabled = false;
 				}
 			},
-			getClosestMenu: function getClosestMenu(elm) {
+			getClosestMenu: function(elm) {
 				var $closestMenu = $(elm).closest('ul');
 				while ($closestMenu.dataSM('in-mega')) {
 					$closestMenu = $closestMenu.parent().closest('ul');
 				}
 				return $closestMenu[0] || null;
 			},
-			getHeight: function getHeight($elm) {
+			getHeight: function($elm) {
 				return this.getOffset($elm, true);
 			},
 			// returns precise width/height float values
-			getOffset: function getOffset($elm, height) {
+			getOffset: function($elm, height) {
 				var old;
 				if ($elm.css('display') == 'none') {
 					old = { position: $elm[0].style.position, visibility: $elm[0].style.visibility };
 					$elm.css({ position: 'absolute', visibility: 'hidden' }).show();
 				}
 				var box = $elm[0].getBoundingClientRect && $elm[0].getBoundingClientRect(),
-				    val = box && (height ? box.height || box.bottom - box.top : box.width || box.right - box.left);
+					val = box && (height ? box.height || box.bottom - box.top : box.width || box.right - box.left);
 				if (!val && val !== 0) {
 					val = height ? $elm[0].offsetHeight : $elm[0].offsetWidth;
 				}
@@ -371,50 +382,50 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				return val;
 			},
-			getStartZIndex: function getStartZIndex(root) {
+			getStartZIndex: function(root) {
 				var zIndex = parseInt(this[root ? '$root' : '$firstSub'].css('z-index'));
 				if (!root && isNaN(zIndex)) {
 					zIndex = parseInt(this.$root.css('z-index'));
 				}
 				return !isNaN(zIndex) ? zIndex : 1;
 			},
-			getTouchPoint: function getTouchPoint(e) {
+			getTouchPoint: function(e) {
 				return e.touches && e.touches[0] || e.changedTouches && e.changedTouches[0] || e;
 			},
-			getViewport: function getViewport(height) {
+			getViewport: function(height) {
 				var name = height ? 'Height' : 'Width',
-				    val = document.documentElement['client' + name],
-				    val2 = window['inner' + name];
+					val = document.documentElement['client' + name],
+					val2 = window['inner' + name];
 				if (val2) {
 					val = Math.min(val, val2);
 				}
 				return val;
 			},
-			getViewportHeight: function getViewportHeight() {
+			getViewportHeight: function() {
 				return this.getViewport(true);
 			},
-			getViewportWidth: function getViewportWidth() {
+			getViewportWidth: function() {
 				return this.getViewport();
 			},
-			getWidth: function getWidth($elm) {
+			getWidth: function($elm) {
 				return this.getOffset($elm);
 			},
-			handleEvents: function handleEvents() {
+			handleEvents: function() {
 				return !this.disabled && this.isCSSOn();
 			},
-			handleItemEvents: function handleItemEvents($a) {
+			handleItemEvents: function($a) {
 				return this.handleEvents() && !this.isLinkInMegaMenu($a);
 			},
-			isCollapsible: function isCollapsible() {
+			isCollapsible: function() {
 				return this.$firstSub.css('position') == 'static';
 			},
-			isCSSOn: function isCSSOn() {
+			isCSSOn: function() {
 				return this.$firstLink.css('display') != 'inline';
 			},
-			isFixed: function isFixed() {
+			isFixed: function() {
 				var isFixed = this.$root.css('position') == 'fixed';
 				if (!isFixed) {
-					this.$root.parentsUntil('body').each(function () {
+					this.$root.parentsUntil('body').each(function() {
 						if ($(this).css('position') == 'fixed') {
 							isFixed = true;
 							return false;
@@ -423,19 +434,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				return isFixed;
 			},
-			isLinkInMegaMenu: function isLinkInMegaMenu($a) {
+			isLinkInMegaMenu: function($a) {
 				return $(this.getClosestMenu($a[0])).hasClass('mega-menu');
 			},
-			isTouchMode: function isTouchMode() {
+			isTouchMode: function() {
 				return !mouse || this.opts.noMouseOver || this.isCollapsible();
 			},
-			itemActivate: function itemActivate($a, hideDeeperSubs) {
+			itemActivate: function($a, hideDeeperSubs) {
 				var $ul = $a.closest('ul'),
-				    level = $ul.dataSM('level');
+					level = $ul.dataSM('level');
 				// if for some reason the parent item is not activated (e.g. this is an API call to activate the item), activate all parent items first
 				if (level > 1 && (!this.activatedItems[level - 2] || this.activatedItems[level - 2][0] != $ul.dataSM('parent-a')[0])) {
 					var self = this;
-					$($ul.parentsUntil('[data-smartmenus-id]', 'ul').get().reverse()).add($ul).each(function () {
+					$($ul.parentsUntil('[data-smartmenus-id]', 'ul').get().reverse()).add($ul).each(function() {
 						self.itemActivate($(this).dataSM('parent-a'));
 					});
 				}
@@ -450,18 +461,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				// show the sub menu if this item has one
 				var $sub = $a.dataSM('sub');
-				if ($sub && (this.isTouchMode() || !this.opts.showOnClick || this.clickActivated)) {
+				if ($sub && (this.isTouchMode() || (!this.opts.showOnClick || this.clickActivated))) {
 					this.menuShow($sub);
 				}
 			},
-			itemBlur: function itemBlur(e) {
+			itemBlur: function(e) {
 				var $a = $(e.currentTarget);
 				if (!this.handleItemEvents($a)) {
 					return;
 				}
 				this.$root.triggerHandler('blur.smapi', $a[0]);
 			},
-			itemClick: function itemClick(e) {
+			itemClick: function(e) {
 				var $a = $(e.currentTarget);
 				if (!this.handleItemEvents($a)) {
 					return;
@@ -475,12 +486,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return false;
 				}
 				var subArrowClicked = $(e.target).is('.sub-arrow'),
-				    $sub = $a.dataSM('sub'),
-				    firstLevelSub = $sub ? $sub.dataSM('level') == 2 : false,
-				    collapsible = this.isCollapsible(),
-				    behaviorToggle = /toggle$/.test(this.opts.collapsibleBehavior),
-				    behaviorLink = /link$/.test(this.opts.collapsibleBehavior),
-				    behaviorAccordion = /^accordion/.test(this.opts.collapsibleBehavior);
+					$sub = $a.dataSM('sub'),
+					firstLevelSub = $sub ? $sub.dataSM('level') == 2 : false,
+					collapsible = this.isCollapsible(),
+					behaviorToggle = /toggle$/.test(this.opts.collapsibleBehavior),
+					behaviorLink = /link$/.test(this.opts.collapsibleBehavior),
+					behaviorAccordion = /^accordion/.test(this.opts.collapsibleBehavior);
 				// if the sub is hidden, try to show it
 				if ($sub && !$sub.is(':visible')) {
 					if (!behaviorLink || !collapsible || subArrowClicked) {
@@ -496,7 +507,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 							return false;
 						}
 					}
-					// if the sub is visible and we are in collapsible mode
+				// if the sub is visible and we are in collapsible mode
 				} else if (collapsible && (behaviorToggle || subArrowClicked)) {
 					this.itemActivate($a, behaviorAccordion);
 					this.menuHide($sub);
@@ -509,14 +520,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return false;
 				}
 			},
-			itemDown: function itemDown(e) {
+			itemDown: function(e) {
 				var $a = $(e.currentTarget);
 				if (!this.handleItemEvents($a)) {
 					return;
 				}
 				$a.dataSM('mousedown', true);
 			},
-			itemEnter: function itemEnter(e) {
+			itemEnter: function(e) {
 				var $a = $(e.currentTarget);
 				if (!this.handleItemEvents($a)) {
 					return;
@@ -527,13 +538,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						this.showTimeout = 0;
 					}
 					var self = this;
-					this.showTimeout = setTimeout(function () {
-						self.itemActivate($a);
-					}, this.opts.showOnClick && $a.closest('ul').dataSM('level') == 1 ? 1 : this.opts.showTimeout);
+					this.showTimeout = setTimeout(function() { self.itemActivate($a); }, this.opts.showOnClick && $a.closest('ul').dataSM('level') == 1 ? 1 : this.opts.showTimeout);
 				}
 				this.$root.triggerHandler('mouseenter.smapi', $a[0]);
 			},
-			itemFocus: function itemFocus(e) {
+			itemFocus: function(e) {
 				var $a = $(e.currentTarget);
 				if (!this.handleItemEvents($a)) {
 					return;
@@ -544,7 +553,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				this.$root.triggerHandler('focus.smapi', $a[0]);
 			},
-			itemLeave: function itemLeave(e) {
+			itemLeave: function(e) {
 				var $a = $(e.currentTarget);
 				if (!this.handleItemEvents($a)) {
 					return;
@@ -559,7 +568,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				$a.removeDataSM('mousedown');
 				this.$root.triggerHandler('mouseleave.smapi', $a[0]);
 			},
-			menuHide: function menuHide($sub) {
+			menuHide: function($sub) {
 				if (this.$root.triggerHandler('beforehide.smapi', $sub[0]) === false) {
 					return;
 				}
@@ -567,7 +576,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					$sub.stop(true, true);
 				}
 				if ($sub.css('display') != 'none') {
-					var complete = function complete() {
+					var complete = function() {
 						// unset z-index
 						$sub.css('z-index', '');
 					};
@@ -588,7 +597,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					// deactivate scrolling if it is activated for this sub
 					if ($sub.dataSM('scroll')) {
 						this.menuScrollStop($sub);
-						$sub.css({ 'touch-action': '', '-ms-touch-action': '', '-webkit-transform': '', transform: '' }).off('.smartmenus_scroll').removeDataSM('scroll').dataSM('scroll-arrows').hide();
+						$sub.css({ 'touch-action': '', '-ms-touch-action': '', '-webkit-transform': '', transform: '' })
+							.off('.smartmenus_scroll').removeDataSM('scroll').dataSM('scroll-arrows').hide();
 					}
 					// unhighlight parent item + accessibility
 					$sub.dataSM('parent-a').removeClass('highlighted').attr('aria-expanded', 'false');
@@ -602,7 +612,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.$root.triggerHandler('hide.smapi', $sub[0]);
 				}
 			},
-			menuHideAll: function menuHideAll() {
+			menuHideAll: function() {
 				if (this.showTimeout) {
 					clearTimeout(this.showTimeout);
 					this.showTimeout = 0;
@@ -634,7 +644,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				this.zIndexInc = 0;
 				this.$root.triggerHandler('hideAll.smapi');
 			},
-			menuHideSubMenus: function menuHideSubMenus(level) {
+			menuHideSubMenus: function(level) {
 				for (var i = this.activatedItems.length - 1; i >= level; i--) {
 					var $sub = this.activatedItems[i].dataSM('sub');
 					if ($sub) {
@@ -642,7 +652,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 				}
 			},
-			menuInit: function menuInit($ul) {
+			menuInit: function($ul) {
 				if (!$ul.dataSM('in-mega')) {
 					// mark UL's in mega drop downs (if any) so we can neglect them
 					if ($ul.hasClass('mega-menu')) {
@@ -650,7 +660,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 					// get level (much faster than, for example, using parentsUntil)
 					var level = 2,
-					    par = $ul[0];
+						par = $ul[0];
 					while ((par = par.parentNode.parentNode) != this.$root[0]) {
 						level++;
 					}
@@ -661,10 +671,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						$a = $ul.prevAll().find('a').eq(-1);
 					}
 					$a.addClass('has-submenu').dataSM('sub', $ul);
-					$ul.dataSM('parent-a', $a).dataSM('level', level).parent().dataSM('sub', $ul);
+					$ul.dataSM('parent-a', $a)
+						.dataSM('level', level)
+						.parent().dataSM('sub', $ul);
 					// accessibility
-					var aId = $a.attr('id') || this.accessIdPrefix + ++this.idInc,
-					    ulId = $ul.attr('id') || this.accessIdPrefix + ++this.idInc;
+					var aId = $a.attr('id') || this.accessIdPrefix + (++this.idInc),
+						ulId = $ul.attr('id') || this.accessIdPrefix + (++this.idInc);
 					$a.attr({
 						id: aId,
 						'aria-haspopup': 'true',
@@ -684,29 +696,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 				}
 			},
-			menuPosition: function menuPosition($sub) {
+			menuPosition: function($sub) {
 				var $a = $sub.dataSM('parent-a'),
-				    $li = $a.closest('li'),
-				    $ul = $li.parent(),
-				    level = $sub.dataSM('level'),
-				    subW = this.getWidth($sub),
-				    subH = this.getHeight($sub),
-				    itemOffset = $a.offset(),
-				    itemX = itemOffset.left,
-				    itemY = itemOffset.top,
-				    itemW = this.getWidth($a),
-				    itemH = this.getHeight($a),
-				    $win = $(window),
-				    winX = $win.scrollLeft(),
-				    winY = $win.scrollTop(),
-				    winW = this.getViewportWidth(),
-				    winH = this.getViewportHeight(),
-				    horizontalParent = $ul.parent().is('[data-sm-horizontal-sub]') || level == 2 && !$ul.hasClass('sm-vertical'),
-				    rightToLeft = this.opts.rightToLeftSubMenus && !$li.is('[data-sm-reverse]') || !this.opts.rightToLeftSubMenus && $li.is('[data-sm-reverse]'),
-				    subOffsetX = level == 2 ? this.opts.mainMenuSubOffsetX : this.opts.subMenusSubOffsetX,
-				    subOffsetY = level == 2 ? this.opts.mainMenuSubOffsetY : this.opts.subMenusSubOffsetY,
-				    x,
-				    y;
+					$li = $a.closest('li'),
+					$ul = $li.parent(),
+					level = $sub.dataSM('level'),
+					subW = this.getWidth($sub),
+					subH = this.getHeight($sub),
+					itemOffset = $a.offset(),
+					itemX = itemOffset.left,
+					itemY = itemOffset.top,
+					itemW = this.getWidth($a),
+					itemH = this.getHeight($a),
+					$win = $(window),
+					winX = $win.scrollLeft(),
+					winY = $win.scrollTop(),
+					winW = this.getViewportWidth(),
+					winH = this.getViewportHeight(),
+					horizontalParent = $ul.parent().is('[data-sm-horizontal-sub]') || level == 2 && !$ul.hasClass('sm-vertical'),
+					rightToLeft = this.opts.rightToLeftSubMenus && !$li.is('[data-sm-reverse]') || !this.opts.rightToLeftSubMenus && $li.is('[data-sm-reverse]'),
+					subOffsetX = level == 2 ? this.opts.mainMenuSubOffsetX : this.opts.subMenusSubOffsetX,
+					subOffsetY = level == 2 ? this.opts.mainMenuSubOffsetY : this.opts.subMenusSubOffsetY,
+					x, y;
 				if (horizontalParent) {
 					x = rightToLeft ? itemW - subW - subOffsetX : subOffsetX;
 					y = this.opts.bottomToTopSubMenus ? -subH - subOffsetY : itemH + subOffsetY;
@@ -716,7 +727,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				if (this.opts.keepInViewport) {
 					var absX = itemX + x,
-					    absY = itemY + y;
+						absY = itemY + y;
 					if (rightToLeft && absX < winX) {
 						x = horizontalParent ? winX - absX + x : itemW - subOffsetX;
 					} else if (!rightToLeft && absX + subW > winX + winW) {
@@ -734,45 +745,43 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					if (horizontalParent && (absY + subH > winY + winH + 0.49 || absY < winY) || !horizontalParent && subH > winH + 0.49) {
 						var self = this;
 						if (!$sub.dataSM('scroll-arrows')) {
-							$sub.dataSM('scroll-arrows', $([$('<span class="scroll-up"><span class="scroll-up-arrow"></span></span>')[0], $('<span class="scroll-down"><span class="scroll-down-arrow"></span></span>')[0]]).on({
-								mouseenter: function mouseenter() {
-									$sub.dataSM('scroll').up = $(this).hasClass('scroll-up');
-									self.menuScroll($sub);
-								},
-								mouseleave: function mouseleave(e) {
-									self.menuScrollStop($sub);
-									self.menuScrollOut($sub, e);
-								},
-								'mousewheel DOMMouseScroll': function mousewheelDOMMouseScroll(e) {
-									e.preventDefault();
-								}
-							}).insertAfter($sub));
+							$sub.dataSM('scroll-arrows', $([$('<span class="scroll-up"><span class="scroll-up-arrow"></span></span>')[0], $('<span class="scroll-down"><span class="scroll-down-arrow"></span></span>')[0]])
+								.on({
+									mouseenter: function() {
+										$sub.dataSM('scroll').up = $(this).hasClass('scroll-up');
+										self.menuScroll($sub);
+									},
+									mouseleave: function(e) {
+										self.menuScrollStop($sub);
+										self.menuScrollOut($sub, e);
+									},
+									'mousewheel DOMMouseScroll': function(e) { e.preventDefault(); }
+								})
+								.insertAfter($sub)
+							);
 						}
 						// bind scroll events and save scroll data for this sub
 						var eNS = '.smartmenus_scroll';
 						$sub.dataSM('scroll', {
-							y: this.cssTransforms3d ? 0 : y - itemH,
-							step: 1,
-							// cache stuff for faster recalcs later
-							itemH: itemH,
-							subH: subH,
-							arrowDownH: this.getHeight($sub.dataSM('scroll-arrows').eq(1))
-						}).on(getEventsNS({
-							'mouseover': function mouseover(e) {
-								self.menuScrollOver($sub, e);
-							},
-							'mouseout': function mouseout(e) {
-								self.menuScrollOut($sub, e);
-							},
-							'mousewheel DOMMouseScroll': function mousewheelDOMMouseScroll(e) {
-								self.menuScrollMousewheel($sub, e);
-							}
-						}, eNS)).dataSM('scroll-arrows').css({ top: 'auto', left: '0', marginLeft: x + (parseInt($sub.css('border-left-width')) || 0), width: subW - (parseInt($sub.css('border-left-width')) || 0) - (parseInt($sub.css('border-right-width')) || 0), zIndex: $sub.css('z-index') }).eq(horizontalParent && this.opts.bottomToTopSubMenus ? 0 : 1).show();
+								y: this.cssTransforms3d ? 0 : y - itemH,
+								step: 1,
+								// cache stuff for faster recalcs later
+								itemH: itemH,
+								subH: subH,
+								arrowDownH: this.getHeight($sub.dataSM('scroll-arrows').eq(1))
+							})
+							.on(getEventsNS({
+								'mouseover': function(e) { self.menuScrollOver($sub, e); },
+								'mouseout': function(e) { self.menuScrollOut($sub, e); },
+								'mousewheel DOMMouseScroll': function(e) { self.menuScrollMousewheel($sub, e); }
+							}, eNS))
+							.dataSM('scroll-arrows').css({ top: 'auto', left: '0', marginLeft: x + (parseInt($sub.css('border-left-width')) || 0), width: subW - (parseInt($sub.css('border-left-width')) || 0) - (parseInt($sub.css('border-right-width')) || 0), zIndex: $sub.css('z-index') })
+								.eq(horizontalParent && this.opts.bottomToTopSubMenus ? 0 : 1).show();
 						// when a menu tree is fixed positioned we allow scrolling via touch too
 						// since there is no other way to access such long sub menus if no mouse is present
 						if (this.isFixed()) {
 							var events = {};
-							events[touchEvents ? 'touchstart touchmove touchend' : 'pointerdown pointermove pointerup MSPointerDown MSPointerMove MSPointerUp'] = function (e) {
+							events[touchEvents ? 'touchstart touchmove touchend' : 'pointerdown pointermove pointerup MSPointerDown MSPointerMove MSPointerUp'] = function(e) {
 								self.menuScrollTouch($sub, e);
 							};
 							$sub.css({ 'touch-action': 'none', '-ms-touch-action': 'none' }).on(getEventsNS(events, eNS));
@@ -781,11 +790,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				$sub.css({ top: 'auto', left: '0', marginLeft: x, marginTop: y - itemH });
 			},
-			menuScroll: function menuScroll($sub, once, step) {
+			menuScroll: function($sub, once, step) {
 				var data = $sub.dataSM('scroll'),
-				    $arrows = $sub.dataSM('scroll-arrows'),
-				    end = data.up ? data.upEnd : data.downEnd,
-				    diff;
+					$arrows = $sub.dataSM('scroll-arrows'),
+					end = data.up ? data.upEnd : data.downEnd,
+					diff;
 				if (!once && data.momentum) {
 					data.momentum *= 0.92;
 					diff = data.momentum;
@@ -801,7 +810,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				if (this.activatedItems[level - 1] && this.activatedItems[level - 1].dataSM('sub') && this.activatedItems[level - 1].dataSM('sub').is(':visible')) {
 					this.menuHideSubMenus(level - 1);
 				}
-				data.y = data.up && end <= data.y || !data.up && end >= data.y ? data.y : Math.abs(end - data.y) > diff ? data.y + (data.up ? diff : -diff) : end;
+				data.y = data.up && end <= data.y || !data.up && end >= data.y ? data.y : (Math.abs(end - data.y) > diff ? data.y + (data.up ? diff : -diff) : end);
 				$sub.css(this.cssTransforms3d ? { '-webkit-transform': 'translate3d(0, ' + data.y + 'px, 0)', transform: 'translate3d(0, ' + data.y + 'px, 0)' } : { marginTop: data.y });
 				// show opposite arrow if appropriate
 				if (mouse && (data.up && data.y > data.downEnd || !data.up && data.y < data.upEnd)) {
@@ -818,12 +827,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						data.step += 0.2;
 					}
 					var self = this;
-					this.scrollTimeout = requestAnimationFrame(function () {
-						self.menuScroll($sub);
-					});
+					this.scrollTimeout = requestAnimationFrame(function() { self.menuScroll($sub); });
 				}
 			},
-			menuScrollMousewheel: function menuScrollMousewheel($sub, e) {
+			menuScrollMousewheel: function($sub, e) {
 				if (this.getClosestMenu(e.target) == $sub[0]) {
 					e = e.originalEvent;
 					var up = (e.wheelDelta || -e.detail) > 0;
@@ -834,26 +841,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				e.preventDefault();
 			},
-			menuScrollOut: function menuScrollOut($sub, e) {
+			menuScrollOut: function($sub, e) {
 				if (mouse) {
 					if (!/^scroll-(up|down)/.test((e.relatedTarget || '').className) && ($sub[0] != e.relatedTarget && !$.contains($sub[0], e.relatedTarget) || this.getClosestMenu(e.relatedTarget) != $sub[0])) {
 						$sub.dataSM('scroll-arrows').css('visibility', 'hidden');
 					}
 				}
 			},
-			menuScrollOver: function menuScrollOver($sub, e) {
+			menuScrollOver: function($sub, e) {
 				if (mouse) {
 					if (!/^scroll-(up|down)/.test(e.target.className) && this.getClosestMenu(e.target) == $sub[0]) {
 						this.menuScrollRefreshData($sub);
 						var data = $sub.dataSM('scroll'),
-						    upEnd = $(window).scrollTop() - $sub.dataSM('parent-a').offset().top - data.itemH;
-						$sub.dataSM('scroll-arrows').eq(0).css('margin-top', upEnd).end().eq(1).css('margin-top', upEnd + this.getViewportHeight() - data.arrowDownH).end().css('visibility', 'visible');
+							upEnd = $(window).scrollTop() - $sub.dataSM('parent-a').offset().top - data.itemH;
+						$sub.dataSM('scroll-arrows').eq(0).css('margin-top', upEnd).end()
+							.eq(1).css('margin-top', upEnd + this.getViewportHeight() - data.arrowDownH).end()
+							.css('visibility', 'visible');
 					}
 				}
 			},
-			menuScrollRefreshData: function menuScrollRefreshData($sub) {
+			menuScrollRefreshData: function($sub) {
 				var data = $sub.dataSM('scroll'),
-				    upEnd = $(window).scrollTop() - $sub.dataSM('parent-a').offset().top - data.itemH;
+					upEnd = $(window).scrollTop() - $sub.dataSM('parent-a').offset().top - data.itemH;
 				if (this.cssTransforms3d) {
 					upEnd = -(parseFloat($sub.css('margin-top')) - upEnd);
 				}
@@ -862,7 +871,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					downEnd: upEnd + this.getViewportHeight() - data.subH
 				});
 			},
-			menuScrollStop: function menuScrollStop($sub) {
+			menuScrollStop: function($sub) {
 				if (this.scrollTimeout) {
 					cancelAnimationFrame(this.scrollTimeout);
 					this.scrollTimeout = 0;
@@ -870,7 +879,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return true;
 				}
 			},
-			menuScrollTouch: function menuScrollTouch($sub, e) {
+			menuScrollTouch: function($sub, e) {
 				e = e.originalEvent;
 				if (isTouchEvent(e)) {
 					var touchPoint = this.getTouchPoint(e);
@@ -911,8 +920,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 								this.menuScroll($sub, true, Math.abs(touchPoint.pageY - prevY));
 							}
 							e.preventDefault();
-						} else {
-							// touchend/pointerup
+						} else { // touchend/pointerup
 							if (data.touchY !== undefined) {
 								if (data.momentum = Math.pow(Math.abs(touchPoint.pageY - data.touchStartY) / (e.timeStamp - data.touchStartTime), 2) * 15) {
 									this.menuScrollStop($sub);
@@ -925,7 +933,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 				}
 			},
-			menuShow: function menuShow($sub) {
+			menuShow: function($sub) {
 				if (!$sub.dataSM('beforefirstshowfired')) {
 					$sub.dataSM('beforefirstshowfired', true);
 					if (this.$root.triggerHandler('beforefirstshow.smapi', $sub[0]) === false) {
@@ -942,7 +950,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				if (!$sub.is(':visible')) {
 					// highlight parent item
 					var $a = $sub.dataSM('parent-a'),
-					    collapsible = this.isCollapsible();
+						collapsible = this.isCollapsible();
 					if (this.opts.keepHighlighted || collapsible) {
 						$a.addClass('highlighted');
 					}
@@ -955,11 +963,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						if (this.opts.subMenusMinWidth || this.opts.subMenusMaxWidth) {
 							$sub.css({ width: 'auto', minWidth: '', maxWidth: '' }).addClass('sm-nowrap');
 							if (this.opts.subMenusMinWidth) {
-								$sub.css('min-width', this.opts.subMenusMinWidth);
+							 	$sub.css('min-width', this.opts.subMenusMinWidth);
 							}
 							if (this.opts.subMenusMaxWidth) {
-								var noMaxWidth = this.getWidth($sub);
-								$sub.css('max-width', this.opts.subMenusMaxWidth);
+							 	var noMaxWidth = this.getWidth($sub);
+							 	$sub.css('max-width', this.opts.subMenusMaxWidth);
 								if (noMaxWidth > this.getWidth($sub)) {
 									$sub.removeClass('sm-nowrap').css('width', this.opts.subMenusMaxWidth);
 								}
@@ -967,7 +975,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						}
 						this.menuPosition($sub);
 					}
-					var complete = function complete() {
+					var complete = function() {
 						// fix: "overflow: hidden;" is not reset on animation complete in jQuery < 1.9.0 in Chrome when global "box-sizing: border-box;" is used
 						$sub.css('overflow', '');
 					};
@@ -996,17 +1004,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.$root.triggerHandler('show.smapi', $sub[0]);
 				}
 			},
-			popupHide: function popupHide(noHideTimeout) {
+			popupHide: function(noHideTimeout) {
 				if (this.hideTimeout) {
 					clearTimeout(this.hideTimeout);
 					this.hideTimeout = 0;
 				}
 				var self = this;
-				this.hideTimeout = setTimeout(function () {
+				this.hideTimeout = setTimeout(function() {
 					self.menuHideAll();
 				}, noHideTimeout ? 1 : this.opts.hideTimeout);
 			},
-			popupShow: function popupShow(left, top) {
+			popupShow: function(left, top) {
 				if (!this.opts.isPopup) {
 					alert('SmartMenus jQuery Error:\n\nIf you want to show this menu via the "popupShow" method, set the isPopup:true option.');
 					return;
@@ -1023,9 +1031,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.$root.css({ left: left, top: top });
 					// show menu
 					var self = this,
-					    complete = function complete() {
-						self.$root.css('overflow', '');
-					};
+						complete = function() {
+							self.$root.css('overflow', '');
+						};
 					if (canAnimate && this.opts.showFunction) {
 						this.opts.showFunction.call(this, this.$root, complete);
 					} else {
@@ -1034,17 +1042,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.visibleSubMenus[0] = this.$root;
 				}
 			},
-			refresh: function refresh() {
+			refresh: function() {
 				this.destroy(true);
 				this.init(true);
 			},
-			rootKeyDown: function rootKeyDown(e) {
+			rootKeyDown: function(e) {
 				if (!this.handleEvents()) {
 					return;
 				}
 				switch (e.keyCode) {
-					case 27:
-						// reset on Esc
+					case 27: // reset on Esc
 						var $activeTopItem = this.activatedItems[0];
 						if ($activeTopItem) {
 							this.menuHideAll();
@@ -1055,8 +1062,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 							}
 						}
 						break;
-					case 32:
-						// activate item's sub on Space
+					case 32: // activate item's sub on Space
 						var $target = $(e.target);
 						if ($target.is('a') && this.handleItemEvents($target)) {
 							var $sub = $target.dataSM('sub');
@@ -1068,7 +1074,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						break;
 				}
 			},
-			rootOut: function rootOut(e) {
+			rootOut: function(e) {
 				if (!this.handleEvents() || this.isTouchMode() || e.target == this.$root[0]) {
 					return;
 				}
@@ -1078,12 +1084,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				if (!this.opts.showOnClick || !this.opts.hideOnClick) {
 					var self = this;
-					this.hideTimeout = setTimeout(function () {
-						self.menuHideAll();
-					}, this.opts.hideTimeout);
+					this.hideTimeout = setTimeout(function() { self.menuHideAll(); }, this.opts.hideTimeout);
 				}
 			},
-			rootOver: function rootOver(e) {
+			rootOver: function(e) {
 				if (!this.handleEvents() || this.isTouchMode() || e.target == this.$root[0]) {
 					return;
 				}
@@ -1092,12 +1096,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					this.hideTimeout = 0;
 				}
 			},
-			winResize: function winResize(e) {
+			winResize: function(e) {
 				if (!this.handleEvents()) {
 					// we still need to resize the disable overlay if it's visible
 					if (this.$disableOverlay) {
 						var pos = this.$root.offset();
-						this.$disableOverlay.css({
+	 					this.$disableOverlay.css({
 							top: pos.top,
 							left: pos.left,
 							width: this.$root.outerWidth(),
@@ -1110,7 +1114,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				if (!('onorientationchange' in window) || e.type == 'orientationchange') {
 					var collapsible = this.isCollapsible();
 					// if it was collapsible before resize and still is, don't do it
-					if (!(this.wasCollapsible && collapsible)) {
+					if (!(this.wasCollapsible && collapsible)) { 
 						if (this.activatedItems.length) {
 							this.activatedItems[this.activatedItems.length - 1][0].blur();
 						}
@@ -1122,36 +1126,36 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		}
 	});
 
-	$.fn.dataSM = function (key, val) {
+	$.fn.dataSM = function(key, val) {
 		if (val) {
 			return this.data(key + '_smartmenus', val);
 		}
 		return this.data(key + '_smartmenus');
 	};
 
-	$.fn.removeDataSM = function (key) {
+	$.fn.removeDataSM = function(key) {
 		return this.removeData(key + '_smartmenus');
 	};
 
-	$.fn.smartmenus = function (options) {
+	$.fn.smartmenus = function(options) {
 		if (typeof options == 'string') {
 			var args = arguments,
-			    method = options;
+				method = options;
 			Array.prototype.shift.call(args);
-			return this.each(function () {
+			return this.each(function() {
 				var smartmenus = $(this).data('smartmenus');
 				if (smartmenus && smartmenus[method]) {
 					smartmenus[method].apply(smartmenus, args);
 				}
 			});
 		}
-		return this.each(function () {
+		return this.each(function() {
 			// [data-sm-options] attribute on the root UL
 			var dataOpts = $(this).data('sm-options') || null;
 			if (dataOpts) {
 				try {
 					dataOpts = eval('(' + dataOpts + ')');
-				} catch (e) {
+				} catch(e) {
 					dataOpts = null;
 					alert('ERROR\n\nSmartMenus jQuery init:\nInvalid "data-sm-options" attribute value syntax.');
 				};
@@ -1162,57 +1166,51 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	// default settings
 	$.fn.smartmenus.defaults = {
-		isPopup: false, // is this a popup menu (can be shown via the popupShow/popupHide methods) or a permanent menu bar
-		mainMenuSubOffsetX: 0, // pixels offset from default position
-		mainMenuSubOffsetY: 0, // pixels offset from default position
-		subMenusSubOffsetX: 0, // pixels offset from default position
-		subMenusSubOffsetY: 0, // pixels offset from default position
-		subMenusMinWidth: '10em', // min-width for the sub menus (any CSS unit) - if set, the fixed width set in CSS will be ignored
-		subMenusMaxWidth: '20em', // max-width for the sub menus (any CSS unit) - if set, the fixed width set in CSS will be ignored
-		subIndicators: true, // create sub menu indicators - creates a SPAN and inserts it in the A
-		subIndicatorsPos: 'append', // position of the SPAN relative to the menu item content ('append', 'prepend')
-		subIndicatorsText: '', // [optionally] add text in the SPAN (e.g. '+') (you may want to check the CSS for the sub indicators too)
-		scrollStep: 30, // pixels step when scrolling long sub menus that do not fit in the viewport height
-		scrollAccelerate: true, // accelerate scrolling or use a fixed step
-		showTimeout: 250, // timeout before showing the sub menus
-		hideTimeout: 500, // timeout before hiding the sub menus
-		showDuration: 0, // duration for show animation - set to 0 for no animation - matters only if showFunction:null
-		showFunction: null, // custom function to use when showing a sub menu (the default is the jQuery 'show')
-		// don't forget to call complete() at the end of whatever you do
-		// e.g.: function($ul, complete) { $ul.fadeIn(250, complete); }
-		hideDuration: 0, // duration for hide animation - set to 0 for no animation - matters only if hideFunction:null
-		hideFunction: function hideFunction($ul, complete) {
-			$ul.fadeOut(200, complete);
-		}, // custom function to use when hiding a sub menu (the default is the jQuery 'hide')
-		// don't forget to call complete() at the end of whatever you do
-		// e.g.: function($ul, complete) { $ul.fadeOut(250, complete); }
-		collapsibleShowDuration: 0, // duration for show animation for collapsible sub menus - matters only if collapsibleShowFunction:null
-		collapsibleShowFunction: function collapsibleShowFunction($ul, complete) {
-			$ul.slideDown(200, complete);
-		}, // custom function to use when showing a collapsible sub menu
-		// (i.e. when mobile styles are used to make the sub menus collapsible)
-		collapsibleHideDuration: 0, // duration for hide animation for collapsible sub menus - matters only if collapsibleHideFunction:null
-		collapsibleHideFunction: function collapsibleHideFunction($ul, complete) {
-			$ul.slideUp(200, complete);
-		}, // custom function to use when hiding a collapsible sub menu
-		// (i.e. when mobile styles are used to make the sub menus collapsible)
-		showOnClick: false, // show the first-level sub menus onclick instead of onmouseover (i.e. mimic desktop app menus) (matters only for mouse input)
-		hideOnClick: true, // hide the sub menus on click/tap anywhere on the page
-		noMouseOver: false, // disable sub menus activation onmouseover (i.e. behave like in touch mode - use just mouse clicks) (matters only for mouse input)
-		keepInViewport: true, // reposition the sub menus if needed to make sure they always appear inside the viewport
-		keepHighlighted: true, // keep all ancestor items of the current sub menu highlighted (adds the 'highlighted' class to the A's)
-		markCurrentItem: false, // automatically add the 'current' class to the A element of the item linking to the current URL
-		markCurrentTree: true, // add the 'current' class also to the A elements of all ancestor items of the current item
-		rightToLeftSubMenus: false, // right to left display of the sub menus (check the CSS for the sub indicators' position)
-		bottomToTopSubMenus: false, // bottom to top display of the sub menus
-		collapsibleBehavior: 'default' // parent items behavior in collapsible (mobile) view ('default', 'toggle', 'link', 'accordion', 'accordion-toggle', 'accordion-link')
-		// 'default' - first tap on parent item expands sub, second tap loads its link
-		// 'toggle' - the whole parent item acts just as a toggle button for its sub menu (expands/collapses on each tap)
-		// 'link' - the parent item acts as a regular item (first tap loads its link), the sub menu can be expanded only via the +/- button
-		// 'accordion' - like 'default' but on expand also resets any visible sub menus from deeper levels or other branches
-		// 'accordion-toggle' - like 'toggle' but on expand also resets any visible sub menus from deeper levels or other branches
-		// 'accordion-link' - like 'link' but on expand also resets any visible sub menus from deeper levels or other branches
+		isPopup:		false,		// is this a popup menu (can be shown via the popupShow/popupHide methods) or a permanent menu bar
+		mainMenuSubOffsetX:	0,		// pixels offset from default position
+		mainMenuSubOffsetY:	0,		// pixels offset from default position
+		subMenusSubOffsetX:	0,		// pixels offset from default position
+		subMenusSubOffsetY:	0,		// pixels offset from default position
+		subMenusMinWidth:	'10em',		// min-width for the sub menus (any CSS unit) - if set, the fixed width set in CSS will be ignored
+		subMenusMaxWidth:	'20em',		// max-width for the sub menus (any CSS unit) - if set, the fixed width set in CSS will be ignored
+		subIndicators: 		true,		// create sub menu indicators - creates a SPAN and inserts it in the A
+		subIndicatorsPos: 	'append',	// position of the SPAN relative to the menu item content ('append', 'prepend')
+		subIndicatorsText:	'',		// [optionally] add text in the SPAN (e.g. '+') (you may want to check the CSS for the sub indicators too)
+		scrollStep: 		30,		// pixels step when scrolling long sub menus that do not fit in the viewport height
+		scrollAccelerate:	true,		// accelerate scrolling or use a fixed step
+		showTimeout:		250,		// timeout before showing the sub menus
+		hideTimeout:		500,		// timeout before hiding the sub menus
+		showDuration:		0,		// duration for show animation - set to 0 for no animation - matters only if showFunction:null
+		showFunction:		null,		// custom function to use when showing a sub menu (the default is the jQuery 'show')
+							// don't forget to call complete() at the end of whatever you do
+							// e.g.: function($ul, complete) { $ul.fadeIn(250, complete); }
+		hideDuration:		0,		// duration for hide animation - set to 0 for no animation - matters only if hideFunction:null
+		hideFunction:		function($ul, complete) { $ul.fadeOut(200, complete); },	// custom function to use when hiding a sub menu (the default is the jQuery 'hide')
+							// don't forget to call complete() at the end of whatever you do
+							// e.g.: function($ul, complete) { $ul.fadeOut(250, complete); }
+		collapsibleShowDuration:0,		// duration for show animation for collapsible sub menus - matters only if collapsibleShowFunction:null
+		collapsibleShowFunction:function($ul, complete) { $ul.slideDown(200, complete); },	// custom function to use when showing a collapsible sub menu
+							// (i.e. when mobile styles are used to make the sub menus collapsible)
+		collapsibleHideDuration:0,		// duration for hide animation for collapsible sub menus - matters only if collapsibleHideFunction:null
+		collapsibleHideFunction:function($ul, complete) { $ul.slideUp(200, complete); },	// custom function to use when hiding a collapsible sub menu
+							// (i.e. when mobile styles are used to make the sub menus collapsible)
+		showOnClick:		false,		// show the first-level sub menus onclick instead of onmouseover (i.e. mimic desktop app menus) (matters only for mouse input)
+		hideOnClick:		true,		// hide the sub menus on click/tap anywhere on the page
+		noMouseOver:		false,		// disable sub menus activation onmouseover (i.e. behave like in touch mode - use just mouse clicks) (matters only for mouse input)
+		keepInViewport:		true,		// reposition the sub menus if needed to make sure they always appear inside the viewport
+		keepHighlighted:	true,		// keep all ancestor items of the current sub menu highlighted (adds the 'highlighted' class to the A's)
+		markCurrentItem:	false,		// automatically add the 'current' class to the A element of the item linking to the current URL
+		markCurrentTree:	true,		// add the 'current' class also to the A elements of all ancestor items of the current item
+		rightToLeftSubMenus:	false,		// right to left display of the sub menus (check the CSS for the sub indicators' position)
+		bottomToTopSubMenus:	false,		// bottom to top display of the sub menus
+		collapsibleBehavior:	'default'	// parent items behavior in collapsible (mobile) view ('default', 'toggle', 'link', 'accordion', 'accordion-toggle', 'accordion-link')
+							// 'default' - first tap on parent item expands sub, second tap loads its link
+							// 'toggle' - the whole parent item acts just as a toggle button for its sub menu (expands/collapses on each tap)
+							// 'link' - the parent item acts as a regular item (first tap loads its link), the sub menu can be expanded only via the +/- button
+							// 'accordion' - like 'default' but on expand also resets any visible sub menus from deeper levels or other branches
+							// 'accordion-toggle' - like 'toggle' but on expand also resets any visible sub menus from deeper levels or other branches
+							// 'accordion-link' - like 'link' but on expand also resets any visible sub menus from deeper levels or other branches
 	};
 
 	return $;
-});
+}));
