@@ -1,7 +1,3 @@
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 /*!
  * SmartMenus jQuery Plugin Bootstrap 4 Addon - v0.1.0 - September 17, 2017
  * http://www.smartmenus.org/
@@ -12,38 +8,77 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * Licensed MIT
  */
 
-(function (factory) {
+(function(factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD
 		define(['jquery', 'smartmenus'], factory);
-	} else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && _typeof(module.exports) === 'object') {
+	} else if (typeof module === 'object' && typeof module.exports === 'object') {
 		// CommonJS
 		module.exports = factory(require('jquery'));
 	} else {
 		// Global jQuery
 		factory(jQuery);
 	}
-})(function ($) {
+} (function($) {
 
 	$.extend($.SmartMenus.Bootstrap = {}, {
 		keydownFix: false,
-		init: function init() {
+		init: function() {
 			// init all navbars that don't have the "data-sm-skip" attribute set
 			var $navbars = $('ul.navbar-nav:not([data-sm-skip])');
-			$navbars.each(function () {
+			$navbars.each(function() {
 				var $this = $(this),
-				    obj = $this.data('smartmenus');
+					obj = $this.data('smartmenus');
 				// if this navbar is not initialized
 				if (!obj) {
-					var onInit = function onInit() {
+					var skipBehavior = $this.is('[data-sm-skip-collapsible-behavior]'),
+						rightAligned = $this.hasClass('ml-auto') || $this.prevAll('.mr-auto').length > 0;
+
+					$this.smartmenus({
+							// these are some good default options that should work for all
+							subMenusSubOffsetX: 2,
+							subMenusSubOffsetY: -9,
+							subIndicators: !skipBehavior,
+							collapsibleShowFunction: null,
+							collapsibleHideFunction: null,
+							rightToLeftSubMenus: rightAligned,
+							bottomToTopSubMenus: $this.closest('.fixed-bottom').length > 0,
+							// custom option(s) for the Bootstrap 4 addon
+							bootstrapHighlightClasses: 'text-dark bg-light'
+						})
+						.on({
+							// set/unset proper Bootstrap classes for some menu elements
+							'show.smapi': function(e, menu) {
+								var $menu = $(menu),
+									$scrollArrows = $menu.dataSM('scroll-arrows');
+								if ($scrollArrows) {
+									$scrollArrows.css('background-color', $menu.css('background-color'));
+								}
+								$menu.parent().addClass('show');
+								if (obj.opts.keepHighlighted && $menu.dataSM('level') > 2) {
+									$menu.prevAll('a').addClass(obj.opts.bootstrapHighlightClasses);
+								}
+							},
+							'hide.smapi': function(e, menu) {
+								var $menu = $(menu);
+								$menu.parent().removeClass('show');
+								if (obj.opts.keepHighlighted && $menu.dataSM('level') > 2) {
+									$menu.prevAll('a').removeClass(obj.opts.bootstrapHighlightClasses);
+								}
+							}
+						});
+
+					obj = $this.data('smartmenus');
+
+					function onInit() {
 						// set Bootstrap's "active" class to SmartMenus "current" items (should someone decide to enable markCurrentItem: true)
-						$this.find('a.current').each(function () {
+						$this.find('a.current').each(function() {
 							var $this = $(this);
 							// dropdown items require the class to be set to the A's while for nav items it should be set to the parent LI's
 							($this.hasClass('dropdown-item') ? $this : $this.parent()).addClass('active');
 						});
 						// parent items fixes
-						$this.find('a.has-submenu').each(function () {
+						$this.find('a.has-submenu').each(function() {
 							var $this = $(this);
 							// remove Bootstrap required attributes that might cause conflicting issues with the SmartMenus script
 							if ($this.is('[data-toggle="dropdown"]')) {
@@ -54,14 +89,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 								$this.dataSM('bs-dropdown-toggle', true).removeClass('dropdown-toggle');
 							}
 						});
-					};
+					}
 
-					var onBeforeDestroy = function onBeforeDestroy() {
-						$this.find('a.current').each(function () {
+					onInit();
+
+					function onBeforeDestroy() {
+						$this.find('a.current').each(function() {
 							var $this = $(this);
 							($this.hasClass('active') ? $this : $this.parent()).removeClass('active');
 						});
-						$this.find('a.has-submenu').each(function () {
+						$this.find('a.has-submenu').each(function() {
 							var $this = $(this);
 							if ($this.dataSM('bs-dropdown-toggle')) {
 								$this.addClass('dropdown-toggle').removeDataSM('bs-dropdown-toggle');
@@ -70,64 +107,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 								$this.attr('data-toggle', 'dropdown').removeDataSM('bs-data-toggle-dropdown');
 							}
 						});
-					};
+					}
 
 					// custom "refresh" method for Bootstrap
-
-
-					var detectCollapsible = function detectCollapsible(force) {
-						var newW = obj.getViewportWidth();
-						if (newW != winW || force) {
-							if (obj.isCollapsible()) {
-								$this.addClass('sm-collapsible');
-							} else {
-								$this.removeClass('sm-collapsible');
-							}
-							winW = newW;
-						}
-					};
-
-					var skipBehavior = $this.is('[data-sm-skip-collapsible-behavior]'),
-					    rightAligned = $this.hasClass('ml-auto') || $this.prevAll('.mr-auto').length > 0;
-
-					$this.smartmenus({
-						// these are some good default options that should work for all
-						subMenusSubOffsetX: 2,
-						subMenusSubOffsetY: -9,
-						subIndicators: !skipBehavior,
-						collapsibleShowFunction: null,
-						collapsibleHideFunction: null,
-						rightToLeftSubMenus: rightAligned,
-						bottomToTopSubMenus: $this.closest('.fixed-bottom').length > 0,
-						// custom option(s) for the Bootstrap 4 addon
-						bootstrapHighlightClasses: 'text-dark bg-light'
-					}).on({
-						// set/unset proper Bootstrap classes for some menu elements
-						'show.smapi': function showSmapi(e, menu) {
-							var $menu = $(menu),
-							    $scrollArrows = $menu.dataSM('scroll-arrows');
-							if ($scrollArrows) {
-								$scrollArrows.css('background-color', $menu.css('background-color'));
-							}
-							$menu.parent().addClass('show');
-							if (obj.opts.keepHighlighted && $menu.dataSM('level') > 2) {
-								$menu.prevAll('a').addClass(obj.opts.bootstrapHighlightClasses);
-							}
-						},
-						'hide.smapi': function hideSmapi(e, menu) {
-							var $menu = $(menu);
-							$menu.parent().removeClass('show');
-							if (obj.opts.keepHighlighted && $menu.dataSM('level') > 2) {
-								$menu.prevAll('a').removeClass(obj.opts.bootstrapHighlightClasses);
-							}
-						}
-					});
-
-					obj = $this.data('smartmenus');
-
-					onInit();
-
-					obj.refresh = function () {
+					obj.refresh = function() {
 						$.SmartMenus.prototype.refresh.call(this);
 						onInit();
 						// update collapsible detection
@@ -135,7 +118,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					};
 
 					// custom "destroy" method for Bootstrap
-					obj.destroy = function (refresh) {
+					obj.destroy = function(refresh) {
 						onBeforeDestroy();
 						$.SmartMenus.prototype.destroy.call(this, refresh);
 					};
@@ -147,7 +130,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 					// onresize detect when the navbar becomes collapsible and add it the "sm-collapsible" class
 					var winW;
-
+					function detectCollapsible(force) {
+						var newW = obj.getViewportWidth();
+						if (newW != winW || force) {
+							if (obj.isCollapsible()) {
+								$this.addClass('sm-collapsible');
+							} else {
+								$this.removeClass('sm-collapsible');
+							}
+							winW = newW;
+						}
+					}
 					detectCollapsible();
 					$(window).on('resize.smartmenus' + obj.rootId, detectCollapsible);
 				}
@@ -170,4 +163,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	$($.SmartMenus.Bootstrap.init);
 
 	return $;
-});
+}));
