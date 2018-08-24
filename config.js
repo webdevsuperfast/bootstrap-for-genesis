@@ -11,7 +11,7 @@ module.exports = {
 	// START Editing Project Variables.
 	// Project options.
 	project: 'bootstrap-for-genesis', // Project Name.
-	projectURL: 'https://themegen.lndo.site', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:8888.
+	projectURL: 'wordpress.local', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:8888.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: true,
 	injectChanges: true,
