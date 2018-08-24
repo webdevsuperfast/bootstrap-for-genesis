@@ -98,4 +98,7 @@ function bfg_childtheme_setup() {
 	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
 		include $file;
 	}
+	
+	// Load Child theme text domain
+	load_child_theme_textdomain( 'bootstrap-for-genesis', get_stylesheet_directory() . '/languages' );
 }
