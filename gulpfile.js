@@ -222,27 +222,13 @@ gulp.task( 'vendorsJS', function() {
 				}
 			})
 		)
-		// .pipe(
-		// 	babel({
-		// 		presets: [
-		// 			[
-		// 				'env', // Preset which compiles ES6 to ES5.
-		// 				{
-		// 					targets: { browsers: config.BROWSERS_LIST } // Target browser list to support.
-		// 				}
-		// 			]
-		// 		]
-		// 	})
-		// )
 		.pipe( remember( 'vendorsJS' ) ) // Bring all files back to stream
-		// .pipe( concat( config.jsVendorFile + '.js' ) )
 		.pipe(foreach(function(stream, file){
 			return stream
 				.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 				.pipe( gulp.dest( config.jsVendorDestination ) )
 				.pipe(
 					rename({
-						// basename: config.jsVendorFile,
 						suffix: '.min'
 					})
 				)
