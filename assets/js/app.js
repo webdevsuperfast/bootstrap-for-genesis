@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 (function ($) {
-	$(document).ready(function () {
-		$('.gallery').find('br').detach();
-	});
+  $(document).ready(function () {
+    $('.gallery').find('br').detach();
+  });
 })(jQuery);
