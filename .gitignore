@@ -74,3 +74,4 @@ Rails
 dploy.yaml
 exclude.txt
 temp
+.rev
