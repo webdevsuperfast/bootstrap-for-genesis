@@ -24,10 +24,21 @@ add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
 function bfg_nav_menu_args_filter( $args ) {
 
     require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-navwalker.php' );
+
+    $menu_classes = array(
+        'navbar-nav'
+    );
+
+    $navextra = get_theme_mod( 'navextra', false );
+    if ( $navextra !== '' ) {
+        $menu_classes[] = 'mr-auto';
+    } else {
+        $menu_classes[] = 'ml-auto';
+    }
     
     if ( 'primary' === $args['theme_location'] ) {
         $args['container'] = false;
-        $args['menu_class'] = 'navbar-nav mr-auto';
+        $args['menu_class'] = esc_attr( implode( ' ', $menu_classes ) );
         $args['fallback_cb'] = 'WP_Bootstrap_Navwalker::fallback';
         $args['walker'] = new WP_Bootstrap_Navwalker();
     }
@@ -54,7 +65,7 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
     }
 
     $output .= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#'.$data_target.'" aria-controls="'.$data_target.'" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
-    $output .= '<div class="collapse navbar-collapse" id="'.$data_target.'">';
+    $output .= '<nav class="collapse navbar-collapse" id="'.$data_target.'">';
     $output .= $html;
     
     $navextra = get_theme_mod( 'navextra', false );
@@ -63,7 +74,7 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
         $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
     }
 
-    $output .= '</div>';
+    $output .= '</nav>';
     
     return $output;
 }
