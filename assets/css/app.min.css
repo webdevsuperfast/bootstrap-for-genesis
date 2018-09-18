@@ -1833,7 +1833,7 @@ img.wp-smiley,.rsswidget img{border:0;border-radius:0;-webkit-box-shadow:none;bo
 .no-js .menu-item-has-children:hover .dropdown-menu,.no-js .menu-item-has-children:focus .dropdown-menu{display:block}
 .logged-in .navbar-fixed-top{margin-top:32px}
 .site-header .site-description{margin-bottom:0}
-.jumbotron{border-radius:0;padding-right:0;padding-left:0}
+.jumbotron{border-radius:0;margin-bottom:0;padding-right:0;padding-left:0}
 .site-inner{padding:4rem 0}
 body.archive .entry,body.blog .entry,body.search .entry{border-bottom:1px solid rgba(0,0,0,0.1);padding-bottom:2rem;margin-bottom:2rem}
 .entry-image-link{display:inline-block;margin-bottom:1rem}
