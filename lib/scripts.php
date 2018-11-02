@@ -16,7 +16,8 @@ add_action( 'wp_enqueue_scripts', 'bfg_theme_scripts' );
 function bfg_theme_scripts() {
 	$version = wp_get_theme()->Version;
 	if ( !is_admin() ) {
-		wp_enqueue_style( 'app-css', BFG_THEME_CSS . 'app.min.css' );
+		// Smart Menu JS
+		wp_enqueue_style( 'smartmenus-bootstrap', BFG_THEME_CSS . 'smartmenus-bootstrap.css' );
 
 		// Disable the superfish script
 		wp_deregister_script( 'superfish' );
@@ -36,11 +37,11 @@ function bfg_theme_scripts() {
 		wp_enqueue_script( 'app-bootstrap-js' );
 
 		// Register Smart Menu JS and enqueue it
-		wp_register_script( 'app-smartmenu-js', BFG_THEME_JS . 'jquery.smartmenus.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'app-smartmenu-js', BFG_THEME_JS . 'smartmenus.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-smartmenu-js' );
 
 		// Register Smart Menu Boostrap Addon Js and enqueue it
-		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap-4.min.js', array( 'app-smartmenu-js' ), $version, true );
+		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'smartmenus-bootstrap.min.js', array( 'app-smartmenu-js' ), $version, true );
 		wp_enqueue_script( 'app-smartmenu-bootstrap-js' );
 
 		// Register theme JS and enqueue it
