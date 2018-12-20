@@ -13,7 +13,7 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 
 ## Features
 
-1. Bootstrap v3.3.7
+1. Bootstrap v3.4
 2. Bootstrap components
 	* Comment Form
 	* Media List(Used in comments)
