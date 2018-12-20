@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
-    runSequence = require('run-sequence'),
+    // runSequence = require('run-sequence'),
     del = require('del');
 
 // CSS
@@ -82,20 +82,24 @@ gulp.task('copy', function() {
 });
 
 // Default task
-gulp.task('default', function() {
-    runSequence(
-        'clean',
-        'copy',
-        ['styles', 'lint', 'scripts'],
-        'watch'
-    );
-});
+// gulp.task('default', function() {
+//     runSequence(
+//         'clean',
+//         'copy',
+//         ['styles', 'lint', 'scripts'],
+//         'watch'
+//     );
+// });
 
 // Watch
 gulp.task('watch', function() {
     // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], gulp.series('styles'));
 
     // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']);
+    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], gulp.series('scripts'));
 });
+
+gulp.task('default', gulp.series('clean', 'copy', ['styles', 'lint', 'scripts'], 'watch', function(){
+    done();
+}));
