@@ -1,37 +1,41 @@
 {
   "name": "bootstrap-for-genesis",
-  "author": "Rotsen Mark Acob",
   "version": "2.0.2",
+  "description": "An awesome Genesis Framework child theme using Bootstrap 4",
+  "main": "gulpfile.js",
+  "repository": "git@github.com:webdevsuperfast/bootstrap-for-genesis.git",
+  "author": "Rotsen Mark Acob <acob.rotsen@hotmail.com>",
   "license": "GPL-2.0",
-  "repository": "https://github.com/webdevsuperfast/bootstrap-for-genesis",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-jsbeautifier": "^2.1.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "jshint": "^2.9.7",
+    "merge-stream": "^1.0.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6",
+    "vinyl-paths": "^2.1.0"
+  },
   "dependencies": {
-    "bootstrap": "4.1.3",
+    "bootstrap": "4.2.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.5",
     "smartmenus": "^1.1.0",
     "smartmenus-bootstrap-4": "^0.1.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-wp-toolkit": "^2.3.2"
-  },
-  "description": "An awesome Genesis Framework child theme using Bootstrap 4",
-  "main": "gulpfile.js",
-  "theme": {
-    "name": "Bootstrap for Genesis",
-    "description": "Bootstrap-powered Genesis child theme.",
-    "author": "Rotsen Mark Acob",
-    "authoruri": "https://webdevsuperfast.github.io/",
-    "version": "2.0.2",
-    "template": "genesis",
-    "templateversion": "2.0",
-    "license": "GPL-2.0+",
-    "licenseuri": "http://www.opensource.org/licenses/gpl-license.php",
-    "githuburi": "https://github.com/webdevsuperfast/bootstrap-for-genesis",
-    "textdomain": "bootstrap-for-genesis",
-    "domainpath": "/languages",
-    "tags": "two-columns, three-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready"
-  },
-  "private": true
+  }
 }
