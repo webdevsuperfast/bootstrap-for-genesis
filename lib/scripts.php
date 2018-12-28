@@ -16,8 +16,8 @@ add_action( 'wp_enqueue_scripts', 'bfg_theme_scripts' );
 function bfg_theme_scripts() {
 	$version = wp_get_theme()->Version;
 	if ( !is_admin() ) {
-		// Smart Menu JS
-		wp_enqueue_style( 'smartmenus-bootstrap', BFG_THEME_CSS . 'smartmenus-bootstrap.css' );
+		// Enqueue Bootstrap CSS
+		wp_enqueue_style( 'app-css', BFG_THEME_CSS . 'app.css' );
 
 		// Disable the superfish script
 		wp_deregister_script( 'superfish' );
@@ -25,7 +25,7 @@ function bfg_theme_scripts() {
 
 		// Deregister jQuery and use Bootstrap supplied version
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', BFG_THEME_JS . 'jquery.min.js', array(), $version, true );
+		wp_register_script( 'jquery', BFG_THEME_JS . 'jquery.slim.min.js', array(), $version, true );
 		wp_enqueue_script( 'jquery' );
 
 		// Register Popper JS and enqueue it
@@ -37,12 +37,20 @@ function bfg_theme_scripts() {
 		wp_enqueue_script( 'app-bootstrap-js' );
 
 		// Register Smart Menu JS and enqueue it
-		wp_register_script( 'app-smartmenu-js', BFG_THEME_JS . 'smartmenus.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'app-smartmenu-js', BFG_THEME_JS . 'jquery.smartmenus.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-smartmenu-js' );
 
 		// Register Smart Menu Boostrap Addon Js and enqueue it
-		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'smartmenus-bootstrap.min.js', array( 'app-smartmenu-js' ), $version, true );
+		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap-4.min.js', array( 'app-smartmenu-js' ), $version, true );
 		wp_enqueue_script( 'app-smartmenu-bootstrap-js' );
+
+		// Register Font Awesome JS and enqueue it
+		wp_register_script( 'app-fontawesome-js', 'https://use.fontawesome.com/releases/v5.6.3/js/all.js', array(), $version, true );
+		wp_enqueue_script( 'app-fontawesome-js' );
+
+		// Register Font Awesome 4 Shim and enqueue it
+		wp_register_script( 'app-fontawesome-shim-js', 'https://use.fontawesome.com/releases/v5.6.3/js/v4-shims.js', array( 'app-fontawesome-js', $version, true ) );
+		wp_enqueue_script( 'app-fontawesome-shim-js' );
 
 		// Register theme JS and enqueue it
 		wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
