@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) to handle tasks, configuration and lint files. 
+Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to handle tasks, configuration and lint files. 
 
 ## Installation Instructions
 
@@ -50,4 +50,3 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
 * [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
-* [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit)
