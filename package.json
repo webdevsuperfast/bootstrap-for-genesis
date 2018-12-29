@@ -24,6 +24,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
+    "gulp-wp-pot": "^2.3.3",
     "jshint": "^2.9.7",
     "merge-stream": "^1.0.1",
     "vinyl-paths": "^2.1.0"
