@@ -14,7 +14,8 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
-    browserSync = require('browser-sync'),
+    browserSync = require('browser-sync').create(),
+    wpPot = require('gulp-wp-pot'),
     del = require('del');
 
 var paths = {
@@ -32,7 +33,17 @@ var paths = {
             'node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.js'
         ],
         dest: 'assets/js'
+    },
+    languages: {
+        src: '**/*.php',
+        dest: 'languages/bootstrap-for-genesis.pot'
     }
+}
+
+function translation() {
+    return gulp.src(paths.languages.src)
+        .pipe(wpPot())
+        .pipe(gulp.dest(paths.languages.dest))
 }
 
 function scriptsLint() {
@@ -98,5 +109,7 @@ function watch() {
         gulp.series(browserSyncReload)
     )
 }
+
+gulp.task('translation', translation);
 
 gulp.task('default', gulp.parallel(style, js, browserSyncServe, watch));
