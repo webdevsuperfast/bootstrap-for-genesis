@@ -71,7 +71,7 @@ function js() {
             .pipe(rename({suffix: '.min'}))
     }))
     .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(browserSync.reload({stream:true}))
+    .pipe(browserSync.stream({match: '**/*.js'}))
     .pipe(notify({ message: 'Scripts task complete' }));
 }
 
