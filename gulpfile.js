@@ -7,9 +7,6 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    prettify = require('gulp-jsbeautifier'),
-    vinylpaths = require('vinyl-paths'),
     cmq = require('gulp-combine-mq'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
@@ -47,7 +44,7 @@ function translation() {
 }
 
 function scriptsLint() {
-    return gulp.src('assets/js/**/*','gulpfile.js')
+    return gulp.src('assets/js/source/**/*','gulpfile.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
 }
@@ -67,7 +64,7 @@ function style() {
         .pipe(rename('app.css'))
         .pipe(minifycss())
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.stream({match: '**/*.css'}))
+        .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
     
     return mergeStream;
@@ -100,7 +97,7 @@ function browserSyncReload(done) {
 }
 
 function watch() {
-    gulp.watch(paths.styles.src, style).on('change', browserSync.reload)
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], style).on('change', browserSync.reload)
     gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
     gulp.watch([
             '*.php',
