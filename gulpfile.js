@@ -12,8 +12,7 @@ var gulp = require('gulp'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
-    wpPot = require('gulp-wp-pot'),
-    del = require('del');
+    wpPot = require('gulp-wp-pot');
 
 var paths = {
     styles: {
@@ -58,6 +57,7 @@ function style() {
         .pipe(concat('app.scss'));
     
     var mergeStream = merge(sassStream, cssStream)
+        .pipe(changed(paths.styles.dest))
         .pipe(concat('app.css'))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(cmq())
@@ -72,7 +72,7 @@ function style() {
 
 function js() {
     return gulp.src(paths.scripts.src)
-    .pipe(changed('js'))
+    .pipe(changed(paths.scripts.dest))
     .pipe(foreach(function(stream, file){
         return stream
             .pipe(uglify())
