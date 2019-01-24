@@ -1,18 +1,25 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-clean-css'),
+    postcss = require('gulp-postcss'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cmq = require('gulp-combine-mq'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
-    wpPot = require('gulp-wp-pot');
+    wpPot = require('gulp-wp-pot'),
+    cssnano = require('cssnano'),
+    cmq = require('css-mqpacker'),
+    autoprefixer = require('autoprefixer');
+
+var plugins = [
+    autoprefixer,
+    cssnano,
+    cmq
+]
 
 var paths = {
     styles: {
@@ -59,10 +66,8 @@ function style() {
     var mergeStream = merge(sassStream, cssStream)
         .pipe(changed(paths.styles.dest))
         .pipe(concat('app.css'))
-        .pipe(autoprefixer('last 2 versions'))
-        .pipe(cmq())
+        .pipe(postcss(plugins))
         .pipe(rename('app.css'))
-        .pipe(minifycss())
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
