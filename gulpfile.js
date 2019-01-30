@@ -40,6 +40,9 @@ var paths = {
     languages: {
         src: '**/*.php',
         dest: 'languages/bootstrap-for-genesis.pot'
+    },
+    site: {
+        url: 'http://bootstrap.test'
     }
 }
 
@@ -91,7 +94,7 @@ function js() {
 function browserSyncServe(done) {
     browserSync.init({
         injectChanges: true,
-        proxy: 'http://wordpress.test'
+        proxy: paths.site.url
     })
     done();
 }
