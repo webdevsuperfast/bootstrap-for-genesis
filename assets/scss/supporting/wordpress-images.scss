@@ -1,3 +1,7 @@
+img {
+    @include img-fluid;
+}
+
 .alignleft,
 .alignright,
 .aligncenter {
