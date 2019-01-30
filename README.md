@@ -19,7 +19,8 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 4. Install [Gulp](https://gulpjs.com/) globally.
 5. Install [Yarn](https://yarnpkg.com/en/docs/install)
 6. Run `yarn install` to install dependencies through terminal/CLI program.
-7. Run `gulp` through your favorite CLI program.
+7. Replace site url in line `45` of `gulpfile.js` to your local development URL(e.g. http://bootstrap.test).
+8. Run `gulp` through your favorite CLI program.
 
 ## Features
 
