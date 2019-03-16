@@ -105,7 +105,7 @@ function bfg_navbar_content_markup() {
             $output .= '</form>';
             break;
         case 'date': 
-            $output .= '<p class="navbar-text navbar-right">';
+            $output .= '<p class="navbar-text navbar-right mb-0">';
             $output .= date_i18n( get_option( 'date_format' ) );
             $output .= '</p>';
             break;
