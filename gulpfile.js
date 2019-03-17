@@ -109,7 +109,8 @@ function watch() {
     gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
     gulp.watch([
             '*.php',
-            'lib/*'
+            'lib/*',
+            '**/**/*.php'
         ],
         gulp.series(browserSyncReload)
     )
