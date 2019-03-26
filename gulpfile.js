@@ -6,7 +6,6 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
     browserSync = require('browser-sync').create(),
@@ -59,36 +58,28 @@ function scriptsLint() {
 }
 
 function style() {
-    var cssStream = gulp.src('node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.css')
-        .pipe(concat('smartmenus.css'));
-    
-    var sassStream = gulp.src(paths.styles.src)
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(concat('app.scss'));
-    
-    var mergeStream = merge(sassStream, cssStream)
+    return gulp.src(paths.styles.src)
         .pipe(changed(paths.styles.dest))
-        .pipe(concat('app.css'))
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
-    
-    return mergeStream;
 }
 
 function js() {
     return gulp.src(paths.scripts.src)
-    .pipe(changed(paths.scripts.dest))
-    .pipe(foreach(function(stream, file){
-        return stream
-            .pipe(uglify())
-            .pipe(rename({suffix: '.min'}))
-    }))
-    .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(browserSync.stream({match: '**/*.js'}))
-    .pipe(notify({ message: 'Scripts task complete' }));
+        .pipe(changed(paths.scripts.dest))
+        .pipe(foreach(function(stream, file){
+            return stream
+                .pipe(uglify())
+                .pipe(rename({suffix: '.min'}))
+        }))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream({match: '**/*.js'}))
+        .pipe(notify({ message: 'Scripts task complete' }));
 }
 
 function browserSyncServe(done) {

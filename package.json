@@ -24,8 +24,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.4",
-    "jshint": "^2.10.2",
-    "merge-stream": "^1.0.1"
+    "jshint": "^2.10.2"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
