@@ -67,7 +67,7 @@ function bfg_childtheme_setup() {
 	add_theme_support( 'genesis-connect-woocommerce' );
 
 	// Remove unneeded widget areas
-	unregister_sidebar( 'header-right' );
+	// unregister_sidebar( 'header-right' );
 
 	// Move Sidebar Secondary After Content
 	remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
