@@ -109,6 +109,14 @@ function bfg_navbar_content_markup() {
             $output .= date_i18n( get_option( 'date_format' ) );
             $output .= '</p>';
             break;
+        case 'widget':
+            ob_start();
+            genesis_widget_area( 'header-right', array(
+                'before' => '<div class="header-right navbar-text navbar-right mb-0">',
+                'after' => '</div>'
+            ) );
+            $output .= ob_get_clean();
+            break;
         case '':
             $output .= '';
             break;

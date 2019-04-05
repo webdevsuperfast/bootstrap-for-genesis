@@ -96,7 +96,8 @@ add_action( 'customize_register', function( $wp_customize ) {
         'choices' => array(
             '' => __( 'None', 'bootstrap-for-genesis' ),
             'date' => __( 'Date', 'bootstrap-for-genesis' ),
-            'search' => __( 'Search Form', 'bootstrap-for-genesis' )
+            'search' => __( 'Search Form', 'bootstrap-for-genesis' ),
+            'widget' => __( 'Widget Area', 'bootstrap-for-genesis' )
         )
     ) );
 
