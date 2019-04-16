@@ -21,6 +21,11 @@ function bfg_do_plugins_register() {
 			'slug'      => 'widget-css-classes',
 			'required'  => false
 		),
+		array(
+			'name'		=> __( 'Bootstrap for Contact Form 7', 'bootstrap-for-genesis' ),
+			'slug'		=> 'bootstrap-for-contact-form-7',
+			'required'	=> false
+		)
 	);
 
 	$config = array(
