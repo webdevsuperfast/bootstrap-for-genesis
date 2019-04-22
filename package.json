@@ -13,8 +13,8 @@
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "fibers": "^3.1.1",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp": "^4.0.1",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-changed": "^3.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-dart-sass": "^0.9.1",
@@ -27,7 +27,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.5",
     "jshint": "^2.10.2",
-    "sass": "^1.18.0"
+    "sass": "^1.19.0"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
