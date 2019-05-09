@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     cssnano = require('cssnano'),
     cmq = require('css-mqpacker'),
     autoprefixer = require('autoprefixer'),
-    comments = require('postcss-discard-comments');
+    comments = require('postcss-discard-comments'),
+    Fiber = require('fibers');
 
 sass.compiler = require('sass');
 
@@ -29,7 +30,7 @@ var plugins = [
 var paths = {
     styles: {
         src: 'assets/scss/style.scss',
-        dest: 'assets/css'
+        dest: './'
     },
     scripts: {
         src: [
@@ -66,10 +67,10 @@ function scriptsLint() {
 function style() {
     return gulp.src(paths.styles.src)
         .pipe(changed(paths.styles.dest))
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
         .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
-        .pipe(rename('app.css'))
+        .pipe(rename('style.css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
