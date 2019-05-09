@@ -16,9 +16,6 @@ add_action( 'wp_enqueue_scripts', 'bfg_theme_scripts' );
 function bfg_theme_scripts() {
 	$version = wp_get_theme()->Version;
 	if ( !is_admin() ) {
-		// Enqueue Bootstrap CSS
-		wp_enqueue_style( 'app-css', BFG_THEME_CSS . 'app.css' );
-
 		// Disable the superfish script
 		wp_deregister_script( 'superfish' );
 		wp_deregister_script( 'superfish-args' );
