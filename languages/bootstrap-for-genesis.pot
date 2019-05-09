@@ -1,4 +1,4 @@
-# Copyright (C) 2018 unnamed project
+# Copyright (C) 2019 unnamed project
 # This file is distributed under the same license as the unnamed project package.
 msgid ""
 msgstr ""
@@ -47,78 +47,86 @@ msgid "Navigation Position"
 msgstr ""
 
 #: lib/customizer.php:45
-msgid "Sticky Top"
+msgid "Default"
 msgstr ""
 
 #: lib/customizer.php:46
-msgid "Fixed Top"
+msgid "Sticky Top"
 msgstr ""
 
 #: lib/customizer.php:47
+msgid "Fixed Top"
+msgstr ""
+
+#: lib/customizer.php:48
 msgid "Fixed Bottom"
 msgstr ""
 
-#: lib/customizer.php:59
+#: lib/customizer.php:60
 msgid "Navigation Container"
 msgstr ""
 
-#: lib/customizer.php:62
+#: lib/customizer.php:63
 msgid "Small"
 msgstr ""
 
-#: lib/customizer.php:63
+#: lib/customizer.php:64
 msgid "Medium"
 msgstr ""
 
-#: lib/customizer.php:64
+#: lib/customizer.php:65
 msgid "Large"
 msgstr ""
 
-#: lib/customizer.php:65
+#: lib/customizer.php:66
 msgid "Extra Large"
 msgstr ""
 
-#: lib/customizer.php:77
+#: lib/customizer.php:78
 msgid "Navigation Background"
 msgstr ""
 
-#: lib/customizer.php:80, lib/customizer.php:120, lib/customizer.php:136
+#: lib/customizer.php:81, lib/customizer.php:122, lib/customizer.php:138
 msgid "Light"
 msgstr ""
 
-#: lib/customizer.php:81, lib/customizer.php:121, lib/customizer.php:137
+#: lib/customizer.php:82, lib/customizer.php:123, lib/customizer.php:139
 msgid "Dark"
 msgstr ""
 
-#: lib/customizer.php:82, lib/customizer.php:122, lib/customizer.php:138
+#: lib/customizer.php:83, lib/customizer.php:124, lib/customizer.php:140
 msgid "Primary"
 msgstr ""
 
-#: lib/customizer.php:94
+#: lib/customizer.php:95
 msgid "Navigation Extras"
 msgstr ""
 
-#: lib/customizer.php:97
+#: lib/customizer.php:98
 msgid "None"
 msgstr ""
 
-#: lib/customizer.php:98
+#: lib/customizer.php:99
 msgid "Date"
 msgstr ""
 
-#: lib/customizer.php:99
+#: lib/customizer.php:100
 msgid "Search Form"
 msgstr ""
 
-#: lib/customizer.php:105
+#: lib/customizer.php:101
+msgid "Widget Area"
+msgstr ""
+
+#: lib/customizer.php:107
 msgid "Footer Section"
 msgstr ""
 
-#: lib/customizer.php:117
+#: lib/customizer.php:119
 msgid "Footer Widget Background"
 msgstr ""
 
-#: lib/customizer.php:133
+#: lib/customizer.php:135
 msgid "Footer Background"
 msgstr ""
 
@@ -150,92 +158,96 @@ msgstr ""
 msgid "Widget CSS Classes"
 msgstr ""
 
-#: lib/tgm.php:35, lib/modules/class-tgm-plugin-activation.php:334
+#: lib/tgm.php:25
+msgid "Bootstrap for Contact Form 7"
+msgstr ""
+
+#: lib/tgm.php:40, lib/modules/class-tgm-plugin-activation.php:334
 msgid "Install Required Plugins"
 msgstr ""
 
-#: lib/tgm.php:36, lib/modules/class-tgm-plugin-activation.php:335
+#: lib/tgm.php:41, lib/modules/class-tgm-plugin-activation.php:335
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: lib/tgm.php:37, lib/modules/class-tgm-plugin-activation.php:337
+#: lib/tgm.php:42, lib/modules/class-tgm-plugin-activation.php:337
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: lib/tgm.php:38, lib/modules/class-tgm-plugin-activation.php:340
+#: lib/tgm.php:43, lib/modules/class-tgm-plugin-activation.php:340
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: lib/tgm.php:39, lib/modules/class-tgm-plugin-activation.php:341
+#: lib/tgm.php:44, lib/modules/class-tgm-plugin-activation.php:341
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:40, lib/modules/class-tgm-plugin-activation.php:347
+#: lib/tgm.php:45, lib/modules/class-tgm-plugin-activation.php:347
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:41
+#: lib/tgm.php:46
 msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
 msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:42, lib/modules/class-tgm-plugin-activation.php:365
+#: lib/tgm.php:47, lib/modules/class-tgm-plugin-activation.php:365
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:43, lib/modules/class-tgm-plugin-activation.php:371
+#: lib/tgm.php:48, lib/modules/class-tgm-plugin-activation.php:371
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:44
+#: lib/tgm.php:49
 msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
 msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:45, lib/modules/class-tgm-plugin-activation.php:353
+#: lib/tgm.php:50, lib/modules/class-tgm-plugin-activation.php:353
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:46
+#: lib/tgm.php:51
 msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
 msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:47, lib/modules/class-tgm-plugin-activation.php:377
+#: lib/tgm.php:52, lib/modules/class-tgm-plugin-activation.php:377
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:48, lib/modules/class-tgm-plugin-activation.php:387
+#: lib/tgm.php:53, lib/modules/class-tgm-plugin-activation.php:387
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/tgm.php:49, lib/modules/class-tgm-plugin-activation.php:392
+#: lib/tgm.php:54, lib/modules/class-tgm-plugin-activation.php:392
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: lib/tgm.php:50, lib/modules/class-tgm-plugin-activation.php:394, lib/modules/class-tgm-plugin-activation.php:3252
+#: lib/tgm.php:55, lib/modules/class-tgm-plugin-activation.php:394, lib/modules/class-tgm-plugin-activation.php:3252
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: lib/tgm.php:51
+#: lib/tgm.php:56
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
@@ -245,6 +257,10 @@ msgstr ""
 
 #: lib/widget-areas.php:21
 msgid "This is the home featured area. It uses the jumbotron bootstrap section."
+msgstr ""
+
+#: templates/page_landing.php:3
+msgid "Landing"
 msgstr ""
 
 #. translators: %s: plugin name.
