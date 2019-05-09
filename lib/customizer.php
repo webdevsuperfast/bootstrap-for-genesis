@@ -33,7 +33,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 
     //* Add Navigation Controls
     $wp_customize->add_setting( 'navposition', array(
-        'default' => 'sticky-top'
+        'default' => ''
     ) );
 
     $wp_customize->add_control( 'navposition', array(
@@ -42,6 +42,7 @@ add_action( 'customize_register', function( $wp_customize ) {
         'label' => __( 'Navigation Position', 'bootstrap-for-genesis' ),
         'section' => 'navigation',
         'choices' => array(
+            '' => __( 'Default', 'bootstrap-for-genesis' ),
             'sticky-top' => __( 'Sticky Top', 'bootstrap-for-genesis' ),
             'fixed-top' => __( 'Fixed Top', 'bootstrap-for-genesis' ),
             'fixed-bottom' => __( 'Fixed Bottom', 'bootstrap-for-genesis' ),
