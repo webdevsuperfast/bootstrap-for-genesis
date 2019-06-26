@@ -27,7 +27,7 @@
     "gulp-wp-pot": "^2.3.5",
     "jshint": "^2.10.2",
     "postcss-discard-comments": "^4.0.2",
-    "sass": "^1.21.0"
+    "sass": "^1.22.0"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
