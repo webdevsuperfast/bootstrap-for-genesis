@@ -11,7 +11,6 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     wpPot = require('gulp-wp-pot'),
     cssnano = require('cssnano'),
-    cmq = require('css-mqpacker'),
     autoprefixer = require('autoprefixer'),
     comments = require('postcss-discard-comments'),
     Fiber = require('fibers');
@@ -21,7 +20,6 @@ sass.compiler = require('sass');
 var plugins = [
     autoprefixer,
     cssnano,
-    cmq,
     comments({
         removeAllButFirst: true
     })
