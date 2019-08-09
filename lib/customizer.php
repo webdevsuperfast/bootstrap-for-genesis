@@ -102,6 +102,28 @@ add_action( 'customize_register', function( $wp_customize ) {
         )
     ) );
 
+    // Container Layout
+    $wp_customize->add_section( 'container-layout', array(
+        'title' => __( 'Container Layout', 'bootstrap-for-genesis' ),
+        'priority' => 40,
+        'panel' => 'bootstrap'
+    ) );
+
+    $wp_customize->add_setting( 'container', array(
+        'default' => 'boxed',
+    ) );
+
+    $wp_customize->add_control( 'container', array(
+        'type' => 'select',
+        'priority' => 30,
+        'label' => __( 'Container Settings', 'bootstrap-for-genesis' ),
+        'section' => 'container-layout',
+        'choices' => array(
+            'fluid' => __( 'Fluid Layout', 'bootstrap-for-genesis' ),
+            'boxed' => __( 'Boxed Layout', 'bootstrap-for-genesis' )
+        )
+    ) );
+
     // Footer Section
     $wp_customize->add_section( 'footer', array(
         'title' => __( 'Footer Section', 'bootstrap-for-genesis' ),

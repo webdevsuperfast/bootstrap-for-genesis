@@ -78,11 +78,24 @@ function bfg_merge_genesis_attr_classes() {
             'archive-pagination'        => 'clearfix',
             'entry-content'             => 'clearfix',
             'entry-pagination'          => 'clearfix',
-            'structural-wrap'           => 'container',
+            // 'structural-wrap'           => 'container',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
             'entry-image'               => 'img-fluid'
     );
+
+    // Container Layout
+    $container = get_theme_mod( 'container' );
+
+    switch ( $container ) {
+        case 'fluid':
+            $classes['structural-wrap'] = 'container-fluid';
+            break;
+        case 'boxed':
+        default:
+            $classes['structural-wrap'] = 'container';
+            break;
+    }
 
     $navclasses = array();
 
