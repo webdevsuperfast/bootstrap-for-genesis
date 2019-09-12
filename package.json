@@ -13,8 +13,8 @@
     "cssnano": "^4.1.10",
     "fibers": "^4.0.1",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-changed": "^4.0.0",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-changed": "^4.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-flatmap": "^1.0.2",
     "gulp-jshint": "^2.1.0",
@@ -26,7 +26,7 @@
     "gulp-wp-pot": "^2.3.5",
     "jshint": "^2.10.2",
     "postcss-discard-comments": "^4.0.2",
-    "sass": "^1.22.9"
+    "sass": "^1.22.12"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
