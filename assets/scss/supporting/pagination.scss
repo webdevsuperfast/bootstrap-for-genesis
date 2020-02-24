@@ -6,22 +6,103 @@
  * In Bootstrap a span inside the li would be preferred
  * but this solution via CSS is simplier than modifying the markup
  *---------------------------------------------------------- */
-
 .archive-pagination {
-    clear: both;
+    a {
+        position: relative;
+        display: block;
+        padding: $pagination-padding-y $pagination-padding-x;
+        margin-left: -$pagination-border-width;
+        line-height: $pagination-line-height;
+        color: $pagination-color;
+        background-color: $pagination-bg;
+        border: $pagination-border-width solid $pagination-border-color;
+        @include hover-focus {
+            color: $pagination-hover-color;
+            text-decoration: none;
+            background-color: $pagination-hover-bg;
+            border-color: $pagination-hover-border-color;
+        }
+    }
+    ul {
+        display: flex;
+        @include list-unstyled;
+        @include border-radius;
+        margin-bottom: 0;
+        li {
+            &:first-child {
+                a {
+                    margin-left: 0;
+                    @include border-left-radius($border-radius);
+                }
+            }
+            &:last-child {
+                a {
+                    @include border-right-radius($border-radius);
+                }
+            }
+            &.active {
+                a {
+                    z-index: 2;
+                    color: $pagination-active-color;
+                    background-color: $pagination-active-bg;
+                    border-color: $pagination-active-border-color;
+                }
+            }
+            &.pagination-omission {
+                position: relative;
+                display: block;
+                padding: $pagination-padding-y $pagination-padding-x;
+                margin-left: -$pagination-border-width;
+                line-height: $pagination-line-height;
+                color: $pagination-color;
+                background-color: $pagination-bg;
+                border: $pagination-border-width solid $pagination-border-color;
+            }
+        }
+    }
 }
 
-.bfg-pagination-numeric ul {
-    @extend .pagination;
-}
-.pagination-omission {
-    position: relative;
-    float: left; // Collapse white-space
-    padding: $padding-base-vertical $padding-base-horizontal;
-    line-height: $line-height-base;
-    text-decoration: none;
-    color: $pagination-color;
-    background-color: $pagination-bg;
-    border: 1px solid $pagination-border;
-    margin-left: -1px;
+.post-pagination {
+    @include clearfix;
+    @include list-unstyled;
+    @include border-radius;
+    display: flex;
+    margin-bottom: $spacer*2;
+    a {
+        position: relative;
+        display: block;
+        padding: $pagination-padding-y $pagination-padding-x;
+        margin-left: -$pagination-border-width;
+        line-height: $pagination-line-height;
+        color: $pagination-color;
+        background-color: $pagination-bg;
+        border: $pagination-border-width solid $pagination-border-color;
+        @include hover-focus {
+            color: $pagination-hover-color;
+            text-decoration: none;
+            background-color: $pagination-hover-bg;
+            border-color: $pagination-hover-border-color;
+        }
+    }
+    li {
+        &:first-child {
+            a {
+                margin-left: 0;
+                @include border-left-radius($border-radius);
+            }
+        }
+        &:last-child {
+            a {
+                @include border-right-radius($border-radius);
+            }
+        }
+        &.active {
+            a {
+                z-index: 2;
+                color: $pagination-active-color;
+                background-color: $pagination-active-bg;
+                border-color: $pagination-active-border-color;
+            }
+        }
+    }
 }

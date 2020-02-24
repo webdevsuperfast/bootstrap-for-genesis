@@ -1,11 +1,3 @@
-/**
- * This file should be used to override the Bootstrap core Sass variables
- * See https://github.com/salcode/bootstrap-genesis/issues/83
- *
- * e.g. $brand-primary: #f00;
- */
-// Bootstrap Font
-$icon-font-path: "../fonts/bootstrap/"; // $icon-font-path: "../fonts/bootstrap/";
+$enable-flex: true;
 
-// Navbar
-$navbar-margin-bottom: 0;
+$fa-font-path: "assets/fonts/fontawesome";

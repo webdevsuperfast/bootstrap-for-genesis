@@ -4,8 +4,8 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.rotsenacob.com
- * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
  * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
@@ -73,19 +73,4 @@ function bfg_body_class( $args ) {
 		$args[] = 'blog';
 
 	return $args;
-}
-
-// Remove Parentheses on Archive/Categories
-// @link http://wordpress.stackexchange.com/questions/88545/how-to-remove-the-parentheses-from-the-category-widget
-add_filter( 'wp_list_categories', 'bfg_categories_postcount_filter', 10, 2 );
-add_filter( 'get_archives_link', 'bfg_categories_postcount_filter', 10, 2 );
-function bfg_categories_postcount_filter( $variable ) {
-   $variable = str_replace( '(', '<span class="badge post-count">', $variable );
-   $variable = str_replace( ')', '</span>', $variable );
-   return $variable;
-}
-
-// Mr Image Resize functionn
-function bfg_thumb($url, $width, $height=0, $align='') {
-	return mr_image_resize($url, $width, $height, true, $align, false);
 }

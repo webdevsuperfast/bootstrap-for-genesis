@@ -4,23 +4,12 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.rotsenacob.com
- * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
  * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
-
-// Integrate Bootstrap Media List on comment lists
-add_filter( 'genesis_comment_list_args', 'bfg_comment_list_args', 10, 2 );
-function bfg_comment_list_args( $args ) {
-	require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
-
-	$args['avatar_size'] = 64;
-	$args['walker'] = new Bootstrap_Comment_Walker();
-	$args['callback'] = '';
-	return $args;
-}
 
 // Comment Form
 // @link http://www.codecheese.com/2013/11/wordpress-comment-form-with-twitter-bootstrap-3-supports/
@@ -45,22 +34,13 @@ function bfg_comment_form_fields( $fields ) {
     $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
     
     $fields   =  array(
-        'author' => '<div class="form-group comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+        'author' => '<div class="form-group comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="text-muted required">*</span>' : '' ) . '</label> ' .
                     '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div>',
-        'email'  => '<div class="form-group comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+        'email'  => '<div class="form-group comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="text-muted required">*</span>' : '' ) . '</label> ' .
                     '<input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>',
         'url'    => '<div class="form-group comment-form-url"><label for="url">' . __( 'Website' ) . '</label> ' .
                     '<input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>'        
     );
     
     return $fields;
-}
-
-add_filter( 'genesis_ping_list_args', 'bfg_ping_list_args' );
-function bfg_ping_list_args( $args ) {
-    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-comment-walker.php' );
-    
-    $args['walker'] = new Bootstrap_Comment_Walker();
-    $args['avatar_size'] = 0;
-    return $args;
 }

@@ -4,20 +4,30 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.rotsenacob.com
- * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
  * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
 
-// Add row class after wrap
-add_filter( 'genesis_structural_wrap-footer-widgets', 'bfg_filter_structural_wrap', 10, 2 );
+// Add .row div inside .wrap/.container div
+add_action( 'get_header', function() {
+    $wraps = array(
+        'footer-widgets'
+    );
+    
+    foreach( $wraps as $wrap ) {
+        $context= "genesis_structural_wrap-$wrap";
+        add_filter( $context, 'bfg_filter_structural_wrap', 10, 2 );
+    }
+}, 10, 1 );
+
+// Function to add .row div inside .container div
 function bfg_filter_structural_wrap( $output, $original_output ) {
     if( 'close' == $original_output ) {
         $output = '</div>' . $output;
     }
-
     if ( 'open' == $original_output )  {
     	$output = $output . '<div class="row">';
     }
@@ -59,21 +69,90 @@ function bfg_add_markup_sanitize_classes( $attr, $context ) {
 
 // Default array of classes to add
 function bfg_merge_genesis_attr_classes() {
-    $navclass = get_theme_mod( 'navtype', 'navbar-static-top' );
+    global $wp_registered_sidebar;
     $classes = array(
             'content-sidebar-wrap'      => 'row',
             'content'                   => 'col-sm-8',
             'sidebar-primary'           => 'col-sm-4',
             'sidebar-secondary'         => 'col-sm-2',
-            'archive-pagination'        => ( 'numeric' == genesis_get_option( 'posts_nav' ) ) ? 'clearfix bfg-pagination-numeric' : 'clearfix bfg-pagination-prev-next',
+            'archive-pagination'        => 'clearfix',
             'entry-content'             => 'clearfix',
-            'entry-pagination'          => 'clearfix bfg-pagination-numeric',
-            'structural-wrap'           => 'container',
-            'footer-widget-area'        => 'col-sm-6',
+            'entry-pagination'          => 'clearfix',
+            // 'structural-wrap'           => 'container',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-default ' . $navclass
+            'entry-image'               => 'img-fluid'
     );
+
+    // Container Layout
+    $container = get_theme_mod( 'container' );
+
+    switch ( $container ) {
+        case 'fluid':
+            $classes['structural-wrap'] = 'container-fluid';
+            break;
+        case 'boxed':
+        default:
+            $classes['structural-wrap'] = 'container';
+            break;
+    }
+
+    $navclasses = array();
+
+    $navclasses[] = 'navbar';
+
+    $navposition = get_theme_mod( 'navposition', false );
+
+    $navclasses[] = $navposition;
+
+    $navcontainer = get_theme_mod( 'navcontainer', 'lg' );
+    $navclasses[] = 'navbar-expand-' . $navcontainer;
+
+    $navcolor = get_theme_mod( 'navcolor', 'dark' );
+
+    switch( $navcolor ) {
+        case 'light':
+            $navclasses[] = 'navbar-light';
+            $navclasses[] = 'bg-light';
+            break;
+        case 'dark':
+        default:
+            $navclasses[] = 'navbar-dark';
+            $navclasses[] = 'bg-dark';
+            break;
+        case 'primary':
+            $navclasses[] = 'navbar-dark';
+            $navclasses[] = 'bg-primary';
+            break;
+    }
+
+    $classes['site-header'] = esc_attr( implode( ' ', $navclasses ) );
+
+    // Footer Class
+    $footerwidgetbg = get_theme_mod( 'footerwidgetbg', 'dark' );
+    
+    $footerwidgetclasses = array();
+    
+    if ( $footerwidgetbg !== 'primary' ) {
+        $footerwidgetclasses[] = 'text-muted';
+    }
+
+    $footerwidgetclasses[] = 'bg-' . $footerwidgetbg;
+
+    $classes['footer-widgets'] = esc_attr( implode( ' ', $footerwidgetclasses ) );
+
+    // Footer Class
+    $footerbg = get_theme_mod( 'footerbg', 'dark' );
+
+    $footerclasses = array();
+
+    if ( $footerbg !== 'primary' ) {
+        $footerclasses[] = 'text-muted';
+    }
+
+    $footerclasses[] = 'bg-' . $footerbg;
+
+    $classes['site-footer'] = esc_attr( implode( ' ', $footerclasses ) );
     
     if ( has_filter( 'bfg_add_classes' ) ) {
         $classes = apply_filters( 'bfg_add_classes', $classes );
@@ -104,8 +183,8 @@ function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // sidebar-content          // supported
     if ( 'sidebar-content' === $layout ) {
-        $classes_to_add['content'] = 'col-sm-8 col-sm-push-4';
-        $classes_to_add['sidebar-primary'] = 'col-sm-4 col-sm-pull-8';
+        $classes_to_add['content'] = 'col-sm-8';
+        $classes_to_add['sidebar-primary'] = 'order-first col-sm-4';
     }
 
     // content-sidebar-sidebar  // supported
@@ -118,17 +197,17 @@ function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // sidebar-sidebar-content  // supported
     if ( 'sidebar-sidebar-content' === $layout ) {
-        $classes_to_add['content'] = 'col-sm-6 col-sm-push-6';
-        $classes_to_add['sidebar-primary'] = 'col-sm-4 col-sm-pull-4';
-        $classes_to_add['sidebar-secondary'] = 'col-sm-2 col-sm-pull-10';
+        $classes_to_add['content'] = 'col-sm-6 order-3';
+        $classes_to_add['sidebar-primary'] = 'col-sm-4 order-2';
+        $classes_to_add['sidebar-secondary'] = 'col-sm-2 order-first';
     }
 
 
     // sidebar-content-sidebar  // supported
     if ( 'sidebar-content-sidebar' === $layout ) {
-        $classes_to_add['content'] = 'col-sm-6 col-sm-push-2';
-        $classes_to_add['sidebar-primary'] = 'col-sm-4 col-sm-push-2';
-        $classes_to_add['sidebar-secondary'] = 'col-sm-2 col-sm-pull-10';
+        $classes_to_add['content'] = 'col-sm-6';
+        $classes_to_add['sidebar-primary'] = 'col-sm-4';
+        $classes_to_add['sidebar-secondary'] = 'col-sm-2 order-first';
     }
 
     return $classes_to_add;

@@ -4,8 +4,8 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.rotsenacob.com
- * @author       Rotsen Mark Acob <www.rotsenacob.com>
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
  * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
@@ -17,27 +17,14 @@ function bfg_do_plugins_register() {
 
 	$plugins = array(
 		array(
-			'name'      => __( 'Page Builder by SiteOrigin', 'bootstrap-for-genesis' ),
-			'slug'      => 'siteorigin-panels',
-			'required'  => false
-		),
-
-		array(
-			'name'      => __( 'SiteOrigin Widgets Bundle', 'bootstrap-for-genesis' ),
-			'slug'      => 'so-widgets-bundle',
-			'required'  => false
-		),
-		
-		array(
 			'name'      => __( 'Widget CSS Classes', 'bootstrap-for-genesis' ),
 			'slug'      => 'widget-css-classes',
 			'required'  => false
 		),
-
 		array(
-			'name'		=> __( 'Kirki', 'bootstrap-for-genesis' ),
-			'slug'		=> 'kirki',
-			'required' 	=> true
+			'name'		=> __( 'Bootstrap for Contact Form 7', 'bootstrap-for-genesis' ),
+			'slug'		=> 'bootstrap-for-contact-form-7',
+			'required'	=> false
 		)
 	);
 

@@ -1,0 +1,15 @@
+/* ## Single Post/Page
+----------------------------------------------------------------------------- */
+.entry {
+    .entry-meta {
+        @extend .text-muted;
+    }
+    .entry-footer {
+        .entry-meta {
+            margin-bottom: 0;
+        }
+    }
+    .single & {
+        margin-bottom: $spacer*2;
+    }
+}

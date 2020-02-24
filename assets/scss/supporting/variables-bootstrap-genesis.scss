@@ -1,13 +1,13 @@
 /* Variables
 ------------------------------------------------------------ */
 
-$galleryCaptionColor: $thumbnail-caption-color;
+$galleryCaptionColor: $figure-caption-color;
 
-$widgetFontColor: $text-color;
+$widgetFontColor: $body-color;
 $widgetBgColor: transparent;
-$widgetBorderColor: $gray-lighter;
+$widgetBorderColor: $border-color;
 
 $commentBgColor: $body-bg;
 $commentBorderColor: $body-bg;
-$singleCommentBgColor: $panel-default-heading-bg;
-$singleCommentPostAuthorBgColor: $state-warning-bg;
+$singleCommentBgColor: $body-bg; // $panel-default-heading-bg;
+$singleCommentPostAuthorBgColor: $body-bg; // $state-warning-bg;

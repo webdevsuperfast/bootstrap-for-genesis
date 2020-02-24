@@ -1,105 +1,117 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-clean-css'),
+    postcss = require('gulp-postcss'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    prettify = require('gulp-jsbeautifier'),
-    vinylpaths = require('vinyl-paths'),
-    cmq = require('gulp-combine-mq'),
-    merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
-    // runSequence = require('run-sequence'),
-    del = require('del');
+    browserSync = require('browser-sync').create(),
+    wpPot = require('gulp-wp-pot'),
+    cssnano = require('cssnano'),
+    autoprefixer = require('autoprefixer'),
+    comments = require('postcss-discard-comments'),
+    Fiber = require('fibers');
 
-// CSS
-gulp.task('styles', function(){
-    var cssStream = gulp.src([
-        'node_modules/smartmenus/dist/addons/bootstrap/jquery.smartmenus.bootstrap.css'
-    ])
-    .pipe(concat('smartmenus.css'));
+sass.compiler = require('sass');
 
-    var sassStream = gulp.src('assets/scss/style.scss')
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(concat('app.scss'))
-    
-    var mergeStream = merge(sassStream, cssStream)
-        .pipe(concat('app.css'))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(cmq())
-        .pipe(gulp.dest('temp/css'))
-        .pipe(rename('app.css'))
-        .pipe(minifycss())
-        .pipe(gulp.dest('assets/css'))
-        .pipe(notify({ message: 'Styles task complete' }));
-    
-    return mergeStream;
-});
+var plugins = [
+    autoprefixer,
+    cssnano,
+    comments({
+        removeAllButFirst: true
+    })
+]
 
-// JSHint
-gulp.task('lint', function(){
-    return gulp.src('assets/js/source/*.js')
+var paths = {
+    styles: {
+        src: 'assets/scss/style.scss',
+        dest: './'
+    },
+    scripts: {
+        src: [
+            'assets/js/source/app.js',
+            'node_modules/jquery/dist/jquery.slim.js',
+            'node_modules/bootstrap/dist/js/bootstrap.js',
+            'node_modules/popper.js/dist/umd/popper.js',
+            'node_modules/smartmenus/dist/jquery.smartmenus.js',
+            'node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.js'
+        ],
+        dest: 'assets/js'
+    },
+    languages: {
+        src: '**/*.php',
+        dest: 'languages/bootstrap-for-genesis.pot'
+    },
+    site: {
+        url: 'http://bootstrap.test'
+    }
+}
+
+function translation() {
+    return gulp.src(paths.languages.src)
+        .pipe(wpPot())
+        .pipe(gulp.dest(paths.languages.dest))
+}
+
+function scriptsLint() {
+    return gulp.src('assets/js/source/**/*','gulpfile.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
-});
+}
 
-// Scripts
-gulp.task('scripts', function() {
-    return gulp.src([
-        'assets/js/source/*.js',
-        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'node_modules/smartmenus/dist/jquery.smartmenus.js',
-        'node_modules/smartmenus/dist/addons/bootstrap/jquery.smartmenus.bootstrap.js'
-    ])
-    .pipe(changed('js'))
-    .pipe(foreach(function(stream, file){
-        return stream
-            .pipe(uglify())
-            .pipe(rename({suffix: '.min'}))
-            .pipe(gulp.dest('temp/js'))
-    }))
-    .pipe(gulp.dest('assets/js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});
+function style() {
+    return gulp.src(paths.styles.src)
+        .pipe(changed(paths.styles.dest))
+        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
+        .pipe(concat('app.scss'))
+        .pipe(postcss(plugins))
+        .pipe(rename('style.css'))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.stream())
+        .pipe(notify({ message: 'Styles task complete' }));
+}
 
-// Clean
-gulp.task('clean', function(cb) {
-    return gulp.src('temp/*')
-    .pipe(vinylpaths(del))
-});
+function js() {
+    return gulp.src(paths.scripts.src)
+        .pipe(changed(paths.scripts.dest))
+        .pipe(foreach(function(stream, file){
+            return stream
+                .pipe(uglify())
+                .pipe(rename({suffix: '.min'}))
+        }))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream({match: '**/*.js'}))
+        .pipe(notify({ message: 'Scripts task complete' }));
+}
 
-// Copy bootstrap fonts to assets folder
-gulp.task('copy', function() {
-    return gulp.src(['node_modules/bootstrap-sass/assets/fonts/bootstrap/**/*'], {
-        base: 'node_modules/bootstrap-sass/assets/fonts'
+function browserSyncServe(done) {
+    browserSync.init({
+        injectChanges: true,
+        proxy: paths.site.url
     })
-    .pipe(gulp.dest('assets/fonts'));
-});
-
-// Default task
-// gulp.task('default', function() {
-//     runSequence(
-//         'clean',
-//         'copy',
-//         ['styles', 'lint', 'scripts'],
-//         'watch'
-//     );
-// });
-
-// Watch
-gulp.task('watch', function() {
-    // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], gulp.series('styles'));
-
-    // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], gulp.series('scripts'));
-});
-
-gulp.task('default', gulp.series('clean', 'copy', ['styles', 'lint', 'scripts'], 'watch', function(){
     done();
-}));
+}
+
+function browserSyncReload(done) {
+    browserSync.reload();
+    done();
+}
+
+function watch() {
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], style).on('change', browserSync.reload)
+    gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
+    gulp.watch([
+            '*.php',
+            'lib/*',
+            '**/**/*.php'
+        ],
+        gulp.series(browserSyncReload)
+    )
+}
+
+gulp.task('translation', translation);
+
+gulp.task('default', gulp.parallel(style, js, browserSyncServe, watch));

@@ -1,0 +1,120 @@
+img {
+    @include img-fluid;
+}
+
+.alignleft,
+.alignright,
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+        display: block;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .alignleft {
+        float: left;
+        img {
+            margin: auto;
+        }
+    }
+
+    .alignright {
+        float: right;
+        img {
+            margin: auto;
+        }
+    }
+
+    .aligncenter {
+        margin: {
+            right: auto;
+            left: auto;
+        }
+        img {
+            margin: auto;
+        }
+    }
+
+    img.alignleft {
+        // margin: 5px 20px 5px 0;
+        margin: {
+            top: map-get($spacers, 2);
+            right: map-get($spacers, 4);
+            bottom: map-get($spacers, 2);
+            left: map-get($spacers, 0);
+        }
+    }
+
+    .wp-caption.alignleft {
+        // margin: 5px 10px 5px 0;
+        margin: {
+            top: map-get($spacers, 2);
+            right: map-get($spacers, 3);
+            bottom: map-get($spacers, 2);
+            left: map-get($spacers, 0);
+        }
+    }
+
+    img.alignright {
+        // margin: 5px 0 5px 20px;
+        margin: {
+            top: map-get($spacers, 2);
+            right: map-get($spacers, 0);
+            bottom: map-get($spacers, 2);
+            left: map-get($spacers, 4);
+        }
+    }
+
+    .wp-caption.alignright {
+        // margin: 5px 0 5px 10px;
+        margin: {
+            top: map-get($spacers, 2);
+            right: map-get($spacers, 0);
+            bottom: map-get($spacers, 2);
+            left: map-get($spacers, 3);
+        }
+    }
+
+    img.aligncenter {
+        // margin: 5px auto;
+        margin: map-get($spacers, 2) auto;
+    }
+
+    img.alignnone {
+        // margin: 5px 0;
+        margin: map-get($spacers, 2) auto;
+    }
+}
+
+.wp-caption {
+    // margin-bottom: $spacer;
+    margin-bottom: map-get($spacers, 3);
+    .wp-caption-text {
+        margin-bottom: 0;
+    }
+}
+
+.wp-caption .wp-caption-text,
+.entry-caption, .gallery-caption {
+    @extend .text-muted;
+    font-size: 14px;
+    text-align: center;
+}
+
+img.wp-smiley,
+.rsswidget img {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.wp-caption.alignleft + ul,
+.wp-caption.alignleft + ol  {
+    list-style-position: inside;
+}
