@@ -7,14 +7,10 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    prettify = require('gulp-jsbeautifier'),
     vinylpaths = require('vinyl-paths'),
-    cmq = require('gulp-combine-mq'),
     merge = require('merge-stream'),
     foreach = require('gulp-flatmap'),
     changed = require('gulp-changed'),
-    // runSequence = require('run-sequence'),
     del = require('del');
 
 // CSS
@@ -31,7 +27,6 @@ gulp.task('styles', function(){
     var mergeStream = merge(sassStream, cssStream)
         .pipe(concat('app.css'))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(cmq())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('app.css'))
         .pipe(minifycss())
@@ -80,16 +75,6 @@ gulp.task('copy', function() {
     })
     .pipe(gulp.dest('assets/fonts'));
 });
-
-// Default task
-// gulp.task('default', function() {
-//     runSequence(
-//         'clean',
-//         'copy',
-//         ['styles', 'lint', 'scripts'],
-//         'watch'
-//     );
-// });
 
 // Watch
 gulp.task('watch', function() {
