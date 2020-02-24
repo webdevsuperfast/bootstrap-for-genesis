@@ -1,0 +1,17 @@
+/* Archive/Blog Styling
+----------------------------------------------------------------------------- */
+
+body.archive,
+body.blog,
+body.search {
+    .entry {
+        border-bottom: 1px solid $hr-border-color;
+        padding-bottom: $spacer*2;
+        margin-bottom: $spacer*2;
+    }
+}
+
+.entry-image-link {
+    display: inline-block;
+    margin-bottom: $spacer;
+}

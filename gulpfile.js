@@ -1,76 +1,117 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
+    postcss = require('gulp-postcss'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    del = require('del');
+    foreach = require('gulp-flatmap'),
+    changed = require('gulp-changed'),
+    browserSync = require('browser-sync').create(),
+    wpPot = require('gulp-wp-pot'),
+    cssnano = require('cssnano'),
+    autoprefixer = require('autoprefixer'),
+    comments = require('postcss-discard-comments'),
+    Fiber = require('fibers');
 
-// CSS
-gulp.task('styles', function(){
-    return gulp.src('assets/scss/style.scss')
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('temp/css'))
-        .pipe(rename('style.css'))
-        .pipe(cssnano())
-        .pipe(gulp.dest('./'))
-        .pipe(notify({ message: 'Styles task complete' }));
-} );
+sass.compiler = require('sass');
 
-// JSHint
-gulp.task('lint', function(){
-    return gulp.src('assets/js/source/*.js')
+var plugins = [
+    autoprefixer,
+    cssnano,
+    comments({
+        removeAllButFirst: true
+    })
+]
+
+var paths = {
+    styles: {
+        src: 'assets/scss/style.scss',
+        dest: './'
+    },
+    scripts: {
+        src: [
+            'assets/js/source/app.js',
+            'node_modules/jquery/dist/jquery.slim.js',
+            'node_modules/bootstrap/dist/js/bootstrap.js',
+            'node_modules/popper.js/dist/umd/popper.js',
+            'node_modules/smartmenus/dist/jquery.smartmenus.js',
+            'node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.js'
+        ],
+        dest: 'assets/js'
+    },
+    languages: {
+        src: '**/*.php',
+        dest: 'languages/bootstrap-for-genesis.pot'
+    },
+    site: {
+        url: 'http://bootstrap.test'
+    }
+}
+
+function translation() {
+    return gulp.src(paths.languages.src)
+        .pipe(wpPot())
+        .pipe(gulp.dest(paths.languages.dest))
+}
+
+function scriptsLint() {
+    return gulp.src('assets/js/source/**/*','gulpfile.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
-});
+}
 
-// Scripts
-gulp.task('source', function() {
-    return gulp.src([
-        'assets/js/source/*.js'
-    ])
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('temp/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});
+function style() {
+    return gulp.src(paths.styles.src)
+        .pipe(changed(paths.styles.dest))
+        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
+        .pipe(concat('app.scss'))
+        .pipe(postcss(plugins))
+        .pipe(rename('style.css'))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.stream())
+        .pipe(notify({ message: 'Styles task complete' }));
+}
 
-gulp.task('vendor', function(){
-    return gulp.src([
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'assets/js/vendor/*.js'
-    ])
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('temp/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});
+function js() {
+    return gulp.src(paths.scripts.src)
+        .pipe(changed(paths.scripts.dest))
+        .pipe(foreach(function(stream, file){
+            return stream
+                .pipe(uglify())
+                .pipe(rename({suffix: '.min'}))
+        }))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream({match: '**/*.js'}))
+        .pipe(notify({ message: 'Scripts task complete' }));
+}
 
-// Clean
-gulp.task('clean', function(cb) {
-    del(['temp/css', 'temp/js'], cb)
-});
+function browserSyncServe(done) {
+    browserSync.init({
+        injectChanges: true,
+        proxy: paths.site.url
+    })
+    done();
+}
 
-// Default task
-gulp.task('default', function() {
-    gulp.start('clean', 'styles', 'lint', 'source', 'vendor', 'watch');
-});
+function browserSyncReload(done) {
+    browserSync.reload();
+    done();
+}
 
-// Watch
-gulp.task('watch', function() {
-    // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
+function watch() {
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], style).on('change', browserSync.reload)
+    gulp.watch(paths.scripts.src, gulp.series(scriptsLint, js))
+    gulp.watch([
+            '*.php',
+            'lib/*',
+            '**/**/*.php'
+        ],
+        gulp.series(browserSyncReload)
+    )
+}
 
-    // Watch .js files
-    gulp.watch(['assets/js/vendor/*.js'], ['vendor']);
-    gulp.watch(['assets/js/source/*.js'], ['source']);
-});
+gulp.task('translation', translation);
+
+gulp.task('default', gulp.parallel(style, js, browserSyncServe, watch));

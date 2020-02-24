@@ -1,224 +1,165 @@
 <?php
 /**
- * Customizer Options
+ * Customizer
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.superfastbusiness.com
- * @author       SuperFastBusiness <www.superfastbusiness.com>
- * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
+ * @copyright    Copyright (c) 2017, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
 
-add_action( 'init', 'bfg_customizer_options' );
-function bfg_customizer_options() {
-	// Stores all the controls that will be added
-	$options = array();
+add_action( 'customize_register', function( $wp_customize ) {
+    // Add Default Settings
+    $wp_customize->add_setting( 'bootstrap-for-genesis', array(
+        'capability' => 'edit_theme_options',
+        'type' => 'theme_mod'
+    ) );
 
-	// Stores all the sections to be added
-	$sections = array();
+    // Add Bootstrap Panel
+    $wp_customize->add_panel( 'bootstrap', array(
+        'title' => __( 'Bootstrap for Genesis', 'bootstrap-for-genesis' ),
+        'priority' => 100
+    ) );
 
-	// Stores all the panels to be added
-	$panels = array();
+    // Add Navigation Section
+    $wp_customize->add_section( 'navigation', array(
+        'title' => __( 'Navigation Settings', 'bootstrap-for-genesis' ),
+        'priority' => 10,
+        'panel' => 'bootstrap'
+    ) );
 
-	// Adds the sections to the $options array
-	$options['sections'] = $sections;
+    //* Add Navigation Controls
+    $wp_customize->add_setting( 'navposition', array(
+        'default' => ''
+    ) );
 
-	// Logo
-	$section = 'logo';
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Logo', 'bfg' ),
-		'priority' => '25'
-	);
+    $wp_customize->add_control( 'navposition', array(
+        'type' => 'select',
+        'priority' => 10,
+        'label' => __( 'Navigation Position', 'bootstrap-for-genesis' ),
+        'section' => 'navigation',
+        'choices' => array(
+            '' => __( 'Default', 'bootstrap-for-genesis' ),
+            'sticky-top' => __( 'Sticky Top', 'bootstrap-for-genesis' ),
+            'fixed-top' => __( 'Fixed Top', 'bootstrap-for-genesis' ),
+            'fixed-bottom' => __( 'Fixed Bottom', 'bootstrap-for-genesis' ),
+        )
+    ) );
 
-	$options['logo'] = array(
-		'id' => 'logo',
-		'label' => __( 'Upload logo', 'bfg' ),
-		'type' => 'upload',
-		'section' => $section,
-		'default' => ''
-	);
+    $wp_customize->add_setting( 'navcontainer', array(
+        'default' => 'lg'
+    ) );
 
-	// Navigation Extras
-	$section = 'navextra';
-	
-	$choices = array(
-		'date' => __( 'Date', 'bfg' ),
-		'search' => __( 'Search Form', 'bfg' )
-	);
-	
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Navigation Extras', 'bfg' ),
-		'priority' => '30'
-	);
+    // Navigation Container
+    $wp_customize->add_control( 'navcontainer', array(
+        'type' => 'select',
+        'priority' => 20,
+        'label' => __( 'Navigation Container', 'bootstrap-for-genesis' ),
+        'section' => 'navigation',
+        'choices' => array(
+            'sm' => __( 'Small', 'bootstrap-for-genesis' ),
+            'md' => __( 'Medium', 'bootstrap-for-genesis' ),
+            'lg' => __( 'Large', 'bootstrap-for-genesis' ),
+            'xl' => __( 'Extra Large', 'bootstrap-for-genesis' )
+        )
+    ) );
 
-	$options['navextra'] = array(
-		'id' => 'navextra',
-		'label' => __( 'Display navigation extras', 'bfg' ),
-		'section' => $section,
-		'type' => 'checkbox',
-		'default' => false
-	);
-	
-	$options['select'] = array(
-		'id' => 'select',
-		'label' => __( 'Select Navigation Extra', 'bfg' ),
-		'section' => $section,
-		'type' => 'select',
-		'choices' => $choices,
-		'default' => 'search'
-	);
+    // Navigation Color
+    $wp_customize->add_setting( 'navcolor', array(
+        'default' => 'dark'
+    ) );
 
-	// Typography
-	$section = 'typography';
-	$font_choices = customizer_library_get_font_choices();
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Typography', 'bfg' ),
-		'priority' => '30'
-	);
-	$options['custom-font'] = array(
-		'id' => 'custom-font',
-		'label' => __( 'Enable custom font', 'bfg' ),
-		'section' => $section,
-		'type' => 'checkbox',
-		'default' => false	
-	);
-	$options['heading-font'] = array(
-		'id' => 'heading-font',
-		'label'   => __( 'Heading Font', 'bfg' ),
-		'section' => $section,
-		'type'    => 'select',
-		'choices' => $font_choices,
-		'default' => 'Raleway'
-	);
-	$options['body-font'] = array(
-		'id' => 'body-font',
-		'label'   => __( 'Body Font', 'bfg' ),
-		'section' => $section,
-		'type'    => 'select',
-		'choices' => $font_choices,
-		'default' => 'Roboto'
-	);
+    $wp_customize->add_control( 'navcolor', array(
+        'type' => 'select',
+        'priority' => 30,
+        'label' => __( 'Navigation Background', 'bootstrap-for-genesis' ),
+        'section' => 'navigation',
+        'choices' => array(
+            'light' => __( 'Light', 'bootstrap-for-genesis' ),
+            'dark' => __( 'Dark', 'bootstrap-for-genesis' ),
+            'primary' => __( 'Primary', 'bootstrap-for-genesis' )
+        )
+    ) );
+    
+    // Navigation Extras
+    $wp_customize->add_setting( 'navextra', array(
+        'default' => 'search'
+    ) );
 
-	// Footer
-	$section = 'footer';
+    $wp_customize->add_control( 'navextra', array(
+        'type' => 'select',
+        'priority' => 40,
+        'label' => __( 'Navigation Extras', 'bootstrap-for-genesis' ),
+        'section' => 'navigation',
+        'choices' => array(
+            '' => __( 'None', 'bootstrap-for-genesis' ),
+            'date' => __( 'Date', 'bootstrap-for-genesis' ),
+            'search' => __( 'Search Form', 'bootstrap-for-genesis' ),
+            'widget' => __( 'Widget Area', 'bootstrap-for-genesis' )
+        )
+    ) );
 
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Footer', 'bfg' ),
-		'priority' => '35',
-		'description' => __( '', 'bfg' )
-	);
-	$options['footer'] = array(
-		'id' => 'creds',
-		'label' => __( 'Copyright', 'bfg' ),
-		'section' => $section,
-		'type' => 'text',
-		'default' => ''
-	);
+    // Container Layout
+    $wp_customize->add_section( 'container-layout', array(
+        'title' => __( 'Container Layout', 'bootstrap-for-genesis' ),
+        'priority' => 40,
+        'panel' => 'bootstrap'
+    ) );
 
-	// Adds the sections to the $options array
-	$options['sections'] = $sections;
+    $wp_customize->add_setting( 'container', array(
+        'default' => 'boxed',
+    ) );
 
-	// Adds the panels to the $options array
-	$options['panels'] = $panels;
-	$customizer_library = Customizer_Library::Instance();
-	$customizer_library->add_options( $options );
+    $wp_customize->add_control( 'container', array(
+        'type' => 'select',
+        'priority' => 30,
+        'label' => __( 'Container Settings', 'bootstrap-for-genesis' ),
+        'section' => 'container-layout',
+        'choices' => array(
+            'fluid' => __( 'Fluid Layout', 'bootstrap-for-genesis' ),
+            'boxed' => __( 'Boxed Layout', 'bootstrap-for-genesis' )
+        )
+    ) );
 
-	// To delete custom mods use: customizer_library_remove_theme_mods();
-}
+    // Footer Section
+    $wp_customize->add_section( 'footer', array(
+        'title' => __( 'Footer Section', 'bootstrap-for-genesis' ),
+        'priority' => 40,
+        'panel' => 'bootstrap'
+    ) );
 
-// Enqueue Google Fonts via Customizer
-add_action( 'wp_enqueue_scripts', 'bfg_customizer_fonts' );
-function bfg_customizer_fonts() {
-	// Font options
-	$fonts = array(
-		get_theme_mod( 'heading-font', customizer_library_get_default( 'heading-font' ) ),
-		get_theme_mod( 'body-font', customizer_library_get_default( 'heading-font' ) )
-	);
-	$font_uri = customizer_library_get_google_font_uri( $fonts );
+    $wp_customize->add_setting( 'footerwidgetbg', array(
+        'default' => 'dark'
+    ) );
 
-	if ( get_theme_mod( 'custom-font', false ) ) {
-		// Load Google Fonts
-		wp_enqueue_style( 'customizer-fonts', $font_uri, array(), null, 'screen' );
-		
-		// Remove default font enqueue
-		remove_action( 'wp_enqueue_scripts', 'bfg_google_fonts' );
-	}
-}
+    $wp_customize->add_control( 'footerwidgetbg', array(
+        'type' => 'select',
+        'priority' => 30,
+        'label' => __( 'Footer Widget Background', 'bootstrap-for-genesis' ),
+        'section' => 'footer',
+        'choices' => array(
+            'light' => __( 'Light', 'bootstrap-for-genesis' ),
+            'dark' => __( 'Dark', 'bootstrap-for-genesis' ),
+            'primary' => __( 'Primary', 'bootstrap-for-genesis' )
+        )
+    ) );
 
-if ( ! function_exists( 'bfg_customizer_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) {
+    $wp_customize->add_setting( 'footerbg', array(
+        'default' => 'dark'
+    ) );
 
-	add_action( 'customizer_library_styles', 'bfg_customizer_build_styles' );
-	function bfg_customizer_build_styles() {
-		if ( get_theme_mod( 'custom-font', false ) ) {
-			// Heading font
-			$setting = 'heading-font';
-			$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-			$stack = customizer_library_get_font_stack( $mod );
-			if ( $mod != customizer_library_get_default( $setting ) ) {
-				Customizer_Library_Styles()->add( array(
-					'selectors' => array(
-						'.footer-widgets .widgettitle',
-						'.widgettitle',
-						'.h1',
-						'.h2',
-						'.h3',
-						'.h4',
-						'.h5',
-						'.h6',
-						'h1',
-						'h2',
-						'h3',
-						'h4',
-						'h5',
-						'h6',
-						'.widget_recent_entries li a',
-					),
-					'declarations' => array(
-						'font-family' => $stack
-					)
-				) );
-			}
-	
-			// Body Font
-			$setting = 'body-font';
-			$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-			$stack = customizer_library_get_font_stack( $mod );
-			if ( $mod != customizer_library_get_default( $setting ) ) {
-				Customizer_Library_Styles()->add( array(
-					'selectors' => array(
-						'body',
-						'.popover',
-						'.tooltip',
-						'.widget_recent_entries li span',
-						'.site-header .site-description'
-					),
-					'declarations' => array(
-						'font-family' => $stack
-					)
-				) );
-			}
-		}
-	}
-	
-}
-
-if ( !function_exists( 'bfg_library_styles' ) ) {
-	add_action( 'wp_head', 'bfg_library_styles' );
-	function bfg_library_styles() {
-		do_action( 'customizer_library_styles' );
-
-		$css = Customizer_Library_Styles()->build();
-
-		if ( !empty( $css ) ) {
-			echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"bfg-custom-css\">\n";
-				echo $css;
-			echo "\n</style>\n<!-- End Custom CSS -->\n";
-		}
-	}
-}
+    $wp_customize->add_control( 'footerbg', array(
+        'type' => 'select',
+        'priority' => 30,
+        'label' => __( 'Footer Background', 'bootstrap-for-genesis' ),
+        'section' => 'footer',
+        'choices' => array(
+            'light' => __( 'Light', 'bootstrap-for-genesis' ),
+            'dark' => __( 'Dark', 'bootstrap-for-genesis' ),
+            'primary' => __( 'Primary', 'bootstrap-for-genesis' )
+        )
+    ) );
+} );

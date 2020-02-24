@@ -4,9 +4,9 @@
  *
  * @package      Bootstrap for Genesis
  * @since        1.0
- * @link         http://www.superfastbusiness.com
- * @author       SuperFastBusiness <www.superfastbusiness.com>
- * @copyright    Copyright (c) 2015, SuperFastBusiness
+ * @link         http://webdevsuperfast.github.io
+ * @author       Rotsen Mark Acob <webdevsuperfast.github.io>
+ * @copyright    Copyright (c) 2015, Rotsen Mark Acob
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
 */
@@ -17,97 +17,119 @@ if ( class_exists( 'UberMenuStandard' ) ) {
 
 // remove primary & secondary nav from default position
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-// remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-
-// add primary & secondary nav to top of the page
-add_action( 'genesis_before', 'genesis_do_nav' );
-// add_action( 'genesis_before', 'genesis_do_subnav' );
+add_action( 'genesis_header', 'genesis_do_nav' );
 
 // filter menu args for bootstrap walker and other settings
 add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
-
-// add bootstrap markup around the nav
-add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_args_filter( $args ) {
 
-    require_once( BFG_THEME_LIB . 'classes/bootstrap-walker.php' );
+    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-navwalker.php' );
+
+    $menu_classes = array(
+        'navbar-nav'
+    );
+
+    $navextra = get_theme_mod( 'navextra', false );
+    if ( $navextra !== '' ) {
+        $menu_classes[] = 'mr-auto';
+    } else {
+        $menu_classes[] = 'ml-auto';
+    }
     
-    if ( 'primary' === $args['theme_location'] || 'secondary' === $args['theme_location'] ) {
-        $args['menu_class'] = 'nav navbar-nav';
-        $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
-        $args['walker'] = new wp_bootstrap_navwalker();
+    if ( 'primary' === $args['theme_location'] ) {
+        $args['container'] = false;
+        $args['menu_class'] = esc_attr( implode( ' ', $menu_classes ) );
+        $args['fallback_cb'] = 'WP_Bootstrap_Navwalker::fallback';
+        $args['walker'] = new WP_Bootstrap_Navwalker();
     }
     return $args;
 }
+
+// add bootstrap markup around the nav
+add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
 function bfg_nav_menu_markup_filter( $html, $args ) {
     // only add additional Bootstrap markup to
     // primary and secondary nav locations
-    if (
-        'primary'   !== $args->theme_location &&
-        'secondary' !== $args->theme_location
-    ) {
+    if ( 'primary' !== $args->theme_location ) {
         return $html;
     }
-    $data_target = "nav-collapse" . sanitize_html_class( '-' . $args->theme_location );
-    $output = <<<EOT
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#{$data_target}">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-EOT;
+
+    $data_target = 'nav' . sanitize_html_class( '-' . $args->theme_location );
+    
+    $output = '';
+
     // only include blog name and description in the nav
     // if it is the primary nav location
     if ( 'primary' === $args->theme_location ) {
         $output .= apply_filters( 'bfg_navbar_brand', bfg_navbar_brand_markup() );
     }
-    $output .= '</div>'; // .navbar-header
-    $output .= "<div class=\"collapse navbar-collapse\" id=\"{$data_target}\">";
+
+    $output .= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#'.$data_target.'" aria-controls="'.$data_target.'" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
+    $output .= '<nav class="collapse navbar-collapse" id="'.$data_target.'">';
     $output .= $html;
-    if ( get_theme_mod( 'navextra', false ) ) {
+    
+    $navextra = get_theme_mod( 'navextra', false );
+    
+    if ( $navextra == true ) {
         $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
     }
-    $output .= '</div>'; // .collapse .navbar-collapse
+
+    $output .= '</nav>';
     
     return $output;
 }
 
 function bfg_navbar_brand_markup() {
-    // Display navbar brand on small displays 
-    $output = '<a class="navbar-brand visible-xs-block" id="logo" title="'.esc_attr( get_bloginfo( 'description' ) ).'" href="'.esc_url( home_url( '/' ) ).'">';
-    
-    // $output .= apply_filters( 'bfg_nav_brand_args', get_bloginfo( 'name' ) );
-    $output .= get_theme_mod( 'logo', false ) ? '<img src="'.get_theme_mod( 'logo' ).'" alt="'.esc_attr( get_bloginfo( 'description' ) ).'" />' : get_bloginfo( 'name' );
-
-    $output .= '</a>';
-
+    if ( get_theme_mod( 'custom_logo' ) ) {
+        $output = get_custom_logo();
+    } else {
+        $output = '<a class="navbar-brand" title="'.esc_attr( get_bloginfo( 'name' ) ).'" href="'.esc_url( get_home_url( '/' ) ).'">'.get_bloginfo( 'name' ).'</a>';
+    }
     return $output;
 }
 
-// Navigation Extra
+//* Navigation Extras
 function bfg_navbar_content_markup() {
     $url = get_home_url();
     
-    $choices = get_theme_mod( 'select', false );
+    $choices = get_theme_mod( 'navextra', 'search' );
+    
+    $output = '';
+    
     switch( $choices ) {
         case 'search':
         default:
-            $output = '<form method="get" class="navbar-form navbar-right" action="' .  $url . '" role="search">';
-            $output .= '<div class="form-group">';
-            $output .= '<input class="form-control" name="s" placeholder="Search" type="text">';
-            $output .= '</div>';
-            $output .= '<button class="btn btn-default" value="Search" type="submit">Submit</button>';
-            $output .= '</form>';       
+            $output .= '<form class="form-inline float-lg-right" method="get" action="'.$url.'" role="search">';
+            $output .= '<input class="form-control mr-sm-2" type="text" placeholder="Search" name="s">';
+            $output .= '<button class="btn btn-outline-success" type="submit">Search</button>';
+            $output .= '</form>';
             break;
         case 'date': 
-            $output = '<p class="navbar-text navbar-right">';
+            $output .= '<p class="navbar-text navbar-right mb-0">';
             $output .= date_i18n( get_option( 'date_format' ) );
             $output .= '</p>';
+            break;
+        case 'widget':
+            ob_start();
+            genesis_widget_area( 'header-right', array(
+                'before' => '<div class="header-right navbar-text navbar-right mb-0">',
+                'after' => '</div>'
+            ) );
+            $output .= ob_get_clean();
+            break;
+        case '':
+            $output .= '';
             break;
     }
 
 	return $output;
+}
+
+//* Filter primary navigation output to match Bootstrap markup
+// @link http://wordpress.stackexchange.com/questions/58377/using-a-filter-to-modify-genesis-wp-nav-menu/58394#58394
+add_filter( 'genesis_do_nav', 'bfg_override_do_nav', 10, 3 );
+function bfg_override_do_nav($nav_output, $nav, $args) {
+    // return the modified result
+    return sprintf( '%1$s', $nav );
+
 }

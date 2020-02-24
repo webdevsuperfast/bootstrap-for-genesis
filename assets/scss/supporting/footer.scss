@@ -1,0 +1,28 @@
+/* Site Footer
+----------------------------------------------------------------------------- */
+.site-footer {
+    padding: $spacer 0;
+    p {
+        margin-bottom: 0;
+    }
+    ul {
+        @include list-unstyled;
+    }
+    a {
+        color: inherit;
+    }
+    &.text-muted {
+        a {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    &.bg-primary {
+        a {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}

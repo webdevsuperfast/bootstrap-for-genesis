@@ -1,0 +1,590 @@
+# Copyright (C) 2019 unnamed project
+# This file is distributed under the same license as the unnamed project package.
+msgid ""
+msgstr ""
+"Project-Id-Version: unnamed project\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: functions.php:43
+msgid "Primary Navigation Menu"
+msgstr ""
+
+#: lib/comment.php:19
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: lib/comment.php:37
+msgid "Name"
+msgstr ""
+
+#: lib/comment.php:39
+msgid "Email"
+msgstr ""
+
+#: lib/comment.php:41
+msgid "Website"
+msgstr ""
+
+#: lib/customizer.php:23
+msgid "Bootstrap for Genesis"
+msgstr ""
+
+#: lib/customizer.php:29
+msgid "Navigation Settings"
+msgstr ""
+
+#: lib/customizer.php:42
+msgid "Navigation Position"
+msgstr ""
+
+#: lib/customizer.php:45
+msgid "Default"
+msgstr ""
+
+#: lib/customizer.php:46
+msgid "Sticky Top"
+msgstr ""
+
+#: lib/customizer.php:47
+msgid "Fixed Top"
+msgstr ""
+
+#: lib/customizer.php:48
+msgid "Fixed Bottom"
+msgstr ""
+
+#: lib/customizer.php:60
+msgid "Navigation Container"
+msgstr ""
+
+#: lib/customizer.php:63
+msgid "Small"
+msgstr ""
+
+#: lib/customizer.php:64
+msgid "Medium"
+msgstr ""
+
+#: lib/customizer.php:65
+msgid "Large"
+msgstr ""
+
+#: lib/customizer.php:66
+msgid "Extra Large"
+msgstr ""
+
+#: lib/customizer.php:78
+msgid "Navigation Background"
+msgstr ""
+
+#: lib/customizer.php:81, lib/customizer.php:122, lib/customizer.php:138
+msgid "Light"
+msgstr ""
+
+#: lib/customizer.php:82, lib/customizer.php:123, lib/customizer.php:139
+msgid "Dark"
+msgstr ""
+
+#: lib/customizer.php:83, lib/customizer.php:124, lib/customizer.php:140
+msgid "Primary"
+msgstr ""
+
+#: lib/customizer.php:95
+msgid "Navigation Extras"
+msgstr ""
+
+#: lib/customizer.php:98
+msgid "None"
+msgstr ""
+
+#: lib/customizer.php:99
+msgid "Date"
+msgstr ""
+
+#: lib/customizer.php:100
+msgid "Search Form"
+msgstr ""
+
+#: lib/customizer.php:101
+msgid "Widget Area"
+msgstr ""
+
+#: lib/customizer.php:107
+msgid "Footer Section"
+msgstr ""
+
+#: lib/customizer.php:119
+msgid "Footer Widget Background"
+msgstr ""
+
+#: lib/customizer.php:135
+msgid "Footer Background"
+msgstr ""
+
+#: lib/extras.php:50
+msgid "To view this protected post, enter the password below:"
+msgstr ""
+
+#: lib/extras.php:50
+msgid "Password:"
+msgstr ""
+
+#: lib/extras.php:50
+msgid "Submit"
+msgstr ""
+
+#: lib/pagination.php:21
+msgid "Previous Page"
+msgstr ""
+
+#: lib/pagination.php:28
+msgid "Next Page"
+msgstr ""
+
+#: lib/search.php:17, lib/search.php:18
+msgid "Search"
+msgstr ""
+
+#: lib/tgm.php:20
+msgid "Widget CSS Classes"
+msgstr ""
+
+#: lib/tgm.php:25
+msgid "Bootstrap for Contact Form 7"
+msgstr ""
+
+#: lib/tgm.php:40, lib/modules/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/tgm.php:41, lib/modules/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: lib/tgm.php:42, lib/modules/class-tgm-plugin-activation.php:337
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: lib/tgm.php:43, lib/modules/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/tgm.php:44, lib/modules/class-tgm-plugin-activation.php:341
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:45, lib/modules/class-tgm-plugin-activation.php:347
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:46
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:47, lib/modules/class-tgm-plugin-activation.php:365
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:48, lib/modules/class-tgm-plugin-activation.php:371
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:49
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:50, lib/modules/class-tgm-plugin-activation.php:353
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:51
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:52, lib/modules/class-tgm-plugin-activation.php:377
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:53, lib/modules/class-tgm-plugin-activation.php:387
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgm.php:54, lib/modules/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/tgm.php:55, lib/modules/class-tgm-plugin-activation.php:394, lib/modules/class-tgm-plugin-activation.php:3252
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/tgm.php:56
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: lib/widget-areas.php:20
+msgid "Home Featured"
+msgstr ""
+
+#: lib/widget-areas.php:21
+msgid "This is the home featured area. It uses the jumbotron bootstrap section."
+msgstr ""
+
+#: templates/page_landing.php:3
+msgid "Landing"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: lib/modules/class-tgm-plugin-activation.php:339
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:359
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/modules/class-tgm-plugin-activation.php:382
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/modules/class-tgm-plugin-activation.php:393, lib/modules/class-tgm-plugin-activation.php:920, lib/modules/class-tgm-plugin-activation.php:2626, lib/modules/class-tgm-plugin-activation.php:3673
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:395, lib/modules/class-tgm-plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: lib/modules/class-tgm-plugin-activation.php:397
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/modules/class-tgm-plugin-activation.php:399
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: lib/modules/class-tgm-plugin-activation.php:401
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:403
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:1027
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:1027, lib/modules/class-tgm-plugin-activation.php:1030
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:1030
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:1214, lib/modules/class-tgm-plugin-activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: lib/modules/class-tgm-plugin-activation.php:2075
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2366
+msgid "Required"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2369
+msgid "Recommended"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2388
+msgid "External Source"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2408
+msgid "Not Installed"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2414
+msgid "Active"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2423
+msgid "Requires Update"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2426
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: lib/modules/class-tgm-plugin-activation.php:2435
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: lib/modules/class-tgm-plugin-activation.php:2481
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/modules/class-tgm-plugin-activation.php:2485
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/modules/class-tgm-plugin-activation.php:2489
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: lib/modules/class-tgm-plugin-activation.php:2493
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2583
+msgid "Installed version:"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2603
+msgid "Available version:"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2640
+msgid "Plugin"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2641
+msgid "Source"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2642
+msgid "Type"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2646
+msgid "Version"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2647
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/modules/class-tgm-plugin-activation.php:2696
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/modules/class-tgm-plugin-activation.php:2701
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: lib/modules/class-tgm-plugin-activation.php:2707
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2810
+msgid "Install"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2816
+msgid "Update"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2819
+msgid "Activate"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/modules/class-tgm-plugin-activation.php:3591
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: lib/modules/class-tgm-plugin-activation.php:3594
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/modules/class-tgm-plugin-activation.php:3596
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3600
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/modules/class-tgm-plugin-activation.php:3602
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3602, lib/modules/class-tgm-plugin-activation.php:3610
+msgid "Show Details"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3602, lib/modules/class-tgm-plugin-activation.php:3610
+msgid "Hide Details"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/modules/class-tgm-plugin-activation.php:3605
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3608
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: lib/modules/class-tgm-plugin-activation.php:3610
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/modules/class-tgm-plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: lib/modules/class-tgm-plugin-activation.php:3613
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""

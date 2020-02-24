@@ -1,0 +1,141 @@
+/* Widget Styling
+------------------------------------------------------------ */
+
+// default widget styles
+.widget {
+    table {
+        @extend .table;
+    }
+}
+
+.widget_search {
+    .search-query {
+        margin-bottom: $spacer;
+    }
+}
+
+// includes ID in selector for specificity
+.widget_calendar #wp-calendar {
+    th, td {
+        padding: 0;
+    }
+}
+
+/** Recent Posts  */
+.widget_recent_entries {
+	li {
+		margin-bottom: $spacer;
+		a {
+			color: inherit;
+			font-family: $headings-font-family;
+            font-weight: $headings-font-weight;
+			&:hover {
+				color: $link-color;
+			}
+		}
+		span {
+			color: $text-muted;
+			display: block;
+			font-family: $font-family-sans-serif;
+			font-size: 12px;
+		}
+	}
+}
+
+/** Recent Comments **/
+.widget_recent_comments {
+	ul {
+		li {
+			a {
+				color: inherit;
+				&:hover {
+					color: $link-color;
+				}
+			}
+		}
+	}
+}
+
+/** Category Widget **/
+.widget_categories, .widget_archive {
+	form {
+		padding: $list-group-item-padding-y $list-group-item-padding-x;
+	}
+	select {
+		@extend .form-control;
+	}
+	ul, ol {
+		@extend .list-unstyled;
+		ul,ol {
+			margin-left: $spacer;
+		}
+		li {
+			a {
+				color: inherit;
+				&:hover {
+					color: $link-color;
+				}
+			}
+			span {
+				float: right;
+			}
+		}
+	}
+}
+
+/** Tag Cloud Widget */
+.widget_tag_cloud {
+	.tagcloud {
+		font-size: 0;
+		a {
+			@include button-variant($blue, $blue, $blue);
+			font-size: 12px !important;
+			margin-right: 4px;
+			margin-bottom: 4px;
+			.sidebar & {
+				@extend .btn-primary;
+			}
+		}
+	}
+}
+
+/** Genesis Featured Post **/
+.featuredpost {
+	.entry {
+		padding: 0;
+		margin: 0;
+		border-bottom: 0;
+		.entry-header {
+			margin-bottom: 5px;
+			.entry-title {
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+/** Calendar Widget
+----------------------------------------------------------------------------- */
+.widget_calendar {
+	table {
+		@extend .table;
+		@extend .table-responsive;
+		@extend .table-striped;
+		caption {
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+}
+
+/** ## Navigation Widget
+----------------------------------------------------------------------------- */
+.widget_nav_menu {
+	ul {
+		li {
+			a {
+				color: inherit;
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+// Comments
+.entry-comments {
+	margin-bottom: $spacer;
+	h3 {
+		margin-bottom: $spacer;
+	}
+	.comment {
+		margin: 0;
+		margin-bottom: $spacer*2;
+		article[itemprop="comment"] {
+			background-color: $card-bg;
+			background-clip: border-box;
+			border: $card-border-width solid $card-border-color;
+			@include border-radius($card-border-radius);
+		}
+		.comment-content {
+			flex: 1 1 auto;
+            padding: $card-spacer-x;
+		}
+		&.parent {
+			margin-bottom: 0;
+		}
+		.comment-header {
+			padding: $card-spacer-y $card-spacer-x;
+			margin-bottom: 0;
+			background-color: $card-cap-bg;
+			border-bottom: $card-border-width solid $card-border-color;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			margin-bottom: $spacer;
+			.comment-author {
+				margin-bottom: 0;
+				margin-right: auto;
+				img {
+					margin-right: $spacer;
+				}
+				.says {
+					display: none;
+				}
+			}
+			.comment-meta {
+				margin-bottom: 0;
+			}
+		}
+		.comment-reply {
+			padding: $card-spacer-y $card-spacer-x;
+			background-color: $card-cap-bg;
+			border-top: $card-border-width solid $card-border-color;
+			.comment-reply-link {
+				@extend .btn;
+				@extend .btn-primary;
+			}
+		}
+	}
+	.children {
+		margin-top: $spacer;
+        list-style: none;
+	}
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+    width: 50%;
+}
+
+// Trackbacks
+.entry-pings {
+	.pingback {
+		margin-bottom: $spacer;
+		padding-bottom: $spacer;
+	}
+}
+
+.ping-list {
+	@include list-unstyled;
+	.comment-body {
+		background-color: $card-bg;
+		background-clip: border-box;
+		border: $card-border-width solid $card-border-color;
+		@include border-radius($card-border-radius);
+	}
+	.comment-meta {
+		padding: $card-spacer-y $card-spacer-x;
+		margin-bottom: 0;
+		background-color: $card-cap-bg;
+		border-bottom: $card-border-width solid $card-border-color;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: $spacer;
+		.says {
+			display: none;
+		}
+		.comment-author {
+			margin-right: auto;
+		}
+	}
+	.comment-content {
+		flex: 1 1 auto;
+		padding: $card-spacer-x;
+	}
+	.reply {
+		padding: $card-spacer-y $card-spacer-x;
+		background-color: $card-cap-bg;
+		border-top: $card-border-width solid $card-border-color;
+		.comment-reply-link {
+			@extend .btn;
+			@extend .btn-primary;
+		}
+	}
+}
