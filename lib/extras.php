@@ -100,13 +100,13 @@ add_filter( 'wp_link_pages_link', function( $link ) {
     return $link;
 } );
 
-add_filter( 'genesis_footer_creds_text', function( $creds ) {
-    if ( get_theme_mod( 'creds', false ) ) {
-        $creds = get_theme_mod( 'creds' );
-    }
+// add_filter( 'genesis_footer_creds_text', function( $creds ) {
+//     if ( get_theme_mod( 'creds', false ) ) {
+//         $creds = get_theme_mod( 'creds' );
+//     }
 
-    return $creds;
-} );
+//     return $creds;
+// } );
 
 // Remove P tags wrapping on images
 add_filter( 'the_content', 'bfg_filter_ptags_on_images' );
