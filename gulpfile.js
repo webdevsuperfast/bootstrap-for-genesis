@@ -12,10 +12,9 @@ var gulp = require('gulp'),
     wpPot = require('gulp-wp-pot'),
     cssnano = require('cssnano'),
     autoprefixer = require('autoprefixer'),
-    comments = require('postcss-discard-comments'),
-    Fiber = require('fibers');
+    comments = require('postcss-discard-comments');
 
-sass.compiler = require('sass');
+// sass.compiler = require('sass');
 
 var plugins = [
     autoprefixer,
@@ -65,13 +64,14 @@ function scriptsLint() {
 function style() {
     return gulp.src(paths.styles.src)
         .pipe(changed(paths.styles.dest))
-        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
+        .pipe(sass().on('error', sass.logError))
+        // .pipe(sass.render().on('error', sass.logError))
         .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('style.css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(notify({ message: 'Styles task complete' }))
 }
 
 function js() {
