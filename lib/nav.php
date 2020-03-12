@@ -11,25 +11,21 @@
  *
 */
 
-if ( class_exists( 'UberMenuStandard' ) ) {
-    return;
-}
-
 // remove primary & secondary nav from default position
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav' );
 
-// filter menu args for bootstrap walker and other settings
-add_filter( 'wp_nav_menu_args', 'bfg_nav_menu_args_filter' );
-function bfg_nav_menu_args_filter( $args ) {
+add_filter( 'wp_nav_menu_args', function( $args ) {
 
-    require_once( BFG_THEME_MODULES . 'class-wp-bootstrap-navwalker.php' );
+    // Get Menu Location
+    $data_target = 'nav' . sanitize_html_class( '-' . $args['theme_location'] );
 
     $menu_classes = array(
         'navbar-nav'
     );
 
     $navextra = get_theme_mod( 'navextra', false );
+
     if ( $navextra !== '' ) {
         $menu_classes[] = 'mr-auto';
     } else {
@@ -37,13 +33,17 @@ function bfg_nav_menu_args_filter( $args ) {
     }
     
     if ( 'primary' === $args['theme_location'] ) {
-        $args['container'] = false;
+        $args['container'] = 'div';
+        $args['container_class'] = 'collapse navbar-collapse';
+        $args['container_id'] = $data_target;
+        $args['depth'] = 2;
         $args['menu_class'] = esc_attr( implode( ' ', $menu_classes ) );
         $args['fallback_cb'] = 'WP_Bootstrap_Navwalker::fallback';
         $args['walker'] = new WP_Bootstrap_Navwalker();
     }
+
     return $args;
-}
+} );
 
 // add bootstrap markup around the nav
 add_filter( 'wp_nav_menu', 'bfg_nav_menu_markup_filter', 10, 2 );
@@ -65,7 +65,6 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
     }
 
     $output .= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#'.$data_target.'" aria-controls="'.$data_target.'" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
-    $output .= '<nav class="collapse navbar-collapse" id="'.$data_target.'">';
     $output .= $html;
     
     $navextra = get_theme_mod( 'navextra', false );
@@ -73,8 +72,6 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
     if ( $navextra == true ) {
         $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
     }
-
-    $output .= '</nav>';
     
     return $output;
 }
@@ -125,11 +122,19 @@ function bfg_navbar_content_markup() {
 	return $output;
 }
 
-//* Filter primary navigation output to match Bootstrap markup
-// @link http://wordpress.stackexchange.com/questions/58377/using-a-filter-to-modify-genesis-wp-nav-menu/58394#58394
-add_filter( 'genesis_do_nav', 'bfg_override_do_nav', 10, 3 );
-function bfg_override_do_nav($nav_output, $nav, $args) {
-    // return the modified result
-    return sprintf( '%1$s', $nav );
+// Filter menu link attributes and add missing .nav-link class to parent menu link class attribute 
+add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
+    $item_classes = array();
 
-}
+    // Get the current menu item class
+    $item_classes[] = $atts['class'];
+
+    // Apply .nav-link class to parent menu item only
+    if ( $depth == 0 ) {
+        $item_classes[] = 'nav-link';
+    }
+
+    $atts['class'] = esc_attr( implode( ' ', $item_classes ) ); 
+    
+    return $atts;
+}, 10, 4 );
