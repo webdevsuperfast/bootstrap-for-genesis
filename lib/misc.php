@@ -39,7 +39,7 @@ function bfg_get_first_image() {
 add_action( 'genesis_meta', 'bfg_do_meta' );
 function bfg_do_meta() {
 	// Jumbotron
-	if ( is_front_page() && is_active_sidebar( 'home-featured' ) ) add_action( 'genesis_after_header', 'bfg_do_home_featured' );
+	if ( is_front_page() && is_active_sidebar( 'home-featured' ) ) add_action( 'genesis_header', 'bfg_do_home_featured' );
 
 	// Body Class
 	add_filter( 'body_class', 'bfg_body_class' );
