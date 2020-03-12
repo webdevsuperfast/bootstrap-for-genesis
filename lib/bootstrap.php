@@ -126,7 +126,7 @@ function bfg_merge_genesis_attr_classes() {
             break;
     }
 
-    $classes['site-header'] = esc_attr( implode( ' ', $navclasses ) );
+    $classes['nav-primary'] = esc_attr( implode( ' ', $navclasses ) );
 
     // Footer Class
     $footerwidgetbg = get_theme_mod( 'footerwidgetbg', 'dark' );
