@@ -12,6 +12,10 @@
         border: $card-border-width solid $card-border-color;
         @include border-radius($card-border-radius);
         margin-bottom: $spacer*2;
+        &.widget_search {
+            border: none;
+            border-radius: 0px;
+        }
         .widget-wrap {
             flex: 1 1 auto;
             padding: $card-spacer-y $card-spacer-x;
