@@ -36,7 +36,7 @@ add_filter( 'wp_nav_menu_args', function( $args ) {
         $args['container'] = 'div';
         $args['container_class'] = 'collapse navbar-collapse';
         $args['container_id'] = $data_target;
-        $args['depth'] = 2;
+        $args['depth'] = 0;
         $args['menu_class'] = esc_attr( implode( ' ', $menu_classes ) );
         $args['fallback_cb'] = 'WP_Bootstrap_Navwalker::fallback';
         $args['walker'] = new WP_Bootstrap_Navwalker();
@@ -127,14 +127,14 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) 
     $item_classes = array();
 
     // Get the current menu item class
-    $item_classes[] = $atts['class'];
+    $item_classes[] = sanitize_html_class( $atts['class'] );
 
     // Apply .nav-link class to parent menu item only
     if ( $depth == 0 ) {
         $item_classes[] = 'nav-link';
     }
 
-    $atts['class'] = esc_attr( implode( ' ', $item_classes ) ); 
+    $atts['class'] = join( ' ', $item_classes ); 
     
     return $atts;
 }, 10, 4 );
