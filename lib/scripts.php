@@ -33,14 +33,6 @@ function bfg_theme_scripts() {
 		wp_register_script( 'app-bootstrap-js', BFG_THEME_JS . 'bootstrap.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-bootstrap-js' );
 
-		// Register Smart Menu JS and enqueue it
-		wp_register_script( 'app-smartmenu-js', BFG_THEME_JS . 'jquery.smartmenus.min.js', array( 'jquery' ), $version, true );
-		wp_enqueue_script( 'app-smartmenu-js' );
-
-		// Register Smart Menu Boostrap Addon Js and enqueue it
-		wp_register_script( 'app-smartmenu-bootstrap-js', BFG_THEME_JS . 'jquery.smartmenus.bootstrap-4.min.js', array( 'app-smartmenu-js' ), $version, true );
-		wp_enqueue_script( 'app-smartmenu-bootstrap-js' );
-
 		// Register Font Awesome JS and enqueue it
 		wp_register_script( 'app-fontawesome-js', 'https://use.fontawesome.com/releases/v5.6.3/js/all.js', array(), $version, true );
 		wp_enqueue_script( 'app-fontawesome-js' );

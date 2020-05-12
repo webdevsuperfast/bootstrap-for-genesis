@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-dart-sass'),
     postcss = require('gulp-postcss'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
@@ -13,8 +13,6 @@ var gulp = require('gulp'),
     cssnano = require('cssnano'),
     autoprefixer = require('autoprefixer'),
     comments = require('postcss-discard-comments');
-
-// sass.compiler = require('sass');
 
 var plugins = [
     autoprefixer,
@@ -34,9 +32,7 @@ var paths = {
             'assets/js/source/app.js',
             'node_modules/jquery/dist/jquery.slim.js',
             'node_modules/bootstrap/dist/js/bootstrap.js',
-            'node_modules/popper.js/dist/umd/popper.js',
-            'node_modules/smartmenus/dist/jquery.smartmenus.js',
-            'node_modules/smartmenus-bootstrap-4/jquery.smartmenus.bootstrap-4.js'
+            'node_modules/popper.js/dist/umd/popper.js'
         ],
         dest: 'assets/js'
     },
@@ -65,7 +61,6 @@ function style() {
     return gulp.src(paths.styles.src)
         .pipe(changed(paths.styles.dest))
         .pipe(sass().on('error', sass.logError))
-        // .pipe(sass.render().on('error', sass.logError))
         .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('style.css'))

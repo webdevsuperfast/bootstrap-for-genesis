@@ -43,9 +43,9 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 - [ ] Integrate Genesis Configuration API
 - [ ] Integrate AMP Support
 - [ ] Gutenberg Support
-- [ ] Remove SmartMenus support or move to separate plugin
-- [ ] Remove TGM Plugin Activation Support
-- [ ] Use Git Submodule for WP Bootstrap Navwalker
+- [x] Remove SmartMenus support or move to separate plugin
+- [x] Remove TGM Plugin Activation Support
+- [x] Use Git Submodule for WP Bootstrap Navwalker
 - [ ] Code cleanup and bug fixes
 
 ## Credits

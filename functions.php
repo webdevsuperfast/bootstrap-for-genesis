@@ -56,11 +56,11 @@ function bfg_childtheme_setup() {
 
 	// Structural Wraps
 	add_theme_support( 'genesis-structural-wraps', array(
-		'header',
 		'site-inner',
 		'footer-widgets',
 		'footer',
-		'home-featured'
+		'home-featured',
+		'nav'
 	) );
 
 	// WooCommerce Support
@@ -90,9 +90,6 @@ function bfg_childtheme_setup() {
 	// Add Accessibility support
 	add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
 
-	// TGM Plugin Activation
-	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
-
 	// Include php files from lib folder
 	// @link https://gist.github.com/theandystratton/5924570
 	foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) {
@@ -102,3 +99,7 @@ function bfg_childtheme_setup() {
 	// Load Child theme text domain
 	load_child_theme_textdomain( 'bootstrap-for-genesis', get_stylesheet_directory() . '/languages' );
 }
+
+add_action( 'after_setup_theme', function() {
+	require_once( CHILD_DIR . '/lib/modules/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php' );
+} );
