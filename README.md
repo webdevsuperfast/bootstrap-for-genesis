@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to handle tasks, configuration and lint files. 
+Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http://getbootstrap.com/). It uses Gulp to handle tasks, configuration and lint files.
+
+The default branch is under development, use [v4](https://github.com/webdevsuperfast/bootstrap-for-genesis/tree/v4) branch to get the last stable release.
 
 ## Installation Instructions
 
@@ -16,10 +18,12 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 1. Install [Git](https://git-scm.com/).
 2. Clone the repository to your local machine.
 3. Install [Node](https://nodejs.org/en/).
-4. Install [Gulp](https://gulpjs.com/) globally.
-5. Run `npm install` to install dependencies through terminal/CLI program.
-6. Replace site url in line `49` of `gulpfile.js` to your local development URL(e.g. http://bootstrap.test).
-7. Run `gulp` through your favorite CLI program.
+4. Install [Yarn](https://yarnpkg.com).
+5. Install [Gulp](https://gulpjs.com/) globally.
+6. Run `yarn install` or `npm install` to install dependencies through terminal/CLI program.
+7. Run `git submodule init` and `git submodule update` to add [WP Bootstrap Navwalker](https://github.com/twittem/wp-bootstrap-navwalker).
+8. Replace site url in line `49` of `gulpfile.js` to your local development URL(e.g. http://bootstrap.test).
+9. Run `gulp` through your favorite CLI program.
 
 ## Features
 
@@ -34,8 +38,6 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 5. Footer Widgets(modified to add bootstrap column classes based on the number of widget areas)
 6. Additional Widget Areas
 	* Home Featured(jumbotron)
-7. TGM Plugin Activation Support
-8. Multi-level dropdown menus using [SmartMenus](http://www.smartmenus.org/) Bootstrap Addon
 
 ## Todos
 
@@ -48,6 +50,11 @@ Bootstrap for Genesis is a genesis child theme which integrates [Bootstrap](http
 - [x] Use Git Submodule for WP Bootstrap Navwalker
 - [ ] Code cleanup and bug fixes
 
+
+## Notes
+
+Use [SmartMenus for Bootstrap](https://github.com/webdevsuperfast/ra-smartmenus-bootstrap) for multi-level dropdown support or checkout the [v4](https://github.com/webdevsuperfast/bootstrap-for-genesis/tree/v4) branch.
+
 ## Credits
 
 Without these projects, this theme wouldn't be where it is today.
@@ -56,8 +63,6 @@ Without these projects, this theme wouldn't be where it is today.
 * [Bootstrap](http://getbootstrap.com)
 * [Sass](http://sass-lang.com/)
 * [Gulp](http://gulpjs.com/)
-* [TGM Plugin Activation](http://tgmpluginactivation.com/)
 * [WP Bootstrap Navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 * [Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
 * [Bones for Genesis 2.0 with Bootstrap integration](https://github.com/jer0dh/bones-for-genesis-2-0-bootstrap)
-* [SmartMenus Bootstrap Addon](http://www.smartmenus.org/)
