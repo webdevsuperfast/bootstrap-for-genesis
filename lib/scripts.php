@@ -33,14 +33,6 @@ function bfg_theme_scripts() {
 		wp_register_script( 'app-bootstrap-js', BFG_THEME_JS . 'bootstrap.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-bootstrap-js' );
 
-		// Register Font Awesome JS and enqueue it
-		wp_register_script( 'app-fontawesome-js', 'https://use.fontawesome.com/releases/v5.6.3/js/all.js', array(), $version, true );
-		wp_enqueue_script( 'app-fontawesome-js' );
-
-		// Register Font Awesome 4 Shim and enqueue it
-		wp_register_script( 'app-fontawesome-shim-js', 'https://use.fontawesome.com/releases/v5.6.3/js/v4-shims.js', array( 'app-fontawesome-js', $version, true ) );
-		wp_enqueue_script( 'app-fontawesome-shim-js' );
-
 		// Register theme JS and enqueue it
 		wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
