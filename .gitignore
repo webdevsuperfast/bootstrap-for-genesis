@@ -72,3 +72,4 @@ dploy.yaml
 exclude.txt
 temp
 .rev
+lib/debug.php
