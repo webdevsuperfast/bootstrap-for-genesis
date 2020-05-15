@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-dart-sass'),
+    sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     wpPot = require('gulp-wp-pot'),
     cssnano = require('cssnano'),
     autoprefixer = require('autoprefixer'),
-    comments = require('postcss-discard-comments');
+    comments = require('postcss-discard-comments'),
+    Fiber = require('fibers');
 
 var plugins = [
     autoprefixer,
@@ -21,6 +22,8 @@ var plugins = [
         removeAllButFirst: true
     })
 ]
+
+sass.compiler = require('sass');
 
 var paths = {
     styles: {
@@ -60,7 +63,7 @@ function scriptsLint() {
 function style() {
     return gulp.src(paths.styles.src)
         .pipe(changed(paths.styles.dest))
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({fiber: Fiber}).on('error', sass.logError))
         .pipe(concat('app.scss'))
         .pipe(postcss(plugins))
         .pipe(rename('style.css'))
