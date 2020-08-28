@@ -11,6 +11,9 @@
  *
 */
 
+// Detect plugin. For use on Front End only.
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 // Theme Scripts & Stylesheet
 add_action( 'wp_enqueue_scripts', 'bfg_theme_scripts' );
 function bfg_theme_scripts() {
@@ -22,7 +25,14 @@ function bfg_theme_scripts() {
 
 		// Deregister jQuery and use Bootstrap supplied version
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', BFG_THEME_JS . 'jquery.slim.min.js', array(), $version, true );
+		
+		// Detect if WPForo plugin is activated to use full jquery version
+		if ( is_plugin_active( 'wpforo/wpforo.php' ) ) :
+			wp_register_script( 'jquery', BFG_THEME_JS . 'jquery.min.js', array(), $version );
+		else :
+			wp_register_script( 'jquery', BFG_THEME_JS . 'jquery.slim.min.js', array(), $version );
+		endif;
+
 		wp_enqueue_script( 'jquery' );
 
 		// Register Popper JS and enqueue it
