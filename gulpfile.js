@@ -33,6 +33,7 @@ var paths = {
     scripts: {
         src: [
             'assets/js/source/app.js',
+            'node_modules/jquery/dist/jquery.js',
             'node_modules/jquery/dist/jquery.slim.js',
             'node_modules/bootstrap/dist/js/bootstrap.js',
             'node_modules/popper.js/dist/umd/popper.js',
@@ -46,7 +47,7 @@ var paths = {
         dest: 'languages/bootstrap-for-genesis.pot'
     },
     site: {
-        url: 'http://bootstrap.test'
+        url: 'http://wordpress.ddev.site'
     }
 }
 
