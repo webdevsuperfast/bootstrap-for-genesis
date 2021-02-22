@@ -8,8 +8,8 @@
   "license": "GPL-2.0",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^10.1.0",
-    "browser-sync": "^2.26.13",
+    "autoprefixer": "^10.2.4",
+    "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -27,11 +27,11 @@
     "postcss-discard-comments": "^4.0.2"
   },
   "dependencies": {
-    "bootstrap": "4.5.3",
+    "bootstrap": "4.6.0",
     "bootstrap-icons": "^1.2.1",
     "fibers": "^5.0.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "sass": "^1.30.0"
+    "sass": "^1.32.8"
   }
 }
