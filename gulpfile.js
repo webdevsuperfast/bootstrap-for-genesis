@@ -44,7 +44,7 @@ var paths = {
         dest: 'languages/bootstrap-for-genesis.pot'
     },
     site: {
-        url: 'http://bootstrap.test'
+        url: 'http://bootstrap.ddev.site'
     }
 }
 
